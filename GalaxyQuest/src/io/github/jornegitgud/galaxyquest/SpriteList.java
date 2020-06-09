@@ -2,12 +2,14 @@ package io.github.jornegitgud.galaxyquest;
 
 import javafx.scene.image.Image;
 
-public abstract class SpriteList {
-    public Image getNextSprite() {
-        return null;
-    }
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Random;
 
-    public Image getNextSprite(Direction direction) {
-        return null;
-    }
+
+public interface SpriteList {
+
+    Image getNextSprite();
+
+    Image getNextSprite(Direction dir);
 }
