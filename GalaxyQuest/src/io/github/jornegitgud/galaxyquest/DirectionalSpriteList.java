@@ -57,7 +57,7 @@ public class DirectionalSpriteList implements SpriteList {
 
     @Override
     public Image getNextSprite() {
-        getNextSprite(lastDirection);
+        return getNextSprite(lastDirection);
     }
 
     @Override
