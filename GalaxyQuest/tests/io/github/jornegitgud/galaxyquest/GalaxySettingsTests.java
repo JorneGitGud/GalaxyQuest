@@ -21,19 +21,19 @@ public class GalaxySettingsTests {
     @Test
     @DisplayName("constructor wrong settings")
     void constructorTest2() {
-        GalaxySettings gameObject = new GalaxySettings(4, 4, 4, 4, true, 0);
+        GalaxySettings gameObject = new GalaxySettings(2, 2, 4, 4, true, 3);
         Assertions.assertEquals(Defaults.GALAXY_WIDTH, gameObject.getWidth());
         Assertions.assertEquals(Defaults.GALAXY_HEIGHT, gameObject.getHeight());
-        Assertions.assertEquals(Defaults.PLANET_COUNT, gameObject.getPlanetCount());
-        Assertions.assertEquals(Defaults.PIRATE_COUNT, gameObject.getPirateCount());
-        Assertions.assertEquals(Defaults.METEORITE_COUNT, gameObject.getMeteoriteCount());
+        Assertions.assertEquals(4, gameObject.getPlanetCount());
+        Assertions.assertEquals(4, gameObject.getPirateCount());
+        Assertions.assertEquals(3, gameObject.getMeteoriteCount());
         Assertions.assertEquals(true, gameObject.getSettingsFrozen());
 
     }
     @Test
     @DisplayName("constructor impossible settings")
     void constructorTest3() {
-        GalaxySettings gameObject = new GalaxySettings(50, 50, 30, 20, true, 20);
+        GalaxySettings gameObject = new GalaxySettings(50, 50, 60, 20, true, 20);
         Assertions.assertEquals(Defaults.GALAXY_WIDTH, gameObject.getWidth());
         Assertions.assertEquals(Defaults.GALAXY_HEIGHT, gameObject.getHeight());
         Assertions.assertEquals(Defaults.PLANET_COUNT, gameObject.getPlanetCount());
@@ -45,7 +45,7 @@ public class GalaxySettingsTests {
     @Test
     @DisplayName("Setters test")
     void settersTest(){
-        GalaxySettings gameObject = new GalaxySettings(50, 50, 30, 20, false, 20);
+        GalaxySettings gameObject = new GalaxySettings(50, 50, 10, 10, false, 10);
         gameObject.setWidth(10);
         gameObject.setHeight(10);
         gameObject.setPlanetCount(5);

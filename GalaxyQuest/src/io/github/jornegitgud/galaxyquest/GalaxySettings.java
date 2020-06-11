@@ -17,17 +17,18 @@ public class GalaxySettings {
     private boolean settingsFrozen;
 
     public GalaxySettings(int width, int height, int planetCount, int pirateCount, Boolean settingsFrozen, int meteoriteCount) {
+        if (width > LIMIT_MIN_LENGTH && width < LIMIT_MAX_LENGTH) this.width = width;
+        if (height > LIMIT_MIN_LENGTH && height < LIMIT_MAX_LENGTH) this.height = height;
+
         totalObjects = planetCount + pirateCount + meteoriteCount;
-        galaxySize = width * height;
+        galaxySize = this.width * this.height;
 
-        if (totalObjects * PERCENT_POPULATED > galaxySize) {
-
-            if (width > LIMIT_MIN_LENGTH && width < LIMIT_MAX_LENGTH) this.width = width;
-            if (height > LIMIT_MIN_LENGTH && height < LIMIT_MAX_LENGTH) this.height = height;
+        if (totalObjects < galaxySize * PERCENT_POPULATED) {
             this.planetCount = planetCount;
             this.meteoriteCount = meteoriteCount;
             this.pirateCount = pirateCount;
         }
+
         this.settingsFrozen = settingsFrozen;
     }
 
@@ -40,35 +41,35 @@ public class GalaxySettings {
     }
 
     public void setWidth(int width) {
-        if (width > LIMIT_MIN_LENGTH && width < LIMIT_MAX_LENGTH && !settingsFrozen && totalObjects * PERCENT_POPULATED > this.height * width) {
+        if (width > LIMIT_MIN_LENGTH && width < LIMIT_MAX_LENGTH && !settingsFrozen && totalObjects < this.height * width * PERCENT_POPULATED) {
             this.width = width;
             this.galaxySize = this.height * this.width;
         }
     }
 
     public void setHeight(int height) {
-        if (height > LIMIT_MIN_LENGTH && height < LIMIT_MAX_LENGTH && !settingsFrozen && totalObjects * PERCENT_POPULATED > this.width * height) {
+        if (height > LIMIT_MIN_LENGTH && height < LIMIT_MAX_LENGTH && !settingsFrozen && totalObjects < this.width * height * PERCENT_POPULATED) {
             this.height = height;
             this.galaxySize = this.height * this.width;
         }
     }
 
     public void setPlanetCount(int planetCount) {
-        if (!settingsFrozen && (planetCount + pirateCount + meteoriteCount) * PERCENT_POPULATED > galaxySize) {
+        if (!settingsFrozen && planetCount + pirateCount + meteoriteCount < galaxySize * PERCENT_POPULATED) {
             this.planetCount = planetCount;
             this.totalObjects = planetCount + pirateCount + meteoriteCount;
         }
     }
 
     public void setPirateCount(int pirateCount) {
-        if (!settingsFrozen && (planetCount + pirateCount + meteoriteCount) * PERCENT_POPULATED > galaxySize) {
+        if (!settingsFrozen && planetCount + pirateCount + meteoriteCount < galaxySize * PERCENT_POPULATED) {
             this.pirateCount = pirateCount;
             this.totalObjects = planetCount + pirateCount + meteoriteCount;
         }
     }
 
     public void setMeteoriteCount(int meteoriteCount) {
-        if (!settingsFrozen && (planetCount + pirateCount + meteoriteCount) * PERCENT_POPULATED > galaxySize) {
+        if (!settingsFrozen && planetCount + pirateCount + meteoriteCount < galaxySize * PERCENT_POPULATED) {
             this.meteoriteCount = meteoriteCount;
             this.totalObjects = planetCount + pirateCount + meteoriteCount;
         }
