@@ -1,5 +1,7 @@
 package io.github.jornegitgud.galaxyquest;
 
+import io.github.jornegitgud.galaxyquest.gameObjects.MovableObject;
+
 public class Tile {
 
     Tile tileAbove;
