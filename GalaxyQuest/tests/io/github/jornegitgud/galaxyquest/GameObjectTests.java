@@ -1,5 +1,6 @@
 package io.github.jornegitgud.galaxyquest;
 
+import io.github.jornegitgud.galaxyquest.gameObjects.GameObject;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
