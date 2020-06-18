@@ -2,10 +2,23 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fff264f5-7b44-419a-b4fb-10106bfbed3e" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/GalaxyQuest/src/io/github/jornegitgud/galaxyquest/gameObjects/GameObject.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/GalaxyQuest/src/io/github/jornegitgud/galaxyquest/gameObjects/Meteorite.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/GalaxyQuest/src/io/github/jornegitgud/galaxyquest/gameObjects/MovableObject.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/GalaxyQuest/src/io/github/jornegitgud/galaxyquest/gameObjects/Planet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/GalaxyQuest/src/io/github/jornegitgud/galaxyquest/gameObjects/Player.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/GalaxyQuest/src/io/github/jornegitgud/galaxyquest/gameObjects/SpacePirate.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/GalaxyQuest/src/io/github/jornegitgud/galaxyquest/gameObjects/Wormhole.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GalaxyQuest/src/io/github/jornegitgud/galaxyquest/Meteorite.java" beforeDir="false" afterPath="$PROJECT_DIR$/GalaxyQuest/src/io/github/jornegitgud/galaxyquest/Meteorite.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GalaxyQuest/src/io/github/jornegitgud/galaxyquest/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/GalaxyQuest/src/io/github/jornegitgud/galaxyquest/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GalaxyQuest/src/io/github/jornegitgud/galaxyquest/SpacePirate.java" beforeDir="false" afterPath="$PROJECT_DIR$/GalaxyQuest/src/io/github/jornegitgud/galaxyquest/SpacePirate.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GalaxyQuest/src/io/github/jornegitgud/galaxyquest/GameObject.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GalaxyQuest/src/io/github/jornegitgud/galaxyquest/Meteorite.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GalaxyQuest/src/io/github/jornegitgud/galaxyquest/MovableObject.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GalaxyQuest/src/io/github/jornegitgud/galaxyquest/Planet.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GalaxyQuest/src/io/github/jornegitgud/galaxyquest/Player.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GalaxyQuest/src/io/github/jornegitgud/galaxyquest/SpacePirate.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GalaxyQuest/src/io/github/jornegitgud/galaxyquest/Tile.java" beforeDir="false" afterPath="$PROJECT_DIR$/GalaxyQuest/src/io/github/jornegitgud/galaxyquest/Tile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GalaxyQuest/src/io/github/jornegitgud/galaxyquest/Wormhole.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GalaxyQuest/tests/io/github/jornegitgud/galaxyquest/GameObjectTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/GalaxyQuest/tests/io/github/jornegitgud/galaxyquest/GameObjectTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -123,11 +136,12 @@
       <workItem from="1591905235400" duration="378000" />
       <workItem from="1591905629926" duration="1176000" />
       <workItem from="1592505270845" duration="1021000" />
+      <workItem from="1592512445349" duration="283000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="2" />
+    <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
     <state x="92" y="92" width="1736" height="856" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog" timestamp="1591905974414">
