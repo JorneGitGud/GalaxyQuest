@@ -11,4 +11,7 @@ public class Galaxy {
         this.settings = settings;
     }
 
+    public GalaxySettings getSettings() {
+        return settings;
+    }
 }
