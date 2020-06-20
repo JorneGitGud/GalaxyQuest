@@ -6,39 +6,35 @@ public class HighScore {
     String name;
     int score;
     int setSecPerTile = 2;
-    int planetVallue = 100;
-    int obstacleVallue = 200;
+    int planetValue = 100;
+    int obstacleValue = 200;
+    GalaxySettings galaxySettings;
 
 
-    public HighScore() {
-        this.name = "ABCABC";
-        this.score = 5000;
-    }
-
-    public HighScore(String name, int elapsedSeconds) {
-        this.name = name;
+    public HighScore(String name, int elapsedSeconds, GalaxySettings galaxySettings) {
+        this.name = name.toUpperCase();
         this.score = calculateScore(elapsedSeconds);
+        this.galaxySettings = galaxySettings;
 
     }
 
-
-    //should be the actual galaxy settings this is only a temp fix.
-    GalaxySettings tempGalaxySettings = new GalaxySettings(5, 5, 5, 3, false, 2);
 
     private int calculateScore(int elapsedSeconds) {
-        double gridSize = tempGalaxySettings.getGalaxySize();
-        double numberOfObstacles = tempGalaxySettings.getPirateCount() + tempGalaxySettings.getMeteoriteCount();
-        double setPlanets = tempGalaxySettings.getPlanetCount();
-        double maxPlanets = (tempGalaxySettings.getGalaxySize() * tempGalaxySettings.getPERCENT_POPULATED() - numberOfObstacles);
+        double gridSize = galaxySettings.getGalaxySize();
+        double numberOfObstacles = galaxySettings.getPirateCount() + galaxySettings.getMeteoriteCount();
+        double setPlanets = galaxySettings.getPlanetCount();
+        double maxPlanets = (galaxySettings.getGalaxySize() * galaxySettings.getPercentPopulated() - numberOfObstacles);
 
 
         double setSecondsForGrid = (gridSize * 0.75) * setSecPerTile;
         double timeScoreMultiplier = setSecondsForGrid - elapsedSeconds;
         double planetMultiplier = setPlanets / maxPlanets;
-        double planetPoints = planetVallue * planetMultiplier;
-        double extraPoints = numberOfObstacles * obstacleVallue;
+        double planetPoints = planetValue * planetMultiplier;
+        double extraPoints = numberOfObstacles * obstacleValue;
 
         double totalScore = (planetPoints + extraPoints) * timeScoreMultiplier;
-        return (int) totalScore;
+
+        return (int) Math.round(totalScore);
+
     }
 }

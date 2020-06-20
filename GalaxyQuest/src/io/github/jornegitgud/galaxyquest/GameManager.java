@@ -3,6 +3,7 @@ package io.github.jornegitgud.galaxyquest;
 import javafx.stage.Stage;
 
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class GameManager {
     ArrayList<HighScore> highScores;
@@ -26,4 +27,8 @@ public class GameManager {
 
 
 
+
+    public ArrayList<HighScore> getHighScores() {
+        return highScores;
+    }
 }

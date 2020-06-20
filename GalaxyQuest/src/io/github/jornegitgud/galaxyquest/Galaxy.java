@@ -8,6 +8,7 @@ public class Galaxy {
     private String name;
 
 
+
     public Galaxy(String name, GalaxySettings settings) {
         this.name = name;
         this.settings = settings;
@@ -21,4 +22,6 @@ public class Galaxy {
     public GalaxySettings getSettings() {
         return settings;
     }
+
+
 }

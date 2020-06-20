@@ -112,7 +112,7 @@ public class GalaxySettings {
         return totalObjects;
     }
 
-    public double getPERCENT_POPULATED() {
+    public double getPercentPopulated() {
         return PERCENT_POPULATED;
     }
 }
