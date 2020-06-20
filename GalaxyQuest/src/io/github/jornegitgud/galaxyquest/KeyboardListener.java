@@ -5,36 +5,12 @@ import javafx.scene.Scene;
 import java.util.function.Consumer;
 
 public class KeyboardListener {
-    Scene gameScene;
 
-    public boolean areAllKeysPressed() {
-        return isUpPressed && isDownPressed && isLeftPressed && isRightPressed;
-    }
-
-    public boolean isAnyKeyPressed() {
-        return isUpPressed || isDownPressed || isLeftPressed || isRightPressed;
-    }
-
-    public boolean isUpPressed() {
-        return isUpPressed;
-    }
-
-    public boolean isRightPressed() {
-        return isRightPressed;
-    }
-
-    public boolean isDownPressed() {
-        return isDownPressed;
-    }
-
-    public boolean isLeftPressed() {
-        return isLeftPressed;
-    }
-
-    boolean isUpPressed;
-    boolean isRightPressed;
-    boolean isDownPressed;
-    boolean isLeftPressed;
+    private  Scene gameScene;
+    private boolean isUpPressed;
+    private boolean isRightPressed;
+    private boolean isDownPressed;
+    private boolean isLeftPressed;
 
     public Consumer<Direction> onKeyPressed;
     public Consumer<Direction> onKeyReleased;
@@ -107,5 +83,29 @@ public class KeyboardListener {
                     }
             }
         }));
+    }
+
+    public boolean areAllKeysPressed() {
+        return isUpPressed && isDownPressed && isLeftPressed && isRightPressed;
+    }
+
+    public boolean isAnyKeyPressed() {
+        return isUpPressed || isDownPressed || isLeftPressed || isRightPressed;
+    }
+
+    public boolean isUpPressed() {
+        return isUpPressed;
+    }
+
+    public boolean isRightPressed() {
+        return isRightPressed;
+    }
+
+    public boolean isDownPressed() {
+        return isDownPressed;
+    }
+
+    public boolean isLeftPressed() {
+        return isLeftPressed;
     }
 }
