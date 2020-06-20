@@ -9,22 +9,28 @@ public class GameManager {
     ArrayList<HighScore> highScores;
     GalaxyRenderer renderer;
     KeyboardListener keyboardListener;
+    Galaxy galaxy;
 
     public GameManager(Stage stage, GalaxySettings galaxySettings) {
+        galaxy = new Galaxy("John", galaxySettings);
+        populateGalaxy(galaxy);
         highScores = new ArrayList<>();
         renderer = new GalaxyRenderer(stage, galaxySettings);
         keyboardListener = new KeyboardListener(renderer.getScene());
 
-        keyboardListener.onKeyPressed = (direction) -> {
-            switch(direction) {
-                case UP:
-                    break;
-                case DOWN:
 
-            }
-        }
     }
 
+    private void populateGalaxy(Galaxy galaxy){
+
+        //player
+        //pirates
+        //meteorites
+        //planets
+
+
+
+    }
 
 
 

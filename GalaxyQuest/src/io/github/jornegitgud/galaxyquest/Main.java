@@ -17,6 +17,8 @@ public class Main extends Application {
 
         //eventually react to main menu buttons here
         var galaxySettings = new GalaxySettings(); //will be received from mainMenu later
+        galaxySettings.setWidth(18);
+        galaxySettings.setHeight(18);
         var galaxy = new Galaxy("Test", galaxySettings);
 
         var galaxyRenderer = new GalaxyRenderer(stage, galaxySettings);
@@ -24,8 +26,6 @@ public class Main extends Application {
         galaxyRenderer.renderGalaxy(galaxy);
 
         MovableObject test = new MovableObject(new SimpleSpriteList(), new Tile(new Coordinate(0, 0)));
-        test.onMoveEnded = (movableObject) -> {
 
-        }
     }
 }
