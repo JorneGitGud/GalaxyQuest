@@ -73,7 +73,7 @@ public class GalaxySettingsTests {
         Assertions.assertEquals(3,gameObject.getPirateCount());
         Assertions.assertEquals(3,gameObject.getMeteoriteCount());
 
-        gameObject.freezeSetting();
+        gameObject.freezeSettings();
         Assertions.assertEquals(false, gameObject.getCanBeAltered());
         gameObject.setWidth(12);
         gameObject.setHeight(12);

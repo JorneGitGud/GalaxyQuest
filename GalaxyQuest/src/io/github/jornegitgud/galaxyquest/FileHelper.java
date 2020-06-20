@@ -16,7 +16,7 @@ public class FileHelper {
 
         String[] parts = path.split("[/\\\\]");
 
-        return System.getProperty("user.dir") + String.join(File.separator, parts);
+        return System.getProperty("user.dir") + File.separator + "GalaxyQuest" + File.separator + String.join(File.separator, parts);
     }
 
     public static FileInputStream createInputStream(String path) throws FileNotFoundException {
