@@ -4,20 +4,20 @@ import io.github.jornegitgud.galaxyquest.gameObjects.MovableObject;
 
 public class Tile {
 
-    Tile tileAbove;
-    Tile tileBelow;
-    Tile tileRight;
-    Tile tileLeft;
+    private Tile tileAbove;
+    private Tile tileBelow;
+    private Tile tileRight;
+    private Tile tileLeft;
 
-    Coordinate coordinate;
-    MovableObject objectOnTile = new MovableObject();
+    private Coordinate coordinate;
+    //MovableObject objectOnTile = new MovableObject();
 
     public Tile(Coordinate coordinate) {
         this.coordinate = coordinate;
     }
 
     public Tile(Coordinate coordinate, MovableObject objectOnTil) {
-        this.objectOnTile = objectOnTile;
+        //    this.objectOnTile = objectOnTile;
         this.coordinate = coordinate;
     }
 
@@ -52,7 +52,6 @@ public class Tile {
     public void setTileLeft(Tile tileLeft) {
         this.tileLeft = tileLeft;
     }
-
 
 
 }

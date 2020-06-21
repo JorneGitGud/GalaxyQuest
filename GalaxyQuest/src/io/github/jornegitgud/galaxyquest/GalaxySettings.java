@@ -16,6 +16,11 @@ public class GalaxySettings {
 
     private boolean settingsFrozen;
 
+    public GalaxySettings() {
+        totalObjects = planetCount + pirateCount + meteoriteCount;
+        galaxySize = width * height;
+    }
+
     public GalaxySettings(int width, int height, int planetCount, int pirateCount, Boolean settingsFrozen, int meteoriteCount) {
         if (width > LIMIT_MIN_LENGTH && width < LIMIT_MAX_LENGTH) this.width = width;
         if (height > LIMIT_MIN_LENGTH && height < LIMIT_MAX_LENGTH) this.height = height;
@@ -36,7 +41,7 @@ public class GalaxySettings {
         return !settingsFrozen;
     }
 
-    public void freezeSetting() {
+    public void freezeSettings() {
         settingsFrozen = true;
     }
 
@@ -97,5 +102,17 @@ public class GalaxySettings {
 
     public int getMeteoriteCount() {
         return meteoriteCount;
+    }
+
+    public int getGalaxySize() {
+        return galaxySize;
+    }
+
+    public int getTotalObjects() {
+        return totalObjects;
+    }
+
+    public double getPercentPopulated() {
+        return PERCENT_POPULATED;
     }
 }

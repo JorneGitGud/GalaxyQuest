@@ -2,23 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fff264f5-7b44-419a-b4fb-10106bfbed3e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/GalaxyQuest/src/io/github/jornegitgud/galaxyquest/gameObjects/GameObject.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GalaxyQuest/src/io/github/jornegitgud/galaxyquest/gameObjects/Meteorite.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GalaxyQuest/src/io/github/jornegitgud/galaxyquest/gameObjects/MovableObject.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GalaxyQuest/src/io/github/jornegitgud/galaxyquest/gameObjects/Planet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GalaxyQuest/src/io/github/jornegitgud/galaxyquest/gameObjects/Player.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GalaxyQuest/src/io/github/jornegitgud/galaxyquest/gameObjects/SpacePirate.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GalaxyQuest/src/io/github/jornegitgud/galaxyquest/gameObjects/Wormhole.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GalaxyQuest/src/io/github/jornegitgud/galaxyquest/GameObject.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GalaxyQuest/src/io/github/jornegitgud/galaxyquest/Meteorite.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GalaxyQuest/src/io/github/jornegitgud/galaxyquest/MovableObject.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GalaxyQuest/src/io/github/jornegitgud/galaxyquest/Planet.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GalaxyQuest/src/io/github/jornegitgud/galaxyquest/Player.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GalaxyQuest/src/io/github/jornegitgud/galaxyquest/SpacePirate.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GalaxyQuest/src/io/github/jornegitgud/galaxyquest/Tile.java" beforeDir="false" afterPath="$PROJECT_DIR$/GalaxyQuest/src/io/github/jornegitgud/galaxyquest/Tile.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GalaxyQuest/src/io/github/jornegitgud/galaxyquest/Wormhole.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GalaxyQuest/tests/io/github/jornegitgud/galaxyquest/GameObjectTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/GalaxyQuest/tests/io/github/jornegitgud/galaxyquest/GameObjectTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GalaxyQuest/src/io/github/jornegitgud/galaxyquest/Galaxy.java" beforeDir="false" afterPath="$PROJECT_DIR$/GalaxyQuest/src/io/github/jornegitgud/galaxyquest/Galaxy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GalaxyQuest/src/io/github/jornegitgud/galaxyquest/GalaxySettings.java" beforeDir="false" afterPath="$PROJECT_DIR$/GalaxyQuest/src/io/github/jornegitgud/galaxyquest/GalaxySettings.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GalaxyQuest/src/io/github/jornegitgud/galaxyquest/GameManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/GalaxyQuest/src/io/github/jornegitgud/galaxyquest/GameManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GalaxyQuest/src/io/github/jornegitgud/galaxyquest/HighScore.java" beforeDir="false" afterPath="$PROJECT_DIR$/GalaxyQuest/src/io/github/jornegitgud/galaxyquest/HighScore.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,7 +26,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../bug-game" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -48,7 +36,20 @@
       <recent name="C:\Projects\GalaxyQuest" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.All in GalaxyQuest (1)">
+  <component name="RunManager" selected="Application.Main">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="io.github.jornegitgud.galaxyquest.Main" />
+      <module name="GalaxyQuest" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="io.github.jornegitgud.galaxyquest.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="All in GalaxyQuest (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="GalaxyQuest" />
       <option name="PACKAGE_NAME" value="" />
@@ -61,17 +62,6 @@
       <module name="GalaxyQuest" />
       <option name="PACKAGE_NAME" value="" />
       <option name="TEST_OBJECT" value="package" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="GalaxySettingsTests (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="GalaxyQuest" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="TEST_OBJECT" value="uniqueId" />
-      <uniqueIds>
-        <uniqueId value="[engine:junit-jupiter]/[class:io.github.jornegitgud.galaxyquest.GalaxySettingsTests]" />
-      </uniqueIds>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -113,11 +103,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Main" />
         <item itemvalue="JUnit.All in GalaxyQuest (1)" />
         <item itemvalue="JUnit.GalaxySettingsTests.settersTest" />
         <item itemvalue="JUnit.All in GalaxyQuest" />
         <item itemvalue="JUnit.GalaxySettingsTests.constructorTest2" />
-        <item itemvalue="JUnit.GalaxySettingsTests (1)" />
       </list>
     </recent_temporary>
   </component>
@@ -137,47 +127,52 @@
       <workItem from="1591905629926" duration="1176000" />
       <workItem from="1592505270845" duration="1021000" />
       <workItem from="1592512445349" duration="283000" />
+      <workItem from="1592676113887" duration="3212000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
+    <option name="version" value="2" />
   </component>
   <component name="WindowStateProjectService">
     <state x="92" y="92" width="1736" height="856" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog" timestamp="1591905974414">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="92" y="92" width="1736" height="856" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1591905974414" />
-    <state x="1097" y="240" key="#com.intellij.ide.util.MemberChooser" timestamp="1592506347711">
+    <state x="1097" y="240" key="#com.intellij.ide.util.MemberChooser" timestamp="1592677793831">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="1097" y="240" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1592506347711" />
+    <state x="1097" y="240" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1592677793831" />
     <state x="1097" y="242" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1050@0.0.1920.1050" timestamp="1591728305964" />
     <state x="590" y="209" key="#com.intellij.ide.util.frameworkSupport.AddFrameworkSupportDialog" timestamp="1591726370405">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="590" y="209" key="#com.intellij.ide.util.frameworkSupport.AddFrameworkSupportDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1591726370405" />
+    <state x="409" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1592677109685">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="409" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1592677109685" />
     <state x="740" y="276" key="FileChooserDialogImpl" timestamp="1591905606254">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="740" y="276" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1591905606254" />
+    <state x="740" y="276" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1592508849910" />
     <state x="740" y="279" key="FileChooserDialogImpl/0.0.1920.1050@0.0.1920.1050" timestamp="1591727186230" />
-    <state width="1877" height="282" key="GridCell.Tab.0.bottom" timestamp="1591906822718">
+    <state width="1877" height="282" key="GridCell.Tab.0.bottom" timestamp="1592508597959">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1591906822718" />
-    <state width="1877" height="282" key="GridCell.Tab.0.center" timestamp="1591906822717">
+    <state width="1877" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1592508597959" />
+    <state width="1877" height="282" key="GridCell.Tab.0.center" timestamp="1592508597959">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1591906822717" />
-    <state width="1877" height="282" key="GridCell.Tab.0.left" timestamp="1591906822717">
+    <state width="1877" height="282" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1592508597959" />
+    <state width="1877" height="282" key="GridCell.Tab.0.left" timestamp="1592508597959">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1591906822717" />
-    <state width="1877" height="282" key="GridCell.Tab.0.right" timestamp="1591906822717">
+    <state width="1877" height="282" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1592508597959" />
+    <state width="1877" height="282" key="GridCell.Tab.0.right" timestamp="1592508597959">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1591906822717" />
+    <state width="1877" height="282" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1592508597959" />
     <state width="1877" height="348" key="GridCell.Tab.1.bottom" timestamp="1591906716068">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -203,6 +198,14 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="656" y="344" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1591905631075" />
+    <state x="616" y="240" key="run.anything.popup" timestamp="1592599797997">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="616" y="240" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1592599797997" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1592677586332">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1592677586332" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -224,5 +227,10 @@
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/GalaxyQuest$Main.ic" NAME="Main Coverage Results" MODIFIED="1592503108445" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>io.github.jornegitgud.galaxyquest.*</FILTER>
+    </SUITE>
   </component>
 </project>
