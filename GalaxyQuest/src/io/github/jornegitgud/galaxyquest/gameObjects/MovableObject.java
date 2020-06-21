@@ -18,7 +18,9 @@ public class MovableObject extends GameObject {
     public MovableObject(SpriteList spriteList, Tile tile) {
         super(spriteList, tile);
     }
-
+    public MovableObject(SpriteList spriteList) {
+        super(spriteList);
+    }
     public void move(int frames, Direction direction) {
         if (isMoving)
             return;

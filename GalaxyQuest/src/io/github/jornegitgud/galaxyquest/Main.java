@@ -27,5 +27,9 @@ public class Main extends Application {
 
         MovableObject test = new MovableObject(new SimpleSpriteList(), new Tile(new Coordinate(0, 0)));
 
+        //test
+        GameManager tempGameManager = new GameManager(stage, galaxySettings);
+
+
     }
 }

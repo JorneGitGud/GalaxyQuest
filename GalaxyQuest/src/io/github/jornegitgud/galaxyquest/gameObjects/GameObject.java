@@ -14,6 +14,12 @@ public class GameObject {
         this.tile = tile;
     }
 
+    public GameObject(SpriteList spriteList) {
+        this.spriteList = spriteList;
+
+    }
+
+
     public SpriteList getSpriteList() {
         return spriteList;
     }

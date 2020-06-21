@@ -1,5 +1,7 @@
 package io.github.jornegitgud.galaxyquest;
 
+import io.github.jornegitgud.galaxyquest.gameObjects.GameObject;
+
 public class Galaxy {
 
     private GalaxySettings settings;
@@ -58,5 +60,11 @@ public class Galaxy {
         return settings;
     }
 
+    public String getName() {
+        return name;
+    }
 
+    public void setGalaxyTile(int x, int y, GameObject gameObject){
+        galaxyTiles[x][y].setGameObject(gameObject);
+    }
 }
