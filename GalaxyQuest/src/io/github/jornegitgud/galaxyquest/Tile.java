@@ -1,23 +1,28 @@
 package io.github.jornegitgud.galaxyquest;
 
+import io.github.jornegitgud.galaxyquest.gameObjects.GameObject;
 import io.github.jornegitgud.galaxyquest.gameObjects.MovableObject;
+import io.github.jornegitgud.galaxyquest.gameObjects.Player;
 
 public class Tile {
 
-    Tile tileAbove;
-    Tile tileBelow;
-    Tile tileRight;
-    Tile tileLeft;
+    private Tile tileAbove;
+    private Tile tileBelow;
+    private Tile tileRight;
+    private Tile tileLeft;
 
-    Coordinate coordinate;
-    MovableObject objectOnTile = new MovableObject();
+    private Coordinate coordinate;
+    //MovableObject objectOnTile = new MovableObject();
+    GameObject gameObject;
 
     public Tile(Coordinate coordinate) {
         this.coordinate = coordinate;
     }
 
-    public Tile(Coordinate coordinate, MovableObject objectOnTil) {
-        this.objectOnTile = objectOnTile;
+
+    //check if needed
+    public Tile(Coordinate coordinate, GameObject gameObject) {
+        this.gameObject = gameObject;
         this.coordinate = coordinate;
     }
 
@@ -53,6 +58,13 @@ public class Tile {
         this.tileLeft = tileLeft;
     }
 
+    public void setGameObject(GameObject gameObject) {
+        this.gameObject = gameObject;
+    }
+
+    public Player getGameObject() {
+        return (Player)gameObject;
+    }
 
 
 }

@@ -43,15 +43,15 @@ public class GalaxyRenderer {
         ImageView playerSample = FileHelper.createImageView("assets/MovableObjects/Player_Left.png");
         playerSample.setX(0);
         playerSample.setY(0);
-        playerSample.setFitWidth(48 * 4);
-        playerSample.setFitHeight(48);
+        playerSample.setFitWidth(GALAXY_GRID_SIZE * 4);
+        playerSample.setFitHeight(GALAXY_GRID_SIZE);
         galaxyPane.getChildren().add(playerSample);
 
         ImageView kai = FileHelper.createImageView("assets/Planets/Kai.png");
-        kai.setX(48);
-        kai.setY(48);
-        kai.setFitWidth(48);
-        kai.setFitHeight(48);
+        kai.setX(GALAXY_GRID_SIZE);
+        kai.setY(GALAXY_GRID_SIZE);
+        kai.setFitWidth(GALAXY_GRID_SIZE);
+        kai.setFitHeight(GALAXY_GRID_SIZE);
         galaxyPane.getChildren().add(kai);
 
         kai.toBack();

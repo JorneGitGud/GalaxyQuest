@@ -103,4 +103,16 @@ public class GalaxySettings {
     public int getMeteoriteCount() {
         return meteoriteCount;
     }
+
+    public int getGalaxySize() {
+        return galaxySize;
+    }
+
+    public int getTotalObjects() {
+        return totalObjects;
+    }
+
+    public double getPercentPopulated() {
+        return PERCENT_POPULATED;
+    }
 }
