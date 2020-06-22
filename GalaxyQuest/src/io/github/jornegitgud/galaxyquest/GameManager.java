@@ -1,17 +1,11 @@
 package io.github.jornegitgud.galaxyquest;
 
 import io.github.jornegitgud.galaxyquest.gameObjects.*;
-import io.github.jornegitgud.galaxyquest.sprites.DirectionalSpriteList;
-import io.github.jornegitgud.galaxyquest.sprites.FileHelper;
-import io.github.jornegitgud.galaxyquest.sprites.SimpleSpriteList;
 import javafx.animation.AnimationTimer;
-import javafx.embed.swing.SwingFXUtils;
 import javafx.stage.Stage;
 
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Random;
 
 public class GameManager {
     ArrayList<HighScore> highScores;
@@ -20,6 +14,8 @@ public class GameManager {
     Galaxy galaxy;
     ArrayList<Coordinate> availableCoordinates = new ArrayList<Coordinate>();
     AnimationTimer mainLoop;
+
+    private static final double FRAME_DURATION_SECONDS = 0.25;
 
     public GameManager(Stage stage, GalaxySettings galaxySettings) throws IOException {
         galaxy = new Galaxy("John", galaxySettings);
@@ -43,7 +39,7 @@ public class GameManager {
                 long elapsedNanoSeconds = now - lastUpdate;
 
                 // 1 second = 100,000,000(100 million) nanoseconds
-                if(elapsedNanoSeconds / 1_000_000_000d < 0.25)
+                if(elapsedNanoSeconds / 1_000_000_000d < FRAME_DURATION_SECONDS)
                     return;
 
                 renderer.renderGalaxy(galaxy);
