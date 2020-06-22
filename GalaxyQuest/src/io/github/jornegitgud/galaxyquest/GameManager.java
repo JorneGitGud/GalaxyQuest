@@ -15,7 +15,8 @@ public class GameManager {
     ArrayList<Coordinate> availableCoordinates = new ArrayList<Coordinate>();
     AnimationTimer mainLoop;
 
-    private static final double FRAME_DURATION_SECONDS = 0.25;
+    private static final double MOVE_FRAME_DURATION_SECONDS = 1 / 60;
+    private static final double SPRITE_FRAME_DURATION_SECONDS = 0.25;
 
     public GameManager(Stage stage, GalaxySettings galaxySettings) throws IOException {
         galaxy = new Galaxy("John", galaxySettings);
@@ -36,10 +37,15 @@ public class GameManager {
 
             @Override
             public void handle(long now) {
-                long elapsedNanoSeconds = now - lastUpdate;
+                double elapsedSeconds = (now - lastUpdate) / 1_000_000_000d;
 
                 // 1 second = 100,000,000(100 million) nanoseconds
-                if(elapsedNanoSeconds / 1_000_000_000d < FRAME_DURATION_SECONDS)
+                if(elapsedSeconds < MOVE_FRAME_DURATION_SECONDS)
+                    return;
+
+                renderer.renderPositions(galaxy);
+
+                if(elapsedSeconds < SPRITE_FRAME_DURATION_SECONDS)
                     return;
 
                 renderer.renderGalaxy(galaxy);
@@ -64,33 +70,33 @@ public class GameManager {
             }
         }
 
-//        Player player = GameObjectFactory.createPlayer(Direction.RIGHT);
+        Player player = GameObjectFactory.createPlayer(Direction.RIGHT);
+
+        galaxy.setGalaxyTile(0, 0, player);
+        availableCoordinates.remove(0);
+
+//        var lastDirection = Direction.RIGHT;
 //
-//        galaxy.setGalaxyTile(0, 0, player);
-//        availableCoordinates.remove(0);
-
-        var lastDirection = Direction.RIGHT;
-
-        for(var y = 0; y < galaxy.getSettings().getHeight(); y++) {
-            for(var x = 0; x < galaxy.getSettings().getWidth(); x++) {
-                switch(lastDirection) {
-                    case UP:
-                        lastDirection = Direction.RIGHT;
-                        break;
-                    case RIGHT:
-                        lastDirection = Direction.DOWN;
-                        break;
-                    case DOWN:
-                        lastDirection = Direction.LEFT;
-                        break;
-                    case LEFT:
-                        lastDirection = Direction.UP;
-                        break;
-                }
-                Player testPlayer = GameObjectFactory.createPlayer(lastDirection);
-                galaxy.setGalaxyTile(x, y, testPlayer);
-            }
-        }
+//        for(var y = 0; y < galaxy.getSettings().getHeight(); y++) {
+//            for(var x = 0; x < galaxy.getSettings().getWidth(); x++) {
+//                switch(lastDirection) {
+//                    case UP:
+//                        lastDirection = Direction.RIGHT;
+//                        break;
+//                    case RIGHT:
+//                        lastDirection = Direction.DOWN;
+//                        break;
+//                    case DOWN:
+//                        lastDirection = Direction.LEFT;
+//                        break;
+//                    case LEFT:
+//                        lastDirection = Direction.UP;
+//                        break;
+//                }
+//                Player testPlayer = GameObjectFactory.createPlayer(lastDirection);
+//                galaxy.setGalaxyTile(x, y, testPlayer);
+//            }
+//        }
 
 //        //spawn Meteorites
 //        for (int x = 0; x < galaxy.getSettings().getMeteoriteCount() ; x++) {

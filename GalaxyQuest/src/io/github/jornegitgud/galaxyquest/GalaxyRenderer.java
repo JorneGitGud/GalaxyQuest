@@ -52,6 +52,16 @@ public class GalaxyRenderer {
         stage.setOnCloseRequest((request) -> onStageClosed.accept(stage));
     }
 
+    public void renderPositions(Galaxy galaxy) {
+        var objects = galaxy.getObjects();
+        for(GameObject object : objects) {
+            var imageView = sprites.get(object);
+            imageView.setX(imageView.getX() + (GALAXY_GRID_SIZE / 15));
+            if(imageView.getX() > galaxy.getSettings().getWidth() * GALAXY_GRID_SIZE + GALAXY_GRID_SIZE)
+                imageView.setX(0 - GALAXY_GRID_SIZE);
+        }
+    }
+
     public void renderGalaxy(Galaxy galaxy) {
         if(!stage.isShowing())
             stage.show();
