@@ -1,11 +1,15 @@
 package io.github.jornegitgud.galaxyquest;
 
+import io.github.jornegitgud.galaxyquest.sprites.DirectionalSpriteList;
+import io.github.jornegitgud.galaxyquest.sprites.FileHelper;
+import io.github.jornegitgud.galaxyquest.sprites.SimpleSpriteList;
 import javafx.scene.image.Image;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.ArrayList;
 
 @DisplayName("SpriteList tests")
@@ -23,15 +27,15 @@ public class SpriteListTests {
 
     @Test
     @DisplayName("Simple sprite list adds image successfully")
-    void simpleSpriteList_AddsImageSuccessfully() throws FileNotFoundException {
+    void simpleSpriteList_AddsImageSuccessfully() throws IOException {
         simpleSpriteList = new SimpleSpriteList();
-        simpleSpriteList.addSprite(FileHelper.createImage("assets/placeholder.png"));
+        simpleSpriteList.addSprite(FileHelper.createFxImage("assets/placeholder.png"));
 
         var sprites = simpleSpriteList.getSprites();
         Assertions.assertNotNull(sprites);
         Assertions.assertTrue(sprites.size() == 1);
 
-        simpleSpriteList.addSprite(FileHelper.createImage("assets/placeholder.png"));
+        simpleSpriteList.addSprite(FileHelper.createFxImage("assets/placeholder.png"));
         Assertions.assertTrue(simpleSpriteList.getSprites().size() == 2);
 
         simpleSpriteList = new SimpleSpriteList(sprites);
@@ -41,13 +45,13 @@ public class SpriteListTests {
 
     @Test
     @DisplayName("Simple sprite list adds array successfully")
-    void simpleSpriteList_AddsImagesSuccessfully() throws FileNotFoundException {
+    void simpleSpriteList_AddsImagesSuccessfully() throws IOException {
         simpleSpriteList = new SimpleSpriteList();
 
         var sprites = new ArrayList<Image>();
-        sprites.add(FileHelper.createImage("assets/placeholder.png"));
-        sprites.add(FileHelper.createImage("assets/placeholder.png"));
-        sprites.add(FileHelper.createImage("assets/placeholder.png"));
+        sprites.add(FileHelper.createFxImage("assets/placeholder.png"));
+        sprites.add(FileHelper.createFxImage("assets/placeholder.png"));
+        sprites.add(FileHelper.createFxImage("assets/placeholder.png"));
 
         simpleSpriteList.addSprites(sprites);
         Assertions.assertNotNull(simpleSpriteList.getSprites());
@@ -67,11 +71,11 @@ public class SpriteListTests {
 
     @Test
     @DisplayName("Directional sprite list adds image successfully")
-    void directionalSpriteList_AddsImageSuccessfully() throws FileNotFoundException {
+    void directionalSpriteList_AddsImageSuccessfully() throws IOException {
         directionalSpriteList = new DirectionalSpriteList(Direction.RIGHT);
-        directionalSpriteList.addSprite(Direction.UP, FileHelper.createImage("assets/placeholder.png"));
-        directionalSpriteList.addSprite(Direction.LEFT, FileHelper.createImage("assets/placeholder.png"));
-        directionalSpriteList.addSprite(Direction.UP, FileHelper.createImage("assets/placeHolder.png"));
+        directionalSpriteList.addSprite(Direction.UP, FileHelper.createFxImage("assets/placeholder.png"));
+        directionalSpriteList.addSprite(Direction.LEFT, FileHelper.createFxImage("assets/placeholder.png"));
+        directionalSpriteList.addSprite(Direction.UP, FileHelper.createFxImage("assets/placeHolder.png"));
         Assertions.assertTrue(directionalSpriteList.getSprites(Direction.RIGHT).size() == 0);
         Assertions.assertTrue(directionalSpriteList.getSprites(Direction.LEFT).size() == 1);
         Assertions.assertTrue(directionalSpriteList.getSprites(Direction.DOWN).size() == 0);
@@ -86,13 +90,13 @@ public class SpriteListTests {
 
     @Test
     @DisplayName("Directional sprite list adds array successfully")
-    void setDirectionalSpriteList_AddsArraySuccessfully() throws FileNotFoundException {
+    void setDirectionalSpriteList_AddsArraySuccessfully() throws IOException {
         var spriteList = new DirectionalSpriteList(Direction.RIGHT);
 
         var sprites = new ArrayList<Image>();
-        sprites.add(FileHelper.createImage("assets/placeholder.png"));
-        sprites.add(FileHelper.createImage("assets/placeholder.png"));
-        sprites.add(FileHelper.createImage("assets/placeholder.png"));
+        sprites.add(FileHelper.createFxImage("assets/placeholder.png"));
+        sprites.add(FileHelper.createFxImage("assets/placeholder.png"));
+        sprites.add(FileHelper.createFxImage("assets/placeholder.png"));
 
         spriteList.addSprites(Direction.UP, sprites);
         spriteList.addSprites(Direction.LEFT, sprites);
@@ -104,18 +108,18 @@ public class SpriteListTests {
 
     @Test
     @DisplayName("SpriteList resets to sprite 0 when going out of bounds or changing direction")
-    void spriteList_resetsSuccessfully() throws FileNotFoundException {
+    void spriteList_resetsSuccessfully() throws IOException {
         var sSpriteList = new SimpleSpriteList();
         var dSpriteList = new DirectionalSpriteList(Direction.UP);
 
-        sSpriteList.addSprite(FileHelper.createImage("assets/placeholder.png"));
-        sSpriteList.addSprite(FileHelper.createImage("assets/placeholder.png"));
-        sSpriteList.addSprite(FileHelper.createImage("assets/placeholder.png"));
+        sSpriteList.addSprite(FileHelper.createFxImage("assets/placeholder.png"));
+        sSpriteList.addSprite(FileHelper.createFxImage("assets/placeholder.png"));
+        sSpriteList.addSprite(FileHelper.createFxImage("assets/placeholder.png"));
 
-        dSpriteList.addSprite(Direction.RIGHT, FileHelper.createImage("assets/placeholder.png"));
-        dSpriteList.addSprite(Direction.RIGHT, FileHelper.createImage("assets/placeholder.png"));
-        dSpriteList.addSprite(Direction.RIGHT, FileHelper.createImage("assets/placeholder.png"));
-        dSpriteList.addSprite(Direction.LEFT, FileHelper .createImage("assets/placeholder.png"));
+        dSpriteList.addSprite(Direction.RIGHT, FileHelper.createFxImage("assets/placeholder.png"));
+        dSpriteList.addSprite(Direction.RIGHT, FileHelper.createFxImage("assets/placeholder.png"));
+        dSpriteList.addSprite(Direction.RIGHT, FileHelper.createFxImage("assets/placeholder.png"));
+        dSpriteList.addSprite(Direction.LEFT, FileHelper.createFxImage("assets/placeholder.png"));
 
         Assertions.assertDoesNotThrow(() -> {sSpriteList.getNextSprite(Direction.UP); });
         Assertions.assertNotNull(sSpriteList.getNextSprite(Direction.LEFT));

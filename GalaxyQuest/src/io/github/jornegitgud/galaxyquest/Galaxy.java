@@ -2,11 +2,14 @@ package io.github.jornegitgud.galaxyquest;
 
 import io.github.jornegitgud.galaxyquest.gameObjects.GameObject;
 
+import java.util.ArrayList;
+
 public class Galaxy {
 
     private GalaxySettings settings;
     private KeyboardListener keyboardListener;
     private Tile[][] galaxyTiles;
+    private ArrayList<GameObject> objects = new ArrayList<>();
 
     private String name;
 
@@ -48,11 +51,18 @@ public class Galaxy {
 
     }
 
-    public Tile getGalaxyTile(int xPos, int yPos) {
+    //Asking for GameManager to ensure ol
+    public Tile getGalaxyTile(GameManager gameManager, int xPos, int yPos) {
         if (yPos < this.galaxyTiles.length && xPos < this.galaxyTiles[0].length && xPos >= 0 && yPos >= 0){
             return this.galaxyTiles[yPos][xPos];
         }
+        return null;
+    }
 
+    public Tile getGalaxyTile(GalaxyRenderer galaxyRenderer, int xPos, int yPos) {
+        if (yPos < this.galaxyTiles.length && xPos < this.galaxyTiles[0].length && xPos >= 0 && yPos >= 0){
+            return this.galaxyTiles[yPos][xPos];
+        }
         return null;
     }
 
@@ -66,5 +76,12 @@ public class Galaxy {
 
     public void setGalaxyTile(int x, int y, GameObject gameObject){
         galaxyTiles[x][y].setGameObject(gameObject);
+        gameObject.setTile(galaxyTiles[x][y]);
+        if(!objects.contains(gameObject))
+            objects.add(gameObject);
+    }
+
+    public ArrayList<GameObject> getObjects() {
+        return objects;
     }
 }

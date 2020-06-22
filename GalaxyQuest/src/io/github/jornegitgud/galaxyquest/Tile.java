@@ -13,7 +13,7 @@ public class Tile {
 
     private Coordinate coordinate;
     //MovableObject objectOnTile = new MovableObject();
-    GameObject gameObject;
+    private GameObject gameObject;
 
     public Tile(Coordinate coordinate) {
         this.coordinate = coordinate;
@@ -62,9 +62,11 @@ public class Tile {
         this.gameObject = gameObject;
     }
 
-    public Player getGameObject() {
-        return (Player)gameObject;
+    public GameObject getGameObject() {
+        return gameObject;
     }
 
-
+    public Coordinate getCoordinate(GalaxyRenderer gr) {
+        return coordinate;
+    }
 }

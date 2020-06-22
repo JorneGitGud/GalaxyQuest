@@ -1,10 +1,11 @@
 package io.github.jornegitgud.galaxyquest.gameObjects;
 
 import io.github.jornegitgud.galaxyquest.Direction;
-import io.github.jornegitgud.galaxyquest.DirectionalSpriteList;
+import io.github.jornegitgud.galaxyquest.HasDirection;
+import io.github.jornegitgud.galaxyquest.sprites.DirectionalSpriteList;
 import io.github.jornegitgud.galaxyquest.Tile;
 
-public class Player extends MovableObject {
+public class Player extends MovableObject implements HasDirection {
     private String name;
     private Direction direction;
 
@@ -24,5 +25,10 @@ public class Player extends MovableObject {
 
     public String getName() {
         return name;
+    }
+
+    @Override
+    public Direction getDirection() {
+        return this.direction;
     }
 }

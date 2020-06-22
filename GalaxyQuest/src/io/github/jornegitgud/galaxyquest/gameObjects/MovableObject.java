@@ -1,11 +1,10 @@
 package io.github.jornegitgud.galaxyquest.gameObjects;
 
 import io.github.jornegitgud.galaxyquest.Direction;
-import io.github.jornegitgud.galaxyquest.SpriteList;
+import io.github.jornegitgud.galaxyquest.sprites.SpriteList;
 import io.github.jornegitgud.galaxyquest.Tile;
 
 import java.util.function.Consumer;
-import java.util.function.Function;
 
 public class MovableObject extends GameObject {
     private SpriteList walkSprites;

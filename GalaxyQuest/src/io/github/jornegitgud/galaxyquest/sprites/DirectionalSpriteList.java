@@ -1,5 +1,6 @@
-package io.github.jornegitgud.galaxyquest;
+package io.github.jornegitgud.galaxyquest.sprites;
 
+import io.github.jornegitgud.galaxyquest.Direction;
 import javafx.scene.image.Image;
 
 import java.util.ArrayList;

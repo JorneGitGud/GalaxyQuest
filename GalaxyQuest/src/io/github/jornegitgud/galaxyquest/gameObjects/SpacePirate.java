@@ -1,7 +1,7 @@
 package io.github.jornegitgud.galaxyquest.gameObjects;
 
 import io.github.jornegitgud.galaxyquest.Direction;
-import io.github.jornegitgud.galaxyquest.DirectionalSpriteList;
+import io.github.jornegitgud.galaxyquest.sprites.DirectionalSpriteList;
 import io.github.jornegitgud.galaxyquest.Tile;
 
 public class SpacePirate  extends MovableObject{
