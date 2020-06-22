@@ -1,6 +1,7 @@
 package io.github.jornegitgud.galaxyquest;
 
 import io.github.jornegitgud.galaxyquest.gameObjects.GameObject;
+import io.github.jornegitgud.galaxyquest.gameObjects.Player;
 
 import java.util.ArrayList;
 
@@ -10,6 +11,7 @@ public class Galaxy {
     private KeyboardListener keyboardListener;
     private Tile[][] galaxyTiles;
     private ArrayList<GameObject> objects = new ArrayList<>();
+    private Player player;
 
     private String name;
 
@@ -23,7 +25,7 @@ public class Galaxy {
         //create tiles
         for (int y = 0; y < settings.getHeight(); y++) {
             for (int x = 0; x < settings.getWidth(); x++) {
-                this.galaxyTiles[y][x] = new Tile(new Coordinate(y, x));
+                this.galaxyTiles[y][x] = new Tile(new Coordinate(x, y));
             }
         }
 
@@ -84,4 +86,13 @@ public class Galaxy {
     public ArrayList<GameObject> getObjects() {
         return objects;
     }
+
+   public void setPlayer(Player player) {
+        this.player = player;
+   }
+
+   public Player getPlayer() {
+        return this.player;
+   }
 }
+

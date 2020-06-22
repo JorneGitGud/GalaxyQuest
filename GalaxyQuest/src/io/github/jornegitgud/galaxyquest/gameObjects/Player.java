@@ -5,9 +5,13 @@ import io.github.jornegitgud.galaxyquest.HasDirection;
 import io.github.jornegitgud.galaxyquest.sprites.DirectionalSpriteList;
 import io.github.jornegitgud.galaxyquest.Tile;
 
+import java.util.function.Consumer;
+
 public class Player extends MovableObject implements HasDirection {
     private String name;
     private Direction direction;
+
+    public Consumer<HasDirection> onDirectionChanged;
 
     public Player(String name, Tile tile, Direction direction, DirectionalSpriteList directionalSpriteList) {
         super(directionalSpriteList, tile);
@@ -30,5 +34,10 @@ public class Player extends MovableObject implements HasDirection {
     @Override
     public Direction getDirection() {
         return this.direction;
+    }
+
+    public void setDirection(Direction direction) {
+        this.direction = direction;
+        this.onDirectionChanged.accept(this);
     }
 }

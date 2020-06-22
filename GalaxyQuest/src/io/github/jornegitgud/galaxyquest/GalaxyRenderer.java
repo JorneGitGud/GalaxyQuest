@@ -1,6 +1,7 @@
 package io.github.jornegitgud.galaxyquest;
 
 import io.github.jornegitgud.galaxyquest.gameObjects.GameObject;
+import io.github.jornegitgud.galaxyquest.gameObjects.MovableObject;
 import io.github.jornegitgud.galaxyquest.sprites.FileHelper;
 import io.github.jornegitgud.galaxyquest.sprites.SimpleSpriteList;
 import io.github.jornegitgud.galaxyquest.sprites.SpriteMapParser;
@@ -55,10 +56,28 @@ public class GalaxyRenderer {
     public void renderPositions(Galaxy galaxy) {
         var objects = galaxy.getObjects();
         for(GameObject object : objects) {
-            var imageView = sprites.get(object);
-            imageView.setX(imageView.getX() + (GALAXY_GRID_SIZE / 15));
-            if(imageView.getX() > galaxy.getSettings().getWidth() * GALAXY_GRID_SIZE + GALAXY_GRID_SIZE)
-                imageView.setX(0 - GALAXY_GRID_SIZE);
+            if(object instanceof MovableObject) {
+                MovableObject movableObject = (MovableObject)object;
+                if(!movableObject.isMoving())
+                    continue;
+
+                double movePercentage = movableObject.updateMove();
+                ImageView sprite = sprites.get(movableObject);
+                switch (movableObject.getMoveDirection()) {
+                    case UP:
+                        sprite.setY((movableObject.getTile().getCoordinate(this).y * GALAXY_GRID_SIZE) - (1 * movePercentage * GALAXY_GRID_SIZE));
+                        break;
+                    case RIGHT:
+                        sprite.setX((movableObject.getTile().getCoordinate(this).x * GALAXY_GRID_SIZE) + (1 * movePercentage * GALAXY_GRID_SIZE));
+                        break;
+                    case LEFT:
+                        sprite.setX((movableObject.getTile().getCoordinate(this).x * GALAXY_GRID_SIZE) - (1 * movePercentage * GALAXY_GRID_SIZE));
+                        break;
+                    case DOWN:
+                        sprite.setY((movableObject.getTile().getCoordinate(this).y * GALAXY_GRID_SIZE) + (1 * movePercentage * GALAXY_GRID_SIZE));
+                        break;
+                }
+            }
         }
     }
 
@@ -92,6 +111,11 @@ public class GalaxyRenderer {
             }
 
         }
+    }
+
+    public void updateDirection(GameObject object) {
+        var imageView = sprites.get(object);
+        imageView.setImage(object.getSpriteList().getNextSprite(((HasDirection)object).getDirection()));
     }
 
     public Scene getScene() {
