@@ -3,19 +3,19 @@ package io.github.jornegitgud.galaxyquest.gameObjects;
 import io.github.jornegitgud.galaxyquest.Tile;
 import io.github.jornegitgud.galaxyquest.sprites.SpriteList;
 
-public class Planet extends GameObject{
-    String name;
-    Boolean visited;
+public class Planet extends GameObject {
+    private String name;
+    private Boolean visited;
 
     public Planet(SpriteList spriteList) {
         super(spriteList);
     }
 
-    public Planet(SpriteList spriteList, Tile tile) {
-        super(spriteList, tile);
+
+
+    public void visited() {
+        this.visited = true;
     }
-
-
 
 //    public Planet(String name, Boolean visited) {
 //        this.name = name;

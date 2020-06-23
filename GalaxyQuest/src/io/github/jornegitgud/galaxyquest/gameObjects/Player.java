@@ -13,12 +13,7 @@ public class Player extends MovableObject implements HasDirection {
 
     public Consumer<HasDirection> onDirectionChanged;
 
-    public Player(String name, Tile tile, Direction direction, DirectionalSpriteList directionalSpriteList) {
-        super(directionalSpriteList, tile);
 
-        this.name = name;
-        this.direction = direction;
-    }
 
     public Player(String name, Direction direction, DirectionalSpriteList directionalSpriteList) {
         super(directionalSpriteList);

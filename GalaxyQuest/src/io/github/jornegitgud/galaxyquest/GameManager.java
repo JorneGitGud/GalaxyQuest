@@ -7,6 +7,7 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Random;
+import java.util.function.Consumer;
 
 public class GameManager {
     ArrayList<HighScore> highScores;
@@ -14,6 +15,7 @@ public class GameManager {
     KeyboardListener keyboardListener;
     Galaxy galaxy;
     AnimationTimer mainLoop;
+    Consumer<GameResult> onEndGame;
 
     private static final double MOVE_FRAME_DURATION_SECONDS = 1 / 60;
     private static final double SPRITE_FRAME_DURATION_SECONDS = 0.25;
@@ -42,12 +44,12 @@ public class GameManager {
                 double elapsedSeconds = (now - lastUpdate) / 1_000_000_000d;
 
                 // 1 second = 100,000,000(100 million) nanoseconds
-                if(elapsedSeconds < MOVE_FRAME_DURATION_SECONDS)
+                if (elapsedSeconds < MOVE_FRAME_DURATION_SECONDS)
                     return;
 
                 renderer.renderPositions(galaxy);
 
-                if(elapsedSeconds < SPRITE_FRAME_DURATION_SECONDS)
+                if (elapsedSeconds < SPRITE_FRAME_DURATION_SECONDS)
                     return;
 
                 renderer.renderGalaxy(galaxy);
@@ -67,20 +69,51 @@ public class GameManager {
         };
 
         keyboardListener.onKeyReleased = (direction) -> {
-            if(lastDirection == direction)
+            if (lastDirection == direction)
                 lastDirection = null;
         };
 
         galaxy.getPlayer().onMoveEnded = (player) -> {
-            if(lastDirection != null)
+            if (lastDirection != null)
                 player.move(15, lastDirection);
+            checkCurrentTile((Player) player);
         };
 
         galaxy.getPlayer().onDirectionChanged = (player) -> {
-            renderer.updateDirection((GameObject)player);
+            renderer.updateDirection((GameObject) player);
         };
 
     }
+
+
+    private void checkCurrentTile(Player player) {
+
+        GameObject currentGameObject = player.getTile().getGameObject();
+        if (currentGameObject instanceof Planet) {
+            ((Planet) currentGameObject).visited();
+            //move player to tile
+        } else if (currentGameObject instanceof SpacePirate || currentGameObject instanceof Meteorite) {
+            onEndGame.accept(new GameResult(false, null));
+        } else if (currentGameObject instanceof Wormhole && ((Wormhole) currentGameObject).isActive()) {
+            //elapsed Secconds!!
+            onEndGame.accept(new GameResult(false, new HighScore(player.getName(), 10, galaxy.getSettings())));
+        } else {
+            //move player to tile
+        }
+
+    }
+
+    public void gameOver(Boolean win){
+        if(!win){
+            // died of life circumstances
+            //close gameScene
+        }else{
+            //set highscore
+            //show highscore
+            //close gamescene
+        }
+    }
+
 
     private void populateGalaxy(Galaxy galaxy) throws IOException {
         ArrayList<Coordinate> availableCoordinates = new ArrayList<Coordinate>();
@@ -99,7 +132,7 @@ public class GameManager {
         availableCoordinates.remove(0);
 
         //Spawn planets
-        for (int x = 0 ; x < galaxy.getSettings().getPlanetCount() ; x++) {
+        for (int x = 0; x < galaxy.getSettings().getPlanetCount(); x++) {
             Planet planet = GameObjectFactory.createPlanet();
             int tempPos = random.nextInt(availableCoordinates.size());
             int tempX = availableCoordinates.get(tempPos).x;
@@ -109,7 +142,7 @@ public class GameManager {
         }
 
         //spawn Meteorites
-        for (int x = 0; x < galaxy.getSettings().getMeteoriteCount() ; x++) {
+        for (int x = 0; x < galaxy.getSettings().getMeteoriteCount(); x++) {
             Meteorite meteorite = GameObjectFactory.createMeteorite();
             int tempPos = random.nextInt(availableCoordinates.size());
             int tempX = availableCoordinates.get(tempPos).x;
@@ -119,7 +152,7 @@ public class GameManager {
         }
 
         //spawn pirates
-        for (int x = 0 ; x < galaxy.getSettings().getPirateCount() ; x++) {
+        for (int x = 0; x < galaxy.getSettings().getPirateCount(); x++) {
             SpacePirate spacePirate = GameObjectFactory.createSpacePirate();
             int tempPos = random.nextInt(availableCoordinates.size());
             int tempX = availableCoordinates.get(tempPos).x;

@@ -7,11 +7,6 @@ public class GameObject {
     private SpriteList spriteList;
     private Tile tile;
 
-    public GameObject(SpriteList spriteList, Tile tile) {
-        this.spriteList = spriteList;
-        this.tile = tile;
-    }
-
     public GameObject(SpriteList spriteList) {
         this.spriteList = spriteList;
     }

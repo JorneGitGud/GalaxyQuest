@@ -16,9 +16,7 @@ public class MovableObject extends GameObject {
     private Direction moveDirection;
     public Consumer<MovableObject> onMoveEnded;
 
-    public MovableObject(SpriteList spriteList, Tile tile) {
-        super(spriteList, tile);
-    }
+
     public MovableObject(SpriteList spriteList) {
         super(spriteList);
     }
