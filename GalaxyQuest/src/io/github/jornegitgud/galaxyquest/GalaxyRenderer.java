@@ -2,6 +2,7 @@ package io.github.jornegitgud.galaxyquest;
 
 import io.github.jornegitgud.galaxyquest.gameObjects.GameObject;
 import io.github.jornegitgud.galaxyquest.gameObjects.MovableObject;
+import io.github.jornegitgud.galaxyquest.gameObjects.Wormhole;
 import io.github.jornegitgud.galaxyquest.sprites.FileHelper;
 import io.github.jornegitgud.galaxyquest.sprites.SimpleSpriteList;
 import io.github.jornegitgud.galaxyquest.sprites.SpriteMapParser;
@@ -98,6 +99,12 @@ public class GalaxyRenderer {
                 imageView.setY(object.getTile().getCoordinate(this).y * GALAXY_GRID_SIZE);
                 imageView.setFitWidth(GALAXY_GRID_SIZE);
                 imageView.setFitHeight(GALAXY_GRID_SIZE);
+                if(object instanceof Wormhole) {
+                    imageView.setFitHeight(GALAXY_GRID_SIZE * 1.5);
+                    imageView.setFitWidth(GALAXY_GRID_SIZE * 1.5);
+                    imageView.setX(imageView.getX() - GALAXY_GRID_SIZE * 0.25);
+                    imageView.setY(imageView.getY() - GALAXY_GRID_SIZE * 0.25);
+                }
                 imageView.toFront();
                 continue;
             }

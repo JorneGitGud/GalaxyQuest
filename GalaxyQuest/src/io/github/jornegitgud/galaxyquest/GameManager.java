@@ -6,13 +6,13 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Random;
 
 public class GameManager {
     ArrayList<HighScore> highScores;
     GalaxyRenderer renderer;
     KeyboardListener keyboardListener;
     Galaxy galaxy;
-    ArrayList<Coordinate> availableCoordinates = new ArrayList<Coordinate>();
     AnimationTimer mainLoop;
 
     private static final double MOVE_FRAME_DURATION_SECONDS = 1 / 60;
@@ -83,7 +83,8 @@ public class GameManager {
     }
 
     private void populateGalaxy(Galaxy galaxy) throws IOException {
-//        Random random;
+        ArrayList<Coordinate> availableCoordinates = new ArrayList<Coordinate>();
+        Random random = new Random();
 
         for (int x = 0; x < galaxy.getSettings().getHeight(); x++) {
             for (int y = 0; y < galaxy.getSettings().getWidth(); y++) {
@@ -97,47 +98,43 @@ public class GameManager {
         galaxy.setPlayer(player);
         availableCoordinates.remove(0);
 
+        //Spawn planets
+        for (int x = 0 ; x < galaxy.getSettings().getPlanetCount() ; x++) {
+            Planet planet = GameObjectFactory.createPlanet();
+            int tempPos = random.nextInt(availableCoordinates.size());
+            int tempX = availableCoordinates.get(tempPos).x;
+            int tempY = availableCoordinates.get(tempPos).y;
+            galaxy.setGalaxyTile(tempX, tempY, planet);
+            availableCoordinates.remove(tempPos);
+        }
 
-//        //spawn Meteorites
-//        for (int x = 0; x < galaxy.getSettings().getMeteoriteCount() ; x++) {
-//            Random random = new Random();
-//            SimpleSpriteList simpleSpriteList = new SimpleSpriteList();
-//            int tempPos = random.nextInt(availableCoordinates.size());
-//            int tempX = availableCoordinates.get(1).x;
-//            int tempY = availableCoordinates.get(1).y;
-//            Meteorite meteorite = new Meteorite(Direction.UP, simpleSpriteList);
-//            galaxy.setGalaxyTile(tempX, tempY, meteorite);
-//            availableCoordinates.remove(tempPos);
-//        }
-//
-//        //spawn pirates
-//        for (int x = 0 ; x < galaxy.getSettings().getPirateCount() ; x++) {
-//            Random random = new Random();
-//            DirectionalSpriteList pirateSpriteList = new DirectionalSpriteList(Direction.UP);
-//            int tempPos = random.nextInt(availableCoordinates.size());
-//            int tempX = availableCoordinates.get(tempPos).x;
-//            int tempY = availableCoordinates.get(tempPos).y;
-//            SpacePirate spacePirate = new SpacePirate(Direction.UP, pirateSpriteList);
-//            galaxy.setGalaxyTile(tempX, tempY, spacePirate);
-//            availableCoordinates.remove(tempPos);
-//        }
-//
-//        //planets
-//        for (int x = 0 ; x < galaxy.getSettings().getPlanetCount() ; x++) {
-//            Random random = new Random();
-//            SimpleSpriteList planetSpriteList = new SimpleSpriteList();
-//            try {
-//                planetSpriteList.addSprite(SwingFXUtils.toFXImage(FileHelper.createImage("assets/Planets/Andoria.png"), null));
-//            } catch (IOException e) {
-//                e.printStackTrace();
-//            }
-//            int tempPos = random.nextInt(availableCoordinates.size());
-//            int tempX = availableCoordinates.get(tempPos).x;
-//            int tempY = availableCoordinates.get(tempPos).y;
-//            Planet planet = new Planet(planetSpriteList);
-//            galaxy.setGalaxyTile(tempX, tempY, planet);
-//            availableCoordinates.remove(tempPos);
-//        }
+        //spawn Meteorites
+        for (int x = 0; x < galaxy.getSettings().getMeteoriteCount() ; x++) {
+            Meteorite meteorite = GameObjectFactory.createMeteorite();
+            int tempPos = random.nextInt(availableCoordinates.size());
+            int tempX = availableCoordinates.get(tempPos).x;
+            int tempY = availableCoordinates.get(tempPos).y;
+            galaxy.setGalaxyTile(tempX, tempY, meteorite);
+            availableCoordinates.remove(tempPos);
+        }
+
+        //spawn pirates
+        for (int x = 0 ; x < galaxy.getSettings().getPirateCount() ; x++) {
+            SpacePirate spacePirate = GameObjectFactory.createSpacePirate();
+            int tempPos = random.nextInt(availableCoordinates.size());
+            int tempX = availableCoordinates.get(tempPos).x;
+            int tempY = availableCoordinates.get(tempPos).y;
+            galaxy.setGalaxyTile(tempX, tempY, spacePirate);
+            availableCoordinates.remove(tempPos);
+        }
+
+        Wormhole wormhole = GameObjectFactory.createWormhole();
+        int tempPos = random.nextInt(availableCoordinates.size());
+        int tempX = availableCoordinates.get(tempPos).x;
+        int tempY = availableCoordinates.get(tempPos).y;
+        galaxy.setGalaxyTile(tempX, tempY, wormhole);
+        availableCoordinates.remove(tempPos);
+
     }
 
 

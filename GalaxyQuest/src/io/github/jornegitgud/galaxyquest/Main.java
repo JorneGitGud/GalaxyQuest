@@ -18,8 +18,8 @@ public class Main extends Application {
 
         //eventually react to main menu buttons here
         var galaxySettings = new GalaxySettings(); //will be received from mainMenu later
-        galaxySettings.setWidth(18);
-        galaxySettings.setHeight(18);
+        galaxySettings.setWidth(12);
+        galaxySettings.setHeight(12);
 
         //test
         GameManager tempGameManager = new GameManager(stage, galaxySettings);
