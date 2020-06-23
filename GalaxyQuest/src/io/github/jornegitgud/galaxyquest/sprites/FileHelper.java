@@ -1,11 +1,15 @@
-package io.github.jornegitgud.galaxyquest;
+package io.github.jornegitgud.galaxyquest.sprites;
 
+import javafx.embed.swing.SwingFXUtils;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
+import javax.imageio.ImageIO;
+import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.regex.Pattern;
 
@@ -15,7 +19,6 @@ public class FileHelper {
             path = "/" + path;
 
         String[] parts = path.split("[/\\\\]");
-
         return System.getProperty("user.dir") + File.separator + "GalaxyQuest" + File.separator + String.join(File.separator, parts);
     }
 
@@ -25,14 +28,20 @@ public class FileHelper {
         return new FileInputStream(normalizedPath);
     }
 
-    public static Image createImage(String path) throws FileNotFoundException {
+    public static java.awt.image.BufferedImage createImage(String path) throws IOException {
+        FileInputStream stream = createInputStream(path);
+
+        return ImageIO.read(stream);
+    }
+
+    public static Image createFxImage(String path) throws IOException {
         FileInputStream stream = createInputStream(path);
 
         return new Image(stream);
     }
 
-    public static ImageView createImageView(String path) throws FileNotFoundException {
-        Image image = createImage(path);
+    public static ImageView createImageView(String path) throws IOException {
+        Image image = createFxImage(path);
 
         return new ImageView(image);
     }

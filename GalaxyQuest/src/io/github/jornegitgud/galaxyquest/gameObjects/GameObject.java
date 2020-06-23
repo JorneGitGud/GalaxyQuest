@@ -1,9 +1,7 @@
 package io.github.jornegitgud.galaxyquest.gameObjects;
 
-import io.github.jornegitgud.galaxyquest.SpriteList;
+import io.github.jornegitgud.galaxyquest.sprites.SpriteList;
 import io.github.jornegitgud.galaxyquest.Tile;
-
-import java.util.function.Function;
 
 public class GameObject {
     private SpriteList spriteList;
@@ -16,7 +14,6 @@ public class GameObject {
 
     public GameObject(SpriteList spriteList) {
         this.spriteList = spriteList;
-
     }
 
 
@@ -28,7 +25,7 @@ public class GameObject {
         return tile;
     }
 
-    protected void setTile(Tile tile) {
+    public void setTile(Tile tile) {
         this.tile = tile;
     }
 

@@ -36,6 +36,11 @@
             <artifactId>javafx-media</artifactId>
             <version>${javafx-platform.version}</version>
         </dependency>
+        <dependency>
+            <groupId>org.openjfx</groupId>
+            <artifactId>javafx-swing</artifactId>
+            <version>${javafx-platform.version}</version>
+        </dependency>
     </dependencies>
 
     <build>
