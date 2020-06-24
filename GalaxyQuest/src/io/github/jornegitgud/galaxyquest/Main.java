@@ -1,7 +1,5 @@
 package io.github.jornegitgud.galaxyquest;
 
-import io.github.jornegitgud.galaxyquest.gameObjects.MovableObject;
-import io.github.jornegitgud.galaxyquest.sprites.SimpleSpriteList;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -17,14 +15,11 @@ public class Main extends Application {
     public void start(Stage stage) throws Exception {
         stage.setTitle("Galaxy Quest");
 
-        Parent root = FXMLLoader.load(getClass().getResource("GalaxyQuestMainMenu.fxml"));
+        Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("GalaxyQuestMainMenu.fxml"));
         stage.setTitle("Main Menu");
         stage.setScene(new Scene(root, 768, 768));
         stage.show();
     }
-
-
-
 
 //        var mainMenu = new MainMenu(stage);
 //
