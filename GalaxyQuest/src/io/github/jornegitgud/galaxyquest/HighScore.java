@@ -3,7 +3,7 @@ package io.github.jornegitgud.galaxyquest;
 
 public class HighScore {
 
-    String name;
+    String name = "";
     int score;
     int setSecPerTile = 2;
     int planetValue = 100;
@@ -11,11 +11,16 @@ public class HighScore {
     GalaxySettings galaxySettings;
 
 
-    public HighScore(String name, int elapsedSeconds, GalaxySettings galaxySettings) {
-        this.name = name.toUpperCase();
+    public HighScore(int elapsedSeconds, GalaxySettings galaxySettings) {
         this.galaxySettings = galaxySettings;
         this.score = calculateScore(elapsedSeconds);
 
+    }
+
+    public void setName(String name) {
+        if(name.length() > 6)
+            name = name.substring(0, 6);
+        this.name = name.toUpperCase();
     }
 
 

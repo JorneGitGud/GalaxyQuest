@@ -2,16 +2,26 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fff264f5-7b44-419a-b4fb-10106bfbed3e" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/GalaxyQuest/lib/javafx-windows-sdk-14.0.1/lib/javafx-swt.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/GalaxyQuest/lib/javafx-windows-sdk-14.0.1/lib/javafx.base.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/GalaxyQuest/lib/javafx-windows-sdk-14.0.1/lib/javafx.controls.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/GalaxyQuest/lib/javafx-windows-sdk-14.0.1/lib/javafx.fxml.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/GalaxyQuest/lib/javafx-windows-sdk-14.0.1/lib/javafx.graphics.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/GalaxyQuest/lib/javafx-windows-sdk-14.0.1/lib/javafx.media.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/GalaxyQuest/lib/javafx-windows-sdk-14.0.1/lib/javafx.swing.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/GalaxyQuest/lib/javafx-windows-sdk-14.0.1/lib/javafx.web.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/GalaxyQuest/src/io/github/jornegitgud/galaxyquest/controllers/MainMenuController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GalaxyQuest/lib/javafx-windows-sdk-14.0.1/lib/javafx-swt.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GalaxyQuest/lib/javafx-windows-sdk-14.0.1/lib/javafx.base.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GalaxyQuest/lib/javafx-windows-sdk-14.0.1/lib/javafx.controls.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GalaxyQuest/lib/javafx-windows-sdk-14.0.1/lib/javafx.fxml.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GalaxyQuest/lib/javafx-windows-sdk-14.0.1/lib/javafx.graphics.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GalaxyQuest/lib/javafx-windows-sdk-14.0.1/lib/javafx.media.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GalaxyQuest/lib/javafx-windows-sdk-14.0.1/lib/javafx.swing.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GalaxyQuest/lib/javafx-windows-sdk-14.0.1/lib/javafx.web.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GalaxyQuest/resources/GalaxyQuestMainMenu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/GalaxyQuest/resources/GalaxyQuestMainMenu.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GalaxyQuest/src/io/github/jornegitgud/galaxyquest/GalaxyRenderer.java" beforeDir="false" afterPath="$PROJECT_DIR$/GalaxyQuest/src/io/github/jornegitgud/galaxyquest/GalaxyRenderer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GalaxyQuest/src/io/github/jornegitgud/galaxyquest/GameManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/GalaxyQuest/src/io/github/jornegitgud/galaxyquest/GameManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GalaxyQuest/src/io/github/jornegitgud/galaxyquest/HighScore.java" beforeDir="false" afterPath="$PROJECT_DIR$/GalaxyQuest/src/io/github/jornegitgud/galaxyquest/HighScore.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GalaxyQuest/src/io/github/jornegitgud/galaxyquest/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/GalaxyQuest/src/io/github/jornegitgud/galaxyquest/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/GalaxyQuestMainMenu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/GalaxyQuestMainMenu.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/GalaxyQuest/resources/GalaxyQuestMainMenu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/GalaxyQuest/resources/GalaxyQuestMainMenu.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/target/classes/GalaxyQuestMainMenu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/target/classes/GalaxyQuestMainMenu.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -163,10 +173,10 @@
     <option name="version" value="2" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="478" y="48" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1593028859746">
+    <state x="478" y="48" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1593030104927">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="478" y="48" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1593028859746" />
+    <state x="478" y="48" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1593030104927" />
     <state x="92" y="92" width="1736" height="856" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog" timestamp="1591905974414">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -198,46 +208,46 @@
     </state>
     <state x="740" y="276" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1593029107357" />
     <state x="740" y="279" key="FileChooserDialogImpl/0.0.1920.1050@0.0.1920.1050" timestamp="1591727186230" />
-    <state width="1877" height="282" key="GridCell.Tab.0.bottom" timestamp="1593029435764">
+    <state width="1877" height="282" key="GridCell.Tab.0.bottom" timestamp="1593033121306">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1877" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040/-3840.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1593011357854" />
-    <state width="1877" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1593029435764" />
-    <state width="1877" height="282" key="GridCell.Tab.0.center" timestamp="1593029435764">
+    <state width="1877" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1593033121306" />
+    <state width="1877" height="282" key="GridCell.Tab.0.center" timestamp="1593033121305">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1877" height="282" key="GridCell.Tab.0.center/0.0.1920.1040/-3840.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1593011357854" />
-    <state width="1877" height="282" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1593029435764" />
-    <state width="1877" height="282" key="GridCell.Tab.0.left" timestamp="1593029435764">
+    <state width="1877" height="282" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1593033121305" />
+    <state width="1877" height="282" key="GridCell.Tab.0.left" timestamp="1593033121305">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1877" height="282" key="GridCell.Tab.0.left/0.0.1920.1040/-3840.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1593011357854" />
-    <state width="1877" height="282" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1593029435764" />
-    <state width="1877" height="282" key="GridCell.Tab.0.right" timestamp="1593029435764">
+    <state width="1877" height="282" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1593033121305" />
+    <state width="1877" height="282" key="GridCell.Tab.0.right" timestamp="1593033121306">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1877" height="282" key="GridCell.Tab.0.right/0.0.1920.1040/-3840.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1593011357854" />
-    <state width="1877" height="282" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1593029435764" />
-    <state width="1877" height="348" key="GridCell.Tab.1.bottom" timestamp="1593009236002">
-      <screen x="-1920" y="0" width="1920" height="1040" />
+    <state width="1877" height="282" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1593033121306" />
+    <state width="1877" height="348" key="GridCell.Tab.1.bottom" timestamp="1593032102885">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1877" height="348" key="GridCell.Tab.1.bottom/0.0.1920.1040/-3840.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1593009236002" />
-    <state width="1877" height="348" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1592863651191" />
-    <state width="1877" height="348" key="GridCell.Tab.1.center" timestamp="1593009236002">
-      <screen x="-1920" y="0" width="1920" height="1040" />
+    <state width="1877" height="348" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1593032102885" />
+    <state width="1877" height="348" key="GridCell.Tab.1.center" timestamp="1593032102885">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1877" height="348" key="GridCell.Tab.1.center/0.0.1920.1040/-3840.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1593009236002" />
-    <state width="1877" height="348" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1592863651191" />
-    <state width="1877" height="348" key="GridCell.Tab.1.left" timestamp="1593009236002">
-      <screen x="-1920" y="0" width="1920" height="1040" />
+    <state width="1877" height="348" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1593032102885" />
+    <state width="1877" height="348" key="GridCell.Tab.1.left" timestamp="1593032102884">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1877" height="348" key="GridCell.Tab.1.left/0.0.1920.1040/-3840.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1593009236002" />
-    <state width="1877" height="348" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1592863651191" />
-    <state width="1877" height="348" key="GridCell.Tab.1.right" timestamp="1593009236002">
-      <screen x="-1920" y="0" width="1920" height="1040" />
+    <state width="1877" height="348" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1593032102884" />
+    <state width="1877" height="348" key="GridCell.Tab.1.right" timestamp="1593032102885">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1877" height="348" key="GridCell.Tab.1.right/0.0.1920.1040/-3840.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1593009236002" />
-    <state width="1877" height="348" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1592863651191" />
+    <state width="1877" height="348" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1593032102885" />
     <state x="440" y="94" key="SettingsEditor" timestamp="1593029388447">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
