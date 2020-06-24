@@ -2,12 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fff264f5-7b44-419a-b4fb-10106bfbed3e" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GalaxyQuest/assets/FXML/GalaxyQuestMainMenu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/GalaxyQuest/resources/GalaxyQuestMainMenu.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GalaxyQuest/assets/FXML/Settings.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/GalaxyQuest/resources/Settings.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GalaxyQuest/assets/MainMenuSettings/GalaxyMenugif.gif" beforeDir="false" afterPath="$PROJECT_DIR$/GalaxyQuest/resources/GalaxyMenugif.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GalaxyQuest/src/io/github/jornegitgud/galaxyquest/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/GalaxyQuest/src/io/github/jornegitgud/galaxyquest/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GalaxyQuest/lib/javafx-windows-sdk-14.0.1/lib/javafx-swt.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GalaxyQuest/lib/javafx-windows-sdk-14.0.1/lib/javafx.base.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GalaxyQuest/lib/javafx-windows-sdk-14.0.1/lib/javafx.controls.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GalaxyQuest/lib/javafx-windows-sdk-14.0.1/lib/javafx.fxml.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GalaxyQuest/lib/javafx-windows-sdk-14.0.1/lib/javafx.graphics.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GalaxyQuest/lib/javafx-windows-sdk-14.0.1/lib/javafx.media.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GalaxyQuest/lib/javafx-windows-sdk-14.0.1/lib/javafx.swing.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GalaxyQuest/lib/javafx-windows-sdk-14.0.1/lib/javafx.web.jar" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
