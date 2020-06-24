@@ -14,21 +14,18 @@ import java.util.ArrayList;
 
 @DisplayName("SpriteList tests")
 public class SpriteListTests {
-    private SimpleSpriteList simpleSpriteList;
-    private DirectionalSpriteList directionalSpriteList;
-
 
     @Test
     @DisplayName("Simple sprite list's getSprites() never returns null")
     void simpleSpriteList_GetSpritesNeverNull() {
-        simpleSpriteList = new SimpleSpriteList();
+        SimpleSpriteList simpleSpriteList = new SimpleSpriteList();
         Assertions.assertNotNull(simpleSpriteList.getSprites());
     }
 
     @Test
     @DisplayName("Simple sprite list adds image successfully")
     void simpleSpriteList_AddsImageSuccessfully() throws IOException {
-        simpleSpriteList = new SimpleSpriteList();
+        SimpleSpriteList simpleSpriteList = new SimpleSpriteList();
         simpleSpriteList.addSprite(FileHelper.createFxImage("assets/placeholder.png"));
 
         var sprites = simpleSpriteList.getSprites();
@@ -46,7 +43,7 @@ public class SpriteListTests {
     @Test
     @DisplayName("Simple sprite list adds array successfully")
     void simpleSpriteList_AddsImagesSuccessfully() throws IOException {
-        simpleSpriteList = new SimpleSpriteList();
+        SimpleSpriteList simpleSpriteList = new SimpleSpriteList();
 
         var sprites = new ArrayList<Image>();
         sprites.add(FileHelper.createFxImage("assets/placeholder.png"));
@@ -61,7 +58,7 @@ public class SpriteListTests {
     @Test
     @DisplayName("Directional sprite list's getSprites() never returns null")
     void directionalSpriteList_GetSpritesNeverNull() {
-        directionalSpriteList = new DirectionalSpriteList(Direction.RIGHT);
+        DirectionalSpriteList directionalSpriteList = new DirectionalSpriteList(Direction.RIGHT);
         Assertions.assertNotNull(directionalSpriteList.getSprites());
         Assertions.assertNotNull(directionalSpriteList.getSprites(Direction.UP));
         Assertions.assertNotNull(directionalSpriteList.getSprites(Direction.DOWN));
@@ -72,7 +69,7 @@ public class SpriteListTests {
     @Test
     @DisplayName("Directional sprite list adds image successfully")
     void directionalSpriteList_AddsImageSuccessfully() throws IOException {
-        directionalSpriteList = new DirectionalSpriteList(Direction.RIGHT);
+        DirectionalSpriteList directionalSpriteList = new DirectionalSpriteList(Direction.RIGHT);
         directionalSpriteList.addSprite(Direction.UP, FileHelper.createFxImage("assets/placeholder.png"));
         directionalSpriteList.addSprite(Direction.LEFT, FileHelper.createFxImage("assets/placeholder.png"));
         directionalSpriteList.addSprite(Direction.UP, FileHelper.createFxImage("assets/placeHolder.png"));
@@ -91,6 +88,7 @@ public class SpriteListTests {
     @Test
     @DisplayName("Directional sprite list adds array successfully")
     void setDirectionalSpriteList_AddsArraySuccessfully() throws IOException {
+        DirectionalSpriteList directionalSpriteList = new DirectionalSpriteList(Direction.RIGHT);
         var spriteList = new DirectionalSpriteList(Direction.RIGHT);
 
         var sprites = new ArrayList<Image>();

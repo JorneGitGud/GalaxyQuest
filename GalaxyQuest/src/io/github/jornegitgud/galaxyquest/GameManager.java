@@ -17,6 +17,8 @@ public class GameManager {
     AnimationTimer mainLoop;
     Consumer<GameResult> onGameEnded = (result) -> { };
 
+    private long startTime;
+
     private static final double MOVE_FRAME_DURATION_SECONDS = 1d / 60d;
     private static final double SPRITE_FRAME_DURATION_SECONDS = 1d / 4d;
 
@@ -25,6 +27,7 @@ public class GameManager {
     private Wormhole wormhole;
 
     public GameManager(Stage stage, GalaxySettings galaxySettings) throws IOException {
+        startTime = System.currentTimeMillis();
         galaxySettings.freezeSettings();
         galaxy = new Galaxy("John", galaxySettings);
         populateGalaxy(galaxy);
@@ -106,7 +109,8 @@ public class GameManager {
         } else if (currentGameObject instanceof Wormhole && ((Wormhole) currentGameObject).isActive()) {
             //elapsed Secconds!!
 //            onGameEnded.accept(new GameResult(false, new HighScore(player.getName(), 10, galaxy.getSettings())));
-            onGameEnded.accept(new GameResult(true, null));
+            //onGameEnded.accept(new GameResult(true, null));
+            gameOver(true);
             renderer.destroyScene();
             mainLoop.stop();
         } else {
@@ -115,13 +119,15 @@ public class GameManager {
 
     }
 
+    // even checken hoe we de player naam op halen en setten in de game
     public void gameOver(Boolean win){
         if(!win){
             // died of life circumstances
             //close gameScene
         }else{
-            //set highscore
-            //show highscore
+            HighScore highScore = new HighScore(galaxy.getPlayer().getName(), (int)(System.currentTimeMillis()-startTime)/1000,galaxy.getSettings());
+            highScores.add(highScore);
+            System.out.println(galaxy.getPlayer().getName()+ " : " +highScore.score);
             //close gamescene
         }
     }
