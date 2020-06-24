@@ -15,14 +15,17 @@ public class GameManager {
     KeyboardListener keyboardListener;
     Galaxy galaxy;
     AnimationTimer mainLoop;
-    Consumer<GameResult> onEndGame;
+    Consumer<GameResult> onGameEnded = (result) -> { };
 
-    private static final double MOVE_FRAME_DURATION_SECONDS = 1 / 60;
-    private static final double SPRITE_FRAME_DURATION_SECONDS = 0.25;
+    private static final double MOVE_FRAME_DURATION_SECONDS = 1d / 60d;
+    private static final double SPRITE_FRAME_DURATION_SECONDS = 1d / 4d;
 
     private Direction lastDirection = null;
+    private int planetsVisited = 0;
+    private Wormhole wormhole;
 
     public GameManager(Stage stage, GalaxySettings galaxySettings) throws IOException {
+        galaxySettings.freezeSettings();
         galaxy = new Galaxy("John", galaxySettings);
         populateGalaxy(galaxy);
         highScores = new ArrayList<>();
@@ -89,14 +92,23 @@ public class GameManager {
     private void checkCurrentTile(Player player) {
 
         GameObject currentGameObject = player.getTile().getGameObject();
-        if (currentGameObject instanceof Planet) {
-            ((Planet) currentGameObject).visited();
+        if (currentGameObject instanceof Planet && !((Planet) currentGameObject).hasBeenVisited()) {
+                ((Planet) currentGameObject).setVisited();
+                planetsVisited++;
+                renderer.addSprite(galaxy, currentGameObject.getTile(), "assets/Planets/Planet_Visited.png");
+                if(planetsVisited == galaxy.getSettings().getPlanetCount())
+                    wormhole.activate();
             //move player to tile
         } else if (currentGameObject instanceof SpacePirate || currentGameObject instanceof Meteorite) {
-            onEndGame.accept(new GameResult(false, null));
+            onGameEnded.accept(new GameResult(false, null));
+            renderer.destroyScene();
+            mainLoop.stop();
         } else if (currentGameObject instanceof Wormhole && ((Wormhole) currentGameObject).isActive()) {
             //elapsed Secconds!!
-            onEndGame.accept(new GameResult(false, new HighScore(player.getName(), 10, galaxy.getSettings())));
+//            onGameEnded.accept(new GameResult(false, new HighScore(player.getName(), 10, galaxy.getSettings())));
+            onGameEnded.accept(new GameResult(true, null));
+            renderer.destroyScene();
+            mainLoop.stop();
         } else {
             //move player to tile
         }
@@ -161,11 +173,11 @@ public class GameManager {
             availableCoordinates.remove(tempPos);
         }
 
-        Wormhole wormhole = GameObjectFactory.createWormhole();
+        this.wormhole = GameObjectFactory.createWormhole();
         int tempPos = random.nextInt(availableCoordinates.size());
         int tempX = availableCoordinates.get(tempPos).x;
         int tempY = availableCoordinates.get(tempPos).y;
-        galaxy.setGalaxyTile(tempX, tempY, wormhole);
+        galaxy.setGalaxyTile(tempX, tempY, this.wormhole);
         availableCoordinates.remove(tempPos);
 
     }

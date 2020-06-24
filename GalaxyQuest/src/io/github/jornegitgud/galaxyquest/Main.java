@@ -20,6 +20,7 @@ public class Main extends Application {
         var galaxySettings = new GalaxySettings(); //will be received from mainMenu later
         galaxySettings.setWidth(12);
         galaxySettings.setHeight(12);
+        galaxySettings.setPlanetCount(14);
 
         //test
         GameManager tempGameManager = new GameManager(stage, galaxySettings);
