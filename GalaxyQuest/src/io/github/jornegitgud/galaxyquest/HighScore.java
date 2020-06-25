@@ -13,8 +13,8 @@ public class HighScore {
 
     public HighScore(String name, int elapsedSeconds, GalaxySettings galaxySettings) {
         this.name = name.toUpperCase();
-        this.score = calculateScore(elapsedSeconds);
         this.galaxySettings = galaxySettings;
+        this.score = calculateScore(elapsedSeconds);
 
     }
 

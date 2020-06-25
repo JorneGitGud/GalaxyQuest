@@ -12,6 +12,7 @@ import javafx.scene.layout.*;
 import javafx.stage.Stage;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.function.Consumer;
 
@@ -22,6 +23,7 @@ public class GalaxyRenderer {
     private final Scene gameScene;
     private final Pane galaxyPane;
     private HashMap<GameObject, ImageView> sprites = new HashMap<>();
+    private ArrayList<ImageView> staticSprites = new ArrayList<>();
     public Consumer<Stage> onStageClosed;
 
     private SimpleSpriteList galaxySprites;
@@ -32,7 +34,6 @@ public class GalaxyRenderer {
         galaxyPane = new Pane();
         this.gameScene = new Scene(galaxyPane, settings.getWidth() * GALAXY_GRID_SIZE, settings.getHeight() * GALAXY_GRID_SIZE);
         stage.setResizable(false);
-
 
         stage.setScene(this.gameScene);
         try {
@@ -87,6 +88,7 @@ public class GalaxyRenderer {
             stage.show();
 
         background.setImage(galaxySprites.getNextSprite());
+        background.toBack();
 
         var objects = galaxy.getObjects();
 
@@ -104,20 +106,30 @@ public class GalaxyRenderer {
                     imageView.setFitWidth(GALAXY_GRID_SIZE * 1.5);
                     imageView.setX(imageView.getX() - GALAXY_GRID_SIZE * 0.25);
                     imageView.setY(imageView.getY() - GALAXY_GRID_SIZE * 0.25);
+                    imageView.setVisible(false);
                 }
-                imageView.toFront();
+                imageView.toBack();
                 continue;
             }
             var imageView = sprites.get(object);
             if(object instanceof HasDirection) {
                 var direction = ((HasDirection) object).getDirection();
                 imageView.setImage(object.getSpriteList().getNextSprite(direction));
+                imageView.toFront();
                 continue;
             } else {
                 imageView.setImage(object.getSpriteList().getNextSprite());
             }
 
+            if(object instanceof Wormhole && !imageView.isVisible() && ((Wormhole) object).isActive())
+                imageView.setVisible(true);
         }
+
+        for(var sprite : staticSprites) {
+            sprite.toFront();
+        }
+
+        sprites.get(galaxy.getPlayer()).toFront();
     }
 
     public void updateDirection(GameObject object) {
@@ -127,6 +139,36 @@ public class GalaxyRenderer {
 
     public Scene getScene() {
         return gameScene;
+    }
+
+    public void destroyScene() {
+        var imageViews = new ArrayList<>(sprites.values());
+        imageViews.addAll(staticSprites);
+        imageViews.add(background);
+
+        for(var imageView : imageViews) {
+            imageView.setVisible(false);
+            galaxyPane.getChildren().remove(imageView);
+        }
+
+        this.stage.setResizable(true);
+    }
+
+    public void addSprite(Galaxy galaxy, Tile tile, String spritePath) {
+        var coordinate = tile.getCoordinate(this);
+        try {
+            var imageView = FileHelper.createImageView(spritePath);
+            staticSprites.add(imageView);
+            imageView.setX(coordinate.x * GALAXY_GRID_SIZE);
+            imageView.setY(coordinate.y * GALAXY_GRID_SIZE);
+            imageView.setFitHeight(GALAXY_GRID_SIZE);
+            imageView.setFitWidth(GALAXY_GRID_SIZE);
+            galaxyPane.getChildren().add(imageView);
+            imageView.toFront();
+            sprites.get(galaxy.getPlayer()).toFront();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
 

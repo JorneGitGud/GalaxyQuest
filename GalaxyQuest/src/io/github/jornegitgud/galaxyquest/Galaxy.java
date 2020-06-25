@@ -19,7 +19,6 @@ public class Galaxy {
     public Galaxy(String name, GalaxySettings settings) {
         this.name = name;
         this.settings = settings;
-        this.settings.freezeSettings();
         this.galaxyTiles = new Tile[settings.getHeight()][settings.getWidth()];
 
         //create tiles

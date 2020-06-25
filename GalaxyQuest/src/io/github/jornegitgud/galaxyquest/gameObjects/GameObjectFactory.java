@@ -18,6 +18,7 @@ public class GameObjectFactory {
     private static HashMap<Direction, ArrayList<Image>> spacePirateSprites;
     private static ArrayList<Image> wormholeSprites;
     private static Random random = new Random();
+    private static int planetChoice = 0;
 
     public static Player createPlayer(Direction spawnDirection) throws IOException {
         if (playerSprites == null) {
@@ -50,9 +51,10 @@ public class GameObjectFactory {
             planetSprites.add(FileHelper.createFxImage("assets/Planets/Zodd.png"));
         }
 
-        int planetChoice = random.nextInt(planetSprites.size());
         SimpleSpriteList planetList = new SimpleSpriteList();
         planetList.addSprite(planetSprites.get(planetChoice));
+        planetChoice++;
+        if(planetChoice > planetSprites.size()-1) planetChoice = 0;
         return new Planet(planetList);
     }
 

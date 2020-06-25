@@ -11,7 +11,7 @@ public class GameObjectTests {
     private GameObject gameObject;
 
     public GameObjectTests() {
-        gameObject = new GameObject(new SimpleSpriteList(), new Tile(new Coordinate(0,0)));
+        gameObject = new GameObject(new SimpleSpriteList());
     }
 
     @Test
