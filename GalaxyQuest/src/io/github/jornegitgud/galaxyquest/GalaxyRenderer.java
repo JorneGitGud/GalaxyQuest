@@ -152,6 +152,7 @@ public class GalaxyRenderer {
         }
 
         this.stage.setResizable(true);
+        this.stage.setScene(null);
     }
 
     public void addSprite(Galaxy galaxy, Tile tile, String spritePath) {

@@ -10,7 +10,7 @@ import java.util.Random;
 import java.util.function.Consumer;
 
 public class GameManager {
-    ArrayList<HighScore> highScores;
+    ArrayList<HighScore> highScores = new ArrayList<>();
     GalaxyRenderer renderer;
     KeyboardListener keyboardListener;
     Galaxy galaxy;
@@ -103,33 +103,26 @@ public class GameManager {
                     wormhole.activate();
             //move player to tile
         } else if (currentGameObject instanceof SpacePirate || currentGameObject instanceof Meteorite) {
-            onGameEnded.accept(new GameResult(false, null));
-            renderer.destroyScene();
-            mainLoop.stop();
+            gameOver(false);
         } else if (currentGameObject instanceof Wormhole && ((Wormhole) currentGameObject).isActive()) {
-            //elapsed Secconds!!
-//            onGameEnded.accept(new GameResult(false, new HighScore(player.getName(), 10, galaxy.getSettings())));
-            //onGameEnded.accept(new GameResult(true, null));
             gameOver(true);
-            renderer.destroyScene();
-            mainLoop.stop();
-        } else {
-            //move player to tile
         }
-
     }
 
     // even checken hoe we de player naam op halen en setten in de game
     public void gameOver(Boolean win){
-        if(!win){
-            // died of life circumstances
-            //close gameScene
-        }else{
-            HighScore highScore = new HighScore(galaxy.getPlayer().getName(), (int)(System.currentTimeMillis()-startTime)/1000,galaxy.getSettings());
+        HighScore highScore = null;
+
+        if(win) {
+            highScore = new HighScore((int)( System.currentTimeMillis() - startTime) / 1000, galaxy.getSettings());
             highScores.add(highScore);
             System.out.println(galaxy.getPlayer().getName()+ " : " +highScore.score);
             //close gamescene
         }
+
+        renderer.destroyScene();
+        mainLoop.stop();
+        onGameEnded.accept(new GameResult(win, highScore));
     }
 
 
