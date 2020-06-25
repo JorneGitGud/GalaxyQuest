@@ -11,6 +11,10 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Random;
 
+/**
+ * to-do!
+ * the GameObjectFactory creates all the objects that are spawned on the gameScene.
+ */
 public class GameObjectFactory {
     private static HashMap<Direction, ArrayList<Image>> playerSprites;
     private static ArrayList<Image> planetSprites;
@@ -20,6 +24,12 @@ public class GameObjectFactory {
     private static Random random = new Random();
     private static int planetChoice = 0;
 
+    /**
+     * this method creates the Player object, it sets the spawn direction and sets the sprites and size.
+     * @param spawnDirection the direction the player is facing when first initialised.
+     * @return a player object
+     * @throws IOException throws an exception if the file is not found.
+     */
     public static Player createPlayer(Direction spawnDirection) throws IOException {
         if (playerSprites == null) {
             var leftSprites = FileHelper.createImage("assets/MovableObjects/Player_Left.png");
@@ -36,6 +46,13 @@ public class GameObjectFactory {
         return new Player("Test", spawnDirection, new DirectionalSpriteList(playerSprites, spawnDirection));
     }
 
+    /**
+     * this method creates the planet objects.
+     * it adds all images of the planets to planetSprites arraylist.
+     * the creates a SimpleSpriteList adds a image from the planetsprites arraylist from the location dicided by the planetChoice variable.
+     * @return  a new Planet object with the simpleSpriteList variable.
+     * @throws IOException throws IOExpeption if the file could not be found
+     */
     public static Planet createPlanet() throws IOException {
         if (planetSprites == null) {
             planetSprites = new ArrayList<>();
@@ -58,6 +75,12 @@ public class GameObjectFactory {
         return new Planet(planetList);
     }
 
+    /**
+     * creates Meteorite objects. makes new arraylist with the meteorite imange and adds this to a new meteorite.
+     *
+     * @return a new meteorite
+     * @throws IOException throws IOExpeption if the file could not be found
+     */
     public static Meteorite createMeteorite() throws IOException {
         if (meteoriteSprites == null) {
             meteoriteSprites = new ArrayList<>();
@@ -67,6 +90,12 @@ public class GameObjectFactory {
     }
 
 
+
+    /**
+     * this method creates the SpacePirate object, it sets the spawn direction to UP and sets the sprites and size.
+     * @return a SpacePirate object
+     * @throws IOException throws an exception if the file is not found.
+     */
     public static SpacePirate createSpacePirate() throws IOException {
         if (spacePirateSprites == null) {
             spacePirateSprites = new HashMap<>();
@@ -83,6 +112,11 @@ public class GameObjectFactory {
         return new SpacePirate(Direction.UP, new DirectionalSpriteList(spacePirateSprites, Direction.UP));
     }
 
+    /**
+     * creates a worhmhole object, sets the sprite and size;
+     * @return a Wormhole object
+     * @throws IOException throws an exception if the file is not found.
+     */
     public static Wormhole createWormhole() throws IOException {
         if (wormholeSprites == null) {
             var wormHole = FileHelper.createImage("assets/Wormhole/wormhole.png");

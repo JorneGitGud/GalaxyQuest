@@ -13,6 +13,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.regex.Pattern;
 
+//to do Javadoc
 public class FileHelper {
     private static String normalizePath(String path) {
         if(!path.startsWith("/") && !path.startsWith("\\"))

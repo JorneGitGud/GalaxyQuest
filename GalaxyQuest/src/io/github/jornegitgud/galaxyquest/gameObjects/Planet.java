@@ -2,6 +2,9 @@ package io.github.jornegitgud.galaxyquest.gameObjects;
 
 import io.github.jornegitgud.galaxyquest.sprites.SpriteList;
 
+/**
+ * this is the planet object, it extends from the {@link GameObject}
+ */
 public class Planet extends GameObject {
     private boolean visited;
 

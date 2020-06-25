@@ -7,6 +7,10 @@ import io.github.jornegitgud.galaxyquest.Tile;
 
 import java.util.function.Consumer;
 
+/**
+ * this is the player object, it extends from the {@link MovableObject} and implements the {@link HasDirection}
+ *
+ */
 public class Player extends MovableObject implements HasDirection {
     private String name;
     private Direction direction;

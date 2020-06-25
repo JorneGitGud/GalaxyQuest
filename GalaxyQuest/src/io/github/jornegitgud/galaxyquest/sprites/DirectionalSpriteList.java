@@ -7,12 +7,20 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Random;
 
+/**
+ * the DirectionalSpriteList creates 4(directions) Arraylists that hold sprites used to in animations
+ */
 public class DirectionalSpriteList implements SpriteList {
 
     private HashMap<Direction, ArrayList<Image>> sprites = new HashMap<>();
     private Direction lastDirection;
     private int frameCounter = -1;
 
+    /**
+     * this constructor sets the last direction to the default direction
+     * fills the hashmap with arraylists containing NO sprites (used for that direction)
+     * @param defaultDirection defines what the default direction is.
+     */
     public DirectionalSpriteList(Direction defaultDirection) {
         //Init all sprite collections with empty ArrayList
         this.lastDirection = defaultDirection;
@@ -23,6 +31,12 @@ public class DirectionalSpriteList implements SpriteList {
         sprites.put(Direction.UP, new ArrayList<>());
     }
 
+    /**
+     * this constructor sets the last direction to the default direction
+     * fills the hashmap with arraylists containing sprites (used for that direction)
+     * @param sprites contains the sprites
+     * @param defaultDirection
+     */
     public DirectionalSpriteList(HashMap<Direction, ArrayList<Image>> sprites, Direction defaultDirection) {
         this.lastDirection = defaultDirection;
         if (!sprites.containsKey(Direction.UP))
@@ -61,6 +75,12 @@ public class DirectionalSpriteList implements SpriteList {
         return getNextSprite(lastDirection);
     }
 
+
+    /**
+     * getNextSprite returns the next sprite used in animations.
+     * @param dir
+     * @return
+     */
     @Override
     public Image getNextSprite(Direction dir) {
         if (lastDirection != dir)
