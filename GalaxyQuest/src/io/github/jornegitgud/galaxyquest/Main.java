@@ -5,6 +5,7 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import javafx.stage.WindowEvent;
 
 import java.io.IOException;
 
@@ -25,6 +26,7 @@ public class Main extends Application {
         stage.show();
 
         var controller = (MainMenuController) fxmlLoader.getController();
+
         controller.onStartButtonClicked = (event) -> {
             //eventually react to main menu buttons here
             var galaxySettings = new GalaxySettings(); //will be received from mainMenu later
@@ -39,5 +41,10 @@ public class Main extends Application {
                 e.printStackTrace();
             }
         };
+
+        controller.onExitButtonClicked = (event) -> {
+            stage.close();
+        };
+
     }
 }
