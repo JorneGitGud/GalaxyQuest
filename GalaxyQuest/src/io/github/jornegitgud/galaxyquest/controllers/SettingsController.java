@@ -9,7 +9,10 @@ import java.util.function.Consumer;
 
 
 public class SettingsController {
-    private Slider galaxySlider;
+
+    @FXML
+    private Slider galaxySizeSlider, planetSlider, pirateSlider, meteorSlider;
+
     private double galaxySize;
     private double planetCount;
     private double pirateCount;
@@ -23,29 +26,26 @@ public class SettingsController {
     public void backToMenu(ActionEvent event) {
         this.onSettingsBackClicked.accept(event); }
 
+
+
     @FXML
     public void setGalaxySize() {
-        this.galaxySize = galaxySlider.getValue();
-        System.out.println(this.galaxySize + " ");
+        this.galaxySize = galaxySizeSlider.getValue();
+    }
+    
+    @FXML
+    public void setPlanetSlider() {
+        this.planetCount = planetSlider.getValue();
     }
 
     @FXML
-    public void setPlanetCount(Slider slider) {
-        this.planetCount = slider.getValue();
+    public void setPirateCount() {
+        this.pirateCount = pirateSlider.getValue();
     }
 
     @FXML
-    public void setPirateCount(Slider slider) {
-        this.pirateCount = slider.getValue();
+    public void setMeteoriteCount() {
+        this.meteoriteCount = meteorSlider.getValue();
     }
 
-    @FXML
-    public void setMeteoriteCount(Slider slider) {
-        this.meteoriteCount = slider.getValue();
-    }
-
-    @FXML
-    public void applySettings(ActionEvent event) {
-
-    }
 }
