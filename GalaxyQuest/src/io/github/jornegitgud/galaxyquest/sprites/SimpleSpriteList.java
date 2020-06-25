@@ -6,6 +6,9 @@ import javafx.scene.image.Image;
 import java.util.ArrayList;
 import java.util.Random;
 
+/**
+ * the SimpleSprite class is used in animation that don't have specific directions.
+ */
 public class SimpleSpriteList implements SpriteList {
 
     ArrayList<Image> sprites = new ArrayList<>();
@@ -13,6 +16,9 @@ public class SimpleSpriteList implements SpriteList {
 
     public SimpleSpriteList() { }
 
+    /*
+    consturctor that sets the sprites ArrayList.
+     */
     public SimpleSpriteList(ArrayList<Image> sprites) {
         this.sprites = sprites;
     }
@@ -29,6 +35,10 @@ public class SimpleSpriteList implements SpriteList {
         return this.sprites;
     }
 
+    /**
+     * randomizes the first image used in animations.
+     * @return returns an Image from the sprites Arraylist
+     */
     @Override
     public Image getNextSprite() {
         if (frameCounter == -1) //randomize start frame on app start

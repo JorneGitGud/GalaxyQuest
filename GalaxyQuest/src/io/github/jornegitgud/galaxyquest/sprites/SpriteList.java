@@ -7,7 +7,9 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Random;
 
-
+/*
+this interface makes sure that classes that implement this interface have the getNextSprite functions
+ */
 public interface SpriteList {
 
     Image getNextSprite();

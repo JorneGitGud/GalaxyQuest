@@ -7,7 +7,12 @@ import io.github.jornegitgud.galaxyquest.Tile;
 
 import java.util.function.Consumer;
 
+/**
+ * the MovableObject class extends from {@link GameObject}
+ * it holds all the common variables use by the {@link Player}, {@link SpacePirate}, {@link Meteorite}.
+ */
 public class MovableObject extends GameObject {
+
     private SpriteList walkSprites;
     private boolean moving;
     private int moveFrames;
@@ -16,11 +21,12 @@ public class MovableObject extends GameObject {
     private Direction moveDirection;
     public Consumer<MovableObject> onMoveEnded;
 
-
+    //to do java doc
     public MovableObject(SpriteList spriteList) {
         super(spriteList);
     }
 
+    //to do java doc
     public void move(int frames, Direction direction) {
         if (moving)
             return;
@@ -45,13 +51,13 @@ public class MovableObject extends GameObject {
                 break;
         }
 
-        if(nextTile == null)
+        if (nextTile == null)
             moving = false;
 
-        if(this instanceof HasDirection)
+        if (this instanceof HasDirection)
             ((HasDirection) this).setDirection(direction);
     }
-
+    //to do java doc
     public double updateMove() {
         currentFrame++;
         if (currentFrame >= moveFrames) {
@@ -62,11 +68,11 @@ public class MovableObject extends GameObject {
         }
         return (1.0 / moveFrames) * currentFrame;
     }
-
+    //to do java doc
     public boolean isMoving() {
         return moving;
     }
-
+    //to do java doc
     public Direction getMoveDirection() {
         return moveDirection;
     }
