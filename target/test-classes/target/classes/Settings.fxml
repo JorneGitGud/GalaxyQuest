@@ -12,7 +12,7 @@
     <children>
         <ImageView fitHeight="768.0" fitWidth="768.0" pickOnBounds="true" preserveRatio="true">
             <image>
-                <Image url="@../../../../../../../assets/MainMenuSettings/GalaxyMenugif.gif" />
+                <Image url="GalaxyMenugif.gif" />
             </image>
         </ImageView>
         <Slider blockIncrement="5.0" layoutX="30.0" layoutY="411.0" majorTickUnit="10.0" max="25.0" />

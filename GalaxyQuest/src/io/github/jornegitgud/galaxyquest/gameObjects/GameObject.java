@@ -25,6 +25,9 @@ public class GameObject {
     }
 
     public void setTile(Tile tile) {
+        if(this.tile != null)
+            this.tile.removeGameObject(this);
+        tile.addGameObject(this);
         this.tile = tile;
     }
 

@@ -76,7 +76,7 @@ public class Galaxy {
     }
 
     public void setGalaxyTile(int x, int y, GameObject gameObject){
-        galaxyTiles[x][y].setGameObject(gameObject);
+        galaxyTiles[x][y].addGameObject(gameObject);
         gameObject.setTile(galaxyTiles[x][y]);
         if(!objects.contains(gameObject))
             objects.add(gameObject);

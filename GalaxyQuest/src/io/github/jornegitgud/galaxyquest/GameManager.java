@@ -25,11 +25,14 @@ public class GameManager {
     private Direction lastDirection = null;
     private int planetsVisited = 0;
     private Wormhole wormhole;
+    private boolean playerOnPlanet = false;
 
+    @SuppressWarnings("UnnecessaryContinue")
     public GameManager(Stage stage, GalaxySettings galaxySettings) throws IOException {
         startTime = System.currentTimeMillis();
         galaxySettings.freezeSettings();
         galaxy = new Galaxy("John", galaxySettings);
+
         populateGalaxy(galaxy);
         highScores = new ArrayList<>();
         renderer = new GalaxyRenderer(stage, galaxySettings);
@@ -82,30 +85,73 @@ public class GameManager {
         galaxy.getPlayer().onMoveEnded = (player) -> {
             if (lastDirection != null)
                 player.move(15, lastDirection);
-            checkCurrentTile((Player) player);
+            checkCurrentTilePlayer((Player) player);
         };
 
         galaxy.getPlayer().onDirectionChanged = (player) -> {
             renderer.updateDirection((GameObject) player);
         };
 
+        for(var object : galaxy.getObjects()) {
+            if(object instanceof Meteorite) {
+                ((Meteorite) object).onMoveEnded = (meteorite) -> {
+                    checkCurrentTileMoveableObject(meteorite);
+                    while(!meteorite.move(15, Direction.randomDirection()));
+                };
+                var meteorite = (Meteorite) object;
+                while(!meteorite.move(15, Direction.randomDirection())) {continue;};
+            } else if (object instanceof SpacePirate) {
+                ((SpacePirate) object).onMoveEnded = (spacePirate) -> {
+                    checkCurrentTileMoveableObject(spacePirate);
+                    if(!playerOnPlanet) {
+                        while (!spacePirate.move(20, spacePirate.getTile().getDirectionTo(galaxy.getPlayer().getTile()))) {continue;}
+                    }
+                    else //try once but don't bother retrying as player is on planet
+                        spacePirate.move(20, spacePirate.getTile().getDirectionTo(galaxy.getPlayer().getTile()));
+                };
+                var spacePirate = (SpacePirate) object;
+                spacePirate.move(20, spacePirate.getTile().getDirectionTo(galaxy.getPlayer().getTile()));
+            }
+        }
+
+    }
+
+    private void checkCurrentTileMoveableObject(GameObject object) {
+        if(object instanceof Player)
+            checkCurrentTilePlayer((Player) object);
+
+        if(object.getTile().contains(Player.class))
+            gameOver(false);
     }
 
 
-    private void checkCurrentTile(Player player) {
+    private void checkCurrentTilePlayer(Player player) {
+        if(playerOnPlanet && !player.getTile().contains(Planet.class)) {
+            playerOnPlanet = false;
+            for(GameObject gameObject : galaxy.getObjects())
+                if(gameObject instanceof SpacePirate && !((SpacePirate) gameObject).isMoving()) {
+                    var spacePirate = (SpacePirate)gameObject;
+                    spacePirate.move(20, spacePirate.getTile().getDirectionTo(player.getTile()));
+                }
+        }
 
-        GameObject currentGameObject = player.getTile().getGameObject();
-        if (currentGameObject instanceof Planet && !((Planet) currentGameObject).hasBeenVisited()) {
-                ((Planet) currentGameObject).setVisited();
-                planetsVisited++;
-                renderer.addSprite(galaxy, currentGameObject.getTile(), "assets/Planets/Planet_Visited.png");
-                if(planetsVisited == galaxy.getSettings().getPlanetCount())
-                    wormhole.activate();
+        if(player.getTile().contains(Planet.class)) {
+            this.playerOnPlanet = true;
+            var planet = player.getTile().getFirst(Planet.class);
+            if(planet.hasBeenVisited())
+                return;
+            planet.setVisited();
+            planetsVisited++;
+            renderer.addSprite(galaxy, planet.getTile(), "assets/Planets/Planet_Visited.png");
+            if (planetsVisited == galaxy.getSettings().getPlanetCount())
+                wormhole.activate();
             //move player to tile
-        } else if (currentGameObject instanceof SpacePirate || currentGameObject instanceof Meteorite) {
+        } else if (player.getTile().containsAny(Meteorite.class, SpacePirate.class)) {
             gameOver(false);
-        } else if (currentGameObject instanceof Wormhole && ((Wormhole) currentGameObject).isActive()) {
-            gameOver(true);
+        } else if (player.getTile().contains(Wormhole.class)) {
+            var wormhole = player.getTile().getFirst(Wormhole.class);
+            if(wormhole.isActive())
+                gameOver(true);
         }
     }
 
@@ -116,7 +162,7 @@ public class GameManager {
         if(win) {
             highScore = new HighScore((int)( System.currentTimeMillis() - startTime) / 1000, galaxy.getSettings());
             highScores.add(highScore);
-            System.out.println(galaxy.getPlayer().getName()+ " : " +highScore.score);
+            System.out.println(galaxy.getPlayer().getName()+ " : " + highScore.score);
             //close gamescene
         }
 

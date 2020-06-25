@@ -1,6 +1,7 @@
 package io.github.jornegitgud.galaxyquest.gameObjects;
 
 import io.github.jornegitgud.galaxyquest.Direction;
+import io.github.jornegitgud.galaxyquest.GameResult;
 import io.github.jornegitgud.galaxyquest.HasDirection;
 import io.github.jornegitgud.galaxyquest.sprites.SpriteList;
 import io.github.jornegitgud.galaxyquest.Tile;
@@ -27,9 +28,9 @@ public class MovableObject extends GameObject {
     }
 
     //to do java doc
-    public void move(int frames, Direction direction) {
+    public boolean move(int frames, Direction direction) {
         if (moving)
-            return;
+            return true;
         moving = true;
         moveFrames = frames;
         currentFrame = 0;
@@ -51,12 +52,19 @@ public class MovableObject extends GameObject {
                 break;
         }
 
-        if (nextTile == null)
-            moving = false;
+        if(nextTile == null || (this.getClass().getName() != Player.class.getName() && nextTile.containsAny(Planet.class, Meteorite.class, SpacePirate.class))) {
+            direction = Direction.randomDirection();
+            this.moving = false;
+            this.move(frames, direction);
+            return true;
+        }
 
         if (this instanceof HasDirection)
             ((HasDirection) this).setDirection(direction);
+
+        return true;
     }
+
     //to do java doc
     public double updateMove() {
         currentFrame++;

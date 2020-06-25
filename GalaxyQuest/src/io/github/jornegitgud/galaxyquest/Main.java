@@ -30,7 +30,9 @@ public class Main extends Application {
         controller.onStartButtonClicked = (event) -> {
             //eventually react to main menu buttons here
             var galaxySettings = new GalaxySettings(); //will be received from mainMenu later
-
+            galaxySettings.setWidth(16);
+            galaxySettings.setHeight(16);
+            galaxySettings.setPirateCount(3);
             //test
             try {
                 GameManager gameManager = new GameManager(stage, galaxySettings);

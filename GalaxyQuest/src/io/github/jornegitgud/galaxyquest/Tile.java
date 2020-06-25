@@ -4,6 +4,8 @@ import io.github.jornegitgud.galaxyquest.gameObjects.GameObject;
 import io.github.jornegitgud.galaxyquest.gameObjects.MovableObject;
 import io.github.jornegitgud.galaxyquest.gameObjects.Player;
 
+import java.util.ArrayList;
+
 public class Tile {
 
     private Tile tileAbove;
@@ -13,16 +15,9 @@ public class Tile {
 
     private Coordinate coordinate;
     //MovableObject objectOnTile = new MovableObject();
-    private GameObject gameObject;
+    private ArrayList<GameObject> gameObjects = new ArrayList<>();
 
     public Tile(Coordinate coordinate) {
-        this.coordinate = coordinate;
-    }
-
-
-    //check if needed
-    public Tile(Coordinate coordinate, GameObject gameObject) {
-        this.gameObject = gameObject;
         this.coordinate = coordinate;
     }
 
@@ -58,15 +53,56 @@ public class Tile {
         this.tileLeft = tileLeft;
     }
 
-    public void setGameObject(GameObject gameObject) {
-        this.gameObject = gameObject;
+    public void addGameObject(GameObject gameObject) {
+        if(!this.gameObjects.contains(gameObject))
+            gameObjects.add(gameObject);
     }
 
-    public GameObject getGameObject() {
-        return gameObject;
+    public void removeGameObject(GameObject gameObject) {
+        if(this.gameObjects.contains(gameObject))
+            this.gameObjects.remove(gameObject);
+    }
+
+    public ArrayList<GameObject> getGameObjects() {
+        return gameObjects;
+    }
+
+    public boolean contains(Class tClass) {
+        for(GameObject object : gameObjects) {
+            if(object.getClass().getName().equals(tClass.getName()))
+                return true;
+        }
+        return false;
+    }
+
+    public boolean containsAny(Class... tClasses) {
+        for(GameObject object : gameObjects) {
+            String className = object.getClass().getName();
+            for(Class tClass : tClasses)
+                if(className.equals(tClass.getName()))
+                    return true;
+        }
+        return false;
+    }
+
+    public <T extends GameObject> T getFirst(Class<T> tClass) {
+        for(GameObject object : gameObjects) {
+            if (object.getClass().getName().equals(tClass.getName()))
+                return (T) object;
+        }
+        return null;
     }
 
     public Coordinate getCoordinate(GalaxyRenderer gr) {
         return coordinate;
+    }
+
+    public Direction getDirectionTo(Tile otherTile) {
+        var deltaX = Math.abs(otherTile.coordinate.x - this.coordinate.x);
+        var deltaY = Math.abs(otherTile.coordinate.y - this.coordinate.y);
+
+        if(deltaX >= deltaY)
+            return otherTile.coordinate.x - this.coordinate.x < 0 ? Direction.LEFT : Direction.RIGHT;
+        return otherTile.coordinate.y - this.coordinate.y < 0 ? Direction.UP : Direction.DOWN;
     }
 }
