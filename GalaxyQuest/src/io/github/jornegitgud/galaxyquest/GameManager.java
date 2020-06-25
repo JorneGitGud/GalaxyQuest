@@ -25,7 +25,6 @@ public class GameManager {
     private Direction lastDirection = null;
     private int planetsVisited = 0;
     private Wormhole wormhole;
-    private boolean playerOnPlanet = false;
 
     @SuppressWarnings("UnnecessaryContinue")
     public GameManager(Stage stage, GalaxySettings galaxySettings) throws IOException {
@@ -96,18 +95,14 @@ public class GameManager {
             if(object instanceof Meteorite) {
                 ((Meteorite) object).onMoveEnded = (meteorite) -> {
                     checkCurrentTileMoveableObject(meteorite);
-                    while(!meteorite.move(15, Direction.randomDirection()));
+                    meteorite.move(15, Direction.randomDirection());
                 };
                 var meteorite = (Meteorite) object;
-                while(!meteorite.move(15, Direction.randomDirection())) {continue;};
+                meteorite.move(15, Direction.randomDirection());
             } else if (object instanceof SpacePirate) {
                 ((SpacePirate) object).onMoveEnded = (spacePirate) -> {
                     checkCurrentTileMoveableObject(spacePirate);
-                    if(!playerOnPlanet) {
-                        while (!spacePirate.move(20, spacePirate.getTile().getDirectionTo(galaxy.getPlayer().getTile()))) {continue;}
-                    }
-                    else //try once but don't bother retrying as player is on planet
-                        spacePirate.move(20, spacePirate.getTile().getDirectionTo(galaxy.getPlayer().getTile()));
+                    spacePirate.move(20, spacePirate.getTile().getDirectionTo(galaxy.getPlayer().getTile()));
                 };
                 var spacePirate = (SpacePirate) object;
                 spacePirate.move(20, spacePirate.getTile().getDirectionTo(galaxy.getPlayer().getTile()));
@@ -126,17 +121,7 @@ public class GameManager {
 
 
     private void checkCurrentTilePlayer(Player player) {
-        if(playerOnPlanet && !player.getTile().contains(Planet.class)) {
-            playerOnPlanet = false;
-            for(GameObject gameObject : galaxy.getObjects())
-                if(gameObject instanceof SpacePirate && !((SpacePirate) gameObject).isMoving()) {
-                    var spacePirate = (SpacePirate)gameObject;
-                    spacePirate.move(20, spacePirate.getTile().getDirectionTo(player.getTile()));
-                }
-        }
-
         if(player.getTile().contains(Planet.class)) {
-            this.playerOnPlanet = true;
             var planet = player.getTile().getFirst(Planet.class);
             if(planet.hasBeenVisited())
                 return;

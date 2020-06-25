@@ -35,7 +35,7 @@ public class HighScore {
 
 
         double setSecondsForGrid = (gridSize * 0.85) * setSecPerTile;
-        double timeScoreMultiplier = setSecondsForGrid - elapsedSeconds;;
+        double timeScoreMultiplier = setSecondsForGrid - elapsedSeconds;
         if(timeScoreMultiplier<0) timeScoreMultiplier = 0.5;
         double planetMultiplier = setPlanets / maxPlanets;
         double planetPoints = (planetValue * planetMultiplier)*setPlanets;
