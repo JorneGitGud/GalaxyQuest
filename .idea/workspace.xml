@@ -2,18 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fff264f5-7b44-419a-b4fb-10106bfbed3e" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GalaxyQuest/src/io/github/jornegitgud/galaxyquest/Direction.java" beforeDir="false" afterPath="$PROJECT_DIR$/GalaxyQuest/src/io/github/jornegitgud/galaxyquest/Direction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GalaxyQuest/src/io/github/jornegitgud/galaxyquest/Galaxy.java" beforeDir="false" afterPath="$PROJECT_DIR$/GalaxyQuest/src/io/github/jornegitgud/galaxyquest/Galaxy.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GalaxyQuest/src/io/github/jornegitgud/galaxyquest/GameManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/GalaxyQuest/src/io/github/jornegitgud/galaxyquest/GameManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GalaxyQuest/src/io/github/jornegitgud/galaxyquest/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/GalaxyQuest/src/io/github/jornegitgud/galaxyquest/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GalaxyQuest/src/io/github/jornegitgud/galaxyquest/Tile.java" beforeDir="false" afterPath="$PROJECT_DIR$/GalaxyQuest/src/io/github/jornegitgud/galaxyquest/Tile.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GalaxyQuest/src/io/github/jornegitgud/galaxyquest/gameObjects/GameObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/GalaxyQuest/src/io/github/jornegitgud/galaxyquest/gameObjects/GameObject.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GalaxyQuest/src/io/github/jornegitgud/galaxyquest/gameObjects/MovableObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/GalaxyQuest/src/io/github/jornegitgud/galaxyquest/gameObjects/MovableObject.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GalaxyQuest/src/io/github/jornegitgud/galaxyquest/gameObjects/SpacePirate.java" beforeDir="false" afterPath="$PROJECT_DIR$/GalaxyQuest/src/io/github/jornegitgud/galaxyquest/gameObjects/SpacePirate.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/GalaxyQuest/resources/GalaxyQuestMainMenu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/GalaxyQuest/resources/GalaxyQuestMainMenu.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/target/classes/GalaxyQuestMainMenu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/target/classes/GalaxyQuestMainMenu.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/target/classes/Settings.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/target/classes/Settings.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,7 +29,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/GalaxyQuest/assets/BackgroundSprites" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/GalaxyQuest/assets/MovableObjects" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
