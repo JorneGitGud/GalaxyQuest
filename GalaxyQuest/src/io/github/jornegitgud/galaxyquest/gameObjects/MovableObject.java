@@ -52,12 +52,16 @@ public class MovableObject extends GameObject {
                 break;
         }
 
-        if(nextTile == null || (this.getClass().getName() != Player.class.getName() && nextTile.containsAny(Planet.class, Meteorite.class, SpacePirate.class))) {
+        if(nextTile == null
+                || (!(this instanceof Player) && nextTile.containsAny(Planet.class, Meteorite.class, SpacePirate.class))
+                || (!(this instanceof Player) && nextTile.contains(Wormhole.class) && nextTile.getFirst(Wormhole.class).isActive())) {
             direction = Direction.randomDirection();
             this.moving = false;
             this.move(frames, direction);
             return true;
         }
+
+
 
         if (this instanceof HasDirection)
             ((HasDirection) this).setDirection(direction);
