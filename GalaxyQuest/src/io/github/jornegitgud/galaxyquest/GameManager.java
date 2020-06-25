@@ -104,13 +104,13 @@ public class GameManager {
                 ((SpacePirate) object).onMoveEnded = (spacePirate) -> {
                     checkCurrentTileMoveableObject(spacePirate);
                     if(!playerOnPlanet) {
-                        while (!spacePirate.move(22, spacePirate.getTile().getDirectionTo(galaxy.getPlayer().getTile()))) {continue;}
+                        while (!spacePirate.move(20, spacePirate.getTile().getDirectionTo(galaxy.getPlayer().getTile()))) {continue;}
                     }
                     else //try once but don't bother retrying as player is on planet
-                        spacePirate.move(22, spacePirate.getTile().getDirectionTo(galaxy.getPlayer().getTile()));
+                        spacePirate.move(20, spacePirate.getTile().getDirectionTo(galaxy.getPlayer().getTile()));
                 };
                 var spacePirate = (SpacePirate) object;
-                spacePirate.move(22, spacePirate.getTile().getDirectionTo(galaxy.getPlayer().getTile()));
+                spacePirate.move(20, spacePirate.getTile().getDirectionTo(galaxy.getPlayer().getTile()));
             }
         }
 
@@ -131,7 +131,7 @@ public class GameManager {
             for(GameObject gameObject : galaxy.getObjects())
                 if(gameObject instanceof SpacePirate && !((SpacePirate) gameObject).isMoving()) {
                     var spacePirate = (SpacePirate)gameObject;
-                    spacePirate.move(22, spacePirate.getTile().getDirectionTo(player.getTile()));
+                    spacePirate.move(20, spacePirate.getTile().getDirectionTo(player.getTile()));
                 }
         }
 
