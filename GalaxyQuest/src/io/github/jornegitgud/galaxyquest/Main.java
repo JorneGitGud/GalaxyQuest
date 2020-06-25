@@ -1,6 +1,7 @@
 package io.github.jornegitgud.galaxyquest;
 
 import io.github.jornegitgud.galaxyquest.controllers.MainMenuController;
+import io.github.jornegitgud.galaxyquest.controllers.SettingsController;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -14,18 +15,22 @@ public class Main extends Application {
         launch(args);
     }
     private Scene mainMenuScene;
+    private Scene settingsScene;
 
     @Override
     public void start(Stage stage) throws Exception {
         stage.setTitle("Galaxy Quest");
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getClassLoader().getResource("GalaxyQuestMainMenu.fxml"));
+        FXMLLoader fxmlLoaderMenu = new FXMLLoader(getClass().getClassLoader().getResource("GalaxyQuestMainMenu.fxml"));
+        FXMLLoader fxmlLoaderSettings = new FXMLLoader( getClass().getClassLoader().getResource("Settings.fxml"));
 
         stage.setTitle("Main Menu");
-        this.mainMenuScene = new Scene(fxmlLoader.load(), 768, 768);
+        this.mainMenuScene = new Scene(fxmlLoaderMenu.load(), 768, 768);
+        this.settingsScene = new Scene( fxmlLoaderSettings.load(), 768,768);
         stage.setScene(mainMenuScene);
         stage.show();
 
-        var controller = (MainMenuController) fxmlLoader.getController();
+        var controller = (MainMenuController) fxmlLoaderMenu.getController();
+        var settingsController = (SettingsController) fxmlLoaderSettings.getController();
 
         controller.onStartButtonClicked = (event) -> {
             //eventually react to main menu buttons here
@@ -44,6 +49,14 @@ public class Main extends Application {
 
         controller.onExitButtonClicked = (event) -> {
             stage.close();
+        };
+
+        controller.onSettingsbuttonClicked = (event) -> {
+            stage.setScene(settingsScene);
+        };
+
+        settingsController.onSettingsBackClicked = (event) -> {
+            stage.setScene(mainMenuScene);
         };
 
     }
