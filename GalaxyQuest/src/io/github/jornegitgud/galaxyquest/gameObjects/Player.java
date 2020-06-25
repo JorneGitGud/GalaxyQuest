@@ -3,7 +3,6 @@ package io.github.jornegitgud.galaxyquest.gameObjects;
 import io.github.jornegitgud.galaxyquest.Direction;
 import io.github.jornegitgud.galaxyquest.HasDirection;
 import io.github.jornegitgud.galaxyquest.sprites.DirectionalSpriteList;
-import io.github.jornegitgud.galaxyquest.Tile;
 
 import java.util.function.Consumer;
 
@@ -15,7 +14,7 @@ public class Player extends MovableObject implements HasDirection {
     private String name;
     private Direction direction;
 
-    public Consumer<HasDirection> onDirectionChanged;
+    public Consumer<Player> onDirectionChanged;
 
 
 // even checken hoe we de player naam op halen en setten in de game

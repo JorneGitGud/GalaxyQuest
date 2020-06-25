@@ -88,7 +88,7 @@ public class GameManager {
         };
 
         galaxy.getPlayer().onDirectionChanged = (player) -> {
-            renderer.updateDirection((GameObject) player);
+            renderer.updateDirection(player);
         };
 
         for(var object : galaxy.getObjects()) {
@@ -100,12 +100,17 @@ public class GameManager {
                 var meteorite = (Meteorite) object;
                 meteorite.move(15, Direction.randomDirection());
             } else if (object instanceof SpacePirate) {
-                ((SpacePirate) object).onMoveEnded = (spacePirate) -> {
-                    checkCurrentTileMoveableObject(spacePirate);
-                    spacePirate.move(20, spacePirate.getTile().getDirectionTo(galaxy.getPlayer().getTile()));
-                };
                 var spacePirate = (SpacePirate) object;
+                spacePirate.onMoveEnded = (pirate) -> {
+                    checkCurrentTileMoveableObject(pirate);
+                    pirate.move(20, pirate.getTile().getDirectionTo(galaxy.getPlayer().getTile()));
+                };
+                spacePirate.onDirectionChanged = (pirate) -> {
+                    renderer.updateDirection(pirate);
+                };
                 spacePirate.move(20, spacePirate.getTile().getDirectionTo(galaxy.getPlayer().getTile()));
+            }
+            if(object instanceof HasDirection) {
             }
         }
 
