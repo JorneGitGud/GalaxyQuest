@@ -14,8 +14,10 @@ public class Main extends Application {
     public static void main(String[] args) {
         launch(args);
     }
+
     private Scene mainMenuScene;
     private Scene settingsScene;
+    private GalaxySettings galaxySettings = new GalaxySettings();
 
     @Override
     public void start(Stage stage) throws Exception {
@@ -32,16 +34,11 @@ public class Main extends Application {
         var settingsController = (SettingsController) fxmlLoaderSettings.getController();
 
         controller.onStartButtonClicked = (event) -> {
-            //eventually react to main menu buttons here
-            var galaxySettings = new GalaxySettings(); //will be received from mainMenu later
-            galaxySettings.setWidth(12);
-            galaxySettings.setHeight(12);
-            galaxySettings.setPirateCount(0);
-            //test
             try {
-                GameManager gameManager = new GameManager(stage, galaxySettings);
+                GameManager gameManager = new GameManager(stage, this.galaxySettings);
                 gameManager.onGameEnded = (gameResult) -> {
                     stage.setScene(this.mainMenuScene);
+                    this.galaxySettings.unfreezeSettings();
                 };
             } catch (IOException e) {
                 e.printStackTrace();
@@ -54,9 +51,11 @@ public class Main extends Application {
 
         controller.onSettingsbuttonClicked = (event) -> {
             stage.setScene(settingsScene);
+            settingsController.setSettings(galaxySettings);
         };
 
-        settingsController.onSettingsBackClicked = (event) -> {
+        settingsController.onSettingsBackClicked = (settings) -> {
+            this.galaxySettings = settings;
             stage.setScene(mainMenuScene);
         };
 

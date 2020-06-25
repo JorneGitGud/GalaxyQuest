@@ -45,6 +45,8 @@ public class GalaxySettings {
         settingsFrozen = true;
     }
 
+    public void unfreezeSettings() { settingsFrozen = false;}
+
     public void setWidth(int width) {
         if (width > LIMIT_MIN_LENGTH && width < LIMIT_MAX_LENGTH && !settingsFrozen && totalObjects < this.height * width * PERCENT_POPULATED) {
             this.width = width;
