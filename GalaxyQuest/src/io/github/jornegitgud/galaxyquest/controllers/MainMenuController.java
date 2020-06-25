@@ -6,8 +6,12 @@ import javafx.fxml.FXML;
 import java.util.function.Consumer;
 
 public class MainMenuController {
-    public Consumer<ActionEvent> onStartButtonClicked = (event) -> {};
-    public Consumer<ActionEvent> onExitButtonClicked = (event) -> {};
+    public Consumer<ActionEvent> onStartButtonClicked = (event) -> {
+    };
+    public Consumer<ActionEvent> onExitButtonClicked = (event) -> {
+    };
+    public Consumer<ActionEvent> onSettingsbuttonClicked = (event) -> {
+    };
 
     @FXML
     public void startGame(ActionEvent event) {
@@ -15,5 +19,13 @@ public class MainMenuController {
     }
 
     @FXML
-    public void exitGame(ActionEvent event) { this.onExitButtonClicked.accept(event); }
+    public void exitGame(ActionEvent event) {
+        this.onExitButtonClicked.accept(event);
+    }
+
+    @FXML
+    public void openSettings(ActionEvent event) {
+        this.onSettingsbuttonClicked.accept(event);
+    }
 }
+

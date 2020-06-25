@@ -14,11 +14,11 @@
          <image>
             <Image url="GalaxyMenugif.gif" />
          </image></ImageView>
-        <Button blendMode="SCREEN" defaultButton="true" layoutX="410.0" layoutY="39.0" mnemonicParsing="false" style="-fx-background-color: BLUE;" text="Start Game" textFill="WHITE" onAction="#startGame"/>
-        <Button layoutX="658.0" layoutY="39.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="76.0" style="-fx-background-color: BLUE;" text="Credits" textFill="WHITE" />
+        <Button blendMode="SCREEN" defaultButton="true" layoutX="410.0" layoutY="39.0" mnemonicParsing="false" style="-fx-background-color: #2295c7;" text="Start Game" textFill="WHITE" onAction="#startGame"/>
+        <Button layoutX="658.0" layoutY="39.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="76.0" style="-fx-background-color: #2295c7;" text="Credits" textFill="WHITE" />
 
-        <Button layoutX="535.0" layoutY="39.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="76.0" style="-fx-background-color: BLUE;" text="Settings" textFill="WHITE" />
-        <Button layoutX="535.0" layoutY="94.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="76.0" style="-fx-background-color: BLUE;" text="Exit Game" textFill="WHITE" onAction="#exitGame" />
+        <Button layoutX="535.0" layoutY="39.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="76.0" style="-fx-background-color: #2295c7;" text="Settings" textFill="WHITE" onAction="#openSettings"/>
+        <Button layoutX="535.0" layoutY="94.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="76.0" style="-fx-background-color: #2295c7;" text="Exit Game" textFill="WHITE" onAction="#exitGame" />
       <VBox layoutX="54.0" layoutY="240.0" prefHeight="246.0" prefWidth="177.0">
          <children>
             <Label prefHeight="49.0" prefWidth="177.0" text=" RONALD : 1000000" textFill="RED">
