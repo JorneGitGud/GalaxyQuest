@@ -22,8 +22,7 @@ public class Main extends Application {
         stage.setTitle("Galaxy Quest");
         FXMLLoader fxmlLoaderMenu = new FXMLLoader(getClass().getClassLoader().getResource("GalaxyQuestMainMenu.fxml"));
         FXMLLoader fxmlLoaderSettings = new FXMLLoader( getClass().getClassLoader().getResource("Settings.fxml"));
-
-        stage.setTitle("Main Menu");
+        
         this.mainMenuScene = new Scene(fxmlLoaderMenu.load(), 768, 768);
         this.settingsScene = new Scene( fxmlLoaderSettings.load(), 768,768);
         stage.setScene(mainMenuScene);
