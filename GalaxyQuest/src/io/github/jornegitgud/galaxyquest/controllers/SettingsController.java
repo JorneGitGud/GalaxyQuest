@@ -19,17 +19,22 @@ public class SettingsController {
         int size = Math.max(settings.getWidth(), settings.getHeight());
         galaxySizeSlider.setValue(size);
         galaxySizeLabel.setText(String.valueOf(size));
+
+        planetSlider.setValue(settings.getPlanetCount());
+        planetCountLabel.setText(String.valueOf(settings.getPlanetCount()));
+
+        meteoriteSlider.setValue(settings.getMeteoriteCount());
+        meteoriteCountLabel.setText(String.valueOf(settings.getMeteoriteCount()));
+
+        pirateSlider.setValue(settings.getPirateCount());
+        pirateCountLabel.setText(String.valueOf(settings.getPirateCount()));
     }
 
     @FXML
-    private Slider galaxySizeSlider, planetSlider, pirateSlider, meteorSlider;
+    private Slider galaxySizeSlider, planetSlider, pirateSlider, meteoriteSlider;
 
     @FXML
-    private Label galaxySizeLabel;
-
-    private double planetCount;
-    private double pirateCount;
-    private double meteoriteCount;
+    private Label galaxySizeLabel, planetCountLabel, meteoriteCountLabel, pirateCountLabel;
 
     public Consumer<GalaxySettings> onSettingsBackClicked = (settings) -> {
     };
@@ -52,17 +57,23 @@ public class SettingsController {
     
     @FXML
     public void setPlanetSlider() {
-        this.planetCount = planetSlider.getValue();
+        int value = (int) planetSlider.getValue();
+        planetCountLabel.setText(String.valueOf(value));
+        settings.setPlanetCount(value);
     }
 
     @FXML
     public void setPirateCount() {
-        this.pirateCount = pirateSlider.getValue();
+        int value = (int) pirateSlider.getValue();
+        pirateCountLabel.setText(String.valueOf(value));
+        settings.setPirateCount(value);
     }
 
     @FXML
     public void setMeteoriteCount() {
-        this.meteoriteCount = meteorSlider.getValue();
+        int value = (int) meteoriteSlider.getValue();
+        meteoriteCountLabel.setText(String.valueOf(value));
+        settings.setMeteoriteCount(value);
     }
 
 }
