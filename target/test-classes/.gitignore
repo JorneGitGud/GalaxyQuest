@@ -12,7 +12,6 @@
 
 # Package Files #
 .idea/sonarlint
-*.jar
 *.war
 *.nar
 *.ear
