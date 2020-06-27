@@ -2,13 +2,11 @@ package io.github.jornegitgud.galaxyquest;
 
 import io.github.jornegitgud.galaxyquest.controllers.MainMenuController;
 import io.github.jornegitgud.galaxyquest.controllers.SettingsController;
-import io.github.jornegitgud.galaxyquest.gameObjects.Player;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.TextInputDialog;
 import javafx.stage.Stage;
-import javafx.stage.WindowEvent;
 
 import java.io.IOException;
 import java.util.Optional;
@@ -85,9 +83,7 @@ public class Main extends Application {
 
 
         Optional<String> result = dialog.showAndWait();
-        if (result.isPresent()){
-            return result.get();
-        } else return "Player";
+        return result.orElse("Player");
 
     }
 
