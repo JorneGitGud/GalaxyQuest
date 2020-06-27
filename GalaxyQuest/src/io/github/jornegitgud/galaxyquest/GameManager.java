@@ -69,7 +69,6 @@ public class GameManager {
             }
         };
 
-        mainLoop.start();
         renderer.onStageClosed = (closedStage) -> {
             mainLoop.stop();
         };
@@ -93,6 +92,8 @@ public class GameManager {
         galaxy.getPlayer().onDirectionChanged = (player) -> {
             renderer.updateDirection(player);
         };
+
+        mainLoop.start();
 
         for (var object : galaxy.getObjects()) {
             if (object instanceof Meteorite) {
@@ -161,7 +162,7 @@ public class GameManager {
     }
 
 
-    private void populateGalaxy(Galaxy galaxy) throws IOException {
+    protected void populateGalaxy(Galaxy galaxy) throws IOException {
         ArrayList<Coordinate> availableCoordinates = new ArrayList<Coordinate>();
         Random random = new Random();
 
@@ -214,6 +215,10 @@ public class GameManager {
         galaxy.setGalaxyTile(tempX, tempY, this.wormhole);
         availableCoordinates.remove(tempPos);
 
+    }
+
+    public Galaxy getGalaxy(GalaxyRenderer renderer) {
+        return this.galaxy;
     }
 }
 

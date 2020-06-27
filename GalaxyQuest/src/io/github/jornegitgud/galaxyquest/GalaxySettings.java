@@ -1,5 +1,7 @@
 package io.github.jornegitgud.galaxyquest;
 
+import javax.swing.text.DefaultEditorKit;
+
 public class GalaxySettings {
     private final double PERCENT_POPULATED = 0.5;
     //private final int WORMHOLE_COUNT = 1;
@@ -65,6 +67,8 @@ public class GalaxySettings {
     }
 
     public void setPlanetCount(int planetCount) {
+        if(planetCount < Defaults.PLANET_COUNT)
+            planetCount = Defaults.PLANET_COUNT;
         if (!settingsFrozen && planetCount + pirateCount + meteoriteCount < galaxySize * PERCENT_POPULATED) {
             this.planetCount = planetCount;
             this.totalObjects = planetCount + pirateCount + meteoriteCount;
@@ -79,6 +83,8 @@ public class GalaxySettings {
     }
 
     public void setMeteoriteCount(int meteoriteCount) {
+        if(meteoriteCount < Defaults.METEORITE_COUNT)
+            meteoriteCount = Defaults.METEORITE_COUNT;
         if (!settingsFrozen && planetCount + pirateCount + meteoriteCount < galaxySize * PERCENT_POPULATED) {
             this.meteoriteCount = meteoriteCount;
             this.totalObjects = planetCount + pirateCount + meteoriteCount;

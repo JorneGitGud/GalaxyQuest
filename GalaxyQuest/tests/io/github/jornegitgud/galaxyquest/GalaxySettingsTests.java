@@ -45,47 +45,56 @@ public class GalaxySettingsTests {
     @Test
     @DisplayName("Setters test")
     void settersTest(){
-        GalaxySettings gameObject = new GalaxySettings(50, 50, 10, 10, false, 10);
-        gameObject.setWidth(10);
-        gameObject.setHeight(10);
-        gameObject.setPlanetCount(5);
-        gameObject.setPirateCount(3);
-        gameObject.setMeteoriteCount(3);
+        GalaxySettings galaxySettings = new GalaxySettings(50, 50, 10, 10, false, 10);
+        galaxySettings.setWidth(10);
+        galaxySettings.setHeight(10);
+        galaxySettings.setPlanetCount(5);
+        galaxySettings.setPirateCount(3);
+        galaxySettings.setMeteoriteCount(6);
 
         //should work
-        Assertions.assertEquals(10,gameObject.getWidth());
-        Assertions.assertEquals(10,gameObject.getHeight());
-        Assertions.assertEquals(5,gameObject.getPlanetCount());
-        Assertions.assertEquals(3,gameObject.getPirateCount());
-        Assertions.assertEquals(3,gameObject.getMeteoriteCount());
+        Assertions.assertEquals(10,galaxySettings.getWidth());
+        Assertions.assertEquals(10,galaxySettings.getHeight());
+        Assertions.assertEquals(5,galaxySettings.getPlanetCount());
+        Assertions.assertEquals(3,galaxySettings.getPirateCount());
+        Assertions.assertEquals(6,galaxySettings.getMeteoriteCount());
 
 
         //shouldn't work
-        gameObject.setWidth(200);
-        gameObject.setHeight(200);
-        gameObject.setPlanetCount(200);
-        gameObject.setPirateCount(300);
-        gameObject.setMeteoriteCount(30000000);
+        galaxySettings.setWidth(200);
+        galaxySettings.setHeight(200);
+        galaxySettings.setPlanetCount(200);
+        galaxySettings.setPirateCount(300);
+        galaxySettings.setMeteoriteCount(30000000);
 
-        Assertions.assertEquals(10,gameObject.getWidth());
-        Assertions.assertEquals(10,gameObject.getHeight());
-        Assertions.assertEquals(5,gameObject.getPlanetCount());
-        Assertions.assertEquals(3,gameObject.getPirateCount());
-        Assertions.assertEquals(3,gameObject.getMeteoriteCount());
+        Assertions.assertEquals(10,galaxySettings.getWidth());
+        Assertions.assertEquals(10,galaxySettings.getHeight());
+        Assertions.assertEquals(5,galaxySettings.getPlanetCount());
+        Assertions.assertEquals(3,galaxySettings.getPirateCount());
+        Assertions.assertEquals(6,galaxySettings.getMeteoriteCount());
 
-        gameObject.freezeSettings();
-        Assertions.assertEquals(false, gameObject.getCanBeAltered());
-        gameObject.setWidth(12);
-        gameObject.setHeight(12);
-        gameObject.setPlanetCount(8);
-        gameObject.setPirateCount(7);
-        gameObject.setMeteoriteCount(9);
+        galaxySettings.freezeSettings();
+        Assertions.assertEquals(false, galaxySettings.getCanBeAltered());
+        galaxySettings.setWidth(12);
+        galaxySettings.setHeight(12);
+        galaxySettings.setPlanetCount(8);
+        galaxySettings.setPirateCount(7);
+        galaxySettings.setMeteoriteCount(9);
 
         //should work
-        Assertions.assertEquals(10,gameObject.getWidth());
-        Assertions.assertEquals(10,gameObject.getHeight());
-        Assertions.assertEquals(5,gameObject.getPlanetCount());
-        Assertions.assertEquals(3,gameObject.getPirateCount());
-        Assertions.assertEquals(3,gameObject.getMeteoriteCount());
+        Assertions.assertEquals(10,galaxySettings.getWidth());
+        Assertions.assertEquals(10,galaxySettings.getHeight());
+        Assertions.assertEquals(5,galaxySettings.getPlanetCount());
+        Assertions.assertEquals(3,galaxySettings.getPirateCount());
+        Assertions.assertEquals(6,galaxySettings.getMeteoriteCount());
+        galaxySettings.unfreezeSettings();
+
+        //requirement: always at least 3 planets
+        galaxySettings.setPlanetCount(0);
+        Assertions.assertTrue(galaxySettings.getPlanetCount() >= Defaults.PLANET_COUNT);
+
+        //requirement: always at least 5 meteorites
+        galaxySettings.setMeteoriteCount(0);
+        Assertions.assertTrue(galaxySettings.getMeteoriteCount() >= Defaults.METEORITE_COUNT);
     }
 }
