@@ -14,6 +14,8 @@ import java.io.IOException;
 import java.util.Optional;
 
 public class Main extends Application {
+    protected static HighScore[] highScoresList;
+
     public static void main(String[] args) {
         launch(args);
     }
@@ -25,6 +27,12 @@ public class Main extends Application {
 
     @Override
     public void start(Stage stage) throws Exception {
+
+        highScoresList = new HighScore[5];
+        for(int i = 0 ; i < highScoresList.length; i++){
+            highScoresList[i] = new HighScore();
+        }
+
         stage.setTitle("Galaxy Quest");
         FXMLLoader fxmlLoaderMenu = new FXMLLoader(getClass().getClassLoader().getResource("GalaxyQuestMainMenu.fxml"));
         FXMLLoader fxmlLoaderSettings = new FXMLLoader( getClass().getClassLoader().getResource("Settings.fxml"));
@@ -71,16 +79,18 @@ public class Main extends Application {
     }
     public String askForName(){
         TextInputDialog dialog = new TextInputDialog("Wouter");
-        dialog.setTitle("Text Input Dialog");
-        dialog.setHeaderText("Look, a Text Input Dialog");
-        dialog.setContentText("Please enter your name:");
+        dialog.setTitle("player name");
+        dialog.setHeaderText("Your score might end up in the highscores list");
+        dialog.setContentText("Please enter your name: (6 Characters)");
 
-// Traditional way to get the response value.
+
         Optional<String> result = dialog.showAndWait();
         if (result.isPresent()){
             return result.get();
         } else return "Player";
 
     }
+
+
 
 }

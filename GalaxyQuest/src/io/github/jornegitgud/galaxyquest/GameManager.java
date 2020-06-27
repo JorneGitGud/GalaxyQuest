@@ -12,7 +12,7 @@ import java.util.Random;
 import java.util.function.Consumer;
 
 public class GameManager {
-    HighScore[] highScoresList;
+
     GalaxyRenderer renderer;
     KeyboardListener keyboardListener;
     Galaxy galaxy;
@@ -41,10 +41,7 @@ public class GameManager {
         galaxy = new Galaxy(galaxySettings);
 
         populateGalaxy(galaxy);
-        highScoresList = new HighScore[5];
-        for (int i = 0; i < highScoresList.length; i++) {
-            highScoresList[i] = new HighScore();
-        }
+
         renderer = new GalaxyRenderer(stage, galaxySettings);
         keyboardListener = new KeyboardListener(renderer.getScene());
         renderer.renderGalaxy(galaxy);
@@ -164,7 +161,6 @@ public class GameManager {
         if (win) {
 
             highScore = new HighScore((int) (System.currentTimeMillis() - startTime) / 1000, galaxy.getSettings(), this);
-
             addScore(highScore);
         }
 
@@ -228,35 +224,24 @@ public class GameManager {
         availableCoordinates.remove(tempPos);
 
     }
-
-    public String getPlayerName() {
-        return playerName;
-    }
-
-    public HighScore[] getHighScoreList() {
-        return highScoresList;
-    }
-
-
-
-
     public void addScore(HighScore highScore) {
 
-        for (int i = 0; i < this.highScoresList.length; i++) {
-            if (highScore.getScore() > this.highScoresList[i].getScore()) {
-                HighScore temp = this.highScoresList[i];
-                this.highScoresList[i] = highScore;
+        for (int i = 0; i < Main.highScoresList.length; i++) {
+            if (highScore.getScore() > Main.highScoresList[i].getScore()) {
+                HighScore temp = Main.highScoresList[i];
+                Main.highScoresList[i] = highScore;
                 addScore(temp);
                 break;
             }
+            for(HighScore h : Main.highScoresList){
+                System.out.println( h.getName() +" : "+h.getScore());
+            }
         }
-
     }
 
-    public void printScores(){
-        for(HighScore h : highScoresList){
-            System.out.println( h.getName()+" : " + h.getScore());
-        }
+
+    public String getPlayerName() {
+        return playerName;
     }
 }
 

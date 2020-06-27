@@ -4,7 +4,7 @@ package io.github.jornegitgud.galaxyquest;
 public class HighScore {
 
     private String name = "default";
-    private int score = 0;
+    private int score = 50;
     private double setSecPerTile = 0.5;
     private int planetValue = 100;
     private int obstacleValue = 100;
