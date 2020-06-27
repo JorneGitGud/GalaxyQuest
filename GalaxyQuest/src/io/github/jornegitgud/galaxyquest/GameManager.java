@@ -165,7 +165,7 @@ public class GameManager {
 
             highScore = new HighScore((int) (System.currentTimeMillis() - startTime) / 1000, galaxy.getSettings(), this);
 
-            addToHighScoreList(highScore);
+            addScore(highScore);
         }
 
         renderer.destroyScene();
@@ -237,16 +237,25 @@ public class GameManager {
         return highScoresList;
     }
 
-    public void addToHighScoreList(HighScore highScore) {
 
-        for (int i = 0; i < highScoresList.length - 1; i++) {
 
-            if (highScore.getScore() > highScoresList[i].getScore()) {
-                HighScore temp = highScoresList[i];
+
+    public void addScore(HighScore highScore) {
+
+        for (int i = 0; i < this.highScoresList.length; i++) {
+            if (highScore.getScore() > this.highScoresList[i].getScore()) {
+                HighScore temp = this.highScoresList[i];
                 this.highScoresList[i] = highScore;
-                highScoresList[i + 1] = temp;
+                addScore(temp);
                 break;
             }
+        }
+
+    }
+
+    public void printScores(){
+        for(HighScore h : highScoresList){
+            System.out.println( h.getName()+" : " + h.getScore());
         }
     }
 }

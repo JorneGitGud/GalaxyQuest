@@ -43,3 +43,5 @@ x
 HGalaxyQuest/tests/io/github/jornegitgud/galaxyquest/SpriteListTests.java,f\e\fe14be458794a128ce99e1a30961adf6771708b9
 „
 TGalaxyQuest/src/io/github/jornegitgud/galaxyquest/sprites/DirectionalSpriteList.java,c\4\c47b34e755463e6d6e06021e21a07fa2330328df
+|
+LGalaxyQuest/tests/io/github/jornegitgud/galaxyquest/GalaxySettingsTests.java,7\4\74a5733dd761aef2fbcd08ac0e2d969476c596fa
