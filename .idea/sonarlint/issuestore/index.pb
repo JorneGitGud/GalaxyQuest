@@ -29,3 +29,17 @@ IGalaxyQuest/src/io/github/jornegitgud/galaxyquest/gameObjects/Player.java,e\d\
 TGalaxyQuest/src/io/github/jornegitgud/galaxyquest/gameObjects/GameObjectFactory.java,f\5\f5047413015967870e681042d5be7ca29a1cec77
 }
 MGalaxyQuest/src/io/github/jornegitgud/galaxyquest/gameObjects/GameObject.java,8\b\8bb28d715cedda04e8d516dc4d96cfd7112827c1
+…
+UGalaxyQuest/src/io/github/jornegitgud/galaxyquest/controllers/SettingsController.java,d\d\ddc1d3589f484a8886339df3be7f97bbd5327f83
+…
+UGalaxyQuest/src/io/github/jornegitgud/galaxyquest/controllers/MainMenuController.java,5\3\53d098fce6b743b60afa7702023dd1e63abfae9f
+o
+?GalaxyQuest/src/io/github/jornegitgud/galaxyquest/Defaults.java,2\f\2f76c4ae9ac209d28680e103f9973c9833e9ed5a
+k
+;GalaxyQuest/src/io/github/jornegitgud/galaxyquest/Main.java,c\2\c2af74eda231fc8af0ef5b0c9b5c77c3a10e61c8
+
+OGalaxyQuest/src/io/github/jornegitgud/galaxyquest/sprites/SimpleSpriteList.java,d\4\d4f7c2c18f4f33a371919ef5adcee329de0b5e55
+x
+HGalaxyQuest/tests/io/github/jornegitgud/galaxyquest/SpriteListTests.java,f\e\fe14be458794a128ce99e1a30961adf6771708b9
+„
+TGalaxyQuest/src/io/github/jornegitgud/galaxyquest/sprites/DirectionalSpriteList.java,c\4\c47b34e755463e6d6e06021e21a07fa2330328df

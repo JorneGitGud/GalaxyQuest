@@ -83,6 +83,8 @@ public class DirectionalSpriteList implements SpriteList {
      */
     @Override
     public Image getNextSprite(Direction dir) {
+        if(sprites.get(dir).size() == 0)
+            return null;
         if (lastDirection != dir)
             frameCounter = -1;
         else if (frameCounter == -1) //randomize start frame on app start
@@ -91,7 +93,7 @@ public class DirectionalSpriteList implements SpriteList {
         ArrayList<Image> frames = sprites.get(dir);
 
         frameCounter++;
-        if (frameCounter == frames.size())
+        if (frameCounter >= frames.size())
             frameCounter = 0;
 
         lastDirection = dir;

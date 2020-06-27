@@ -89,15 +89,14 @@ public class SpriteListTests {
     @DisplayName("Directional sprite list adds array successfully")
     void setDirectionalSpriteList_AddsArraySuccessfully() throws IOException {
         DirectionalSpriteList directionalSpriteList = new DirectionalSpriteList(Direction.RIGHT);
-        var spriteList = new DirectionalSpriteList(Direction.RIGHT);
 
         var sprites = new ArrayList<Image>();
         sprites.add(FileHelper.createFxImage("assets/placeholder.png"));
         sprites.add(FileHelper.createFxImage("assets/placeholder.png"));
         sprites.add(FileHelper.createFxImage("assets/placeholder.png"));
 
-        spriteList.addSprites(Direction.UP, sprites);
-        spriteList.addSprites(Direction.LEFT, sprites);
+        directionalSpriteList.addSprites(Direction.UP, sprites);
+        directionalSpriteList.addSprites(Direction.LEFT, sprites);
         Assertions.assertTrue(directionalSpriteList.getSprites(Direction.RIGHT).size() == 0);
         Assertions.assertTrue(directionalSpriteList.getSprites(Direction.LEFT).size() == sprites.size());
         Assertions.assertTrue(directionalSpriteList.getSprites(Direction.DOWN).size() == 0);

@@ -28,7 +28,7 @@ public class SimpleSpriteList implements SpriteList {
     }
 
     public void addSprites(ArrayList<Image> sprites) {
-        sprites.addAll(sprites);
+        this.sprites.addAll(sprites);
     }
 
     public ArrayList<Image> getSprites() {
