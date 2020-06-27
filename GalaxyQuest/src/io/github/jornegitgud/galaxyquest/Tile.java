@@ -14,7 +14,6 @@ public class Tile {
     private Tile tileLeft;
 
     private Coordinate coordinate;
-    //MovableObject objectOnTile = new MovableObject();
     private ArrayList<GameObject> gameObjects = new ArrayList<>();
 
     public Tile(Coordinate coordinate) {
@@ -69,7 +68,7 @@ public class Tile {
 
     public boolean contains(Class tClass) {
         for(GameObject object : gameObjects) {
-            if(object.getClass().getName().equals(tClass.getName()))
+            if(object.getClass().isAssignableFrom(tClass))
                 return true;
         }
         return false;
@@ -87,7 +86,8 @@ public class Tile {
 
     public <T extends GameObject> T getFirst(Class<T> tClass) {
         for(GameObject object : gameObjects) {
-            if (object.getClass().getName().equals(tClass.getName()))
+            if(object.getClass().isAssignableFrom(tClass))
+                //noinspection unchecked <-- type has actually been checked by comparing classes
                 return (T) object;
         }
         return null;

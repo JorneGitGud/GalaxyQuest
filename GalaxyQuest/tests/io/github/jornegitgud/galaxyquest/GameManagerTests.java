@@ -150,6 +150,7 @@ public class GameManagerTests {
         var galaxy = gameManager2.getGalaxy();
         var objects = galaxy.getObjects();
         Wormhole wormhole = null;
+
         for (var object : objects) {
             if (object instanceof Wormhole) {
                 wormhole = (Wormhole) object;
@@ -163,7 +164,8 @@ public class GameManagerTests {
 
         for(var object : objects)
             if(object instanceof Planet) {
-                gameManager2.setPlanetVisited((Planet)object);
+                player.setTile(object.getTile());
+                player.onMoveEnded.accept(player);
                 Assertions.assertTrue(((Planet) object).hasBeenVisited());
                 planetsActivated++;
                 if(planetsActivated < galaxy.getSettings().getPlanetCount())

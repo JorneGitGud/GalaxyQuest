@@ -46,7 +46,8 @@ public class Main extends Application {
 
         controller.onStartButtonClicked = (event) -> {
             try {
-                GameManager gameManager = new GameManager(stage, this.galaxySettings);
+                GalaxyRenderer galaxyRenderer = new GalaxyRenderer(stage, this.galaxySettings);
+                GameManager gameManager = new GameManager(stage, this.galaxySettings, galaxyRenderer);
 
                 gameManager.onGameEnded = (gameResult) -> {
                     if(gameResult.win) {

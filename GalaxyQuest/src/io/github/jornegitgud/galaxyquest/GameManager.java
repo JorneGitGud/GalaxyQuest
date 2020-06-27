@@ -16,9 +16,7 @@ public class GameManager {
     private KeyboardListener keyboardListener;
     private Galaxy galaxy;
     private AnimationTimer mainLoop;
-    public Consumer<GameResult> onGameEnded = (result) -> {
-    };
-
+    public Consumer<GameResult> onGameEnded = (result) -> { };
 
     private long startTime;
 
@@ -29,15 +27,14 @@ public class GameManager {
     private int planetsVisited = 0;
     private Wormhole wormhole;
 
-    public GameManager(Stage stage, GalaxySettings galaxySettings) throws IOException {
+    public GameManager(Stage stage, GalaxySettings galaxySettings, GalaxyRenderer galaxyRenderer) throws IOException {
 
         startTime = System.currentTimeMillis();
         galaxySettings.freezeSettings();
         galaxy = new Galaxy(galaxySettings);
+        this.renderer = galaxyRenderer;
 
         populateGalaxy(galaxy);
-
-        renderer = new GalaxyRenderer(stage, galaxySettings);
         keyboardListener = new KeyboardListener(renderer.getScene());
         renderer.renderGalaxy(galaxy);
 
