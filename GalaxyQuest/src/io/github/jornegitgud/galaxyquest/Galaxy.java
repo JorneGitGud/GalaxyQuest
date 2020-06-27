@@ -13,11 +13,9 @@ public class Galaxy {
     private ArrayList<GameObject> objects = new ArrayList<>();
     private Player player;
 
-    private String name;
 
+    public Galaxy(GalaxySettings settings) {
 
-    public Galaxy(String name, GalaxySettings settings) {
-        this.name = name;
         this.settings = settings;
         this.galaxyTiles = new Tile[settings.getHeight()][settings.getWidth()];
 
@@ -54,14 +52,14 @@ public class Galaxy {
 
     //Asking for GameManager to ensure ol
     public Tile getGalaxyTile(GameManager gameManager, int xPos, int yPos) {
-        if (yPos < this.galaxyTiles.length && xPos < this.galaxyTiles[0].length && xPos >= 0 && yPos >= 0){
+        if (yPos < this.galaxyTiles.length && xPos < this.galaxyTiles[0].length && xPos >= 0 && yPos >= 0) {
             return this.galaxyTiles[yPos][xPos];
         }
         return null;
     }
 
     public Tile getGalaxyTile(GalaxyRenderer galaxyRenderer, int xPos, int yPos) {
-        if (yPos < this.galaxyTiles.length && xPos < this.galaxyTiles[0].length && xPos >= 0 && yPos >= 0){
+        if (yPos < this.galaxyTiles.length && xPos < this.galaxyTiles[0].length && xPos >= 0 && yPos >= 0) {
             return this.galaxyTiles[yPos][xPos];
         }
         return null;
@@ -71,14 +69,10 @@ public class Galaxy {
         return settings;
     }
 
-    public String getName() {
-        return name;
-    }
-
-    public void setGalaxyTile(int x, int y, GameObject gameObject){
+    public void setGalaxyTile(int x, int y, GameObject gameObject) {
         galaxyTiles[x][y].addGameObject(gameObject);
         gameObject.setTile(galaxyTiles[x][y]);
-        if(!objects.contains(gameObject))
+        if (!objects.contains(gameObject))
             objects.add(gameObject);
     }
 
@@ -86,12 +80,12 @@ public class Galaxy {
         return objects;
     }
 
-   public void setPlayer(Player player) {
+    public void setPlayer(Player player) {
         this.player = player;
-   }
+    }
 
-   public Player getPlayer() {
+    public Player getPlayer() {
         return this.player;
-   }
+    }
 }
 

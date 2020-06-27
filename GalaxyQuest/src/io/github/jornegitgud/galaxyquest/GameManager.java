@@ -5,17 +5,22 @@ import javafx.animation.AnimationTimer;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Random;
 import java.util.function.Consumer;
 
 public class GameManager {
-    ArrayList<HighScore> highScores = new ArrayList<>();
+    HighScore[] highScoresList;
     GalaxyRenderer renderer;
     KeyboardListener keyboardListener;
     Galaxy galaxy;
+    String playerName;
     AnimationTimer mainLoop;
-    Consumer<GameResult> onGameEnded = (result) -> { };
+    Consumer<GameResult> onGameEnded = (result) -> {
+    };
+
 
     private long startTime;
 
@@ -26,14 +31,20 @@ public class GameManager {
     private int planetsVisited = 0;
     private Wormhole wormhole;
 
+
     @SuppressWarnings("UnnecessaryContinue")
-    public GameManager(Stage stage, GalaxySettings galaxySettings) throws IOException {
+    public GameManager(String playerName, Stage stage, GalaxySettings galaxySettings) throws IOException {
+        this.playerName = playerName;
+
         startTime = System.currentTimeMillis();
         galaxySettings.freezeSettings();
-        galaxy = new Galaxy("John", galaxySettings);
+        galaxy = new Galaxy(galaxySettings);
 
         populateGalaxy(galaxy);
-        highScores = new ArrayList<>();
+        highScoresList = new HighScore[5];
+        for (int i = 0; i < highScoresList.length; i++) {
+            highScoresList[i] = new HighScore();
+        }
         renderer = new GalaxyRenderer(stage, galaxySettings);
         keyboardListener = new KeyboardListener(renderer.getScene());
         renderer.renderGalaxy(galaxy);
@@ -91,8 +102,8 @@ public class GameManager {
             renderer.updateDirection(player);
         };
 
-        for(var object : galaxy.getObjects()) {
-            if(object instanceof Meteorite) {
+        for (var object : galaxy.getObjects()) {
+            if (object instanceof Meteorite) {
                 ((Meteorite) object).onMoveEnded = (meteorite) -> {
                     checkCurrentTileMoveableObject(meteorite);
                     meteorite.move(15, Direction.randomDirection());
@@ -110,25 +121,26 @@ public class GameManager {
                 };
                 spacePirate.move(20, spacePirate.getTile().getDirectionTo(galaxy.getPlayer().getTile()));
             }
-            if(object instanceof HasDirection) {
+            if (object instanceof HasDirection) {
             }
         }
 
     }
 
+
     private void checkCurrentTileMoveableObject(GameObject object) {
-        if(object instanceof Player)
+        if (object instanceof Player)
             checkCurrentTilePlayer((Player) object);
 
-        if(object.getTile().contains(Player.class))
+        if (object.getTile().contains(Player.class))
             gameOver(false);
     }
 
 
     private void checkCurrentTilePlayer(Player player) {
-        if(player.getTile().contains(Planet.class)) {
+        if (player.getTile().contains(Planet.class)) {
             var planet = player.getTile().getFirst(Planet.class);
-            if(planet.hasBeenVisited())
+            if (planet.hasBeenVisited())
                 return;
             planet.setVisited();
             planetsVisited++;
@@ -140,20 +152,20 @@ public class GameManager {
             gameOver(false);
         } else if (player.getTile().contains(Wormhole.class)) {
             var wormhole = player.getTile().getFirst(Wormhole.class);
-            if(wormhole.isActive())
+            if (wormhole.isActive())
                 gameOver(true);
         }
     }
 
     // even checken hoe we de player naam op halen en setten in de game
-    public void gameOver(Boolean win){
+    public void gameOver(Boolean win) {
         HighScore highScore = null;
 
-        if(win) {
-            highScore = new HighScore((int)( System.currentTimeMillis() - startTime) / 1000, galaxy.getSettings());
-            highScores.add(highScore);
-            System.out.println(galaxy.getPlayer().getName()+ " : " + highScore.score);
-            //close gamescene
+        if (win) {
+
+            highScore = new HighScore((int) (System.currentTimeMillis() - startTime) / 1000, galaxy.getSettings(), this);
+
+            addToHighScoreList(highScore);
         }
 
         renderer.destroyScene();
@@ -217,8 +229,27 @@ public class GameManager {
 
     }
 
+    public String getPlayerName() {
+        return playerName;
+    }
 
-    public ArrayList<HighScore> getHighScores() {
-        return highScores;
+    public HighScore[] getHighScoreList() {
+        return highScoresList;
+    }
+
+    public void addToHighScoreList(HighScore highScore) {
+
+        for (int i = 0; i < highScoresList.length - 1; i++) {
+
+            if (highScore.getScore() > highScoresList[i].getScore()) {
+                HighScore temp = highScoresList[i];
+                this.highScoresList[i] = highScore;
+                highScoresList[i + 1] = temp;
+                break;
+            }
+        }
     }
 }
+
+
+

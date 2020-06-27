@@ -43,7 +43,7 @@ public class GameObjectFactory {
             playerSprites.put(Direction.DOWN, SpriteMapParser.parseSpriteMapToImages(downSprites, 64, 64));
         }
 
-        return new Player("Test", spawnDirection, new DirectionalSpriteList(playerSprites, spawnDirection));
+        return new Player( spawnDirection, new DirectionalSpriteList(playerSprites, spawnDirection));
     }
 
     /**

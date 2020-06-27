@@ -14,6 +14,7 @@ public class GalaxySettings {
     private int pirateCount = Defaults.PIRATE_COUNT;
     private int meteoriteCount = Defaults.METEORITE_COUNT;
 
+
     private boolean settingsFrozen;
 
     public GalaxySettings() {
@@ -21,7 +22,9 @@ public class GalaxySettings {
         galaxySize = width * height;
     }
 
-    public GalaxySettings(int width, int height, int planetCount, int pirateCount, Boolean settingsFrozen, int meteoriteCount) {
+
+    public GalaxySettings (int width, int height, int planetCount, int pirateCount, Boolean settingsFrozen, int meteoriteCount) {
+
         if (width > LIMIT_MIN_LENGTH && width < LIMIT_MAX_LENGTH) this.width = width;
         if (height > LIMIT_MIN_LENGTH && height < LIMIT_MAX_LENGTH) this.height = height;
 
@@ -117,4 +120,5 @@ public class GalaxySettings {
     public double getPercentPopulated() {
         return PERCENT_POPULATED;
     }
+
 }

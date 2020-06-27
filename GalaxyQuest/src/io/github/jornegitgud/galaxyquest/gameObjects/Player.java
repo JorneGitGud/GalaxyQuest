@@ -11,24 +11,19 @@ import java.util.function.Consumer;
  *
  */
 public class Player extends MovableObject implements HasDirection {
-    private String name;
+
     private Direction direction;
 
     public Consumer<Player> onDirectionChanged;
 
 
 // even checken hoe we de player naam op halen en setten in de game
-    public Player(String name, Direction direction, DirectionalSpriteList directionalSpriteList) {
+    public Player( Direction direction, DirectionalSpriteList directionalSpriteList) {
         super(directionalSpriteList);
 
-        this.name = name;
+
         this.direction = direction;
     }
-
-    public String getName() {
-        return name;
-    }
-
     @Override
     public Direction getDirection() {
         return this.direction;

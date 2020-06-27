@@ -2,13 +2,16 @@ package io.github.jornegitgud.galaxyquest;
 
 import io.github.jornegitgud.galaxyquest.controllers.MainMenuController;
 import io.github.jornegitgud.galaxyquest.controllers.SettingsController;
+import io.github.jornegitgud.galaxyquest.gameObjects.Player;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.control.TextInputDialog;
 import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
 
 import java.io.IOException;
+import java.util.Optional;
 
 public class Main extends Application {
     public static void main(String[] args) {
@@ -19,6 +22,7 @@ public class Main extends Application {
     private Scene settingsScene;
     private GalaxySettings galaxySettings = new GalaxySettings();
 
+
     @Override
     public void start(Stage stage) throws Exception {
         stage.setTitle("Galaxy Quest");
@@ -28,6 +32,7 @@ public class Main extends Application {
         this.mainMenuScene = new Scene(fxmlLoaderMenu.load(), 768, 768);
         this.settingsScene = new Scene( fxmlLoaderSettings.load(), 768,768);
         stage.setScene(mainMenuScene);
+
         stage.show();
 
         var controller = (MainMenuController) fxmlLoaderMenu.getController();
@@ -35,8 +40,12 @@ public class Main extends Application {
 
         controller.onStartButtonClicked = (event) -> {
             try {
-                GameManager gameManager = new GameManager(stage, this.galaxySettings);
+                GameManager gameManager = new GameManager(askForName(), stage, this.galaxySettings);
+
+
+
                 gameManager.onGameEnded = (gameResult) -> {
+
                     stage.setScene(this.mainMenuScene);
                     this.galaxySettings.unfreezeSettings();
                 };
@@ -60,4 +69,18 @@ public class Main extends Application {
         };
 
     }
+    public String askForName(){
+        TextInputDialog dialog = new TextInputDialog("Wouter");
+        dialog.setTitle("Text Input Dialog");
+        dialog.setHeaderText("Look, a Text Input Dialog");
+        dialog.setContentText("Please enter your name:");
+
+// Traditional way to get the response value.
+        Optional<String> result = dialog.showAndWait();
+        if (result.isPresent()){
+            return result.get();
+        } else return "Player";
+
+    }
+
 }
