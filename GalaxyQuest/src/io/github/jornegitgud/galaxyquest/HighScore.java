@@ -1,23 +1,25 @@
 package io.github.jornegitgud.galaxyquest;
 
 
-public class HighScore {
+public class HighScore implements Comparable {
 
     private String name = "default";
-    private int score = 50;
-    private double setSecPerTile = 0.5;
-    private int planetValue = 100;
-    private int obstacleValue = 100;
-    private GalaxySettings galaxySettings;
+    private int score = 0;
 
+    private final double SET_SEC_PER_TILE = 0.5;
+    private final int PLANET_VALUE = 100;
+    private final int OBSTACLE_VALUE = 100;
 
     public HighScore() {
     }
 
-    public HighScore(int elapsedSeconds, GalaxySettings galaxySettings, GameManager gameManager) {
-        this.name = gameManager.getPlayerName();
-        this.galaxySettings = galaxySettings;
-        this.score = calculateScore(elapsedSeconds);
+    public HighScore(String name, int score) {
+        this.name = name;
+        this.score = score;
+    }
+
+    public HighScore(int elapsedSeconds, GalaxySettings galaxySettings) {
+        this.score = calculateScore(elapsedSeconds, galaxySettings);
 
     }
 
@@ -28,19 +30,19 @@ public class HighScore {
     }
 
 
-    private int calculateScore(int elapsedSeconds) {
+    private int calculateScore(int elapsedSeconds, GalaxySettings galaxySettings) {
         double gridSize = galaxySettings.getGalaxySize();
         double numberOfObstacles = galaxySettings.getPirateCount() + galaxySettings.getMeteoriteCount();
         double setPlanets = galaxySettings.getPlanetCount();
         double maxPlanets = (galaxySettings.getGalaxySize() * galaxySettings.getPercentPopulated() - numberOfObstacles);
 
 
-        double setSecondsForGrid = (gridSize * 0.85) * setSecPerTile;
+        double setSecondsForGrid = (gridSize * 0.85) * SET_SEC_PER_TILE;
         double timeScoreMultiplier = setSecondsForGrid - elapsedSeconds;
         if (timeScoreMultiplier < 0) timeScoreMultiplier = 0.5;
         double planetMultiplier = setPlanets / maxPlanets;
-        double planetPoints = (planetValue * planetMultiplier) * setPlanets;
-        double extraPoints = numberOfObstacles * obstacleValue;
+        double planetPoints = (PLANET_VALUE * planetMultiplier) * setPlanets;
+        double extraPoints = numberOfObstacles * OBSTACLE_VALUE;
 
         double totalScore = (planetPoints + extraPoints) * timeScoreMultiplier;
         System.out.println(name);
@@ -69,5 +71,12 @@ public class HighScore {
 
     public String getName() {
         return name;
+    }
+
+    @Override
+    public int compareTo(Object other) {
+        if(!(other instanceof HighScore))
+            return 1;
+        return ((HighScore) other).getScore() - this.getScore();
     }
 }

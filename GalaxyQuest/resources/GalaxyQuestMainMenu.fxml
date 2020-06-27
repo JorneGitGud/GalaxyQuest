@@ -21,31 +21,31 @@
         <Button layoutX="535.0" layoutY="94.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="76.0" style="-fx-background-color: #2295c7;" text="Exit Game" textFill="WHITE" onAction="#exitGame" />
       <VBox layoutX="54.0" layoutY="240.0" prefHeight="246.0" prefWidth="177.0">
          <children>
-            <Label prefHeight="49.0" prefWidth="177.0" text=" RONALD : 1000000" textFill="RED">
+            <Label fx:id="highScore1" prefHeight="49.0" prefWidth="177.0" text="" textFill="RED">
                <font>
                   <Font name="Impact" size="21.0" />
                </font>
             </Label>
-            <Label prefHeight="49.0" prefWidth="177.0" text=" JOORNE : 1000000" textFill="RED">
-               <font>
-                  <Font name="Impact" size="21.0" />
-               </font>
-            </Label>
-            <Label prefHeight="49.0" prefWidth="177.0" text=" JORDIE : 1000000" textFill="RED">
-               <font>
-                  <Font name="Impact" size="21.0" />
-               </font>
-            </Label>
-            <Label prefHeight="49.0" prefWidth="177.0" text=" MMAAXX : 1000000" textFill="RED">
-               <font>
-                  <Font name="Impact" size="21.0" />
-               </font>
-            </Label>
-            <Label prefHeight="49.0" prefWidth="177.0" text=" WOUTER : 1000000" textFill="RED">
-               <font>
-                  <Font name="Impact" size="21.0" />
-               </font>
-            </Label>
+             <Label fx:id="highScore2" prefHeight="49.0" prefWidth="177.0" text="" textFill="RED">
+                 <font>
+                     <Font name="Impact" size="21.0" />
+                 </font>
+             </Label>
+             <Label fx:id="highScore3" prefHeight="49.0" prefWidth="177.0" text="" textFill="RED">
+                 <font>
+                     <Font name="Impact" size="21.0" />
+                 </font>
+             </Label>
+             <Label fx:id="highScore4" prefHeight="49.0" prefWidth="177.0" text="" textFill="RED">
+                 <font>
+                     <Font name="Impact" size="21.0" />
+                 </font>
+             </Label>
+             <Label fx:id="highScore5" prefHeight="49.0" prefWidth="177.0" text="" textFill="RED">
+                 <font>
+                     <Font name="Impact" size="21.0" />
+                 </font>
+             </Label>
          </children>
       </VBox>
     </children>

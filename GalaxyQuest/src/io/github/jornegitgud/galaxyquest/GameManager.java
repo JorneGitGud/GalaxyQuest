@@ -2,23 +2,21 @@ package io.github.jornegitgud.galaxyquest;
 
 import io.github.jornegitgud.galaxyquest.gameObjects.*;
 import javafx.animation.AnimationTimer;
+import javafx.application.Platform;
 import javafx.stage.Stage;
 
 import java.io.IOException;
-import java.lang.reflect.Array;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Random;
 import java.util.function.Consumer;
 
 public class GameManager {
 
-    GalaxyRenderer renderer;
-    KeyboardListener keyboardListener;
-    Galaxy galaxy;
-    String playerName;
-    AnimationTimer mainLoop;
-    Consumer<GameResult> onGameEnded = (result) -> {
+    private GalaxyRenderer renderer;
+    private KeyboardListener keyboardListener;
+    private Galaxy galaxy;
+    private AnimationTimer mainLoop;
+    public Consumer<GameResult> onGameEnded = (result) -> {
     };
 
 
@@ -31,10 +29,7 @@ public class GameManager {
     private int planetsVisited = 0;
     private Wormhole wormhole;
 
-
-    @SuppressWarnings("UnnecessaryContinue")
-    public GameManager(String playerName, Stage stage, GalaxySettings galaxySettings) throws IOException {
-        this.playerName = playerName;
+    public GameManager(Stage stage, GalaxySettings galaxySettings) throws IOException {
 
         startTime = System.currentTimeMillis();
         galaxySettings.freezeSettings();
@@ -156,17 +151,13 @@ public class GameManager {
 
     // even checken hoe we de player naam op halen en setten in de game
     public void gameOver(Boolean win) {
-        HighScore highScore = null;
-
-        if (win) {
-
-            highScore = new HighScore((int) (System.currentTimeMillis() - startTime) / 1000, galaxy.getSettings(), this);
-            addScore(highScore);
-        }
+        final HighScore highScore = new HighScore((int) (System.currentTimeMillis() - startTime) / 1000, galaxy.getSettings());
 
         renderer.destroyScene();
         mainLoop.stop();
-        onGameEnded.accept(new GameResult(win, highScore));
+        Platform.runLater(() -> {
+            onGameEnded.accept(new GameResult(win, highScore));
+        });
     }
 
 
@@ -223,25 +214,6 @@ public class GameManager {
         galaxy.setGalaxyTile(tempX, tempY, this.wormhole);
         availableCoordinates.remove(tempPos);
 
-    }
-    public void addScore(HighScore highScore) {
-
-        for (int i = 0; i < Main.highScoresList.length; i++) {
-            if (highScore.getScore() > Main.highScoresList[i].getScore()) {
-                HighScore temp = Main.highScoresList[i];
-                Main.highScoresList[i] = highScore;
-                addScore(temp);
-                break;
-            }
-            for(HighScore h : Main.highScoresList){
-                System.out.println( h.getName() +" : "+h.getScore());
-            }
-        }
-    }
-
-
-    public String getPlayerName() {
-        return playerName;
     }
 }
 

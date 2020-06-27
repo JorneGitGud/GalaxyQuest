@@ -9,6 +9,7 @@ import javafx.scene.control.TextInputDialog;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.Arrays;
 import java.util.Optional;
 
 public class Main extends Application {
@@ -25,11 +26,7 @@ public class Main extends Application {
 
     @Override
     public void start(Stage stage) throws Exception {
-
-        highScoresList = new HighScore[5];
-        for(int i = 0 ; i < highScoresList.length; i++){
-            highScoresList[i] = new HighScore();
-        }
+        this.highScoresList = HighScoreStorage.loadHighScores();
 
         stage.setTitle("Galaxy Quest");
         FXMLLoader fxmlLoaderMenu = new FXMLLoader(getClass().getClassLoader().getResource("GalaxyQuestMainMenu.fxml"));
@@ -44,14 +41,27 @@ public class Main extends Application {
         var controller = (MainMenuController) fxmlLoaderMenu.getController();
         var settingsController = (SettingsController) fxmlLoaderSettings.getController();
 
+        controller.setHighScores(highScoresList);
+
+
         controller.onStartButtonClicked = (event) -> {
             try {
-                GameManager gameManager = new GameManager(askForName(), stage, this.galaxySettings);
-
-
+                GameManager gameManager = new GameManager(stage, this.galaxySettings);
 
                 gameManager.onGameEnded = (gameResult) -> {
+                    if(gameResult.win) {
+                        String playerName = askForName();
+                        HighScore highScore = gameResult.highScore;
+                        highScore.setName(playerName);
 
+                        if(highScoresList[4].getScore() < highScore.getScore()) {
+                            highScoresList[4] = highScore;
+                            Arrays.sort(highScoresList);
+                            HighScoreStorage.saveHighscores(highScoresList);
+                        }
+                    }
+
+                    controller.setHighScores(highScoresList);
                     stage.setScene(this.mainMenuScene);
                     this.galaxySettings.unfreezeSettings();
                 };
@@ -77,16 +87,18 @@ public class Main extends Application {
     }
     public String askForName(){
         TextInputDialog dialog = new TextInputDialog("Wouter");
-        dialog.setTitle("player name");
-        dialog.setHeaderText("Your score might end up in the highscores list");
-        dialog.setContentText("Please enter your name: (6 Characters)");
+        dialog.setTitle("Choose wisely!");
+        dialog.setHeaderText("You won! enter your name to display in the high scores.");
+        dialog.setContentText("Please enter your name: (will be shortened to 6 characters)");
 
 
         Optional<String> result = dialog.showAndWait();
-        return result.orElse("Player");
+        String name = result.orElse("Player");
+        if(name.length() > 6)
+            return name.substring(0, 6);
+        return name;
 
     }
-
 
 
 }
