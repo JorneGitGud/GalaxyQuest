@@ -46,6 +46,7 @@ public class Main extends Application {
         stage.setScene(mainMenuScene);
 
         stage.show();
+        stage.setResizable(false);
 
         var controller = (MainMenuController) fxmlLoaderMenu.getController();
         var settingsController = (SettingsController) fxmlLoaderSettings.getController();

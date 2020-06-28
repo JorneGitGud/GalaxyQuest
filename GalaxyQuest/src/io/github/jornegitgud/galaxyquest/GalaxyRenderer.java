@@ -34,10 +34,10 @@ public class GalaxyRenderer {
     private ImageView background;
 
     /**
-     * This method renders the galaxy. it renders all imigas in the correct places.
-     * @param stage is the stage in wich the galaxy will be rendered
-     * @param settings are use to create  the Default galaxy or 1 with user input.
-     * @throws IOException if one of these is not found.
+     * The GalaxyRenderer is responsible for turning the Galaxy data model into a graphical scene for the user.
+     * @param stage The stage to use for rendering galaxies onto.
+     * @param settings The galaxy's settings, used to determine the width and height of the window.
+     * @throws IOException throws if a sprite could not be found.
      */
     public GalaxyRenderer(Stage stage, GalaxySettings settings) throws IOException {
         this.stage = stage;
@@ -66,8 +66,8 @@ public class GalaxyRenderer {
     }
 
     /**
-     * this method renders the positions of all movable objects in the galaxy.
-     * @param galaxy is the galaxy in wich the positions need to be rendered.
+     * this method updates the positions of all objects that are moving in the galaxy.
+     * @param galaxy is the galaxy to use for updating the positions in the scene.
      */
     public void renderPositions(Galaxy galaxy) {
         var objects = galaxy.getObjects();
@@ -98,8 +98,8 @@ public class GalaxyRenderer {
     }
 
     /**
-     * this method renders the background of the galaxy.
-     * @param galaxy is the galaxy where the background is rendered.
+     * this method renders the galaxy scene (background and all game objects).
+     * @param galaxy the galaxy to render onto the scene.
      */
     public void renderGalaxy(Galaxy galaxy) {
         if(!stage.isShowing())
@@ -151,8 +151,8 @@ public class GalaxyRenderer {
     }
 
     /**
-     * This method update the position of an object and then it moves the object smootly to its new position.
-     * @param object is the object that is moved.
+     * This method updates the sprite of an object with multiple directions. Can be used to change the sprite directly instead of waiting for the next sprite frame.
+     * @param object The object whose sprite to update.
      */
     public void updateDirection(GameObject object) {
         var imageView = sprites.get(object);
@@ -160,15 +160,15 @@ public class GalaxyRenderer {
     }
 
     /**
-     * This method returns the current scene.
-     * @return
+     * get the current sceme
+     * @return The current game scene
      */
     public Scene getScene() {
         return gameScene;
     }
 
     /**
-     * This method destroys the current scene
+     * This method destroys all sprites and the scene.
      */
     public void destroyScene() {
         var imageViews = new ArrayList<>(sprites.values());
@@ -185,10 +185,10 @@ public class GalaxyRenderer {
     }
 
     /**
-     * This method renders the object sprites on the tiles. It makes sure that the player tile is always on top.
-     * @param galaxy is the galaxy that is used.
-     * @param tile the tile that is used
-     * @param spritePath is the string to the location of a sprite.
+     * This method adds a static sprite on top of the galaxy scene. (i.e. flags on top of planets). The player is always rendered on top of static sprites.
+     * @param galaxy is the galaxy to add the sprite on
+     * @param tile the tile to add the sprite on
+     * @param spritePath is the string to the location of the sprite.
      */
     public void addSprite(Galaxy galaxy, Tile tile, String spritePath) {
         var coordinate = tile.getCoordinate(this);
