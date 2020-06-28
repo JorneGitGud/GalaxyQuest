@@ -10,6 +10,9 @@ import java.util.ArrayList;
 import java.util.Random;
 import java.util.function.Consumer;
 
+/**
+ * the GameManager
+ */
 public class GameManager {
 
     private GalaxyRenderer renderer;
@@ -117,7 +120,10 @@ public class GameManager {
 
     }
 
-
+    /**
+     *
+     * @param object
+     */
     private void checkCurrentTileMoveableObject(GameObject object) {
         if (object instanceof Player)
             checkCurrentTilePlayer((Player) object);
@@ -147,7 +153,12 @@ public class GameManager {
         }
     }
 
-    // even checken hoe we de player naam op halen en setten in de game
+    /**
+     * this method is called when the Game is over. it has different functions for a Winning Case of Losing Case.
+     * if Win = true it sets a {@link HighScore }
+     * if Win = false return immediately to the Menu
+     * @param win this tells the method if a player has won or lost
+     */
     public void gameOver(Boolean win) {
         final HighScore highScore = new HighScore((int) (System.currentTimeMillis() - startTime) / 1000, galaxy.getSettings());
 
@@ -158,7 +169,14 @@ public class GameManager {
         });
     }
 
-
+    /**
+     * this methode populates the Galaxy, before calling this method the galaxy contains only empty tiles.
+     * this methode creates an arrayList filled with all possible coordinates for this grid.
+     * then it gives each object {@link Planet},{@link Player}{@link Meteorite}{@link Wormhole} a {@link Coordinate} object and removes it from the arrayList.
+     * And gives this object to the Galaxy class, which sets it in the right Tile
+     * @param galaxy it uses a Galaxy object to check the number of coordinates it should create.
+     * @throws IOException
+     */
     protected void populateGalaxy(Galaxy galaxy) throws IOException {
         ArrayList<Coordinate> availableCoordinates = new ArrayList<Coordinate>();
         Random random = new Random();
