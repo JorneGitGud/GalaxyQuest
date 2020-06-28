@@ -86,6 +86,7 @@ public class Main extends Application {
         };
 
     }
+
     public String askForName(){
         TextInputDialog dialog = new TextInputDialog("Wouter");
         dialog.setTitle("Choose wisely!");
