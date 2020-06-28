@@ -21,8 +21,4 @@ public interface HasDirection {
      */
     void setDirection(Direction direction);
 
-    /**
-     * This method can be used as an eventhandler for classes the have a direction.
-     */
-    Consumer<HasDirection> onDirectionChanged = (obj) -> {};
 }

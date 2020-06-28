@@ -81,10 +81,6 @@ public class HighScore implements Comparable {
         return score;
     }
 
-    public void setScore(int score) {
-        this.score = score;
-    }
-
     public String getName() {
         return name;
     }

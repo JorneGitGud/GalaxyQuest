@@ -20,8 +20,6 @@ public class Player extends MovableObject implements HasDirection {
 
     public Player( Direction direction, DirectionalSpriteList directionalSpriteList) {
         super(directionalSpriteList);
-
-
         this.direction = direction;
     }
     @Override

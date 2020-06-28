@@ -59,14 +59,6 @@ public class Galaxy {
 
     }
 
-    //Asking for GameManager to ensure ol
-    public Tile getGalaxyTile(GameManager gameManager, int xPos, int yPos) {
-        if (yPos < this.galaxyTiles.length && xPos < this.galaxyTiles[0].length && xPos >= 0 && yPos >= 0) {
-            return this.galaxyTiles[yPos][xPos];
-        }
-        return null;
-    }
-
     public Tile getGalaxyTile(GalaxyRenderer galaxyRenderer, int xPos, int yPos) {
         if (yPos < this.galaxyTiles.length && xPos < this.galaxyTiles[0].length && xPos >= 0 && yPos >= 0) {
             return this.galaxyTiles[yPos][xPos];

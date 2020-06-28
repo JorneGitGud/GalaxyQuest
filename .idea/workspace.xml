@@ -32,8 +32,13 @@
   <component name="ChangeListManager">
     <list default="true" id="fff264f5-7b44-419a-b4fb-10106bfbed3e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GalaxyQuest/src/io/github/jornegitgud/galaxyquest/Coordinate.java" beforeDir="false" afterPath="$PROJECT_DIR$/GalaxyQuest/src/io/github/jornegitgud/galaxyquest/Coordinate.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GalaxyQuest/src/io/github/jornegitgud/galaxyquest/GameManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/GalaxyQuest/src/io/github/jornegitgud/galaxyquest/GameManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GalaxyQuest/src/io/github/jornegitgud/galaxyquest/Galaxy.java" beforeDir="false" afterPath="$PROJECT_DIR$/GalaxyQuest/src/io/github/jornegitgud/galaxyquest/Galaxy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GalaxyQuest/src/io/github/jornegitgud/galaxyquest/GalaxySettings.java" beforeDir="false" afterPath="$PROJECT_DIR$/GalaxyQuest/src/io/github/jornegitgud/galaxyquest/GalaxySettings.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GalaxyQuest/src/io/github/jornegitgud/galaxyquest/HasDirection.java" beforeDir="false" afterPath="$PROJECT_DIR$/GalaxyQuest/src/io/github/jornegitgud/galaxyquest/HasDirection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GalaxyQuest/src/io/github/jornegitgud/galaxyquest/HighScore.java" beforeDir="false" afterPath="$PROJECT_DIR$/GalaxyQuest/src/io/github/jornegitgud/galaxyquest/HighScore.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GalaxyQuest/src/io/github/jornegitgud/galaxyquest/KeyboardListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/GalaxyQuest/src/io/github/jornegitgud/galaxyquest/KeyboardListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GalaxyQuest/src/io/github/jornegitgud/galaxyquest/Tile.java" beforeDir="false" afterPath="$PROJECT_DIR$/GalaxyQuest/src/io/github/jornegitgud/galaxyquest/Tile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GalaxyQuest/src/io/github/jornegitgud/galaxyquest/gameObjects/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/GalaxyQuest/src/io/github/jornegitgud/galaxyquest/gameObjects/Player.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,11 +64,13 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$USER_HOME$/Desktop/GalaxyQuest-feature-Jorne" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -197,11 +204,12 @@
       <workItem from="1593273403474" duration="5733000" />
       <workItem from="1593287988128" duration="8799000" />
       <workItem from="1593299683934" duration="919000" />
+      <workItem from="1593364794733" duration="6532000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
+    <option name="version" value="2" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -352,11 +360,6 @@
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/GalaxyQuest/src/io/github/jornegitgud/galaxyquest/HighScoreStorage.java</url>
-          <line>21</line>
-          <option name="timeStamp" value="33" />
-        </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/GalaxyQuest/tests/io/github/jornegitgud/galaxyquest/GameManagerTests.java</url>
           <line>149</line>

@@ -1,8 +1,5 @@
 package io.github.jornegitgud.galaxyquest;
 
-import javax.swing.text.DefaultEditorKit;
-
-
 /**
  * This is the class that holds all the settings for the galaxy.
  * this class is also responsible for changing these settings.
@@ -193,14 +190,6 @@ public class GalaxySettings {
      */
     public int getGalaxySize() {
         return galaxySize;
-    }
-
-    /**
-     * This method is used to get the totalObjects in the galaxy
-     * @return the totalObjects in the galaxy
-     */
-    public int getTotalObjects() {
-        return totalObjects;
     }
 
     /**

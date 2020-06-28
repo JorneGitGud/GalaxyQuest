@@ -20,6 +20,7 @@ public class Tile {
 
     private Coordinate coordinate;
     private ArrayList<GameObject> gameObjects = new ArrayList<>();
+
     /**
      * the Tile constructor uses coordinates that help build and render the galaxy and are also used for path finding by spacePirates.
      *
@@ -83,6 +84,7 @@ public class Tile {
     public ArrayList<GameObject> getGameObjects() {
         return gameObjects;
     }
+
     /**
      * check to see if the tile contains a specific GameObject.
      *
@@ -96,6 +98,7 @@ public class Tile {
         }
         return false;
     }
+
     /**
      * check to see if the tile contains a specific GameObject.
      *
@@ -131,6 +134,7 @@ public class Tile {
     public Coordinate getCoordinate(GalaxyRenderer gr) {
         return coordinate;
     }
+
     /**
      * returns the direction of the otherTile
      * @param otherTile the tile you are looking to get direction to
