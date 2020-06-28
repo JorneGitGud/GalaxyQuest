@@ -89,8 +89,6 @@ public class GameObjectFactory {
         return new Meteorite(Direction.UP, new SimpleSpriteList(meteoriteSprites));
     }
 
-
-
     /**
      * this method creates the SpacePirate object, it sets the spawn direction to UP and sets the sprites and size.
      * @return a SpacePirate object

@@ -1,8 +1,15 @@
 package io.github.jornegitgud.galaxyquest;
 
+import io.github.jornegitgud.galaxyquest.gameObjects.*;
 import javafx.scene.Scene;
 
 import java.util.function.Consumer;
+
+/**
+ * this is the KeyBoardListener class.
+ * this class is used to react to different keyboard input while playing the game
+ */
+
 
 public class KeyboardListener {
 
@@ -15,6 +22,12 @@ public class KeyboardListener {
     public Consumer<Direction> onKeyPressed;
     public Consumer<Direction> onKeyReleased;
 
+
+    /**
+     * This is the method that reacts to keys pressed. It react to buth wasd and the arrow keys on the keyboard.
+     * @param gameScene the gameScene is given so the keyboardListener knows in what scene it needs
+     * to respond to the keyboard.
+     */
 
     public KeyboardListener(Scene gameScene) {
         this.gameScene = gameScene;
@@ -85,26 +98,50 @@ public class KeyboardListener {
         }));
     }
 
+    /**
+     * method to check if all keys (wasd and arrows) are pressed
+     * @return boolean
+     */
     public boolean areAllKeysPressed() {
         return isUpPressed && isDownPressed && isLeftPressed && isRightPressed;
     }
 
+    /**
+     * method to check if any key (wasd and arrows) is pressed
+     * @return boolean
+     */
     public boolean isAnyKeyPressed() {
         return isUpPressed || isDownPressed || isLeftPressed || isRightPressed;
     }
 
+    /**
+     * method to check if w or up arrow key is pressed
+     * @return boolean
+     */
     public boolean isUpPressed() {
         return isUpPressed;
     }
 
+    /**
+     * method to check if a or right arrow key is pressed
+     * @return boolean
+     */
     public boolean isRightPressed() {
         return isRightPressed;
     }
 
+    /**
+     * method to check if s or down arrow key is pressed
+     * @return boolean
+     */
     public boolean isDownPressed() {
         return isDownPressed;
     }
 
+    /**
+     * method to check if d or left arrow key is pressed
+     * @return boolean
+     */
     public boolean isLeftPressed() {
         return isLeftPressed;
     }
