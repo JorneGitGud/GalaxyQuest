@@ -16,6 +16,10 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.function.Consumer;
 
+/**
+ * This class renders the galaxy. It renders all images in the correct places and handles the visual movement of the objects.
+ */
+
 public class GalaxyRenderer {
     private final int GALAXY_GRID_SIZE = 48;
 
@@ -29,6 +33,12 @@ public class GalaxyRenderer {
     private SimpleSpriteList galaxySprites;
     private ImageView background;
 
+    /**
+     * This method renders the galaxy. it renders all imigas in the correct places.
+     * @param stage is the stage in wich the galaxy will be rendered
+     * @param settings are use to create  the Default galaxy or 1 with user input.
+     * @throws IOException if one of these is not found.
+     */
     public GalaxyRenderer(Stage stage, GalaxySettings settings) throws IOException {
         this.stage = stage;
         galaxyPane = new Pane();
@@ -55,6 +65,10 @@ public class GalaxyRenderer {
         stage.setOnCloseRequest((request) -> onStageClosed.accept(stage));
     }
 
+    /**
+     * this method renders the positions of all movable objects in the galaxy.
+     * @param galaxy is the galaxy in wich the positions need to be rendered.
+     */
     public void renderPositions(Galaxy galaxy) {
         var objects = galaxy.getObjects();
         for(GameObject object : objects) {
@@ -83,6 +97,10 @@ public class GalaxyRenderer {
         }
     }
 
+    /**
+     * this method renders the background of the galaxy.
+     * @param galaxy is the galaxy where the background is rendered.
+     */
     public void renderGalaxy(Galaxy galaxy) {
         if(!stage.isShowing())
             stage.show();
@@ -132,15 +150,26 @@ public class GalaxyRenderer {
         sprites.get(galaxy.getPlayer()).toFront();
     }
 
+    /**
+     * This method update the position of an object and then it moves the object smootly to its new position.
+     * @param object is the object that is moved.
+     */
     public void updateDirection(GameObject object) {
         var imageView = sprites.get(object);
         imageView.setImage(object.getSpriteList().getNextSprite(((HasDirection)object).getDirection()));
     }
 
+    /**
+     * This method returns the current scene.
+     * @return
+     */
     public Scene getScene() {
         return gameScene;
     }
 
+    /**
+     * This method destroys the current scene
+     */
     public void destroyScene() {
         var imageViews = new ArrayList<>(sprites.values());
         imageViews.addAll(staticSprites);
@@ -155,6 +184,12 @@ public class GalaxyRenderer {
         this.stage.setScene(null);
     }
 
+    /**
+     * This method renders the object sprites on the tiles. It makes sure that the player tile is always on top.
+     * @param galaxy is the galaxy that is used.
+     * @param tile the tile that is used
+     * @param spritePath is the string to the location of a sprite.
+     */
     public void addSprite(Galaxy galaxy, Tile tile, String spritePath) {
         var coordinate = tile.getCoordinate(this);
         try {

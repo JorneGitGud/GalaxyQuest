@@ -8,7 +8,6 @@ import java.awt.image.BufferedImage;
 import java.util.ArrayList;
 
 
-
 public class SpriteMapParser {
     public static ArrayList<javafx.scene.image.Image> parseSpriteMapToImages(Image image, int singleSpriteWidthPx, int singleSpriteHeightPx) {
         return parseSpriteMapToImages(image, singleSpriteWidthPx, singleSpriteHeightPx, 0, 0);

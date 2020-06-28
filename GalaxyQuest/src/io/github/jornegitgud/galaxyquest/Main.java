@@ -12,6 +12,11 @@ import java.io.IOException;
 import java.util.Arrays;
 import java.util.Optional;
 
+
+/**
+ * This class is where the game starts.
+ */
+
 public class Main extends Application {
     protected static HighScore[] highScoresList;
 
@@ -23,7 +28,11 @@ public class Main extends Application {
     private Scene settingsScene;
     private GalaxySettings galaxySettings = new GalaxySettings();
 
-
+    /**
+     * This method starts the game.
+     * @param stage is used to open a window.
+     * @throws Exception is trowns when there is no stage found.
+     */
     @Override
     public void start(Stage stage) throws Exception {
         this.highScoresList = HighScoreStorage.loadHighScores();
@@ -87,6 +96,10 @@ public class Main extends Application {
 
     }
 
+    /**
+     * This method is used to open a PopUp window. in the window you can enter your name if you won.
+     * @return String with the name in all uppercases and with a maximum of 6 symbols.
+     */
     public String askForName(){
         TextInputDialog dialog = new TextInputDialog("Wouter");
         dialog.setTitle("Choose wisely!");
