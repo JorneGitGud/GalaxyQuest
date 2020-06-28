@@ -17,7 +17,7 @@ import java.util.HashMap;
 import java.util.function.Consumer;
 
 /**
- * This class renders the galaxy. It renders all images in the correct places and handles the visual movement of the objects.
+ * this class renders the galaxy. It renders all images in the correct places and handles the visual movement of the objects.
  */
 
 public class GalaxyRenderer {

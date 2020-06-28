@@ -1,7 +1,7 @@
 package io.github.jornegitgud.galaxyquest;
 
 /**
- * This is the class that holds all the settings for the galaxy.
+ * this is the class that holds all the settings for the galaxy.
  * this class is also responsible for changing these settings.
  */
 public class GalaxySettings {

@@ -14,7 +14,7 @@ import java.util.Optional;
 
 
 /**
- * This class is where the game starts.
+ * this class is where the game starts.
  */
 
 public class Main extends Application {

@@ -3,7 +3,7 @@ package io.github.jornegitgud.galaxyquest.gameObjects;
 import io.github.jornegitgud.galaxyquest.sprites.SpriteList;
 
 /**
- * This is the wormhole object, it extends from the {@link GameObject}
+ * this is the wormhole object, it extends from the {@link GameObject}
  * The wormhole has a boolean called active, this is used to check if the wormhole should be active in the galaxy.
  */
 

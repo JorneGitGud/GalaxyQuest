@@ -6,9 +6,16 @@ import java.io.IOException;
 import java.util.Arrays;
 import java.util.Scanner;
 
+/**
+ * this class stores the highscores in a text file. Wich is saved on the machine that runs the game.
+ */
 public class HighScoreStorage {
     private static final String HIGHSCORE_FILE_PATH = System.getProperty("user.dir") + File.separator + "GalaxyQuest" + File.separator + "highscores.txt";
 
+    /**
+     * This method saves the highscores in a text file.
+     * @param highscores this ArrayList is used the save the scores.
+     */
     public static void saveHighscores(HighScore[] highscores) {
         File file = new File(HIGHSCORE_FILE_PATH);
         if (file.exists())
@@ -24,6 +31,10 @@ public class HighScoreStorage {
         }
     }
 
+    /**
+     * This method loads the highscores out of the text file.
+     * @return
+     */
     public static HighScore[] loadHighScores() {
         File file = new File(HIGHSCORE_FILE_PATH);
         var highScoresList = new HighScore[5];

@@ -5,7 +5,7 @@ import io.github.jornegitgud.galaxyquest.gameObjects.*;
 import java.util.function.Consumer;
 
 /**
- * This is an interface for for classes that use a direction
+ * this is an interface for for classes that use a direction
  */
 public interface HasDirection {
 

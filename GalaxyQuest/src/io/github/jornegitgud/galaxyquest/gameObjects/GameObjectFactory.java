@@ -12,7 +12,6 @@ import java.util.HashMap;
 import java.util.Random;
 
 /**
- * to-do!
  * the GameObjectFactory creates all the objects that are spawned on the gameScene.
  */
 public class GameObjectFactory {
