@@ -13,7 +13,8 @@
         <ImageView fitHeight="958.0" fitWidth="776.0" layoutX="-4.0" layoutY="-4.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="GalaxyMenugif.gif" />
-         </image></ImageView>
+         </image>
+        </ImageView>
         <Button blendMode="SCREEN" defaultButton="true" layoutX="410.0" layoutY="39.0" mnemonicParsing="false" style="-fx-background-color: #2295c7;" text="Start Game" textFill="WHITE" onAction="#startGame"/>
         <Button layoutX="535.0" layoutY="39.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="76.0" style="-fx-background-color: #2295c7;" text="Settings" textFill="WHITE" onAction="#openSettings"/>
         <Button layoutX="658.0" layoutY="39.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="76.0" style="-fx-background-color: #2295c7;" text="Exit Game" textFill="WHITE" onAction="#exitGame" />
