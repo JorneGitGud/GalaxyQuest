@@ -1,5 +1,0 @@
-JORNE:26801
-default:0
-default:0
-default:0
-default:0
