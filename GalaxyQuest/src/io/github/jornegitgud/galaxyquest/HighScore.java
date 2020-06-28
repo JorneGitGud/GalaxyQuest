@@ -1,5 +1,9 @@
 package io.github.jornegitgud.galaxyquest;
-
+/**
+ * this is the highscore class, it had methods that calculate the highscore set by the player.
+ * the created highscore objects are stored in the {@link Main} class.
+ * it has getters and setters
+ */
 
 public class HighScore implements Comparable {
 
@@ -17,7 +21,12 @@ public class HighScore implements Comparable {
         this.name = name;
         this.score = score;
     }
-
+    /**
+     * this constructor replaces the default vallues of the highscore object.
+     *
+     * @param elapsedSeconds is used in calculateScore method
+     * @param galaxySettings is used in calculateScore method
+     */
     public HighScore(int elapsedSeconds, GalaxySettings galaxySettings) {
         this.score = calculateScore(elapsedSeconds, galaxySettings);
 
@@ -29,7 +38,14 @@ public class HighScore implements Comparable {
         this.name = name.toUpperCase();
     }
 
-
+    /**
+     * this method does te calculations that are needed to create a score.
+     * it takes in to account the number of set obstacles and planets, the grid size,  the elapsed seconds.
+     * then it prints all the variables used to the console.
+     *
+     * @param elapsedSeconds the amount of seconds the player took to complete the game
+     * @return returns an int
+     */
     private int calculateScore(int elapsedSeconds, GalaxySettings galaxySettings) {
         double gridSize = galaxySettings.getGalaxySize();
         double numberOfObstacles = galaxySettings.getPirateCount() + galaxySettings.getMeteoriteCount();

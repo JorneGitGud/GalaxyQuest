@@ -22,12 +22,18 @@ public class MovableObject extends GameObject {
     private Direction moveDirection;
     public Consumer<MovableObject> onMoveEnded;
 
-    //to do java doc
+
     public MovableObject(SpriteList spriteList) {
         super(spriteList);
     }
 
-    //to do java doc
+    /**
+     *this method is used to move an object from one tile to another, it sets the tile the object should move to next.
+     * it has a switch case which is used to determen to which tile the object should move
+     * @param frames the amount of frames used in animation while the object is moving.
+     * @param direction the direction in which the object moves
+     * @return returns true if object is moving. od moves the object first and then returns a true.
+     */
     public boolean move(int frames, Direction direction) {
         if (moving)
             return true;
@@ -69,7 +75,10 @@ public class MovableObject extends GameObject {
         return true;
     }
 
-    //to do java doc
+    /**
+     * the method takes sets the object to the next tile.
+     * @return returns a double that is used in the animations
+     */
     public double updateMove() {
         currentFrame++;
         if (currentFrame >= moveFrames) {
@@ -80,11 +89,11 @@ public class MovableObject extends GameObject {
         }
         return (1.0 / moveFrames) * currentFrame;
     }
-    //to do java doc
+
     public boolean isMoving() {
         return moving;
     }
-    //to do java doc
+
     public Direction getMoveDirection() {
         return moveDirection;
     }

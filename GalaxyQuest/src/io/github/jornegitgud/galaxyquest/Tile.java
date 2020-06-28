@@ -5,6 +5,11 @@ import io.github.jornegitgud.galaxyquest.gameObjects.MovableObject;
 import io.github.jornegitgud.galaxyquest.gameObjects.Player;
 
 import java.util.ArrayList;
+/**
+ * this class is used to create all the tiles that make up the galaxy.
+ * the tile contains references to other tiles that are above, below left and right from this tile.
+ * it has getters and setters.
+ */
 
 public class Tile {
 
@@ -15,7 +20,11 @@ public class Tile {
 
     private Coordinate coordinate;
     private ArrayList<GameObject> gameObjects = new ArrayList<>();
-
+    /**
+     * the Tile constructor uses coordinates that help build and render the galaxy and are also used for path finding by spacePirates.
+     *
+     * @param coordinate {@link Coordinate}
+     */
     public Tile(Coordinate coordinate) {
         this.coordinate = coordinate;
     }
@@ -52,11 +61,20 @@ public class Tile {
         this.tileLeft = tileLeft;
     }
 
+    /**
+     * this methhod is used to set {@link GameObject} on the tile.
+     *
+     * @param gameObject the game object can be a {@link io.github.jornegitgud.galaxyquest.gameObjects.Meteorite}, {@link io.github.jornegitgud.galaxyquest.gameObjects.Planet}, {@link io.github.jornegitgud.galaxyquest.gameObjects.Player}, {@link io.github.jornegitgud.galaxyquest.gameObjects.SpacePirate} or a {@link io.github.jornegitgud.galaxyquest.gameObjects.Wormhole}.
+     */
     public void addGameObject(GameObject gameObject) {
         if(!this.gameObjects.contains(gameObject))
             gameObjects.add(gameObject);
     }
-
+    /**
+     * this method remove a gameobject from the tile.
+     *
+     * @param gameObject the object that is to be removed
+     */
     public void removeGameObject(GameObject gameObject) {
         if(this.gameObjects.contains(gameObject))
             this.gameObjects.remove(gameObject);
@@ -65,7 +83,12 @@ public class Tile {
     public ArrayList<GameObject> getGameObjects() {
         return gameObjects;
     }
-
+    /**
+     * check to see if the tile contains a specific GameObject.
+     *
+     * @param tClass the type of object to check.
+     * @return returns a boolean.
+     */
     public boolean contains(Class tClass) {
         for(GameObject object : gameObjects) {
             if(object.getClass().isAssignableFrom(tClass))
@@ -73,7 +96,12 @@ public class Tile {
         }
         return false;
     }
-
+    /**
+     * check to see if the tile contains a specific GameObject.
+     *
+     * @param tClasses the type of object to check.
+     * @return returns a boolean.
+     */
     public boolean containsAny(Class... tClasses) {
         for(GameObject object : gameObjects) {
             String className = object.getClass().getName();
@@ -84,6 +112,13 @@ public class Tile {
         return false;
     }
 
+    /**
+     * this methode takes in an unspecified object and returns any instance of that object that is contained in the tile class
+     *
+     * @param tClass the object to check
+     * @param <T> unspecified type.
+     * @return returns an object if an object of "T" is found on this tile.
+     */
     public <T extends GameObject> T getFirst(Class<T> tClass) {
         for(GameObject object : gameObjects) {
             if(object.getClass().isAssignableFrom(tClass))
@@ -96,7 +131,11 @@ public class Tile {
     public Coordinate getCoordinate(GalaxyRenderer gr) {
         return coordinate;
     }
-
+    /**
+     * returns the direction of the otherTile
+     * @param otherTile the tile you are looking to get direction to
+     * @return returns a {@link Direction} ENUMERATOR
+     */
     public Direction getDirectionTo(Tile otherTile) {
         var deltaX = Math.abs(otherTile.coordinate.x - this.coordinate.x);
         var deltaY = Math.abs(otherTile.coordinate.y - this.coordinate.y);

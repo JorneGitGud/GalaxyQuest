@@ -17,7 +17,7 @@ public class Player extends MovableObject implements HasDirection {
     public Consumer<Player> onDirectionChanged;
 
 
-// even checken hoe we de player naam op halen en setten in de game
+
     public Player( Direction direction, DirectionalSpriteList directionalSpriteList) {
         super(directionalSpriteList);
 

@@ -4,7 +4,12 @@ import io.github.jornegitgud.galaxyquest.gameObjects.GameObject;
 import io.github.jornegitgud.galaxyquest.gameObjects.Player;
 
 import java.util.ArrayList;
-
+/**
+ * this is the galaxy class. it contains the rules for setting up a galaxy. these rules are set in the {@link GalaxySettings} class.
+ * the Galaxy contains all the tiles that make up the grid. these tiles are set in an Tile[][], this array is filles with default tiles,
+ * specific tiles are set in populateGalaxy() in the {@link GameManager} class.
+ * it has getters and setters
+ */
 public class Galaxy {
 
     private GalaxySettings settings;
@@ -13,7 +18,11 @@ public class Galaxy {
     private ArrayList<GameObject> objects = new ArrayList<>();
     private Player player;
 
-
+    /**
+     * the constructor of the Galaxy class uses the GalaxySettings for its settings. the size of the grid and number of objects.
+     * it sets the tiles and gives them their neighbours.
+     * @param settings
+     */
     public Galaxy(GalaxySettings settings) {
 
         this.settings = settings;

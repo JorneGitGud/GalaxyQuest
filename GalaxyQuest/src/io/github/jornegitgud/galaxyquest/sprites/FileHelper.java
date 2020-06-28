@@ -13,16 +13,26 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.regex.Pattern;
 
-//to do Javadoc
+/**
+ * the fileHelper class is used in loading images and cutting some of them up into sprites.
+ * it uses a String variable to choose the right path
+ */
 public class FileHelper {
     private static String normalizePath(String path) {
-        if(!path.startsWith("/") && !path.startsWith("\\"))
+        if (!path.startsWith("/") && !path.startsWith("\\"))
             path = "/" + path;
 
         String[] parts = path.split("[/\\\\]");
         return System.getProperty("user.dir") + File.separator + "GalaxyQuest" + File.separator + String.join(File.separator, parts);
     }
 
+    /**
+     * this method is used to create an opening/connection to a file.
+     *
+     * @param path the path of the image
+     * @return connection to a file
+     * @throws FileNotFoundException
+     */
     public static FileInputStream createInputStream(String path) throws FileNotFoundException {
         String normalizedPath = normalizePath(path);
 
@@ -55,10 +65,10 @@ public class FileHelper {
 
         Pattern pattern = Pattern.compile(regex);
 
-        for(File file : folder.listFiles()) {
-            if(file.isDirectory())
+        for (File file : folder.listFiles()) {
+            if (file.isDirectory())
                 continue;
-            if(pattern.matcher(file.getName()).matches())
+            if (pattern.matcher(file.getName()).matches())
                 images.add(new Image(new FileInputStream(file.getAbsolutePath())));
         }
 
