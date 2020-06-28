@@ -121,8 +121,9 @@ public class GameManager {
     }
 
     /**
-     *
-     * @param object
+     * this method check if the given GameObject is a Player object, if so calls the checkCurrentTilePlayer method.
+     * if not calls the gameOver function.
+     * @param object the Object to be checked
      */
     private void checkCurrentTileMoveableObject(GameObject object) {
         if (object instanceof Player)
@@ -132,7 +133,13 @@ public class GameManager {
             gameOver(false);
     }
 
-
+    /**
+     * checks if the tile where the player is at currently contains another object.
+     * if the other object is a planet sets it to visited.
+     * if meteorite or spacePirate calls the gameOver method with boolean false
+     * if wormhole calls the gameOver method with boolean true
+     * @param player the spaceship in the galaxy
+     */
     private void checkCurrentTilePlayer(Player player) {
         if (player.getTile().contains(Planet.class)) {
             var planet = player.getTile().getFirst(Planet.class);
@@ -143,7 +150,7 @@ public class GameManager {
             renderer.addSprite(galaxy, planet.getTile(), "assets/Planets/Planet_Visited.png");
             if (planetsVisited == galaxy.getSettings().getPlanetCount())
                 wormhole.activate();
-            //move player to tile
+
         } else if (player.getTile().containsAny(Meteorite.class, SpacePirate.class)) {
             gameOver(false);
         } else if (player.getTile().contains(Wormhole.class)) {
