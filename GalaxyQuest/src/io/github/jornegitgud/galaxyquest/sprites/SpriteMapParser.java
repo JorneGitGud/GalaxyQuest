@@ -7,8 +7,6 @@ import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.util.ArrayList;
 
-
-
 public class SpriteMapParser {
     public static ArrayList<javafx.scene.image.Image> parseSpriteMapToImages(Image image, int singleSpriteWidthPx, int singleSpriteHeightPx) {
         return parseSpriteMapToImages(image, singleSpriteWidthPx, singleSpriteHeightPx, 0, 0);
@@ -39,10 +37,6 @@ public class SpriteMapParser {
         }
 
         return sprites;
-    }
-
-    public static ArrayList<ImageView> parseSpriteMapToImageViews(Image image, int singleSpriteWidthPx, int singleSpriteHeightPx) {
-        return parseSpriteMapToImageViews(image, singleSpriteWidthPx, singleSpriteHeightPx, 0, 0);
     }
 
     public static ArrayList<ImageView> parseSpriteMapToImageViews(Image image, int singleSpriteWidthPx, int singleSpriteHeightPx, int startX, int startY) {
