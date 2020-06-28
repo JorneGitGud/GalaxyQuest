@@ -32,8 +32,29 @@
   <component name="ChangeListManager">
     <list default="true" id="fff264f5-7b44-419a-b4fb-10106bfbed3e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GalaxyQuest/src/io/github/jornegitgud/galaxyquest/Coordinate.java" beforeDir="false" afterPath="$PROJECT_DIR$/GalaxyQuest/src/io/github/jornegitgud/galaxyquest/Coordinate.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GalaxyQuest/src/io/github/jornegitgud/galaxyquest/GameManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/GalaxyQuest/src/io/github/jornegitgud/galaxyquest/GameManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/GalaxyMenugif.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/GalaxyQuestMainMenu.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/GalaxyQuest.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Settings.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/tryxy/MainMenu Galaxy Quest.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/tryxy/out/production/MainMenu Galaxy Quest/Galaxy.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/tryxy/out/production/MainMenu Galaxy Quest/META-INF/MainMenu Galaxy Quest.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/tryxy/out/production/MainMenu Galaxy Quest/MainMenuSettings/GalaxyQuestMainMenu.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/tryxy/out/production/MainMenu Galaxy Quest/MainMenuSettings/Settings.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/tryxy/out/production/MainMenu Galaxy Quest/MainMenuSettings/assists/GalaxyMenugif.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/tryxy/out/production/MainMenu Galaxy Quest/assists/Galaxy.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/tryxy/out/production/MainMenu Galaxy Quest/assists/MainMenuSettings/assists/GalaxyMenugif.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/tryxy/out/production/MainMenu Galaxy Quest/assists/galaxybackground.PNG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/tryxy/out/production/MainMenu Galaxy Quest/galaxybackground.PNG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/tryxy/out/production/tryxy/assists/Galaxy.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/tryxy/out/production/tryxy/assists/galaxybackground.PNG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/tryxy/out/production/tryxy/sample/sample.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/tryxy/src/MainMenuSettings/GalaxyQuestMainMenu.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/tryxy/src/MainMenuSettings/Settings.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/tryxy/src/assists/Galaxy.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/tryxy/src/assists/MainMenuSettings/assists/GalaxyMenugif.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/tryxy/src/assists/galaxybackground.PNG" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,10 +84,12 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/GalaxyQuest-feature-Jorne" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs.mocha.mocha_node_package_dir" value="" />
     <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.javacompiler" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -83,7 +106,7 @@
       <recent name="C:\Projects\GalaxyQuest" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager" selected="Maven.GalaxyQuest [compile,javafx:run]">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="io.github.jornegitgud.galaxyquest.Main" />
       <module name="GalaxyQuest" />
@@ -153,12 +176,66 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="GalaxyQuest [compile,javafx:run]" type="MavenRunConfiguration" factoryName="Maven" nameIsGenerated="true">
+      <MavenSettings>
+        <option name="myGeneralSettings" />
+        <option name="myRunnerSettings" />
+        <option name="myRunnerParameters">
+          <MavenRunnerParameters>
+            <option name="profiles">
+              <set />
+            </option>
+            <option name="goals">
+              <list>
+                <option value="compile" />
+                <option value="javafx:run" />
+              </list>
+            </option>
+            <option name="pomFileName" />
+            <option name="profilesMap">
+              <map />
+            </option>
+            <option name="resolveToWorkspace" value="false" />
+            <option name="workingDirPath" value="$PROJECT_DIR$" />
+          </MavenRunnerParameters>
+        </option>
+      </MavenSettings>
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="MavenRunConfiguration" factoryName="Maven">
+      <MavenSettings>
+        <option name="myGeneralSettings" />
+        <option name="myRunnerSettings" />
+        <option name="myRunnerParameters">
+          <MavenRunnerParameters>
+            <option name="profiles">
+              <set />
+            </option>
+            <option name="goals">
+              <list>
+                <option value="mvn" />
+                <option value="clean" />
+                <option value="javafx:run" />
+              </list>
+            </option>
+            <option name="pomFileName" />
+            <option name="profilesMap">
+              <map />
+            </option>
+            <option name="resolveToWorkspace" value="false" />
+            <option name="workingDirPath" value="$PROJECT_DIR$" />
+          </MavenRunnerParameters>
+        </option>
+      </MavenSettings>
+      <method v="2" />
+    </configuration>
     <list>
       <item itemvalue="Application.Main" />
       <item itemvalue="JUnit.GameManagerTests" />
       <item itemvalue="JUnit.GameManagerTests.MeteoritesSpawnInRandomLocation" />
       <item itemvalue="JUnit.GameManagerTests.WormholeSpawnsInRandomLocation" />
       <item itemvalue="JUnit.All in GalaxyQuest" />
+      <item itemvalue="Maven.GalaxyQuest [compile,javafx:run]" />
     </list>
     <recent_temporary>
       <list>
@@ -169,6 +246,18 @@
         <item itemvalue="JUnit.GameManagerTests.MeteoritesSpawnInRandomLocation" />
       </list>
     </recent_temporary>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -208,19 +297,20 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="478" y="48" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1593299710940">
+    <state x="478" y="48" width="1092" height="747" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1593364376735">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="478" y="48" key="#com.intellij.execution.impl.EditConfigurationsDialog/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1593294931246" />
-    <state x="478" y="48" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1593299710940" />
+    <state x="478" y="48" width="1092" height="747" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1593364376735" />
     <state x="92" y="92" width="1736" height="856" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog" timestamp="1591905974414">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -254,38 +344,38 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="414" height="466" key="DebuggerActiveHint/0.0.1920.1040@0.0.1920.1040" timestamp="1592863468680" />
-    <state x="740" y="276" key="FileChooserDialogImpl" timestamp="1593331056701">
+    <state x="740" y="276" key="FileChooserDialogImpl" timestamp="1593363628388">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="740" y="276" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1593331056701" />
+    <state x="740" y="276" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1593363628388" />
     <state x="740" y="279" key="FileChooserDialogImpl/0.0.1920.1050@0.0.1920.1050" timestamp="1591727186230" />
-    <state width="1877" height="282" key="GridCell.Tab.0.bottom" timestamp="1593300609160">
+    <state width="1877" height="281" key="GridCell.Tab.0.bottom" timestamp="1593364446045">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="938" height="352" key="GridCell.Tab.0.bottom/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1593296527378" />
     <state width="1877" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040/-3840.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1593011357854" />
-    <state width="1877" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1593300609160" />
+    <state width="1877" height="281" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1593364446045" />
     <state width="1877" height="119" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1593280833996" />
-    <state width="1877" height="282" key="GridCell.Tab.0.center" timestamp="1593300609160">
+    <state width="1877" height="281" key="GridCell.Tab.0.center" timestamp="1593364446045">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="938" height="352" key="GridCell.Tab.0.center/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1593296527378" />
     <state width="1877" height="282" key="GridCell.Tab.0.center/0.0.1920.1040/-3840.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1593011357854" />
-    <state width="1877" height="282" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1593300609160" />
+    <state width="1877" height="281" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1593364446045" />
     <state width="1877" height="119" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1593280833996" />
-    <state width="1877" height="282" key="GridCell.Tab.0.left" timestamp="1593300609160">
+    <state width="1877" height="281" key="GridCell.Tab.0.left" timestamp="1593364446045">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="938" height="352" key="GridCell.Tab.0.left/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1593296527378" />
     <state width="1877" height="282" key="GridCell.Tab.0.left/0.0.1920.1040/-3840.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1593011357854" />
-    <state width="1877" height="282" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1593300609160" />
+    <state width="1877" height="281" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1593364446045" />
     <state width="1877" height="119" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1593280833996" />
-    <state width="1877" height="282" key="GridCell.Tab.0.right" timestamp="1593300609160">
+    <state width="1877" height="281" key="GridCell.Tab.0.right" timestamp="1593364446045">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="938" height="352" key="GridCell.Tab.0.right/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1593296527378" />
     <state width="1877" height="282" key="GridCell.Tab.0.right/0.0.1920.1040/-3840.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1593011357854" />
-    <state width="1877" height="282" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1593300609160" />
+    <state width="1877" height="281" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1593364446045" />
     <state width="1877" height="119" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1593280833996" />
     <state width="938" height="352" key="GridCell.Tab.1.bottom" timestamp="1593296527378">
       <screen x="0" y="0" width="1920" height="1050" />
@@ -311,20 +401,20 @@
     <state width="938" height="352" key="GridCell.Tab.1.right/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1593296527378" />
     <state width="1877" height="348" key="GridCell.Tab.1.right/0.0.1920.1040/-3840.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1593009236002" />
     <state width="938" height="348" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1593103318767" />
-    <state x="440" y="95" key="SettingsEditor" timestamp="1593294813362">
-      <screen x="0" y="0" width="1920" height="1050" />
+    <state x="440" y="94" key="SettingsEditor" timestamp="1593364239975">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="440" y="95" key="SettingsEditor/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1593294813362" />
-    <state x="440" y="94" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1593029388447" />
+    <state x="440" y="94" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1593364239975" />
     <state x="440" y="95" key="SettingsEditor/0.0.1920.1050@0.0.1920.1050" timestamp="1591727229871" />
     <state x="681" y="261" width="570" height="524" key="StructurePopup" timestamp="1593093309689">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="681" y="261" width="570" height="524" key="StructurePopup/0.0.1920.1040@0.0.1920.1040" timestamp="1593093309689" />
-    <state x="656" y="344" key="com.intellij.ide.util.TipDialog" timestamp="1591905631075">
+    <state x="656" y="344" key="com.intellij.ide.util.TipDialog" timestamp="1593363380525">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="656" y="344" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1591905631075" />
+    <state x="656" y="344" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1593363380525" />
     <state x="93" y="263" width="1562" height="920" key="dock-window-1" timestamp="1593280238207">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
@@ -342,12 +432,12 @@
     </state>
     <state x="616" y="240" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1592599797997" />
     <state x="616" y="249" key="run.anything.popup/0.0.1920.1080@0.0.1920.1080" timestamp="1593271651213" />
-    <state x="623" y="227" width="672" height="685" key="search.everywhere.popup" timestamp="1593293529834">
-      <screen x="0" y="0" width="1920" height="1050" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1593364243677">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="623" y="227" width="672" height="685" key="search.everywhere.popup/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1593293529834" />
     <state x="-1297" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/-3840.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1593009110587" />
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1593086515271" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1593364243677" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
