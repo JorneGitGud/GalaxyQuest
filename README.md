@@ -40,4 +40,8 @@ _____....-//___|  \_\  |  |=====| |   |_|_\\      |___\\    .                 ..
  -JUnit 5
  -Maven
  -Cosmigo Pro motion NG
-                                   
+ 
+ SETUP INSTRUCTIONS:
+ To run the game, please ensure 'GalaxyQuest\resources' is
+ marked as resource folder, rebuild the project, then run either the 'Windows' or 'OS X'
+ launch profile depending on your OS.
