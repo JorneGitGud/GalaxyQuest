@@ -35,7 +35,7 @@ public class Main extends Application {
      */
     @Override
     public void start(Stage stage) throws Exception {
-        this.highScoresList = HighScoreStorage.loadHighScores();
+        highScoresList = HighScoreStorage.loadHighScores();
 
         stage.setTitle("Galaxy Quest");
         FXMLLoader fxmlLoaderMenu = new FXMLLoader(getClass().getClassLoader().getResource("GalaxyQuestMainMenu.fxml"));

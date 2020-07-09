@@ -1,8 +1,6 @@
 package io.github.jornegitgud.galaxyquest;
 
 import io.github.jornegitgud.galaxyquest.gameObjects.GameObject;
-import io.github.jornegitgud.galaxyquest.gameObjects.MovableObject;
-import io.github.jornegitgud.galaxyquest.gameObjects.Player;
 
 import java.util.ArrayList;
 /**
@@ -18,8 +16,8 @@ public class Tile {
     private Tile tileRight;
     private Tile tileLeft;
 
-    private Coordinate coordinate;
-    private ArrayList<GameObject> gameObjects = new ArrayList<>();
+    private final Coordinate coordinate;
+    private final ArrayList<GameObject> gameObjects = new ArrayList<>();
 
     /**
      * the Tile constructor uses coordinates that help build and render the galaxy and are also used for path finding by spacePirates.
@@ -77,12 +75,7 @@ public class Tile {
      * @param gameObject the object that is to be removed
      */
     public void removeGameObject(GameObject gameObject) {
-        if(this.gameObjects.contains(gameObject))
-            this.gameObjects.remove(gameObject);
-    }
-
-    public ArrayList<GameObject> getGameObjects() {
-        return gameObjects;
+        this.gameObjects.remove(gameObject);
     }
 
     /**
@@ -131,7 +124,12 @@ public class Tile {
         return null;
     }
 
-    public Coordinate getCoordinate(GalaxyRenderer gr) {
+    /**
+     * this method returns an Coordinate object. it asks for a GalaxyRenderer as a security check. so that only a class that Class that contains this object can access this method.
+     * @param galaxyRenderer this is the security check.
+     * @return returns an Coordinate object
+     */
+    public Coordinate getCoordinate(GalaxyRenderer galaxyRenderer) {
         return coordinate;
     }
 

@@ -1,7 +1,5 @@
 package io.github.jornegitgud.galaxyquest;
 
-import io.github.jornegitgud.galaxyquest.gameObjects.*;
-
 /**
  * this is the GameResult class.
  * this class is used to determine if the game is won or not.
@@ -9,8 +7,8 @@ import io.github.jornegitgud.galaxyquest.gameObjects.*;
  */
 
 public class GameResult {
-    Boolean win;
-    HighScore highScore;
+    final Boolean win;
+    final HighScore highScore;
 
     /**
      * This method can be called to determine the outcome of the game

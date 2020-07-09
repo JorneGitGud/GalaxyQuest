@@ -1,8 +1,6 @@
 package io.github.jornegitgud.galaxyquest.mockups;
 
 import io.github.jornegitgud.galaxyquest.*;
-import io.github.jornegitgud.galaxyquest.gameObjects.Planet;
-import io.github.jornegitgud.galaxyquest.gameObjects.Wormhole;
 import javafx.stage.Stage;
 
 import java.io.IOException;

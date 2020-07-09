@@ -8,8 +8,9 @@ import io.github.jornegitgud.galaxyquest.sprites.SimpleSpriteList;
 import io.github.jornegitgud.galaxyquest.sprites.SpriteMapParser;
 import javafx.scene.Scene;
 import javafx.scene.image.ImageView;
-import javafx.scene.layout.*;
+import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
+
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -26,8 +27,8 @@ public class GalaxyRenderer {
     private final Stage stage;
     private final Scene gameScene;
     private final Pane galaxyPane;
-    private HashMap<GameObject, ImageView> sprites = new HashMap<>();
-    private ArrayList<ImageView> staticSprites = new ArrayList<>();
+    private final HashMap<GameObject, ImageView> sprites = new HashMap<>();
+    private final ArrayList<ImageView> staticSprites = new ArrayList<>();
     public Consumer<Stage> onStageClosed;
 
     private SimpleSpriteList galaxySprites;

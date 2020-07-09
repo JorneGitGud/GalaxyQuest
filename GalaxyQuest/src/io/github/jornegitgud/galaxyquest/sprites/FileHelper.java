@@ -1,17 +1,13 @@
 package io.github.jornegitgud.galaxyquest.sprites;
 
-import javafx.embed.swing.SwingFXUtils;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
 import javax.imageio.ImageIO;
-import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.regex.Pattern;
 
 /**
  * the fileHelper class is used in loading images for use as sprites.

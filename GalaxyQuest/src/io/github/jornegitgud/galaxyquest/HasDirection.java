@@ -1,9 +1,5 @@
 package io.github.jornegitgud.galaxyquest;
 
-import io.github.jornegitgud.galaxyquest.gameObjects.*;
-
-import java.util.function.Consumer;
-
 /**
  * this is an interface for for classes that use a direction
  */

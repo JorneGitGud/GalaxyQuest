@@ -74,7 +74,7 @@ public class GalaxySettingsTests {
         Assertions.assertEquals(6,galaxySettings.getMeteoriteCount());
 
         galaxySettings.freezeSettings();
-        Assertions.assertEquals(false, galaxySettings.getCanBeAltered());
+        Assertions.assertFalse(galaxySettings.getCanBeAltered());
         galaxySettings.setWidth(12);
         galaxySettings.setHeight(12);
         galaxySettings.setPlanetCount(8);

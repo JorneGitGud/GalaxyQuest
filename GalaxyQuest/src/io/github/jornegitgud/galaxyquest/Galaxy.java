@@ -12,10 +12,9 @@ import java.util.ArrayList;
  */
 public class Galaxy {
 
-    private GalaxySettings settings;
-    private KeyboardListener keyboardListener;
-    private Tile[][] galaxyTiles;
-    private ArrayList<GameObject> objects = new ArrayList<>();
+    private final GalaxySettings settings;
+    private final Tile[][] galaxyTiles;
+    private final ArrayList<GameObject> objects = new ArrayList<>();
     private Player player;
 
     /**
@@ -59,6 +58,13 @@ public class Galaxy {
 
     }
 
+    /**
+     * This method returns a Tile. is asks for a GalaxyRenderer so that only a class that contains a GalaxyRenderer can make use of this method.
+     * @param galaxyRenderer the security check.
+     * @param xPos the position of the tile you want to have returned
+     * @param yPos the position of the tile you want to have returned
+     * @return returns a Tile object
+     */
     public Tile getGalaxyTile(GalaxyRenderer galaxyRenderer, int xPos, int yPos) {
         if (yPos < this.galaxyTiles.length && xPos < this.galaxyTiles[0].length && xPos >= 0 && yPos >= 0) {
             return this.galaxyTiles[yPos][xPos];

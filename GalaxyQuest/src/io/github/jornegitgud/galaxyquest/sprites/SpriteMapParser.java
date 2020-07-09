@@ -83,8 +83,8 @@ public class SpriteMapParser {
     public static ArrayList<ImageView> parseSpriteMapToImageViews(Image image, int singleSpriteWidthPx, int singleSpriteHeightPx, int startX, int startY) {
         ArrayList<javafx.scene.image.Image> images = parseSpriteMapToImages(image, singleSpriteWidthPx, singleSpriteHeightPx, startX, startY);
         ArrayList<ImageView> imageViews = new ArrayList<>();
-        for(var i = 0; i < images.size(); i++) {
-            imageViews.add(new ImageView(images.get(i)));
+        for (javafx.scene.image.Image value : images) {
+            imageViews.add(new ImageView(value));
         }
         return imageViews;
     }

@@ -8,7 +8,7 @@ import org.junit.jupiter.api.Test;
 
 @DisplayName("GameObject tests")
 public class GameObjectTests {
-    private GameObject gameObject;
+    private final GameObject gameObject;
 
     public GameObjectTests() {
         gameObject = new GameObject(new SimpleSpriteList());

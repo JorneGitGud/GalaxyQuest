@@ -1,6 +1,5 @@
 package io.github.jornegitgud.galaxyquest;
 
-import io.github.jornegitgud.galaxyquest.gameObjects.*;
 import javafx.scene.Scene;
 
 import java.util.function.Consumer;
@@ -13,7 +12,6 @@ import java.util.function.Consumer;
 
 public class KeyboardListener {
 
-    private  Scene gameScene;
     private boolean isUpPressed;
     private boolean isRightPressed;
     private boolean isDownPressed;
@@ -30,7 +28,6 @@ public class KeyboardListener {
      */
 
     public KeyboardListener(Scene gameScene) {
-        this.gameScene = gameScene;
 
         gameScene.setOnKeyPressed((keyEvent -> {
             switch(keyEvent.getCode()) {

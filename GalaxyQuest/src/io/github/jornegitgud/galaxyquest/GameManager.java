@@ -15,13 +15,12 @@ import java.util.function.Consumer;
  */
 public class GameManager {
 
-    private GalaxyRenderer renderer;
-    private KeyboardListener keyboardListener;
-    private Galaxy galaxy;
-    private AnimationTimer mainLoop;
+    private final GalaxyRenderer renderer;
+    private final Galaxy galaxy;
+    private final AnimationTimer mainLoop;
     public Consumer<GameResult> onGameEnded = (result) -> { };
 
-    private long startTime;
+    private final long startTime;
 
     private static final double MOVE_FRAME_DURATION_SECONDS = 1d / 60d;
     private static final double SPRITE_FRAME_DURATION_SECONDS = 1d / 4d;
@@ -30,6 +29,8 @@ public class GameManager {
     private int planetsVisited = 0;
     private Wormhole wormhole;
 
+
+    //Stage security reasons??
     public GameManager(Stage stage, GalaxySettings galaxySettings, GalaxyRenderer galaxyRenderer) throws IOException {
 
         startTime = System.currentTimeMillis();
@@ -38,7 +39,7 @@ public class GameManager {
         this.renderer = galaxyRenderer;
 
         populateGalaxy(galaxy);
-        keyboardListener = new KeyboardListener(renderer.getScene());
+        KeyboardListener keyboardListener = new KeyboardListener(renderer.getScene());
         renderer.renderGalaxy(galaxy);
 
         mainLoop = new AnimationTimer() {
@@ -238,7 +239,7 @@ public class GameManager {
         availableCoordinates.remove(tempPos);
 
     }
-
+//galaxy renderer security reasons??
     public Galaxy getGalaxy(GalaxyRenderer renderer) {
         return this.galaxy;
     }

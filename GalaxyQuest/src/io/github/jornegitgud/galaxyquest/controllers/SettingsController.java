@@ -1,9 +1,6 @@
 package io.github.jornegitgud.galaxyquest.controllers;
 
-import com.sun.javafx.scene.control.behavior.SliderBehavior;
-import io.github.jornegitgud.galaxyquest.Galaxy;
 import io.github.jornegitgud.galaxyquest.GalaxySettings;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.Slider;

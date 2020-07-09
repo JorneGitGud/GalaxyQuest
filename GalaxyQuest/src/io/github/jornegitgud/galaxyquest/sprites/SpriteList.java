@@ -3,10 +3,6 @@ package io.github.jornegitgud.galaxyquest.sprites;
 import io.github.jornegitgud.galaxyquest.Direction;
 import javafx.scene.image.Image;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Random;
-
 /*
 this interface makes sure that classes that implement this interface have the getNextSprite functions
  */

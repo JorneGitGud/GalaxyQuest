@@ -1,15 +1,15 @@
 package io.github.jornegitgud.galaxyquest.gameObjects;
 
 import io.github.jornegitgud.galaxyquest.Direction;
-import io.github.jornegitgud.galaxyquest.sprites.*;
+import io.github.jornegitgud.galaxyquest.sprites.DirectionalSpriteList;
+import io.github.jornegitgud.galaxyquest.sprites.FileHelper;
+import io.github.jornegitgud.galaxyquest.sprites.SimpleSpriteList;
+import io.github.jornegitgud.galaxyquest.sprites.SpriteMapParser;
 import javafx.scene.image.Image;
 
-import java.io.File;
 import java.io.IOException;
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.Random;
 
 /**
  * the GameObjectFactory creates all the objects that are spawned on the gameScene.
@@ -20,7 +20,6 @@ public class GameObjectFactory {
     private static ArrayList<Image> meteoriteSprites;
     private static HashMap<Direction, ArrayList<Image>> spacePirateSprites;
     private static ArrayList<Image> wormholeSprites;
-    private static Random random = new Random();
     private static int planetChoice = 0;
 
     /**

@@ -6,7 +6,6 @@ import io.github.jornegitgud.galaxyquest.gameObjects.Wormhole;
 import io.github.jornegitgud.galaxyquest.mockups.GalaxyRendererMock;
 import io.github.jornegitgud.galaxyquest.mockups.GameManagerMock;
 import javafx.stage.Stage;
-import org.assertj.core.api.Assert;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -15,7 +14,6 @@ import org.testfx.framework.junit5.ApplicationExtension;
 import org.testfx.framework.junit5.Start;
 
 import java.io.IOException;
-import java.util.ArrayList;
 
 @ExtendWith(ApplicationExtension.class)
 public class GameManagerTests {
@@ -92,15 +90,15 @@ public class GameManagerTests {
     @Test
     @DisplayName("Meteorites spawn in random locations")
     public void MeteoritesSpawnInRandomLocation() {
-        String galaxy1MeteoriteCoords = "";
-        String galaxy2MeteoriteCoords = "";
+        StringBuilder galaxy1MeteoriteCoords = new StringBuilder();
+        StringBuilder galaxy2MeteoriteCoords = new StringBuilder();
 
         for (var x = 0; x < gameManager.getGalaxy().getSettings().getWidth(); x++)
             for (var y = 0; y < gameManager.getGalaxy().getSettings().getHeight(); y++) {
                 var tile = gameManager.getGalaxy().getGalaxyTile(mockRenderer, x, y);
                 if (tile.contains(Meteorite.class)) {
                     var coordinate = mockRenderer.getCoordinate(tile);
-                    galaxy1MeteoriteCoords += coordinate.x + "," + coordinate.y + "|";
+                    galaxy1MeteoriteCoords.append(coordinate.x).append(",").append(coordinate.y).append("|");
                 }
             }
 
@@ -109,11 +107,11 @@ public class GameManagerTests {
                 var tile = gameManager2.getGalaxy().getGalaxyTile(mockRenderer, x, y);
                 if (tile.contains(Meteorite.class)) {
                     var coordinate = mockRenderer.getCoordinate(tile);
-                    galaxy2MeteoriteCoords += coordinate.x + "," + coordinate.y + "|";
+                    galaxy2MeteoriteCoords.append(coordinate.x).append(",").append(coordinate.y).append("|");
                 }
             }
 
-        Assertions.assertNotEquals(galaxy1MeteoriteCoords, galaxy2MeteoriteCoords);
+        Assertions.assertNotEquals(galaxy1MeteoriteCoords.toString(), galaxy2MeteoriteCoords.toString());
     }
 
     @Test

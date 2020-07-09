@@ -35,7 +35,7 @@ public class DirectionalSpriteList implements SpriteList {
      * this constructor sets the last direction to the default direction
      * fills the hashmap with arraylists containing sprites (used for that direction)
      * @param sprites contains the sprites
-     * @param defaultDirection
+     * @param defaultDirection the direction to which to set the default direction.
      */
     public DirectionalSpriteList(HashMap<Direction, ArrayList<Image>> sprites, Direction defaultDirection) {
         this.lastDirection = defaultDirection;

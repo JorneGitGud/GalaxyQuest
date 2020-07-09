@@ -6,8 +6,8 @@ package io.github.jornegitgud.galaxyquest;
  *
  */
 public class Coordinate {
-    public int x;
-    public int y;
+    public final int x;
+    public final int y;
 
     /**
      * this method calculates the distance between this coordinate and the coordinate that it takes in.

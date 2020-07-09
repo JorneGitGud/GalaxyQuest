@@ -8,7 +8,6 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
 
@@ -30,14 +29,14 @@ public class SpriteListTests {
 
         var sprites = simpleSpriteList.getSprites();
         Assertions.assertNotNull(sprites);
-        Assertions.assertTrue(sprites.size() == 1);
+        Assertions.assertEquals(1, sprites.size());
 
         simpleSpriteList.addSprite(FileHelper.createFxImage("assets/placeholder.png"));
-        Assertions.assertTrue(simpleSpriteList.getSprites().size() == 2);
+        Assertions.assertEquals(2, simpleSpriteList.getSprites().size());
 
         simpleSpriteList = new SimpleSpriteList(sprites);
         Assertions.assertNotNull(simpleSpriteList.getSprites());
-        Assertions.assertTrue(simpleSpriteList.getSprites().size() == sprites.size());
+        Assertions.assertEquals(simpleSpriteList.getSprites().size(), sprites.size());
     }
 
     @Test
@@ -52,7 +51,7 @@ public class SpriteListTests {
 
         simpleSpriteList.addSprites(sprites);
         Assertions.assertNotNull(simpleSpriteList.getSprites());
-        Assertions.assertTrue(simpleSpriteList.getSprites().size() == sprites.size());
+        Assertions.assertEquals(simpleSpriteList.getSprites().size(), sprites.size());
     }
 
     @Test
@@ -73,16 +72,16 @@ public class SpriteListTests {
         directionalSpriteList.addSprite(Direction.UP, FileHelper.createFxImage("assets/placeholder.png"));
         directionalSpriteList.addSprite(Direction.LEFT, FileHelper.createFxImage("assets/placeholder.png"));
         directionalSpriteList.addSprite(Direction.UP, FileHelper.createFxImage("assets/placeHolder.png"));
-        Assertions.assertTrue(directionalSpriteList.getSprites(Direction.RIGHT).size() == 0);
-        Assertions.assertTrue(directionalSpriteList.getSprites(Direction.LEFT).size() == 1);
-        Assertions.assertTrue(directionalSpriteList.getSprites(Direction.DOWN).size() == 0);
-        Assertions.assertTrue(directionalSpriteList.getSprites(Direction.UP).size() == 2);
+        Assertions.assertEquals(0, directionalSpriteList.getSprites(Direction.RIGHT).size());
+        Assertions.assertEquals(1, directionalSpriteList.getSprites(Direction.LEFT).size());
+        Assertions.assertEquals(0, directionalSpriteList.getSprites(Direction.DOWN).size());
+        Assertions.assertEquals(2, directionalSpriteList.getSprites(Direction.UP).size());
 
         var hashMap = directionalSpriteList.getSprites();
         var spriteList2 = new DirectionalSpriteList(hashMap, Direction.RIGHT);
 
-        Assertions.assertTrue(spriteList2.getSprites().keySet().size() == hashMap.keySet().size());
-        Assertions.assertTrue(spriteList2.getSprites().get(Direction.LEFT).size() == directionalSpriteList.getSprites(Direction.LEFT).size());
+        Assertions.assertEquals(spriteList2.getSprites().keySet().size(), hashMap.keySet().size());
+        Assertions.assertEquals(spriteList2.getSprites().get(Direction.LEFT).size(), directionalSpriteList.getSprites(Direction.LEFT).size());
     }
 
     @Test
@@ -97,10 +96,10 @@ public class SpriteListTests {
 
         directionalSpriteList.addSprites(Direction.UP, sprites);
         directionalSpriteList.addSprites(Direction.LEFT, sprites);
-        Assertions.assertTrue(directionalSpriteList.getSprites(Direction.RIGHT).size() == 0);
-        Assertions.assertTrue(directionalSpriteList.getSprites(Direction.LEFT).size() == sprites.size());
-        Assertions.assertTrue(directionalSpriteList.getSprites(Direction.DOWN).size() == 0);
-        Assertions.assertTrue(directionalSpriteList.getSprites(Direction.UP).size() == sprites.size());
+        Assertions.assertEquals(0, directionalSpriteList.getSprites(Direction.RIGHT).size());
+        Assertions.assertEquals(directionalSpriteList.getSprites(Direction.LEFT).size(), sprites.size());
+        Assertions.assertEquals(0, directionalSpriteList.getSprites(Direction.DOWN).size());
+        Assertions.assertEquals(directionalSpriteList.getSprites(Direction.UP).size(), sprites.size());
     }
 
     @Test
