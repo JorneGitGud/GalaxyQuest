@@ -36,35 +36,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fff264f5-7b44-419a-b4fb-10106bfbed3e" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GalaxyQuest/src/io/github/jornegitgud/galaxyquest/Coordinate.java" beforeDir="false" afterPath="$PROJECT_DIR$/GalaxyQuest/src/io/github/jornegitgud/galaxyquest/Coordinate.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GalaxyQuest/src/io/github/jornegitgud/galaxyquest/Galaxy.java" beforeDir="false" afterPath="$PROJECT_DIR$/GalaxyQuest/src/io/github/jornegitgud/galaxyquest/Galaxy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GalaxyQuest/src/io/github/jornegitgud/galaxyquest/GalaxyRenderer.java" beforeDir="false" afterPath="$PROJECT_DIR$/GalaxyQuest/src/io/github/jornegitgud/galaxyquest/GalaxyRenderer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GalaxyQuest/src/io/github/jornegitgud/galaxyquest/GameManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/GalaxyQuest/src/io/github/jornegitgud/galaxyquest/GameManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GalaxyQuest/src/io/github/jornegitgud/galaxyquest/GameResult.java" beforeDir="false" afterPath="$PROJECT_DIR$/GalaxyQuest/src/io/github/jornegitgud/galaxyquest/GameResult.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GalaxyQuest/src/io/github/jornegitgud/galaxyquest/HasDirection.java" beforeDir="false" afterPath="$PROJECT_DIR$/GalaxyQuest/src/io/github/jornegitgud/galaxyquest/HasDirection.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GalaxyQuest/src/io/github/jornegitgud/galaxyquest/KeyboardListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/GalaxyQuest/src/io/github/jornegitgud/galaxyquest/KeyboardListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GalaxyQuest/src/io/github/jornegitgud/galaxyquest/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/GalaxyQuest/src/io/github/jornegitgud/galaxyquest/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GalaxyQuest/src/io/github/jornegitgud/galaxyquest/Tile.java" beforeDir="false" afterPath="$PROJECT_DIR$/GalaxyQuest/src/io/github/jornegitgud/galaxyquest/Tile.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GalaxyQuest/src/io/github/jornegitgud/galaxyquest/controllers/SettingsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/GalaxyQuest/src/io/github/jornegitgud/galaxyquest/controllers/SettingsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GalaxyQuest/src/io/github/jornegitgud/galaxyquest/gameObjects/GameObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/GalaxyQuest/src/io/github/jornegitgud/galaxyquest/gameObjects/GameObject.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GalaxyQuest/src/io/github/jornegitgud/galaxyquest/gameObjects/GameObjectFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/GalaxyQuest/src/io/github/jornegitgud/galaxyquest/gameObjects/GameObjectFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GalaxyQuest/src/io/github/jornegitgud/galaxyquest/gameObjects/Meteorite.java" beforeDir="false" afterPath="$PROJECT_DIR$/GalaxyQuest/src/io/github/jornegitgud/galaxyquest/gameObjects/Meteorite.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GalaxyQuest/src/io/github/jornegitgud/galaxyquest/gameObjects/MovableObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/GalaxyQuest/src/io/github/jornegitgud/galaxyquest/gameObjects/MovableObject.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GalaxyQuest/src/io/github/jornegitgud/galaxyquest/sprites/DirectionalSpriteList.java" beforeDir="false" afterPath="$PROJECT_DIR$/GalaxyQuest/src/io/github/jornegitgud/galaxyquest/sprites/DirectionalSpriteList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GalaxyQuest/src/io/github/jornegitgud/galaxyquest/sprites/FileHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/GalaxyQuest/src/io/github/jornegitgud/galaxyquest/sprites/FileHelper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GalaxyQuest/src/io/github/jornegitgud/galaxyquest/sprites/SpriteList.java" beforeDir="false" afterPath="$PROJECT_DIR$/GalaxyQuest/src/io/github/jornegitgud/galaxyquest/sprites/SpriteList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GalaxyQuest/src/io/github/jornegitgud/galaxyquest/sprites/SpriteMapParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/GalaxyQuest/src/io/github/jornegitgud/galaxyquest/sprites/SpriteMapParser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GalaxyQuest/tests/io/github/jornegitgud/galaxyquest/GalaxySettingsTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/GalaxyQuest/tests/io/github/jornegitgud/galaxyquest/GalaxySettingsTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GalaxyQuest/tests/io/github/jornegitgud/galaxyquest/GameManagerTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/GalaxyQuest/tests/io/github/jornegitgud/galaxyquest/GameManagerTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GalaxyQuest/tests/io/github/jornegitgud/galaxyquest/GameObjectTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/GalaxyQuest/tests/io/github/jornegitgud/galaxyquest/GameObjectTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GalaxyQuest/tests/io/github/jornegitgud/galaxyquest/SpriteListTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/GalaxyQuest/tests/io/github/jornegitgud/galaxyquest/SpriteListTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GalaxyQuest/tests/io/github/jornegitgud/galaxyquest/mockups/GameManagerMock.java" beforeDir="false" afterPath="$PROJECT_DIR$/GalaxyQuest/tests/io/github/jornegitgud/galaxyquest/mockups/GameManagerMock.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDoc/jquery/external/jquery/jquery.js" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDoc/jquery/external/jquery/jquery.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDoc/jquery/jquery-3.3.1.js" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDoc/jquery/jquery-3.3.1.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDoc/jquery/jszip-utils/dist/jszip-utils.js" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDoc/jquery/jszip-utils/dist/jszip-utils.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDoc/jquery/jszip/dist/jszip.js" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDoc/jquery/jszip/dist/jszip.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDoc/search.js" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDoc/search.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -318,7 +290,7 @@
       <workItem from="1594140322514" duration="1705000" />
       <workItem from="1594308905431" duration="71000" />
       <workItem from="1594318099575" duration="3296000" />
-      <workItem from="1594325530598" duration="5381000" />
+      <workItem from="1594325530598" duration="5760000" />
     </task>
     <servers />
   </component>
@@ -372,10 +344,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="409" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1592677109685" />
-    <state x="707" y="369" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1594329762079">
+    <state x="707" y="369" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1594331066632">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="707" y="369" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1920.1050@0.0.1920.1050" timestamp="1594329762079" />
+    <state x="707" y="369" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1920.1050@0.0.1920.1050" timestamp="1594331066632" />
     <state x="585" y="115" key="CommitChangelistDialog2" timestamp="1593285309658">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>

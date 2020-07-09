@@ -115,8 +115,6 @@ public class GameManager {
                 };
                 spacePirate.move(20, spacePirate.getTile().getDirectionTo(galaxy.getPlayer().getTile()));
             }
-            if (object instanceof HasDirection) {
-            }
         }
 
     }
