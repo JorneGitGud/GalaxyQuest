@@ -3,7 +3,6 @@ package io.github.jornegitgud.galaxyquest;
 import io.github.jornegitgud.galaxyquest.gameObjects.*;
 import javafx.animation.AnimationTimer;
 import javafx.application.Platform;
-import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -31,7 +30,7 @@ public class GameManager {
 
 
     //Stage security reasons??
-    public GameManager(Stage stage, GalaxySettings galaxySettings, GalaxyRenderer galaxyRenderer) throws IOException {
+    public GameManager(GalaxySettings galaxySettings, GalaxyRenderer galaxyRenderer) throws IOException {
 
         startTime = System.currentTimeMillis();
         galaxySettings.freezeSettings();
@@ -70,9 +69,7 @@ public class GameManager {
             }
         };
 
-        renderer.onStageClosed = (closedStage) -> {
-            mainLoop.stop();
-        };
+        renderer.onStageClosed = (closedStage) -> mainLoop.stop();
 
         keyboardListener.onKeyPressed = (direction) -> {
             lastDirection = direction;
@@ -110,9 +107,7 @@ public class GameManager {
                     checkCurrentTileMoveableObject(pirate);
                     pirate.move(20, pirate.getTile().getDirectionTo(galaxy.getPlayer().getTile()));
                 };
-                spacePirate.onDirectionChanged = (pirate) -> {
-                    renderer.updateDirection(pirate);
-                };
+                spacePirate.onDirectionChanged = (pirate) -> renderer.updateDirection(pirate);
                 spacePirate.move(20, spacePirate.getTile().getDirectionTo(galaxy.getPlayer().getTile()));
             }
         }
@@ -170,9 +165,7 @@ public class GameManager {
 
         renderer.destroyScene();
         mainLoop.stop();
-        Platform.runLater(() -> {
-            onGameEnded.accept(new GameResult(win, highScore));
-        });
+        Platform.runLater(() -> onGameEnded.accept(new GameResult(win, highScore)));
     }
 
     /**
@@ -181,10 +174,10 @@ public class GameManager {
      * then it gives each object {@link Planet},{@link Player}{@link Meteorite}{@link Wormhole} a {@link Coordinate} object and removes it from the arrayList.
      * And gives this object to the Galaxy class, which sets it in the right Tile
      * @param galaxy it uses a Galaxy object to check the number of coordinates it should create.
-     * @throws IOException
+     * @throws IOException if an input or output operation is failed
      */
     protected void populateGalaxy(Galaxy galaxy) throws IOException {
-        ArrayList<Coordinate> availableCoordinates = new ArrayList<Coordinate>();
+        ArrayList<Coordinate> availableCoordinates = new ArrayList<>();
         Random random = new Random();
 
         for (int x = 0; x < galaxy.getSettings().getHeight(); x++) {
@@ -238,7 +231,7 @@ public class GameManager {
 
     }
 //galaxy renderer security reasons??
-    public Galaxy getGalaxy(GalaxyRenderer renderer) {
+    public Galaxy getGalaxy() {
         return this.galaxy;
     }
 }

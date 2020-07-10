@@ -41,7 +41,7 @@ public class GameManagerTests {
     public void TilesKnowTheirNeighboursTest() {
         for (var x = 0; x < galaxySettings.getWidth(); x++) {
             for (var y = 0; y < galaxySettings.getHeight(); y++) {
-                var tile = galaxy.getGalaxyTile(mockRenderer, x, y);
+                var tile = galaxy.getGalaxyTile(x, y);
                 var coordinate = mockRenderer.getCoordinate(tile);
 
                 var tileAbove = tile.getTileAbove();
@@ -95,7 +95,7 @@ public class GameManagerTests {
 
         for (var x = 0; x < gameManager.getGalaxy().getSettings().getWidth(); x++)
             for (var y = 0; y < gameManager.getGalaxy().getSettings().getHeight(); y++) {
-                var tile = gameManager.getGalaxy().getGalaxyTile(mockRenderer, x, y);
+                var tile = gameManager.getGalaxy().getGalaxyTile(x, y);
                 if (tile.contains(Meteorite.class)) {
                     var coordinate = mockRenderer.getCoordinate(tile);
                     galaxy1MeteoriteCoords.append(coordinate.x).append(",").append(coordinate.y).append("|");
@@ -104,7 +104,7 @@ public class GameManagerTests {
 
         for (var x = 0; x < gameManager2.getGalaxy().getSettings().getWidth(); x++)
             for (var y = 0; y < gameManager2.getGalaxy().getSettings().getHeight(); y++) {
-                var tile = gameManager2.getGalaxy().getGalaxyTile(mockRenderer, x, y);
+                var tile = gameManager2.getGalaxy().getGalaxyTile(x, y);
                 if (tile.contains(Meteorite.class)) {
                     var coordinate = mockRenderer.getCoordinate(tile);
                     galaxy2MeteoriteCoords.append(coordinate.x).append(",").append(coordinate.y).append("|");
@@ -121,7 +121,7 @@ public class GameManagerTests {
         Coordinate wormhole2Coordinate = null;
         for (var x = 0; x < gameManager.getGalaxy().getSettings().getWidth(); x++)
             for (var y = 0; y < gameManager.getGalaxy().getSettings().getHeight(); y++) {
-                var tile = gameManager.getGalaxy().getGalaxyTile(mockRenderer, x, y);
+                var tile = gameManager.getGalaxy().getGalaxyTile(x, y);
                 if (tile.contains(Wormhole.class)) {
                     wormhole1Coordinate = mockRenderer.getCoordinate(tile);
                 }
@@ -129,7 +129,7 @@ public class GameManagerTests {
 
         for (var x = 0; x < gameManager2.getGalaxy().getSettings().getWidth(); x++)
             for (var y = 0; y < gameManager2.getGalaxy().getSettings().getHeight(); y++) {
-                var tile = gameManager2.getGalaxy().getGalaxyTile(mockRenderer, x, y);
+                var tile = gameManager2.getGalaxy().getGalaxyTile(x, y);
                 if (tile.contains(Wormhole.class)) {
                     wormhole2Coordinate = mockRenderer.getCoordinate(tile);
                 }

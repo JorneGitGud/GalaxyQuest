@@ -61,17 +61,6 @@ public class SpriteMapParser {
     }
 
     /**
-     * this method creates an arrayList of one or more Images.
-     * @param image the image to be cut
-     * @param singleSpriteWidthPx height of the sprite
-     * @param singleSpriteHeightPx width of the sprite
-     * @return Arraylist with one or more Images in an ImageView
-     */
-    public static ArrayList<ImageView> parseSpriteMapToImageViews(Image image, int singleSpriteWidthPx, int singleSpriteHeightPx) {
-        return parseSpriteMapToImageViews(image, singleSpriteWidthPx, singleSpriteHeightPx, 0, 0);
-    }
-
-    /**
      * this method creates an arrayList of one or more Images and can be used if an offset to the sprites is needed.
      * @param image the image to be cut up into smaller sprites
      * @param singleSpriteWidthPx the height of the desires sprites

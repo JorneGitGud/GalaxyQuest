@@ -95,10 +95,10 @@ public class GameObjectFactory {
     public static SpacePirate createSpacePirate() throws IOException {
         if (spacePirateSprites == null) {
             spacePirateSprites = new HashMap<>();
-            spacePirateSprites.put(Direction.LEFT, new ArrayList<Image>());
-            spacePirateSprites.put(Direction.RIGHT, new ArrayList<Image>());
-            spacePirateSprites.put(Direction.UP, new ArrayList<Image>());
-            spacePirateSprites.put(Direction.DOWN, new ArrayList<Image>());
+            spacePirateSprites.put(Direction.LEFT, new ArrayList<>());
+            spacePirateSprites.put(Direction.RIGHT, new ArrayList<>());
+            spacePirateSprites.put(Direction.UP, new ArrayList<>());
+            spacePirateSprites.put(Direction.DOWN, new ArrayList<>());
 
             spacePirateSprites.get(Direction.LEFT).add(FileHelper.createFxImage("assets/MovableObjects/Pirate_Left.png"));
             spacePirateSprites.get(Direction.RIGHT).add(FileHelper.createFxImage("assets/MovableObjects/Pirate_Right.png"));

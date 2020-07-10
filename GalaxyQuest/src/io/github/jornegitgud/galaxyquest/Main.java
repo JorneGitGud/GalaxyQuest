@@ -57,7 +57,7 @@ public class Main extends Application {
         controller.onStartButtonClicked = (event) -> {
             try {
                 GalaxyRenderer galaxyRenderer = new GalaxyRenderer(stage, this.galaxySettings);
-                GameManager gameManager = new GameManager(stage, this.galaxySettings, galaxyRenderer);
+                GameManager gameManager = new GameManager(this.galaxySettings, galaxyRenderer);
 
                 gameManager.onGameEnded = (gameResult) -> {
                     if(gameResult.win) {
@@ -81,9 +81,7 @@ public class Main extends Application {
             }
         };
 
-        controller.onExitButtonClicked = (event) -> {
-            stage.close();
-        };
+        controller.onExitButtonClicked = (event) -> stage.close();
 
         controller.onSettingsbuttonClicked = (event) -> {
             stage.setScene(settingsScene);

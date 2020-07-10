@@ -12,7 +12,7 @@ public class GalaxyRendererMock extends GalaxyRenderer {
     }
 
     public Coordinate getCoordinate(Tile tile) {
-        return tile.getCoordinate(this);
+        return tile.getCoordinate();
     }
 
     @Override

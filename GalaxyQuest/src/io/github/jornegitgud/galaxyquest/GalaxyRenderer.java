@@ -82,16 +82,16 @@ public class GalaxyRenderer {
                 ImageView sprite = sprites.get(movableObject);
                 switch (movableObject.getMoveDirection()) {
                     case UP:
-                        sprite.setY((movableObject.getTile().getCoordinate(this).y * GALAXY_GRID_SIZE) - (1 * movePercentage * GALAXY_GRID_SIZE));
+                        sprite.setY((movableObject.getTile().getCoordinate().y * GALAXY_GRID_SIZE) - (1 * movePercentage * GALAXY_GRID_SIZE));
                         break;
                     case RIGHT:
-                        sprite.setX((movableObject.getTile().getCoordinate(this).x * GALAXY_GRID_SIZE) + (1 * movePercentage * GALAXY_GRID_SIZE));
+                        sprite.setX((movableObject.getTile().getCoordinate().x * GALAXY_GRID_SIZE) + (1 * movePercentage * GALAXY_GRID_SIZE));
                         break;
                     case LEFT:
-                        sprite.setX((movableObject.getTile().getCoordinate(this).x * GALAXY_GRID_SIZE) - (1 * movePercentage * GALAXY_GRID_SIZE));
+                        sprite.setX((movableObject.getTile().getCoordinate().x * GALAXY_GRID_SIZE) - (1 * movePercentage * GALAXY_GRID_SIZE));
                         break;
                     case DOWN:
-                        sprite.setY((movableObject.getTile().getCoordinate(this).y * GALAXY_GRID_SIZE) + (1 * movePercentage * GALAXY_GRID_SIZE));
+                        sprite.setY((movableObject.getTile().getCoordinate().y * GALAXY_GRID_SIZE) + (1 * movePercentage * GALAXY_GRID_SIZE));
                         break;
                 }
             }
@@ -116,8 +116,8 @@ public class GalaxyRenderer {
                 var imageView = new ImageView(object.getSpriteList().getNextSprite());
                 sprites.put(object, imageView);
                 galaxyPane.getChildren().add(imageView);
-                imageView.setX(object.getTile().getCoordinate(this).x * GALAXY_GRID_SIZE);
-                imageView.setY(object.getTile().getCoordinate(this).y * GALAXY_GRID_SIZE);
+                imageView.setX(object.getTile().getCoordinate().x * GALAXY_GRID_SIZE);
+                imageView.setY(object.getTile().getCoordinate().y * GALAXY_GRID_SIZE);
                 imageView.setFitWidth(GALAXY_GRID_SIZE);
                 imageView.setFitHeight(GALAXY_GRID_SIZE);
                 if(object instanceof Wormhole) {
@@ -192,7 +192,7 @@ public class GalaxyRenderer {
      * @param spritePath is the string to the location of the sprite.
      */
     public void addSprite(Galaxy galaxy, Tile tile, String spritePath) {
-        var coordinate = tile.getCoordinate(this);
+        var coordinate = tile.getCoordinate();
         try {
             var imageView = FileHelper.createImageView(spritePath);
             staticSprites.add(imageView);

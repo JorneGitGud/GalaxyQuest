@@ -78,8 +78,8 @@ public class DirectionalSpriteList implements SpriteList {
 
     /**
      * getNextSprite returns the next sprite used in animations.
-     * @param dir
-     * @return
+     * @param dir direction of the next sprite
+     * @return returns an images.
      */
     @Override
     public Image getNextSprite(Direction dir) {

@@ -20,7 +20,7 @@ public class Galaxy {
     /**
      * the constructor of the Galaxy class uses the GalaxySettings for its settings. the size of the grid and number of objects.
      * it sets the tiles and gives them their neighbours.
-     * @param settings
+     * @param settings the GalaxySettings
      */
     public Galaxy(GalaxySettings settings) {
 
@@ -60,12 +60,11 @@ public class Galaxy {
 
     /**
      * This method returns a Tile. is asks for a GalaxyRenderer so that only a class that contains a GalaxyRenderer can make use of this method.
-     * @param galaxyRenderer the security check.
      * @param xPos the position of the tile you want to have returned
      * @param yPos the position of the tile you want to have returned
      * @return returns a Tile object
      */
-    public Tile getGalaxyTile(GalaxyRenderer galaxyRenderer, int xPos, int yPos) {
+    public Tile getGalaxyTile(int xPos, int yPos) {
         if (yPos < this.galaxyTiles.length && xPos < this.galaxyTiles[0].length && xPos >= 0 && yPos >= 0) {
             return this.galaxyTiles[yPos][xPos];
         }

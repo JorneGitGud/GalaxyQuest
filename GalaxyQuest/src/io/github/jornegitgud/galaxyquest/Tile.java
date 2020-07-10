@@ -126,10 +126,9 @@ public class Tile {
 
     /**
      * this method returns an Coordinate object. it asks for a GalaxyRenderer as a security check. so that only a class that Class that contains this object can access this method.
-     * @param galaxyRenderer this is the security check.
      * @return returns an Coordinate object
      */
-    public Coordinate getCoordinate(GalaxyRenderer galaxyRenderer) {
+    public Coordinate getCoordinate() {
         return coordinate;
     }
 

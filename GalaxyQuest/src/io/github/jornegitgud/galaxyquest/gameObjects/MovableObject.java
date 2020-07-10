@@ -30,11 +30,10 @@ public class MovableObject extends GameObject {
      * it has a switch case which is used to determen to which tile the object should move
      * @param frames the amount of frames used in animation while the object is moving.
      * @param direction the direction in which the object moves
-     * @return returns true if object is moving. od moves the object first and then returns a true.
      */
-    public boolean move(int frames, Direction direction) {
+    public void move(int frames, Direction direction) {
         if (moving)
-            return true;
+            return;
         moving = true;
         moveFrames = frames;
         currentFrame = 0;
@@ -62,7 +61,7 @@ public class MovableObject extends GameObject {
             direction = Direction.randomDirection();
             this.moving = false;
             this.move(frames, direction);
-            return true;
+            return;
         }
 
 
@@ -70,7 +69,6 @@ public class MovableObject extends GameObject {
         if (this instanceof HasDirection)
             ((HasDirection) this).setDirection(direction);
 
-        return true;
     }
 
     /**

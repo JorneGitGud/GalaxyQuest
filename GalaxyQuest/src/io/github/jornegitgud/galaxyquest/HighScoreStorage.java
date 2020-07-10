@@ -33,7 +33,9 @@ public class HighScoreStorage {
 
     /**
      * This method loads the highscores out of the text file.
-     * @return
+     * it creates a new file if the file does not exist.
+     * Deletes the file if i contains errors.
+     * @return this method returns an HighScore[]
      */
     public static HighScore[] loadHighScores() {
         File file = new File(HIGHSCORE_FILE_PATH);
