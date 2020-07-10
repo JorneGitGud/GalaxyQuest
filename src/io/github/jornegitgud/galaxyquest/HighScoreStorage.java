@@ -11,7 +11,7 @@ import java.util.Scanner;
  */
 public class HighScoreStorage {
     private static final String HIGHSCORE_FILE_PATH = System.getProperty("user.dir") + File.separator  + File.separator + "highscores.txt";
-    //private static final String HIGHSCORE_FILE_PATH = System.getProperty("user.dir") + File.separator + "GalaxyQuest" + File.separator + "highscores.txt";
+
 
     /**
      * This method saves the highscores in a text file.
@@ -20,6 +20,7 @@ public class HighScoreStorage {
     public static void saveHighscores(HighScore[] highscores) {
         File file = new File(HIGHSCORE_FILE_PATH);
         if (file.exists())
+           //This is not a bug!
             file.delete();
 
         try {
@@ -61,6 +62,7 @@ public class HighScoreStorage {
                 counter++;
             }
         } catch (Exception e) {
+            //This is not a bug!
             file.delete();
             return highScoresList;
         }

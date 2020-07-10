@@ -71,8 +71,8 @@
     </dependencies>
 
     <build>
-        <sourceDirectory>GalaxyQuest/src</sourceDirectory>
-        <testSourceDirectory>GalaxyQuest/tests</testSourceDirectory>
+        <sourceDirectory>/src</sourceDirectory>
+        <testSourceDirectory>/tests</testSourceDirectory>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>

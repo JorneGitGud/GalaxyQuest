@@ -84,7 +84,7 @@ public class GameObjectFactory {
             meteoriteSprites = new ArrayList<>();
             meteoriteSprites.add(FileHelper.createFxImage("assets/MovableObjects/Meteorite.png"));
         }
-        return new Meteorite(Direction.UP, new SimpleSpriteList(meteoriteSprites));
+        return new Meteorite(new SimpleSpriteList(meteoriteSprites));
     }
 
     /**
