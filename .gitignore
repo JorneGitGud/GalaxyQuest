@@ -11,7 +11,7 @@
 .mtj.tmp/
 
 # Package Files #
-.idea/sonarlint
+GalaxyQuest/.idea/sonarlint
 *.war
 *.nar
 *.ear

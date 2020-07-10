@@ -10,7 +10,8 @@ import java.util.Scanner;
  * this class stores the highscores in a text file. Wich is saved on the machine that runs the game.
  */
 public class HighScoreStorage {
-    private static final String HIGHSCORE_FILE_PATH = System.getProperty("user.dir") + File.separator + "GalaxyQuest" + File.separator + "highscores.txt";
+    private static final String HIGHSCORE_FILE_PATH = System.getProperty("user.dir") + File.separator  + File.separator + "highscores.txt";
+    //private static final String HIGHSCORE_FILE_PATH = System.getProperty("user.dir") + File.separator + "GalaxyQuest" + File.separator + "highscores.txt";
 
     /**
      * This method saves the highscores in a text file.

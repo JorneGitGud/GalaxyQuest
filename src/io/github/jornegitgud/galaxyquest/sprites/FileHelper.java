@@ -24,7 +24,8 @@ public class FileHelper {
             path = "/" + path;
 
         String[] parts = path.split("[/\\\\]");
-        return System.getProperty("user.dir") + File.separator + "GalaxyQuest" + File.separator + String.join(File.separator, parts);
+        return System.getProperty("user.dir") + File.separator  + File.separator + String.join(File.separator, parts);
+       // return System.getProperty("user.dir") + File.separator + "GalaxyQuest" + File.separator + String.join(File.separator, parts);
     }
 
     /**
