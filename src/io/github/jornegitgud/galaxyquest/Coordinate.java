@@ -2,7 +2,7 @@ package io.github.jornegitgud.galaxyquest;
 
 /**
  * the Coordinate class is used on the {@link Tile} class.
- * it has x & y coordinates
+ * it has x and y coordinates
  *
  */
 public class Coordinate {

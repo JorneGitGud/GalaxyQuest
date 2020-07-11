@@ -5,8 +5,8 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
+@SuppressWarnings({"ALL", "unused"})
 public class GameManagerMock extends GameManager {
-    private GalaxyRendererMock mock;
 
     public GameManagerMock(Stage stage, GalaxySettings galaxySettings, GalaxyRenderer galaxyRenderer) throws IOException {
         super(galaxySettings, galaxyRenderer);

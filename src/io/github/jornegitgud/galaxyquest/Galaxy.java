@@ -67,7 +67,7 @@ public class Galaxy {
 
     /**
      * Get the settings that this galaxy uses.
-     * @return
+     * @return returns the galaxy settings.
      */
     public GalaxySettings getSettings() {
         return settings;
@@ -77,7 +77,7 @@ public class Galaxy {
      * Add a game object to the list of objects on a specified coordinate.
      * @param x the x coordinate of the tile to add the game object to.
      * @param y the y coordinate of the tile to add the game object to.
-     * @param gameObject the game object to add to the list of gameobjects on the tile.
+     * @param gameObject the game object to add to the list of game objects on the tile.
      */
     public void addToTile(int x, int y, GameObject gameObject) {
         galaxyTiles[x][y].addGameObject(gameObject);

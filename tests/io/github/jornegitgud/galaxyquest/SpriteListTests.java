@@ -7,6 +7,7 @@ import javafx.scene.image.Image;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.function.Executable;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -122,7 +123,7 @@ public class SpriteListTests {
         Assertions.assertNotNull(sSpriteList.getNextSprite());
         Assertions.assertNotNull(sSpriteList.getNextSprite());
 
-        Assertions.assertDoesNotThrow(() -> {dSpriteList.getNextSprite();});
+        Assertions.assertDoesNotThrow((Executable) dSpriteList::getNextSprite);
         Assertions.assertNull(dSpriteList.getNextSprite(Direction.UP));
         Assertions.assertNotNull(dSpriteList.getNextSprite(Direction.RIGHT));
         dSpriteList.getNextSprite(Direction.RIGHT);

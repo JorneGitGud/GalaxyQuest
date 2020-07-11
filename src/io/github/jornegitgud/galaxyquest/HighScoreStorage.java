@@ -17,10 +17,10 @@ public class HighScoreStorage {
      * This method saves the high scores in a text file.
      * @param highScores this ArrayList is used the save the scores.
      */
+    @SuppressWarnings("ResultOfMethodCallIgnored")
     public static void saveHighScores(HighScore[] highScores) {
         File file = new File(HIGHSCORE_FILE_PATH);
         if (file.exists())
-           //This is not a bug!
             file.delete();
 
         try {
@@ -39,6 +39,7 @@ public class HighScoreStorage {
      * Deletes the file if i contains errors.
      * @return this method returns an HighScore[]
      */
+    @SuppressWarnings("ResultOfMethodCallIgnored")
     public static HighScore[] loadHighScores() {
         File file = new File(HIGHSCORE_FILE_PATH);
         var highScoresList = new HighScore[5];

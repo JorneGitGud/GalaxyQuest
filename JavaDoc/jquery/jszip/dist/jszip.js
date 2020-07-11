@@ -68,7 +68,7 @@ exports.decode = function(input) {
         throw new Error("Invalid base64 input, it looks like a data url.");
     }
 
-    input = input.replace(/[^A-Za-z0-9+\/=]/g, "");
+    input = input.replace(/[^A-Za-z0-9\+\/\=]/g, "");
 
     var totalLength = input.length * 3 / 4;
     if(input.charAt(input.length - 1) === _keyStr.charAt(64)) {
@@ -1367,11 +1367,11 @@ var fileAdd = function(name, data, originalOptions) {
     }
 
     // UNX_IFDIR  0040000 see zipinfo.c
-    if (o.unixPermissions && (o.unixPermissions && 0x4000)) {
+    if (o.unixPermissions && (o.unixPermissions & 0x4000)) {
         o.dir = true;
     }
     // Bit 4    Directory
-    if (o.dosPermissions && (o.dosPermissions && 0x0010)) {
+    if (o.dosPermissions && (o.dosPermissions & 0x0010)) {
         o.dir = true;
     }
 
@@ -2200,8 +2200,8 @@ DataWorker.prototype._tick = function() {
         return false;
     }
 
-
-    var data = null, nextIndex = Math.min(this.max, this.index + DEFAULT_BLOCK_SIZE);
+    var size = DEFAULT_BLOCK_SIZE;
+    var data = null, nextIndex = Math.min(this.max, this.index + size);
     if (this.index >= this.max) {
         // EOF
         return this.end();
@@ -2230,7 +2230,7 @@ DataWorker.prototype._tick = function() {
 
 module.exports = DataWorker;
 
-},{"../utils":32,"./GenericWorker":28}],28:[function(require,module){
+},{"../utils":32,"./GenericWorker":28}],28:[function(require,module,exports){
 'use strict';
 
 /**
@@ -3342,7 +3342,8 @@ exports.transformTo = function(outputType, input) {
     }
     exports.checkSupport(outputType);
     var inputType = exports.getTypeOf(input);
-    return transform[inputType][outputType](input);
+    var result = transform[inputType][outputType](input);
+    return result;
 };
 
 /**
@@ -4384,9 +4385,9 @@ exports.f = require('./_descriptors') ? Object.defineProperty : function defineP
 },{"./_an-object":38,"./_descriptors":42,"./_ie8-dom-define":49,"./_to-primitive":55}],53:[function(require,module,exports){
 module.exports = function(bitmap, value){
   return {
-    enumerable  : !(bitmap && 1),
-    configurable: !(bitmap && 2),
-    writable    : !(bitmap && 4),
+    enumerable  : !(bitmap & 1),
+    configurable: !(bitmap & 2),
+    writable    : !(bitmap & 4),
     value       : value
   };
 };
@@ -8195,6 +8196,7 @@ module.exports = function inflate_fast(strm, start) {
 
     here = lcode[hold & lmask];
 
+    dolen:
     for (;;) { // Goto emulation
       op = here >>> 24/*here.bits*/;
       hold >>>= op;
@@ -8227,6 +8229,7 @@ module.exports = function inflate_fast(strm, start) {
         }
         here = dcode[hold & dmask];
 
+        dodist:
         for (;;) { // goto emulation
           op = here >>> 24/*here.bits*/;
           hold >>>= op;
@@ -8362,7 +8365,7 @@ module.exports = function inflate_fast(strm, start) {
           }
           else if ((op & 64) === 0) {          /* 2nd level distance code */
             here = dcode[(here & 0xffff)/*here.val*/ + (hold & ((1 << op) - 1))];
-            continue;
+            continue dodist;
           }
           else {
             strm.msg = 'invalid distance code';
@@ -8375,7 +8378,7 @@ module.exports = function inflate_fast(strm, start) {
       }
       else if ((op & 64) === 0) {              /* 2nd level length code */
         here = lcode[(here & 0xffff)/*here.val*/ + (hold & ((1 << op) - 1))];
-        continue;
+        continue dolen;
       }
       else if (op & 32) {                     /* end-of-block */
         //Tracevv((stderr, "inflate:         end of block\n"));
@@ -8405,7 +8408,7 @@ module.exports = function inflate_fast(strm, start) {
   strm.avail_out = (_out < end ? 257 + (end - _out) : 257 - (_out - end));
   state.hold = hold;
   state.bits = bits;
-
+  return;
 };
 
 },{}],70:[function(require,module,exports){
@@ -8516,9 +8519,9 @@ var ENOUGH_LENS = 852;
 var ENOUGH_DISTS = 592;
 //var ENOUGH =  (ENOUGH_LENS+ENOUGH_DISTS);
 
-
+var MAX_WBITS = 15;
 /* 32K LZ77 window */
-var DEF_WBITS = 15;
+var DEF_WBITS = MAX_WBITS;
 
 
 function zswap32(q) {
@@ -8875,13 +8878,13 @@ function inflate(strm, flush) {
       if (state.head) {
         state.head.done = false;
       }
-      if (!(state.wrap && 1) ||   /* check if zlib header allowed */
+      if (!(state.wrap & 1) ||   /* check if zlib header allowed */
         (((hold & 0xff)/*BITS(8)*/ << 8) + (hold >> 8)) % 31) {
         strm.msg = 'incorrect header check';
         state.mode = BAD;
         break;
       }
-      if ((hold && 0x0f)/*BITS(4)*/ !== Z_DEFLATED) {
+      if ((hold & 0x0f)/*BITS(4)*/ !== Z_DEFLATED) {
         strm.msg = 'unknown compression method';
         state.mode = BAD;
         break;
@@ -8923,7 +8926,7 @@ function inflate(strm, flush) {
         state.mode = BAD;
         break;
       }
-      if (state.flags && 0xe000) {
+      if (state.flags & 0xe000) {
         strm.msg = 'unknown header flags set';
         state.mode = BAD;
         break;
@@ -8931,7 +8934,7 @@ function inflate(strm, flush) {
       if (state.head) {
         state.head.text = ((hold >> 8) & 1);
       }
-      if (state.flags && 0x0200) {
+      if (state.flags & 0x0200) {
         //=== CRC2(state.check, hold);
         hbuf[0] = hold & 0xff;
         hbuf[1] = (hold >>> 8) & 0xff;
@@ -8956,7 +8959,7 @@ function inflate(strm, flush) {
       if (state.head) {
         state.head.time = hold;
       }
-      if (state.flags && 0x0200) {
+      if (state.flags & 0x0200) {
         //=== CRC4(state.check, hold)
         hbuf[0] = hold & 0xff;
         hbuf[1] = (hold >>> 8) & 0xff;
@@ -8984,7 +8987,7 @@ function inflate(strm, flush) {
         state.head.xflags = (hold & 0xff);
         state.head.os = (hold >> 8);
       }
-      if (state.flags && 0x0200) {
+      if (state.flags & 0x0200) {
         //=== CRC2(state.check, hold);
         hbuf[0] = hold & 0xff;
         hbuf[1] = (hold >>> 8) & 0xff;
@@ -8998,7 +9001,7 @@ function inflate(strm, flush) {
       state.mode = EXLEN;
       /* falls through */
     case EXLEN:
-      if (state.flags && 0x0400) {
+      if (state.flags & 0x0400) {
         //=== NEEDBITS(16); */
         while (bits < 16) {
           if (have === 0) { break inf_leave; }
@@ -9011,7 +9014,7 @@ function inflate(strm, flush) {
         if (state.head) {
           state.head.extra_len = hold;
         }
-        if (state.flags && 0x0200) {
+        if (state.flags & 0x0200) {
           //=== CRC2(state.check, hold);
           hbuf[0] = hold & 0xff;
           hbuf[1] = (hold >>> 8) & 0xff;
@@ -9029,7 +9032,7 @@ function inflate(strm, flush) {
       state.mode = EXTRA;
       /* falls through */
     case EXTRA:
-      if (state.flags && 0x0400) {
+      if (state.flags & 0x0400) {
         copy = state.length;
         if (copy > have) { copy = have; }
         if (copy) {
@@ -9053,7 +9056,7 @@ function inflate(strm, flush) {
             //        len + copy > state.head.extra_max ?
             //        state.head.extra_max - len : copy);
           }
-          if (state.flags && 0x0200) {
+          if (state.flags & 0x0200) {
             state.check = crc32(state.check, input, copy, next);
           }
           have -= copy;
@@ -9066,7 +9069,7 @@ function inflate(strm, flush) {
       state.mode = NAME;
       /* falls through */
     case NAME:
-      if (state.flags && 0x0800) {
+      if (state.flags & 0x0800) {
         if (have === 0) { break inf_leave; }
         copy = 0;
         do {
@@ -9079,7 +9082,7 @@ function inflate(strm, flush) {
           }
         } while (len && copy < have);
 
-        if (state.flags && 0x0200) {
+        if (state.flags & 0x0200) {
           state.check = crc32(state.check, input, copy, next);
         }
         have -= copy;
@@ -9093,7 +9096,7 @@ function inflate(strm, flush) {
       state.mode = COMMENT;
       /* falls through */
     case COMMENT:
-      if (state.flags && 0x1000) {
+      if (state.flags & 0x1000) {
         if (have === 0) { break inf_leave; }
         copy = 0;
         do {
@@ -9104,7 +9107,7 @@ function inflate(strm, flush) {
             state.head.comment += String.fromCharCode(len);
           }
         } while (len && copy < have);
-        if (state.flags && 0x0200) {
+        if (state.flags & 0x0200) {
           state.check = crc32(state.check, input, copy, next);
         }
         have -= copy;
@@ -9117,7 +9120,7 @@ function inflate(strm, flush) {
       state.mode = HCRC;
       /* falls through */
     case HCRC:
-      if (state.flags && 0x0200) {
+      if (state.flags & 0x0200) {
         //=== NEEDBITS(16); */
         while (bits < 16) {
           if (have === 0) { break inf_leave; }

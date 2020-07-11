@@ -11,10 +11,12 @@ public class GalaxyRendererMock extends GalaxyRenderer {
         super(stage, settings);
     }
 
+    @SuppressWarnings("unused")
     public Coordinate getCoordinate(Tile tile) {
         return tile.getCoordinate();
     }
 
+    @SuppressWarnings("unused")
     @Override
     public void addSprite(Galaxy galaxy, Tile tile, String spritePath) { }
 }

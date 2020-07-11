@@ -42,6 +42,7 @@ public class HighScore implements Comparable {
      * then it prints all the variables used to the console.
      *
      * @param elapsedSeconds the amount of seconds the player took to complete the game
+     * @param galaxySettings the galaxy settings to use in the highscore calculation
      * @return returns an int
      */
     private int calculateScore(int elapsedSeconds, GalaxySettings galaxySettings) {

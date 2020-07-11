@@ -15,7 +15,7 @@ public class GalaxySettingsTests {
         Assertions.assertEquals(3, galaxySettings.getPlanetCount());
         Assertions.assertEquals(2, galaxySettings.getPirateCount());
         Assertions.assertEquals(2, galaxySettings.getMeteoriteCount());
-        Assertions.assertEquals(false, galaxySettings.settingsAreFrozen());
+        Assertions.assertFalse(galaxySettings.settingsAreFrozen());
 
     }
     @Test
@@ -27,7 +27,7 @@ public class GalaxySettingsTests {
         Assertions.assertEquals(4, galaxySettings.getPlanetCount());
         Assertions.assertEquals(4, galaxySettings.getPirateCount());
         Assertions.assertEquals(3, galaxySettings.getMeteoriteCount());
-        Assertions.assertEquals(true, galaxySettings.settingsAreFrozen());
+        Assertions.assertTrue(galaxySettings.settingsAreFrozen());
 
     }
     @Test
@@ -39,7 +39,7 @@ public class GalaxySettingsTests {
         Assertions.assertEquals(Defaults.PLANET_COUNT, settingsAreFrozen.getPlanetCount());
         Assertions.assertEquals(Defaults.PIRATE_COUNT, settingsAreFrozen.getPirateCount());
         Assertions.assertEquals(Defaults.METEORITE_COUNT, settingsAreFrozen.getMeteoriteCount());
-        Assertions.assertEquals(true, settingsAreFrozen.settingsAreFrozen());
+        Assertions.assertTrue(settingsAreFrozen.settingsAreFrozen());
     }
 
     @Test

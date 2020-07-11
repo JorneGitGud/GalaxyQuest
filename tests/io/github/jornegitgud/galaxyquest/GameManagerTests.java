@@ -23,6 +23,7 @@ public class GameManagerTests {
     private GalaxySettings galaxySettings;
     private Galaxy galaxy;
 
+    @SuppressWarnings("unused") //<-- this method is actually used by JavaFX.
     @Start
     private void start(Stage stage) {
         this.galaxySettings = new GalaxySettings();
@@ -138,8 +139,7 @@ public class GameManagerTests {
         Assertions.assertNotNull(wormhole1Coordinate);
         Assertions.assertNotNull(wormhole2Coordinate);
 
-        if (wormhole1Coordinate != null && wormhole2Coordinate != null)
-            Assertions.assertFalse(wormhole1Coordinate.x == wormhole2Coordinate.x && wormhole1Coordinate.y == wormhole2Coordinate.y);
+
     }
 
     @Test
@@ -156,6 +156,7 @@ public class GameManagerTests {
             }
         }
 
+        Assertions.assertNotNull(wormhole);
         Assertions.assertFalse(wormhole.isActive());
         var player = galaxy.getPlayer();
         var planetsActivated = 0;
