@@ -5,10 +5,7 @@ import io.github.jornegitgud.galaxyquest.gameObjects.Player;
 
 import java.util.ArrayList;
 /**
- * this is the galaxy class. it contains the rules for setting up a galaxy. these rules are set in the {@link GalaxySettings} class.
- * the Galaxy contains all the tiles that make up the grid. these tiles are set in an Tile[][], this array is filled with default tiles,
- * specific tiles are set in populateGalaxy() in the {@link GameManager} class.
- * it has getters and setters
+ * The Galaxy class represents a galaxy in the game and contains all the tiles that make up the grid, as well as references to all game objects.
  */
 public class Galaxy {
 
@@ -18,8 +15,8 @@ public class Galaxy {
     private Player player;
 
     /**
-     * the constructor of the Galaxy class uses the GalaxySettings for its settings. the size of the grid and number of objects.
-     * it sets the tiles and gives them their neighbours.
+     * the constructor of the Galaxy class uses an instance of {@link GalaxySettings} to set itself up.
+     * This includes the size of the grid and the amount of planets, meteorites, and pirates to be spawned.
      * @param settings the GalaxySettings
      */
     public Galaxy(GalaxySettings settings) {
@@ -57,9 +54,9 @@ public class Galaxy {
     }
 
     /**
-     * Returns an individual tile in the galaxy.o get
-     * @param yPos the Y co
-     *      * @param xPos the X coordinate of the tile tordinate of the tile to get
+     * Returns an individual tile in the galaxy.
+     * @param xPos the X coordinate of the tile to get
+     * @param yPos the Y coordinate of the tile to get
      * @return the tile at the specified position, or null if the position was out of bounds.
      */
     public Tile getGalaxyTile(int xPos, int yPos) {
@@ -68,25 +65,47 @@ public class Galaxy {
         return null;
     }
 
+    /**
+     * Get the settings that this galaxy uses.
+     * @return
+     */
     public GalaxySettings getSettings() {
         return settings;
     }
 
-    public void setGalaxyTile(int x, int y, GameObject gameObject) {
+    /**
+     * Add a game object to the list of objects on a specified coordinate.
+     * @param x the x coordinate of the tile to add the game object to.
+     * @param y the y coordinate of the tile to add the game object to.
+     * @param gameObject the game object to add to the list of gameobjects on the tile.
+     */
+    public void addToTile(int x, int y, GameObject gameObject) {
         galaxyTiles[x][y].addGameObject(gameObject);
         gameObject.setTile(galaxyTiles[x][y]);
         if (!objects.contains(gameObject))
             objects.add(gameObject);
     }
 
+    /**
+     * Returns a list of all game objects in the galaxy.
+     * @return a list of all game objects in the galaxy.
+     */
     public ArrayList<GameObject> getObjects() {
         return objects;
     }
 
+    /**
+     * Tells the galaxy which object is the controllable player object.
+     * @param player the object that acts as controllable character.
+     */
     public void setPlayer(Player player) {
         this.player = player;
     }
 
+    /**
+     * Get the controllable player object from the galaxy.
+     * @return the player object.
+     */
     public Player getPlayer() {
         return this.player;
     }

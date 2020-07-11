@@ -186,7 +186,7 @@ public class GameManager {
 
         Player player = GameObjectFactory.createPlayer(Direction.RIGHT);
 
-        galaxy.setGalaxyTile(0, 0, player);
+        galaxy.addToTile(0, 0, player);
         galaxy.setPlayer(player);
         availableCoordinates.remove(0);
 
@@ -196,7 +196,7 @@ public class GameManager {
             int tempPos = random.nextInt(availableCoordinates.size());
             int tempX = availableCoordinates.get(tempPos).x;
             int tempY = availableCoordinates.get(tempPos).y;
-            galaxy.setGalaxyTile(tempX, tempY, planet);
+            galaxy.addToTile(tempX, tempY, planet);
             availableCoordinates.remove(tempPos);
         }
 
@@ -206,7 +206,7 @@ public class GameManager {
             int tempPos = random.nextInt(availableCoordinates.size());
             int tempX = availableCoordinates.get(tempPos).x;
             int tempY = availableCoordinates.get(tempPos).y;
-            galaxy.setGalaxyTile(tempX, tempY, meteorite);
+            galaxy.addToTile(tempX, tempY, meteorite);
             availableCoordinates.remove(tempPos);
         }
 
@@ -216,7 +216,7 @@ public class GameManager {
             int tempPos = random.nextInt(availableCoordinates.size());
             int tempX = availableCoordinates.get(tempPos).x;
             int tempY = availableCoordinates.get(tempPos).y;
-            galaxy.setGalaxyTile(tempX, tempY, spacePirate);
+            galaxy.addToTile(tempX, tempY, spacePirate);
             availableCoordinates.remove(tempPos);
         }
 
@@ -224,7 +224,7 @@ public class GameManager {
         int tempPos = random.nextInt(availableCoordinates.size());
         int tempX = availableCoordinates.get(tempPos).x;
         int tempY = availableCoordinates.get(tempPos).y;
-        galaxy.setGalaxyTile(tempX, tempY, this.wormhole);
+        galaxy.addToTile(tempX, tempY, this.wormhole);
         availableCoordinates.remove(tempPos);
 
     }

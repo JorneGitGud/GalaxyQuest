@@ -18,9 +18,9 @@ import java.util.HashMap;
 import java.util.function.Consumer;
 
 /**
- * this class renders the galaxy. It renders all images in the correct places and handles the visual movement of the objects.
+ * The GalaxyRenderer takes Galaxy objects and translates them into a visible GUI for the user.
+ * The GalaxyRenderer is responsible for rendering sprites in the correct positions, with the correct sizes, in the correct order.
  */
-
 public class GalaxyRenderer {
     private final int GALAXY_GRID_SIZE = 48;
 
@@ -35,7 +35,7 @@ public class GalaxyRenderer {
     private ImageView background;
 
     /**
-     * The GalaxyRenderer is responsible for turning the Galaxy data model into a graphical scene for the user.
+     * GalaxyRenderer's constructor takes a stage and a copy of the {@link GalaxySettings} in order to construct the scene (render window in correct size, setup background, etc)
      * @param stage The stage to use for rendering galaxies onto.
      * @param settings The galaxy's settings, used to determine the width and height of the window.
      * @throws IOException throws if a sprite could not be found.
