@@ -1,13 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="AnalysisUIOptions">
-    <option name="ANALYZE_TEST_SOURCES" value="false" />
-  </component>
-  <component name="ArtifactsWorkspaceSettings">
-    <artifacts-to-build>
-      <artifact name="GalaxyQuest:jar" />
-    </artifacts-to-build>
-  </component>
   <component name="BranchesTreeState">
     <expand>
       <path>
@@ -39,6 +31,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fff264f5-7b44-419a-b4fb-10106bfbed3e" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/JavaDoc/allclasses-index.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDoc/allclasses-index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/JavaDoc/help-doc.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDoc/help-doc.html" afterDir="false" />
@@ -136,39 +129,29 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
-    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
-    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="node.js.detected.package.eslint" value="true" />
-    <property name="node.js.detected.package.tslint" value="true" />
-    <property name="node.js.path.for.package.eslint" value="project" />
-    <property name="node.js.path.for.package.tslint" value="project" />
-    <property name="node.js.selected.package.eslint" value="(autodetect)" />
-    <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="nodejs.mocha.mocha_node_package_dir" value="" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
-    <property name="project.structure.side.proportion" value="0.37471265" />
+    <property name="project.structure.side.proportion" value="0.2" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
-    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.javacompiler" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\hhs projects\GalaxyQuest\GalaxyQuest" />
-      <recent name="C:\hhs projects\GalaxyQuest\GalaxyQuest\.idea" />
       <recent name="C:\Projects\GalaxyQuest\GalaxyQuest\resources" />
       <recent name="C:\Projects\GalaxyQuest\GalaxyQuest\src\io\github\jornegitgud\galaxyquest" />
       <recent name="C:\Projects\GalaxyQuest\GalaxyQuest\src\io\github\jornegitgud\galaxyquest\fxml" />
+      <recent name="C:\Projects\GalaxyQuest" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="io.github.jornegitgud.galaxyquest.mockups" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\hhs projects\GalaxyQuest\GalaxyQuest\target" />
       <recent name="C:\Projects\GalaxyQuest\GalaxyQuest\assets\MovableObjects" />
       <recent name="C:\Projects\GalaxyQuest\GalaxyQuest\assets\Planets" />
     </key>
@@ -176,8 +159,8 @@
   <component name="RunManager" selected="Application.Windows">
     <configuration name="OS X" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="io.github.jornegitgud.galaxyquest.Main" />
-      <module name="GalaxyQuest-master" />
-      <option name="VM_PARAMETERS" value="--module-path &quot;./GalaxyQuest/lib/javafx-osx-sdk-14.0.1/lib&quot; --add-modules javafx.base,javafx.controls,javafx.fxml" />
+      <module name="GalaxyQuest" />
+      <option name="VM_PARAMETERS" value="--module-path &quot;.\GalaxyQuest\lib\javafx-osx-sdk-14.0.1\lib&quot; --add-modules javafx.base,javafx.controls,javafx.fxml" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="io.github.jornegitgud.galaxyquest.*" />
@@ -191,7 +174,7 @@
     <configuration name="Windows" type="Application" factoryName="Application" temporary="true">
       <option name="MAIN_CLASS_NAME" value="io.github.jornegitgud.galaxyquest.Main" />
       <module name="GalaxyQuest" />
-      <option name="VM_PARAMETERS" value="--module-path &quot;.\lib\javafx-windows-sdk-14.0.1\lib&quot; --add-modules javafx.base,javafx.controls,javafx.fxml" />
+      <option name="VM_PARAMETERS" value="--module-path &quot;.\GalaxyQuest\lib\javafx-windows-sdk-14.0.1\lib&quot; --add-modules javafx.base,javafx.controls,javafx.fxml" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="io.github.jornegitgud.galaxyquest.*" />
@@ -329,6 +312,18 @@
       </list>
     </recent_temporary>
   </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -378,32 +373,31 @@
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="2" />
+    <option name="version" value="1" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="657" y="140" key="#Windows" timestamp="1594329088135">
-      <screen x="0" y="0" width="1920" height="1050" />
+    <state x="552" y="178" key="#Project_Structure" timestamp="1594469340002">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="657" y="139" key="#Windows/0.0.1920.1040@0.0.1920.1040" timestamp="1593377635606" />
-    <state x="657" y="140" key="#Windows/0.0.1920.1050@0.0.1920.1050" timestamp="1594329088135" />
-    <state x="478" y="48" width="1092" height="747" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1594404470363">
-      <screen x="0" y="0" width="1920" height="1050" />
+    <state x="552" y="178" key="#Project_Structure/0.0.1920.1040@0.0.1920.1040" timestamp="1594469340002" />
+    <state x="478" y="48" width="1092" height="747" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1594469540817">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="478" y="48" key="#com.intellij.execution.impl.EditConfigurationsDialog/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1593294931246" />
-    <state x="478" y="48" width="1092" height="747" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1593377691027" />
-    <state x="478" y="48" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1594404470363" />
+    <state x="478" y="48" width="1092" height="747" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1594469540817" />
     <state x="92" y="92" width="1736" height="856" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog" timestamp="1591905974414">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -415,11 +409,10 @@
     <state x="1097" y="240" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1593095249977" />
     <state x="1097" y="242" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1050@0.0.1920.1050" timestamp="1591728305964" />
     <state x="1097" y="249" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1080@0.0.1920.1080" timestamp="1593277242616" />
-    <state x="690" y="308" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1593377656242">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="690" y="311" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1593294780350">
+      <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="690" y="311" key="#com.intellij.ide.util.TreeClassChooserDialog/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1593294780350" />
-    <state x="690" y="308" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1593377656242" />
     <state x="590" y="209" key="#com.intellij.ide.util.frameworkSupport.AddFrameworkSupportDialog" timestamp="1591726370405">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -443,8 +436,8 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="414" height="466" key="DebuggerActiveHint/0.0.1920.1040@0.0.1920.1040" timestamp="1592863468680" />
-    <state x="740" y="279" key="FileChooserDialogImpl" timestamp="1594404202969">
-      <screen x="0" y="0" width="1920" height="1050" />
+    <state x="740" y="276" key="FileChooserDialogImpl" timestamp="1593363628388">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="740" y="276" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1593546750776" />
     <state x="740" y="279" key="FileChooserDialogImpl/0.0.1920.1050@0.0.1920.1050" timestamp="1594404202969" />
@@ -453,32 +446,28 @@
     </state>
     <state width="937" height="308" key="GridCell.Tab.0.bottom/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1594469254855" />
     <state width="1877" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040/-3840.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1593011357854" />
-    <state width="1877" height="286" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1593377976449" />
-    <state width="1877" height="207" key="GridCell.Tab.0.bottom/0.0.1920.1050@0.0.1920.1050" timestamp="1594406708826" />
+    <state width="1877" height="281" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1594469551140" />
     <state width="1877" height="119" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1593280833996" />
     <state width="937" height="308" key="GridCell.Tab.0.center" timestamp="1594469254855">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state width="937" height="308" key="GridCell.Tab.0.center/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1594469254855" />
     <state width="1877" height="282" key="GridCell.Tab.0.center/0.0.1920.1040/-3840.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1593011357854" />
-    <state width="1877" height="286" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1593377976449" />
-    <state width="1877" height="207" key="GridCell.Tab.0.center/0.0.1920.1050@0.0.1920.1050" timestamp="1594406708810" />
+    <state width="1877" height="281" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1594469551140" />
     <state width="1877" height="119" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1593280833996" />
     <state width="937" height="308" key="GridCell.Tab.0.left" timestamp="1594469254855">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state width="937" height="308" key="GridCell.Tab.0.left/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1594469254855" />
     <state width="1877" height="282" key="GridCell.Tab.0.left/0.0.1920.1040/-3840.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1593011357854" />
-    <state width="1877" height="286" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1593377976449" />
-    <state width="1877" height="207" key="GridCell.Tab.0.left/0.0.1920.1050@0.0.1920.1050" timestamp="1594406708810" />
+    <state width="1877" height="281" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1594469551140" />
     <state width="1877" height="119" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1593280833996" />
     <state width="937" height="308" key="GridCell.Tab.0.right" timestamp="1594469254855">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state width="937" height="308" key="GridCell.Tab.0.right/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1594469254855" />
     <state width="1877" height="282" key="GridCell.Tab.0.right/0.0.1920.1040/-3840.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1593011357854" />
-    <state width="1877" height="286" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1593377976449" />
-    <state width="1877" height="207" key="GridCell.Tab.0.right/0.0.1920.1050@0.0.1920.1050" timestamp="1594406708826" />
+    <state width="1877" height="281" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1594469551140" />
     <state width="1877" height="119" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1593280833996" />
     <state width="938" height="352" key="GridCell.Tab.1.bottom" timestamp="1593296527378">
       <screen x="0" y="0" width="1920" height="1050" />
@@ -504,34 +493,25 @@
     <state width="938" height="352" key="GridCell.Tab.1.right/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1593296527378" />
     <state width="1877" height="348" key="GridCell.Tab.1.right/0.0.1920.1040/-3840.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1593009236002" />
     <state width="938" height="348" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1593103318767" />
-    <state x="498" y="116" key="SettingsEditor" timestamp="1594407526394">
-      <screen x="0" y="0" width="1920" height="1050" />
+    <state x="440" y="94" key="SettingsEditor" timestamp="1594469439555">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="440" y="95" key="SettingsEditor/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1593294813362" />
-    <state x="440" y="94" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1593377593860" />
-    <state x="498" y="116" key="SettingsEditor/0.0.1920.1050@0.0.1920.1050" timestamp="1594407526394" />
+    <state x="440" y="94" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1594469439555" />
+    <state x="440" y="95" key="SettingsEditor/0.0.1920.1050@0.0.1920.1050" timestamp="1591727229871" />
     <state x="681" y="261" width="570" height="524" key="StructurePopup" timestamp="1593093309689">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="681" y="261" width="570" height="524" key="StructurePopup/0.0.1920.1040@0.0.1920.1040" timestamp="1593093309689" />
-    <state x="396" y="273" key="caller.chooser.dialog" timestamp="1594406553567">
-      <screen x="0" y="0" width="1920" height="1050" />
-    </state>
-    <state x="396" y="273" key="caller.chooser.dialog/0.0.1920.1050@0.0.1920.1050" timestamp="1594406553567" />
-    <state x="656" y="344" key="com.intellij.ide.util.TipDialog" timestamp="1593363380525">
+    <state x="656" y="344" key="com.intellij.ide.util.TipDialog" timestamp="1594469303046">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="656" y="344" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1593363380525" />
+    <state x="656" y="344" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1594469303046" />
     <state x="93" y="263" width="1562" height="920" key="dock-window-1" timestamp="1593280238207">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="93" y="263" width="1562" height="920" key="dock-window-1/0.0.1920.1080@0.0.1920.1080" timestamp="1593280238207" />
-    <state x="169" y="-29" width="1683" height="1036" key="find.popup" timestamp="1594405206455">
-      <screen x="0" y="0" width="1920" height="1050" />
-    </state>
-    <state x="591" y="217" width="737" height="606" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1593102560568" />
-    <state x="169" y="-29" width="1683" height="1036" key="find.popup/0.0.1920.1050@0.0.1920.1050" timestamp="1594405206455" />
-    <state x="342" y="140" key="new project wizard" timestamp="1593546763884">
+    <state x="591" y="217" width="737" height="606" key="find.popup" timestamp="1593102560568">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="342" y="140" key="new project wizard/0.0.1920.1040@0.0.1920.1040" timestamp="1593546763884" />
@@ -545,20 +525,20 @@
     </state>
     <state x="616" y="240" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1592599797997" />
     <state x="616" y="249" key="run.anything.popup/0.0.1920.1080@0.0.1920.1080" timestamp="1593271651213" />
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1593372932280">
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1593364616722">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="623" y="227" width="672" height="685" key="search.everywhere.popup/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1593293529834" />
     <state x="-1297" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/-3840.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1593009110587" />
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1593372932280" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1593364616722" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/GalaxyQuest/tests/io/github/jornegitgud/galaxyquest/GameManagerTests.java</url>
-          <line>147</line>
-          <option name="timeStamp" value="47" />
+          <url>file://$PROJECT_DIR$/GalaxyQuest/src/io/github/jornegitgud/galaxyquest/HighScoreStorage.java</url>
+          <line>21</line>
+          <option name="timeStamp" value="33" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
