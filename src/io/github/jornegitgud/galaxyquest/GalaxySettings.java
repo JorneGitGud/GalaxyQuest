@@ -64,10 +64,13 @@ public class GalaxySettings {
     }
 
     /**
-     * a method to open up the settings for the galaxy
+     * a method to unfreeze the game settings.
      */
     public void unfreezeSettings() { settingsFrozen = false;}
 
+    public boolean settingsAreFrozen() {
+        return this.settingsFrozen;
+    }
 
     /**
      * This method sets the width of the galaxy but, checks if it is within the min and max width limits of the galaxy first

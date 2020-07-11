@@ -11,8 +11,4 @@ public class GameManagerMock extends GameManager {
     public GameManagerMock(Stage stage, GalaxySettings galaxySettings, GalaxyRenderer galaxyRenderer) throws IOException {
         super(galaxySettings, galaxyRenderer);
     }
-
-    public Galaxy getGalaxy() {
-        return super.getGalaxy();
-    }
 }

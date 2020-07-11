@@ -9,37 +9,37 @@ public class GalaxySettingsTests {
     @Test
     @DisplayName("constructor right settings")
     void constructorTest() {
-        GalaxySettings gameObject = new GalaxySettings(5, 5, 3, 2, false, 2);
-        Assertions.assertEquals(5, gameObject.getWidth());
-        Assertions.assertEquals(5, gameObject.getHeight());
-        Assertions.assertEquals(3, gameObject.getPlanetCount());
-        Assertions.assertEquals(2, gameObject.getPirateCount());
-        Assertions.assertEquals(2, gameObject.getMeteoriteCount());
-        Assertions.assertEquals(false, gameObject.getSettingsFrozen());
+        GalaxySettings galaxySettings = new GalaxySettings(5, 5, 3, 2, false, 2);
+        Assertions.assertEquals(5, galaxySettings.getWidth());
+        Assertions.assertEquals(5, galaxySettings.getHeight());
+        Assertions.assertEquals(3, galaxySettings.getPlanetCount());
+        Assertions.assertEquals(2, galaxySettings.getPirateCount());
+        Assertions.assertEquals(2, galaxySettings.getMeteoriteCount());
+        Assertions.assertEquals(false, galaxySettings.settingsAreFrozen());
 
     }
     @Test
     @DisplayName("constructor wrong settings")
     void constructorTest2() {
-        GalaxySettings gameObject = new GalaxySettings(2, 2, 4, 4, true, 3);
-        Assertions.assertEquals(Defaults.GALAXY_WIDTH, gameObject.getWidth());
-        Assertions.assertEquals(Defaults.GALAXY_HEIGHT, gameObject.getHeight());
-        Assertions.assertEquals(4, gameObject.getPlanetCount());
-        Assertions.assertEquals(4, gameObject.getPirateCount());
-        Assertions.assertEquals(3, gameObject.getMeteoriteCount());
-        Assertions.assertEquals(true, gameObject.getSettingsFrozen());
+        GalaxySettings galaxySettings = new GalaxySettings(2, 2, 4, 4, true, 3);
+        Assertions.assertEquals(Defaults.GALAXY_WIDTH, galaxySettings.getWidth());
+        Assertions.assertEquals(Defaults.GALAXY_HEIGHT, galaxySettings.getHeight());
+        Assertions.assertEquals(4, galaxySettings.getPlanetCount());
+        Assertions.assertEquals(4, galaxySettings.getPirateCount());
+        Assertions.assertEquals(3, galaxySettings.getMeteoriteCount());
+        Assertions.assertEquals(true, galaxySettings.settingsAreFrozen());
 
     }
     @Test
     @DisplayName("constructor impossible settings")
     void constructorTest3() {
-        GalaxySettings gameObject = new GalaxySettings(50, 50, 60, 20, true, 20);
-        Assertions.assertEquals(Defaults.GALAXY_WIDTH, gameObject.getWidth());
-        Assertions.assertEquals(Defaults.GALAXY_HEIGHT, gameObject.getHeight());
-        Assertions.assertEquals(Defaults.PLANET_COUNT, gameObject.getPlanetCount());
-        Assertions.assertEquals(Defaults.PIRATE_COUNT, gameObject.getPirateCount());
-        Assertions.assertEquals(Defaults.METEORITE_COUNT, gameObject.getMeteoriteCount());
-        Assertions.assertEquals(true, gameObject.getSettingsFrozen());
+        GalaxySettings settingsAreFrozen = new GalaxySettings(50, 50, 60, 20, true, 20);
+        Assertions.assertEquals(Defaults.GALAXY_WIDTH, settingsAreFrozen.getWidth());
+        Assertions.assertEquals(Defaults.GALAXY_HEIGHT, settingsAreFrozen.getHeight());
+        Assertions.assertEquals(Defaults.PLANET_COUNT, settingsAreFrozen.getPlanetCount());
+        Assertions.assertEquals(Defaults.PIRATE_COUNT, settingsAreFrozen.getPirateCount());
+        Assertions.assertEquals(Defaults.METEORITE_COUNT, settingsAreFrozen.getMeteoriteCount());
+        Assertions.assertEquals(true, settingsAreFrozen.settingsAreFrozen());
     }
 
     @Test
@@ -74,7 +74,7 @@ public class GalaxySettingsTests {
         Assertions.assertEquals(6,galaxySettings.getMeteoriteCount());
 
         galaxySettings.freezeSettings();
-        Assertions.assertFalse(galaxySettings.getCanBeAltered());
+        Assertions.assertTrue(galaxySettings.settingsAreFrozen());
         galaxySettings.setWidth(12);
         galaxySettings.setHeight(12);
         galaxySettings.setPlanetCount(8);

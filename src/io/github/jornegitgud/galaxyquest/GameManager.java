@@ -229,6 +229,13 @@ public class GameManager {
 
     }
 
+    /**
+     * Returns the Game Manager's instance of the Galaxy class. Used as an entry point by unit tests.
+     * @return the Galaxy instance that this Game Manager holds.
+     */
+    public Galaxy getGalaxy() {
+        return this.galaxy;
+    }
 }
 
 

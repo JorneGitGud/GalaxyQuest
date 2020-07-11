@@ -27,6 +27,10 @@ public class SimpleSpriteList implements SpriteList {
         sprites.add(sprite);
     }
 
+    public void addSprites(ArrayList<Image> sprites) {
+        this.sprites.addAll(sprites);
+    }
+
     /**
      * randomizes the first image used in animations.
      * @return returns an Image from the sprites Arraylist
@@ -44,5 +48,9 @@ public class SimpleSpriteList implements SpriteList {
     @Override
     public Image getNextSprite(Direction dir) {
         return getNextSprite();
+    }
+
+    public ArrayList<Image> getSprites() {
+        return this.sprites;
     }
 }

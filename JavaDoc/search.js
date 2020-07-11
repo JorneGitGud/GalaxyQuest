@@ -262,7 +262,7 @@ $(function() {
                 };
                 return function(item) {
                     count[item.category] += 1;
-                    return (count[item.category] <= displayCount);;
+                    return (count[item.category] <= displayCount);
             }();
             response(result.filter(counter));
         },

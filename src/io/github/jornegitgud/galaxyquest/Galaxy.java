@@ -54,8 +54,18 @@ public class Galaxy {
                 }
             }
         }
+    }
 
-
+    /**
+     * Returns an individual tile in the galaxy.o get
+     * @param yPos the Y co
+     *      * @param xPos the X coordinate of the tile tordinate of the tile to get
+     * @return the tile at the specified position, or null if the position was out of bounds.
+     */
+    public Tile getGalaxyTile(int xPos, int yPos) {
+        if(yPos < this.galaxyTiles.length && xPos < this.galaxyTiles[0].length && xPos >= 0 && yPos >= 0)
+            return this.galaxyTiles[yPos][xPos];
+        return null;
     }
 
     public GalaxySettings getSettings() {

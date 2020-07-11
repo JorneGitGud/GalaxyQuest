@@ -31,84 +31,39 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fff264f5-7b44-419a-b4fb-10106bfbed3e" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/tests/io/github/jornegitgud/galaxyquest/TileTests.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDoc/allclasses-index.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDoc/allclasses-index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDoc/help-doc.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDoc/help-doc.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDoc/index-files/index-1.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDoc/index-files/index-1.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDoc/index-files/index-11.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDoc/index-files/index-11.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDoc/index-files/index-14.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDoc/index-files/index-14.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDoc/index-files/index-15.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDoc/index-files/index-15.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDoc/index-files/index-16.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDoc/index-files/index-16.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDoc/index-files/index-17.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDoc/index-files/index-17.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDoc/index-files/index-3.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDoc/index-files/index-3.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDoc/index-files/index-7.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDoc/index-files/index-7.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDoc/index-files/index-8.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDoc/index-files/index-8.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDoc/io/github/jornegitgud/galaxyquest/Galaxy.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDoc/io/github/jornegitgud/galaxyquest/Galaxy.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDoc/io/github/jornegitgud/galaxyquest/GalaxyRenderer.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDoc/io/github/jornegitgud/galaxyquest/GalaxyRenderer.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDoc/io/github/jornegitgud/galaxyquest/GameManager.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDoc/io/github/jornegitgud/galaxyquest/GameManager.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDoc/io/github/jornegitgud/galaxyquest/HighScore.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDoc/io/github/jornegitgud/galaxyquest/HighScore.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDoc/io/github/jornegitgud/galaxyquest/HighScoreStorage.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDoc/io/github/jornegitgud/galaxyquest/HighScoreStorage.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDoc/io/github/jornegitgud/galaxyquest/KeyboardListener.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDoc/io/github/jornegitgud/galaxyquest/KeyboardListener.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDoc/io/github/jornegitgud/galaxyquest/Main.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDoc/io/github/jornegitgud/galaxyquest/Main.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDoc/io/github/jornegitgud/galaxyquest/Tile.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDoc/io/github/jornegitgud/galaxyquest/Tile.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDoc/io/github/jornegitgud/galaxyquest/controllers/MainMenuController.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDoc/io/github/jornegitgud/galaxyquest/controllers/MainMenuController.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDoc/io/github/jornegitgud/galaxyquest/gameObjects/GameObjectFactory.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDoc/io/github/jornegitgud/galaxyquest/gameObjects/GameObjectFactory.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDoc/io/github/jornegitgud/galaxyquest/gameObjects/MovableObject.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDoc/io/github/jornegitgud/galaxyquest/gameObjects/MovableObject.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDoc/io/github/jornegitgud/galaxyquest/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDoc/io/github/jornegitgud/galaxyquest/package-summary.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDoc/io/github/jornegitgud/galaxyquest/sprites/FileHelper.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDoc/io/github/jornegitgud/galaxyquest/sprites/FileHelper.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDoc/jquery/external/jquery/jquery.js" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDoc/jquery/external/jquery/jquery.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDoc/jquery/jquery-3.3.1.js" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDoc/jquery/jquery-3.3.1.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDoc/jquery/jquery-migrate-3.0.1.js" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDoc/jquery/jquery-migrate-3.0.1.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDoc/jquery/jquery-ui.js" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDoc/jquery/jquery-ui.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDoc/jquery/jszip-utils/dist/jszip-utils.js" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDoc/jquery/jszip-utils/dist/jszip-utils.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDoc/jquery/jszip/dist/jszip.js" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDoc/jquery/jszip/dist/jszip.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaDoc/io/github/jornegitgud/galaxyquest/CoordinateTest.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDoc/io/github/jornegitgud/galaxyquest/CoordinateTest.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/JavaDoc/member-search-index.js" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDoc/member-search-index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/JavaDoc/search.js" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDoc/search.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaDoc/stylesheet.css" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDoc/stylesheet.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/highscores.txt" beforeDir="false" afterPath="$PROJECT_DIR$/highscores.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/javafx-osx-sdk-14.0.1/legal/javafx.base/ASSEMBLY_EXCEPTION" beforeDir="false" afterPath="$PROJECT_DIR$/lib/javafx-osx-sdk-14.0.1/legal/javafx.base/ASSEMBLY_EXCEPTION" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/javafx-osx-sdk-14.0.1/legal/javafx.controls/ASSEMBLY_EXCEPTION" beforeDir="false" afterPath="$PROJECT_DIR$/lib/javafx-osx-sdk-14.0.1/legal/javafx.controls/ASSEMBLY_EXCEPTION" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/javafx-osx-sdk-14.0.1/legal/javafx.fxml/ASSEMBLY_EXCEPTION" beforeDir="false" afterPath="$PROJECT_DIR$/lib/javafx-osx-sdk-14.0.1/legal/javafx.fxml/ASSEMBLY_EXCEPTION" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/javafx-osx-sdk-14.0.1/legal/javafx.graphics/ASSEMBLY_EXCEPTION" beforeDir="false" afterPath="$PROJECT_DIR$/lib/javafx-osx-sdk-14.0.1/legal/javafx.graphics/ASSEMBLY_EXCEPTION" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/javafx-osx-sdk-14.0.1/legal/javafx.media/ASSEMBLY_EXCEPTION" beforeDir="false" afterPath="$PROJECT_DIR$/lib/javafx-osx-sdk-14.0.1/legal/javafx.media/ASSEMBLY_EXCEPTION" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/javafx-osx-sdk-14.0.1/legal/javafx.swing/ASSEMBLY_EXCEPTION" beforeDir="false" afterPath="$PROJECT_DIR$/lib/javafx-osx-sdk-14.0.1/legal/javafx.swing/ASSEMBLY_EXCEPTION" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/javafx-osx-sdk-14.0.1/legal/javafx.web/ASSEMBLY_EXCEPTION" beforeDir="false" afterPath="$PROJECT_DIR$/lib/javafx-osx-sdk-14.0.1/legal/javafx.web/ASSEMBLY_EXCEPTION" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/javafx-osx-sdk-14.0.1/lib/javafx.properties" beforeDir="false" afterPath="$PROJECT_DIR$/lib/javafx-osx-sdk-14.0.1/lib/javafx.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/javafx-windows-sdk-14.0.1/legal/javafx.base/ASSEMBLY_EXCEPTION" beforeDir="false" afterPath="$PROJECT_DIR$/lib/javafx-windows-sdk-14.0.1/legal/javafx.base/ASSEMBLY_EXCEPTION" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/javafx-windows-sdk-14.0.1/legal/javafx.controls/ASSEMBLY_EXCEPTION" beforeDir="false" afterPath="$PROJECT_DIR$/lib/javafx-windows-sdk-14.0.1/legal/javafx.controls/ASSEMBLY_EXCEPTION" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/javafx-windows-sdk-14.0.1/legal/javafx.fxml/ASSEMBLY_EXCEPTION" beforeDir="false" afterPath="$PROJECT_DIR$/lib/javafx-windows-sdk-14.0.1/legal/javafx.fxml/ASSEMBLY_EXCEPTION" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/javafx-windows-sdk-14.0.1/legal/javafx.graphics/ASSEMBLY_EXCEPTION" beforeDir="false" afterPath="$PROJECT_DIR$/lib/javafx-windows-sdk-14.0.1/legal/javafx.graphics/ASSEMBLY_EXCEPTION" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/javafx-windows-sdk-14.0.1/legal/javafx.media/ASSEMBLY_EXCEPTION" beforeDir="false" afterPath="$PROJECT_DIR$/lib/javafx-windows-sdk-14.0.1/legal/javafx.media/ASSEMBLY_EXCEPTION" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/javafx-windows-sdk-14.0.1/legal/javafx.swing/ASSEMBLY_EXCEPTION" beforeDir="false" afterPath="$PROJECT_DIR$/lib/javafx-windows-sdk-14.0.1/legal/javafx.swing/ASSEMBLY_EXCEPTION" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/javafx-windows-sdk-14.0.1/legal/javafx.web/ASSEMBLY_EXCEPTION" beforeDir="false" afterPath="$PROJECT_DIR$/lib/javafx-windows-sdk-14.0.1/legal/javafx.web/ASSEMBLY_EXCEPTION" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/javafx-windows-sdk-14.0.1/lib/javafx.properties" beforeDir="false" afterPath="$PROJECT_DIR$/lib/javafx-windows-sdk-14.0.1/lib/javafx.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/GalaxyMenugif.gif" beforeDir="false" afterPath="$PROJECT_DIR$/resources/GalaxyMenuGif.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/GalaxyQuestMainMenu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/resources/GalaxyQuestMainMenu.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/Settings.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/resources/Settings.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/io/github/jornegitgud/galaxyquest/Coordinate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/github/jornegitgud/galaxyquest/Coordinate.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/io/github/jornegitgud/galaxyquest/Direction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/github/jornegitgud/galaxyquest/Direction.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/io/github/jornegitgud/galaxyquest/Galaxy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/github/jornegitgud/galaxyquest/Galaxy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/io/github/jornegitgud/galaxyquest/GalaxyRenderer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/github/jornegitgud/galaxyquest/GalaxyRenderer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/io/github/jornegitgud/galaxyquest/GalaxySettings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/github/jornegitgud/galaxyquest/GalaxySettings.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/io/github/jornegitgud/galaxyquest/GameManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/github/jornegitgud/galaxyquest/GameManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/io/github/jornegitgud/galaxyquest/HighScore.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/github/jornegitgud/galaxyquest/HighScore.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/io/github/jornegitgud/galaxyquest/HighScoreStorage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/github/jornegitgud/galaxyquest/HighScoreStorage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/io/github/jornegitgud/galaxyquest/KeyboardListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/github/jornegitgud/galaxyquest/KeyboardListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/io/github/jornegitgud/galaxyquest/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/github/jornegitgud/galaxyquest/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/io/github/jornegitgud/galaxyquest/Tile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/github/jornegitgud/galaxyquest/Tile.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/io/github/jornegitgud/galaxyquest/controllers/MainMenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/github/jornegitgud/galaxyquest/controllers/MainMenuController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/io/github/jornegitgud/galaxyquest/gameObjects/GameObjectFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/github/jornegitgud/galaxyquest/gameObjects/GameObjectFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/io/github/jornegitgud/galaxyquest/gameObjects/MovableObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/github/jornegitgud/galaxyquest/gameObjects/MovableObject.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/io/github/jornegitgud/galaxyquest/sprites/DirectionalSpriteList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/github/jornegitgud/galaxyquest/sprites/DirectionalSpriteList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/io/github/jornegitgud/galaxyquest/sprites/FileHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/github/jornegitgud/galaxyquest/sprites/FileHelper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/io/github/jornegitgud/galaxyquest/sprites/SimpleSpriteList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/github/jornegitgud/galaxyquest/sprites/SimpleSpriteList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/io/github/jornegitgud/galaxyquest/sprites/SpriteMapParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/github/jornegitgud/galaxyquest/sprites/SpriteMapParser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/io/github/jornegitgud/galaxyquest/CoordinateTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/io/github/jornegitgud/galaxyquest/GalaxySettingsTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/tests/io/github/jornegitgud/galaxyquest/GalaxySettingsTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/io/github/jornegitgud/galaxyquest/mockups/GameManagerMock.java" beforeDir="false" afterPath="$PROJECT_DIR$/tests/io/github/jornegitgud/galaxyquest/mockups/GameManagerMock.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -134,6 +89,12 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs.mocha.mocha_node_package_dir" value="" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
@@ -156,7 +117,7 @@
       <recent name="C:\Projects\GalaxyQuest\GalaxyQuest\assets\Planets" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Windows">
+  <component name="RunManager" selected="JUnit.All in GalaxyQuest">
     <configuration name="OS X" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="io.github.jornegitgud.galaxyquest.Main" />
       <module name="GalaxyQuest" />
@@ -304,9 +265,9 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Windows" />
         <item itemvalue="JUnit.All in GalaxyQuest" />
         <item itemvalue="JUnit.GameManagerTests" />
+        <item itemvalue="Application.Windows" />
         <item itemvalue="JUnit.GameManagerTests.WormholeSpawnsInRandomLocation" />
         <item itemvalue="JUnit.GameManagerTests.MeteoritesSpawnInRandomLocation" />
       </list>
@@ -389,19 +350,19 @@
     </option>
   </component>
   <component name="WindowStateProjectService">
-    <state x="552" y="178" key="#Project_Structure" timestamp="1594469340002">
+    <state x="552" y="178" key="#Project_Structure" timestamp="1594470338063">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="178" key="#Project_Structure/0.0.1920.1040@0.0.1920.1040" timestamp="1594469340002" />
+    <state x="552" y="178" key="#Project_Structure/0.0.1920.1040@0.0.1920.1040" timestamp="1594470338063" />
     <state x="478" y="48" width="1092" height="747" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1594469540817">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="478" y="48" key="#com.intellij.execution.impl.EditConfigurationsDialog/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1593294931246" />
     <state x="478" y="48" width="1092" height="747" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1594469540817" />
-    <state x="92" y="92" width="1736" height="856" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog" timestamp="1591905974414">
+    <state x="92" y="92" width="1736" height="856" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog" timestamp="1594472122734">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="92" y="92" width="1736" height="856" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1591905974414" />
+    <state x="92" y="92" width="1736" height="856" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1594472122734" />
     <state x="1097" y="242" key="#com.intellij.ide.util.MemberChooser" timestamp="1593285043042">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
@@ -421,10 +382,11 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="409" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1592677109685" />
-    <state x="707" y="369" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1594469252986">
-      <screen x="0" y="0" width="1920" height="1050" />
+    <state x="707" y="365" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1594471734830">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="707" y="369" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1594469252986" />
+    <state x="707" y="365" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1920.1040@0.0.1920.1040" timestamp="1594471734830" />
     <state x="707" y="369" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1920.1050@0.0.1920.1050" timestamp="1594406971500" />
     <state x="585" y="115" key="CommitChangelistDialog2" timestamp="1593285309658">
       <screen x="0" y="0" width="1920" height="1050" />
@@ -441,58 +403,58 @@
     </state>
     <state x="740" y="276" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1593546750776" />
     <state x="740" y="279" key="FileChooserDialogImpl/0.0.1920.1050@0.0.1920.1050" timestamp="1594404202969" />
-    <state width="937" height="308" key="GridCell.Tab.0.bottom" timestamp="1594469254855">
-      <screen x="0" y="0" width="1920" height="1050" />
+    <state width="1877" height="281" key="GridCell.Tab.0.bottom" timestamp="1594472153981">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="937" height="308" key="GridCell.Tab.0.bottom/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1594469254855" />
     <state width="1877" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040/-3840.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1593011357854" />
-    <state width="1877" height="281" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1594469551140" />
+    <state width="1877" height="281" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1594472153981" />
     <state width="1877" height="119" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1593280833996" />
-    <state width="937" height="308" key="GridCell.Tab.0.center" timestamp="1594469254855">
-      <screen x="0" y="0" width="1920" height="1050" />
+    <state width="1877" height="281" key="GridCell.Tab.0.center" timestamp="1594472153981">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="937" height="308" key="GridCell.Tab.0.center/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1594469254855" />
     <state width="1877" height="282" key="GridCell.Tab.0.center/0.0.1920.1040/-3840.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1593011357854" />
-    <state width="1877" height="281" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1594469551140" />
+    <state width="1877" height="281" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1594472153981" />
     <state width="1877" height="119" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1593280833996" />
-    <state width="937" height="308" key="GridCell.Tab.0.left" timestamp="1594469254855">
-      <screen x="0" y="0" width="1920" height="1050" />
+    <state width="1877" height="281" key="GridCell.Tab.0.left" timestamp="1594472153981">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="937" height="308" key="GridCell.Tab.0.left/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1594469254855" />
     <state width="1877" height="282" key="GridCell.Tab.0.left/0.0.1920.1040/-3840.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1593011357854" />
-    <state width="1877" height="281" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1594469551140" />
+    <state width="1877" height="281" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1594472153981" />
     <state width="1877" height="119" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1593280833996" />
-    <state width="937" height="308" key="GridCell.Tab.0.right" timestamp="1594469254855">
-      <screen x="0" y="0" width="1920" height="1050" />
+    <state width="1877" height="281" key="GridCell.Tab.0.right" timestamp="1594472153981">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="937" height="308" key="GridCell.Tab.0.right/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1594469254855" />
     <state width="1877" height="282" key="GridCell.Tab.0.right/0.0.1920.1040/-3840.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1593011357854" />
-    <state width="1877" height="281" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1594469551140" />
+    <state width="1877" height="281" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1594472153981" />
     <state width="1877" height="119" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1593280833996" />
-    <state width="938" height="352" key="GridCell.Tab.1.bottom" timestamp="1593296527378">
-      <screen x="0" y="0" width="1920" height="1050" />
+    <state width="1877" height="348" key="GridCell.Tab.1.bottom" timestamp="1594472143630">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="938" height="352" key="GridCell.Tab.1.bottom/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1593296527378" />
     <state width="1877" height="348" key="GridCell.Tab.1.bottom/0.0.1920.1040/-3840.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1593009236002" />
-    <state width="938" height="348" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1593103318767" />
-    <state width="938" height="352" key="GridCell.Tab.1.center" timestamp="1593296527378">
-      <screen x="0" y="0" width="1920" height="1050" />
+    <state width="1877" height="348" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1594472143630" />
+    <state width="1877" height="348" key="GridCell.Tab.1.center" timestamp="1594472143630">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="938" height="352" key="GridCell.Tab.1.center/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1593296527378" />
     <state width="1877" height="348" key="GridCell.Tab.1.center/0.0.1920.1040/-3840.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1593009236002" />
-    <state width="938" height="348" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1593103318767" />
-    <state width="938" height="352" key="GridCell.Tab.1.left" timestamp="1593296527378">
-      <screen x="0" y="0" width="1920" height="1050" />
+    <state width="1877" height="348" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1594472143630" />
+    <state width="1877" height="348" key="GridCell.Tab.1.left" timestamp="1594472143630">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="938" height="352" key="GridCell.Tab.1.left/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1593296527378" />
     <state width="1877" height="348" key="GridCell.Tab.1.left/0.0.1920.1040/-3840.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1593009236002" />
-    <state width="938" height="348" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1593103318767" />
-    <state width="938" height="352" key="GridCell.Tab.1.right" timestamp="1593296527378">
-      <screen x="0" y="0" width="1920" height="1050" />
+    <state width="1877" height="348" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1594472143630" />
+    <state width="1877" height="348" key="GridCell.Tab.1.right" timestamp="1594472143630">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="938" height="352" key="GridCell.Tab.1.right/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1593296527378" />
     <state width="1877" height="348" key="GridCell.Tab.1.right/0.0.1920.1040/-3840.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1593009236002" />
-    <state width="938" height="348" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1593103318767" />
+    <state width="1877" height="348" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1594472143630" />
     <state x="440" y="94" key="SettingsEditor" timestamp="1594469439555">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -539,6 +501,11 @@
           <url>file://$PROJECT_DIR$/GalaxyQuest/src/io/github/jornegitgud/galaxyquest/HighScoreStorage.java</url>
           <line>21</line>
           <option name="timeStamp" value="33" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/tests/io/github/jornegitgud/galaxyquest/TileTests.java</url>
+          <line>19</line>
+          <option name="timeStamp" value="48" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

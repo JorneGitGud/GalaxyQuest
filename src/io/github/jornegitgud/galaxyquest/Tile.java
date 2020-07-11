@@ -133,13 +133,16 @@ public class Tile {
     }
 
     /**
-     * returns the direction of the otherTile
-     * @param otherTile the tile you are looking to get direction to
-     * @return returns a {@link Direction} ENUMERATOR
+     * returns the direction in which to navigate to reach a specific tile, using this tile as departure point. Prioritizes X-axis over Y-axis.
+     * @param otherTile The tile to get directions toward from the current tile
+     * @return returns a {@link Direction}, or null if the destination tile is the same as the current tile.
      */
     public Direction getDirectionTo(Tile otherTile) {
         var deltaX = Math.abs(otherTile.coordinate.x - this.coordinate.x);
         var deltaY = Math.abs(otherTile.coordinate.y - this.coordinate.y);
+
+        if(deltaX == 0 && deltaY == 0)
+            return null;
 
         if(deltaX >= deltaY)
             return otherTile.coordinate.x - this.coordinate.x < 0 ? Direction.LEFT : Direction.RIGHT;
