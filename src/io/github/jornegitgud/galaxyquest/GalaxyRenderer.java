@@ -23,12 +23,11 @@ import java.util.function.Consumer;
  */
 public class GalaxyRenderer {
     private final int GALAXY_GRID_SIZE = 48;
-
-    private final Stage stage;
-    private final Scene gameScene;
-    private final Pane galaxyPane;
-    private final HashMap<GameObject, ImageView> sprites = new HashMap<>();
-    private final ArrayList<ImageView> staticSprites = new ArrayList<>();
+    private final Stage STAGE;
+    private final Scene GAME_SCENE;
+    private final Pane GALAXY_PANE;
+    private final HashMap<GameObject, ImageView> SPRITES = new HashMap<>();
+    private final ArrayList<ImageView> STATIC_SPRITES = new ArrayList<>();
     public Consumer<Stage> onStageClosed;
 
     private SimpleSpriteList galaxySprites;
@@ -36,17 +35,17 @@ public class GalaxyRenderer {
 
     /**
      * GalaxyRenderer's constructor takes a stage and a copy of the {@link GalaxySettings} in order to construct the scene (render window in correct size, setup background, etc)
-     * @param stage The stage to use for rendering galaxies onto.
+     * @param STAGE The stage to use for rendering galaxies onto.
      * @param settings The galaxy's settings, used to determine the width and height of the window.
      * @throws IOException throws if a sprite could not be found.
      */
-    public GalaxyRenderer(Stage stage, GalaxySettings settings) throws IOException {
-        this.stage = stage;
-        galaxyPane = new Pane();
-        this.gameScene = new Scene(galaxyPane, settings.getWidth() * GALAXY_GRID_SIZE, settings.getHeight() * GALAXY_GRID_SIZE);
-        stage.setResizable(false);
+    public GalaxyRenderer(Stage STAGE, GalaxySettings settings) throws IOException {
+        this.STAGE = STAGE;
+        GALAXY_PANE = new Pane();
+        this.GAME_SCENE = new Scene(GALAXY_PANE, settings.getWidth() * GALAXY_GRID_SIZE, settings.getHeight() * GALAXY_GRID_SIZE);
+        STAGE.setResizable(false);
 
-        stage.setScene(this.gameScene);
+        STAGE.setScene(this.GAME_SCENE);
         try {
             var backgroundImage = FileHelper.createImage("assets/BackgroundSprites/Galaxy.png");
             galaxySprites = new SimpleSpriteList(SpriteMapParser.parseSpriteMapToImages(backgroundImage, 768, 768));
@@ -57,13 +56,13 @@ public class GalaxyRenderer {
             background.setFitWidth(GALAXY_GRID_SIZE * Math.max(settings.getWidth(), settings.getHeight()));
             background.setFitHeight(GALAXY_GRID_SIZE * Math.max(settings.getHeight(), settings.getWidth()));
 
-            galaxyPane.getChildren().add(background);
+            GALAXY_PANE.getChildren().add(background);
 
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
 
-        stage.setOnCloseRequest((request) -> onStageClosed.accept(stage));
+        STAGE.setOnCloseRequest((request) -> onStageClosed.accept(STAGE));
     }
 
     /**
@@ -79,7 +78,7 @@ public class GalaxyRenderer {
                     continue;
 
                 double movePercentage = movableObject.updateMove();
-                ImageView sprite = sprites.get(movableObject);
+                ImageView sprite = SPRITES.get(movableObject);
                 switch (movableObject.getMoveDirection()) {
                     case UP:
                         sprite.setY((movableObject.getTile().getCoordinate().y * GALAXY_GRID_SIZE) - (1 * movePercentage * GALAXY_GRID_SIZE));
@@ -103,8 +102,8 @@ public class GalaxyRenderer {
      * @param galaxy the galaxy to render onto the scene.
      */
     public void renderGalaxy(Galaxy galaxy) {
-        if(!stage.isShowing())
-            stage.show();
+        if(!STAGE.isShowing())
+            STAGE.show();
 
         background.setImage(galaxySprites.getNextSprite());
         background.toBack();
@@ -112,10 +111,10 @@ public class GalaxyRenderer {
         var objects = galaxy.getObjects();
 
         for(GameObject object : objects) {
-            if(!sprites.containsKey(object)) {
+            if(!SPRITES.containsKey(object)) {
                 var imageView = new ImageView(object.getSpriteList().getNextSprite());
-                sprites.put(object, imageView);
-                galaxyPane.getChildren().add(imageView);
+                SPRITES.put(object, imageView);
+                GALAXY_PANE.getChildren().add(imageView);
                 imageView.setX(object.getTile().getCoordinate().x * GALAXY_GRID_SIZE);
                 imageView.setY(object.getTile().getCoordinate().y * GALAXY_GRID_SIZE);
                 imageView.setFitWidth(GALAXY_GRID_SIZE);
@@ -130,7 +129,7 @@ public class GalaxyRenderer {
                 imageView.toBack();
                 continue;
             }
-            var imageView = sprites.get(object);
+            var imageView = SPRITES.get(object);
             if(object instanceof HasDirection) {
                 var direction = ((HasDirection) object).getDirection();
                 imageView.setImage(object.getSpriteList().getNextSprite(direction));
@@ -144,11 +143,11 @@ public class GalaxyRenderer {
                 imageView.setVisible(true);
         }
 
-        for(var sprite : staticSprites) {
+        for(var sprite : STATIC_SPRITES) {
             sprite.toFront();
         }
 
-        sprites.get(galaxy.getPlayer()).toFront();
+        SPRITES.get(galaxy.getPlayer()).toFront();
     }
 
     /**
@@ -156,7 +155,7 @@ public class GalaxyRenderer {
      * @param object The object whose sprite to update.
      */
     public void updateDirection(GameObject object) {
-        var imageView = sprites.get(object);
+        var imageView = SPRITES.get(object);
         imageView.setImage(object.getSpriteList().getNextSprite(((HasDirection)object).getDirection()));
     }
 
@@ -165,23 +164,23 @@ public class GalaxyRenderer {
      * @return The current game scene
      */
     public Scene getScene() {
-        return gameScene;
+        return GAME_SCENE;
     }
 
     /**
      * This method destroys all sprites and the scene.
      */
     public void destroyScene() {
-        var imageViews = new ArrayList<>(sprites.values());
-        imageViews.addAll(staticSprites);
+        var imageViews = new ArrayList<>(SPRITES.values());
+        imageViews.addAll(STATIC_SPRITES);
         imageViews.add(background);
 
         for(var imageView : imageViews) {
             imageView.setVisible(false);
-            galaxyPane.getChildren().remove(imageView);
+            GALAXY_PANE.getChildren().remove(imageView);
         }
 
-        this.stage.setScene(null);
+        this.STAGE.setScene(null);
     }
 
     /**
@@ -194,14 +193,14 @@ public class GalaxyRenderer {
         var coordinate = tile.getCoordinate();
         try {
             var imageView = FileHelper.createImageView(spritePath);
-            staticSprites.add(imageView);
+            STATIC_SPRITES.add(imageView);
             imageView.setX(coordinate.x * GALAXY_GRID_SIZE);
             imageView.setY(coordinate.y * GALAXY_GRID_SIZE);
             imageView.setFitHeight(GALAXY_GRID_SIZE);
             imageView.setFitWidth(GALAXY_GRID_SIZE);
-            galaxyPane.getChildren().add(imageView);
+            GALAXY_PANE.getChildren().add(imageView);
             imageView.toFront();
-            sprites.get(galaxy.getPlayer()).toFront();
+            SPRITES.get(galaxy.getPlayer()).toFront();
         } catch (IOException e) {
             e.printStackTrace();
         }

@@ -1,7 +1,6 @@
 package io.github.jornegitgud.galaxyquest;
 
 import javafx.scene.Scene;
-
 import java.util.function.Consumer;
 
 /**

@@ -14,12 +14,12 @@ import java.util.function.Consumer;
  */
 public class GameManager {
 
-    private final GalaxyRenderer renderer;
-    private final Galaxy galaxy;
-    private final AnimationTimer mainLoop;
+    private final GalaxyRenderer RENDERER;
+    private final Galaxy GALAXY;
+    private final AnimationTimer MAIN_LOOP;
     public Consumer<GameResult> onGameEnded = (result) -> { };
 
-    private final long startTime;
+    private final long START_TIME;
 
     private static final double MOVE_FRAME_DURATION_SECONDS = 1d / 60d;
     private static final double SPRITE_FRAME_DURATION_SECONDS = 1d / 4d;
@@ -32,16 +32,16 @@ public class GameManager {
 
     public GameManager(GalaxySettings galaxySettings, GalaxyRenderer galaxyRenderer) throws IOException {
 
-        startTime = System.currentTimeMillis();
+        START_TIME = System.currentTimeMillis();
         galaxySettings.freezeSettings();
-        galaxy = new Galaxy(galaxySettings);
-        this.renderer = galaxyRenderer;
+        GALAXY = new Galaxy(galaxySettings);
+        this.RENDERER = galaxyRenderer;
 
-        populateGalaxy(galaxy);
-        KeyboardListener keyboardListener = new KeyboardListener(renderer.getScene());
-        renderer.renderGalaxy(galaxy);
+        populateGalaxy(GALAXY);
+        KeyboardListener keyboardListener = new KeyboardListener(RENDERER.getScene());
+        RENDERER.renderGalaxy(GALAXY);
 
-        mainLoop = new AnimationTimer() {
+        MAIN_LOOP = new AnimationTimer() {
             private long lastUpdate;
 
             @Override
@@ -58,22 +58,22 @@ public class GameManager {
                 if (elapsedSeconds < MOVE_FRAME_DURATION_SECONDS)
                     return;
 
-                renderer.renderPositions(galaxy);
+                RENDERER.renderPositions(GALAXY);
 
                 if (elapsedSeconds < SPRITE_FRAME_DURATION_SECONDS)
                     return;
 
-                renderer.renderGalaxy(galaxy);
+                RENDERER.renderGalaxy(GALAXY);
 
                 lastUpdate = now;
             }
         };
 
-        renderer.onStageClosed = (closedStage) -> mainLoop.stop();
+        RENDERER.onStageClosed = (closedStage) -> MAIN_LOOP.stop();
 
         keyboardListener.onKeyPressed = (direction) -> {
             lastDirection = direction;
-            galaxy.getPlayer().move(15, direction);
+            GALAXY.getPlayer().move(15, direction);
         };
 
         keyboardListener.onKeyReleased = (direction) -> {
@@ -81,17 +81,17 @@ public class GameManager {
                 lastDirection = null;
         };
 
-        galaxy.getPlayer().onMoveEnded = (player) -> {
+        GALAXY.getPlayer().onMoveEnded = (player) -> {
             if (lastDirection != null)
                 player.move(15, lastDirection);
             checkCurrentTilePlayer((Player) player);
         };
 
-        galaxy.getPlayer().onDirectionChanged = renderer::updateDirection;
+        GALAXY.getPlayer().onDirectionChanged = RENDERER::updateDirection;
 
-        mainLoop.start();
+        MAIN_LOOP.start();
 
-        for (var object : galaxy.getObjects()) {
+        for (var object : GALAXY.getObjects()) {
             if (object instanceof Meteorite) {
                 ((Meteorite) object).onMoveEnded = (meteorite) -> {
                     checkCurrentTileMovableObject(meteorite);
@@ -103,10 +103,10 @@ public class GameManager {
                 var spacePirate = (SpacePirate) object;
                 spacePirate.onMoveEnded = (pirate) -> {
                     checkCurrentTileMovableObject(pirate);
-                    pirate.move(20, pirate.getTile().getDirectionTo(galaxy.getPlayer().getTile()));
+                    pirate.move(20, pirate.getTile().getDirectionTo(GALAXY.getPlayer().getTile()));
                 };
-                spacePirate.onDirectionChanged = renderer::updateDirection;
-                spacePirate.move(20, spacePirate.getTile().getDirectionTo(galaxy.getPlayer().getTile()));
+                spacePirate.onDirectionChanged = RENDERER::updateDirection;
+                spacePirate.move(20, spacePirate.getTile().getDirectionTo(GALAXY.getPlayer().getTile()));
             }
         }
 
@@ -139,8 +139,8 @@ public class GameManager {
                 return;
             planet.setVisited();
             planetsVisited++;
-            renderer.addSprite(galaxy, planet.getTile(), "assets/Planets/Planet_Visited.png");
-            if (planetsVisited == galaxy.getSettings().getPlanetCount())
+            RENDERER.addSprite(GALAXY, planet.getTile(), "assets/Planets/Planet_Visited.png");
+            if (planetsVisited == GALAXY.getSettings().getPlanetCount())
                 wormhole.activate();
 
         } else if (player.getTile().containsAny(Meteorite.class, SpacePirate.class)) {
@@ -159,10 +159,10 @@ public class GameManager {
      * @param win this tells the method if a player has won or lost
      */
     public void gameOver(Boolean win) {
-        final HighScore highScore = new HighScore((int) (System.currentTimeMillis() - startTime) / 1000, galaxy.getSettings());
+        final HighScore highScore = new HighScore((int) (System.currentTimeMillis() - START_TIME) / 1000, GALAXY.getSettings());
 
-        renderer.destroyScene();
-        mainLoop.stop();
+        RENDERER.destroyScene();
+        MAIN_LOOP.stop();
         Platform.runLater(() -> onGameEnded.accept(new GameResult(win, highScore)));
     }
 
@@ -174,7 +174,7 @@ public class GameManager {
      * @param galaxy it uses a Galaxy object to check the number of coordinates it should create.
      * @throws IOException if an input or output operation is failed
      */
-    protected void populateGalaxy(Galaxy galaxy) throws IOException {
+    private void populateGalaxy(Galaxy galaxy) throws IOException {
         ArrayList<Coordinate> availableCoordinates = new ArrayList<>();
         Random random = new Random();
 
@@ -234,7 +234,7 @@ public class GameManager {
      * @return the Galaxy instance that this Game Manager holds.
      */
     public Galaxy getGalaxy() {
-        return this.galaxy;
+        return this.GALAXY;
     }
 }
 
