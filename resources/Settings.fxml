@@ -11,7 +11,7 @@
 <AnchorPane fx:controller="io.github.jornegitgud.galaxyquest.controllers.SettingsController" prefHeight="768.0"
             prefWidth="768.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
     <ImageView fitHeight="768.0" fitWidth="768.0" pickOnBounds="true" preserveRatio="true">
-        <Image url="GalaxyMenugif.gif"/>
+        <Image url="GalaxyMenuGif.gif"/>
     </ImageView>
     <Slider fx:id="meteoriteSlider" blockIncrement="5.0" layoutX="30.0" layoutY="411.0" majorTickUnit="10.0" min="5.0"
             max="25.0" value="5"

@@ -16,7 +16,7 @@ public class MainMenuController {
     };
     public Consumer<ActionEvent> onExitButtonClicked = (event) -> {
     };
-    public Consumer<ActionEvent> onSettingsbuttonClicked = (event) -> {
+    public Consumer<ActionEvent> onSettingsButtonClicked = (event) -> {
     };
 
     @FXML
@@ -31,7 +31,7 @@ public class MainMenuController {
 
     @FXML
     public void openSettings(ActionEvent event) {
-        this.onSettingsbuttonClicked.accept(event);
+        this.onSettingsButtonClicked.accept(event);
     }
 
     @FXML

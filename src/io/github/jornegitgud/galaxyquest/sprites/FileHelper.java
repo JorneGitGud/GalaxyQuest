@@ -66,7 +66,7 @@ public class FileHelper {
     }
 
     /**
-     * Takes a path to a file and creates an ImaeView.
+     * Takes a path to a file and creates an ImageView.
      * @param path the path to the file
      * @return the image as javafx.scene.image.ImageView object
      * @throws IOException if this input operation is failed

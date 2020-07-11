@@ -22,7 +22,7 @@ public class KeyboardListener {
 
 
     /**
-     * This is the method that reacts to keys pressed. It react to buth wasd and the arrow keys on the keyboard.
+     * This is the method that reacts to keys pressed. It reacts to both W,A,S,D and the arrow keys on the keyboard.
      * @param gameScene the gameScene is given so the keyboardListener knows in what scene it needs
      * to respond to the keyboard.
      */

@@ -9,17 +9,6 @@ public class Coordinate {
     public final int x;
     public final int y;
 
-    /**
-     * this method calculates the distance between this coordinate and the coordinate that it takes in.
-     *
-     * @param coordinate the coordinate that the distance to should calculated.
-     * @return returns an int that is the amount of tiles between the two coordinates.
-     */
-    public int getDistanceTo(Coordinate coordinate) {
-        int difX = Math.abs(this.x - coordinate.x);
-        int difY = Math.abs(this.y - coordinate.y);
-        return difY + difX;
-    }
 
     public Coordinate(int x, int y) {
         this.x = x;

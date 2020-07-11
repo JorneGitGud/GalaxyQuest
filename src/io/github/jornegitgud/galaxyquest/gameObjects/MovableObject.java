@@ -27,7 +27,7 @@ public class MovableObject extends GameObject {
 
     /**
      *this method is used to move an object from one tile to another, it sets the tile the object should move to next.
-     * it has a switch case which is used to determen to which tile the object should move
+     * it has a switch case which is used to determine to which tile the object should move
      * @param frames the amount of frames used in animation while the object is moving.
      * @param direction the direction in which the object moves
      */

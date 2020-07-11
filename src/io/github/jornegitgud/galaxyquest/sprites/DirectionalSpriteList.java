@@ -54,21 +54,6 @@ public class DirectionalSpriteList implements SpriteList {
         this.sprites = sprites;
     }
 
-    public void addSprite(Direction direction, Image sprite) {
-        sprites.get(direction).add(sprite);
-    }
-
-    public void addSprites(Direction direction, ArrayList<Image> sprites) {
-        this.sprites.get(direction).addAll(sprites);
-    }
-
-    public HashMap<Direction, ArrayList<Image>> getSprites() {
-        return sprites;
-    }
-
-    public ArrayList<Image> getSprites(Direction direction) {
-        return sprites.get(direction);
-    }
 
     @Override
     public Image getNextSprite() {

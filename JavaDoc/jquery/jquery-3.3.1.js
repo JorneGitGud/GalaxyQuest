@@ -117,7 +117,7 @@ function toType( obj ) {
 		return obj + "";
 	}
 
-	// Support: Android <=2.3 only (functionish RegExp)
+	// Support: Android <=2.3 only (function of RegExp)
 	return typeof obj === "object" || typeof obj === "function" ?
 		class2type[ toString.call( obj ) ] || "object" :
 		typeof obj;
@@ -625,9 +625,9 @@ var i,
 	rinputs = /^(?:input|select|textarea|button)$/i,
 	rheader = /^h\d$/i,
 
-	rnative = /^[^{]+\{\s*\[native \w/,
+	rnative = /^[^{]+{\s*\[native \w/,
 
-	// Easily-parseable/retrievable ID or TAG or CLASS selectors
+	// Easily-parsable/retrievable ID or TAG or CLASS selectors
 	rquickExpr = /^(?:#([\w-]+)|(\w+)|\.([\w-]+))$/,
 
 	rsibling = /[+~]/,
@@ -2804,7 +2804,7 @@ function nodeName( elem, name ) {
 
   return elem.nodeName && elem.nodeName.toLowerCase() === name.toLowerCase();
 
-};
+}
 var rsingleTag = ( /^<([a-z][^\/\0>:\x20\t\r\n\f]*)[\x20\t\r\n\f]*\/?>(?:<\/\1>|)$/i );
 
 
@@ -4167,7 +4167,7 @@ var dataUser = new Data();
 //	5. Avoid exposing implementation details on user objects (eg. expando properties)
 //	6. Provide a clear path for implementation upgrade to WeakMap in 2014
 
-var rbrace = /^(?:\{[\w\W]*\}|\[[\w\W]*\])$/,
+var rbrace = /^(?:{[\w\W]*}|\[[\w\W]*])$/,
 	rmultiDash = /[A-Z]/g;
 
 function getData( data ) {
@@ -5486,15 +5486,15 @@ jQuery.each( {
 
 		// Add which for click: 1 === left; 2 === middle; 3 === right
 		if ( !event.which && button !== undefined && rmouseEvent.test( event.type ) ) {
-			if ( button & 1 ) {
+			if ( button && 1 ) {
 				return 1;
 			}
 
-			if ( button & 2 ) {
+			if ( button && 2 ) {
 				return 3;
 			}
 
-			if ( button & 4 ) {
+			if ( button && 4 ) {
 				return 2;
 			}
 
@@ -5604,7 +5604,7 @@ var
 
 	// checked="checked" or checked
 	rchecked = /checked\s*(?:[^=]|=\s*.checked.)/i,
-	rcleanScript = /^\s*<!(?:\[CDATA\[|--)|(?:\]\]|--)>\s*$/g;
+	rcleanScript = /^\s*<!(?:\[CDATA\[|--)|(?:]]|--)>\s*$/g;
 
 // Prefer a tbody over its parent table for containing new rows
 function manipulationTarget( elem, content ) {
@@ -8107,8 +8107,8 @@ jQuery.extend( {
 
 					/* eslint-disable no-cond-assign */
 
-					if ( option.selected =
-						jQuery.inArray( jQuery.valHooks.option.get( option ), values ) > -1
+					if ( option.selected ==
+                        jQuery.inArray(jQuery.valHooks.option.get(option), values) > -1
 					) {
 						optionSet = true;
 					}
@@ -8408,7 +8408,7 @@ jQuery.parseXML = function( data ) {
 
 
 var
-	rbracket = /\[\]$/,
+	rbracket = /\[]$/,
 	rCRLF = /\r?\n/g,
 	rsubmitterTypes = /^(?:submit|button|image|reset|file)$/i,
 	rsubmittable = /^(?:input|select|textarea|keygen)/i;
@@ -9057,7 +9057,6 @@ jQuery.extend( {
 
 				// Support: IE <=8 - 11 only
 				// Anchor's host property isn't correctly set when s.url is relative
-				urlAnchor.href = urlAnchor.href;
 				s.crossDomain = originAnchor.protocol + "//" + originAnchor.host !==
 					urlAnchor.protocol + "//" + urlAnchor.host;
 			} catch ( e ) {

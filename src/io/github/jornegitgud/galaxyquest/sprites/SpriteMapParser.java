@@ -1,7 +1,6 @@
 package io.github.jornegitgud.galaxyquest.sprites;
 
 import javafx.embed.swing.SwingFXUtils;
-import javafx.scene.image.ImageView;
 
 import java.awt.*;
 import java.awt.image.BufferedImage;
@@ -58,23 +57,5 @@ public class SpriteMapParser {
         }
 
         return sprites;
-    }
-
-    /**
-     * this method creates an arrayList of one or more Images and can be used if an offset to the sprites is needed.
-     * @param image the image to be cut up into smaller sprites
-     * @param singleSpriteWidthPx the height of the desires sprites
-     * @param singleSpriteHeightPx the width of the desires sprites
-     * @param startX the start point from where to start cutting
-     * @param startY the start point from where to start cutting
-     * @return Arraylist with one or more Images in an ImageView
-     */
-    public static ArrayList<ImageView> parseSpriteMapToImageViews(Image image, int singleSpriteWidthPx, int singleSpriteHeightPx, int startX, int startY) {
-        ArrayList<javafx.scene.image.Image> images = parseSpriteMapToImages(image, singleSpriteWidthPx, singleSpriteHeightPx, startX, startY);
-        ArrayList<ImageView> imageViews = new ArrayList<>();
-        for (javafx.scene.image.Image value : images) {
-            imageViews.add(new ImageView(value));
-        }
-        return imageViews;
     }
 }

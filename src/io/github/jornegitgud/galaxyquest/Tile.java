@@ -61,7 +61,7 @@ public class Tile {
     }
 
     /**
-     * this methhod is used to set {@link GameObject} on the tile.
+     * this method is used to set {@link GameObject} on the tile.
      *
      * @param gameObject the game object can be a {@link io.github.jornegitgud.galaxyquest.gameObjects.Meteorite}, {@link io.github.jornegitgud.galaxyquest.gameObjects.Planet}, {@link io.github.jornegitgud.galaxyquest.gameObjects.Player}, {@link io.github.jornegitgud.galaxyquest.gameObjects.SpacePirate} or a {@link io.github.jornegitgud.galaxyquest.gameObjects.Wormhole}.
      */
@@ -70,7 +70,7 @@ public class Tile {
             gameObjects.add(gameObject);
     }
     /**
-     * this method remove a gameobject from the tile.
+     * this method remove a GameObject from the tile.
      *
      * @param gameObject the object that is to be removed
      */
@@ -109,7 +109,7 @@ public class Tile {
     }
 
     /**
-     * this methode takes in an unspecified object and returns any instance of that object that is contained in the tile class
+     * this method takes in an unspecified object and returns any instance of that object that is contained in the tile class
      *
      * @param tClass the object to check
      * @param <T> unspecified type.

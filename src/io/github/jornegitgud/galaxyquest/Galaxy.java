@@ -6,7 +6,7 @@ import io.github.jornegitgud.galaxyquest.gameObjects.Player;
 import java.util.ArrayList;
 /**
  * this is the galaxy class. it contains the rules for setting up a galaxy. these rules are set in the {@link GalaxySettings} class.
- * the Galaxy contains all the tiles that make up the grid. these tiles are set in an Tile[][], this array is filles with default tiles,
+ * the Galaxy contains all the tiles that make up the grid. these tiles are set in an Tile[][], this array is filled with default tiles,
  * specific tiles are set in populateGalaxy() in the {@link GameManager} class.
  * it has getters and setters
  */
@@ -56,19 +56,6 @@ public class Galaxy {
         }
 
 
-    }
-
-    /**
-     * This method returns a Tile. is asks for a GalaxyRenderer so that only a class that contains a GalaxyRenderer can make use of this method.
-     * @param xPos the position of the tile you want to have returned
-     * @param yPos the position of the tile you want to have returned
-     * @return returns a Tile object
-     */
-    public Tile getGalaxyTile(int xPos, int yPos) {
-        if (yPos < this.galaxyTiles.length && xPos < this.galaxyTiles[0].length && xPos >= 0 && yPos >= 0) {
-            return this.galaxyTiles[yPos][xPos];
-        }
-        return null;
     }
 
     public GalaxySettings getSettings() {

@@ -31,7 +31,7 @@ public class Main extends Application {
     /**
      * This method starts the game.
      * @param stage is used to open a window.
-     * @throws Exception is trowns when there is no stage found.
+     * @throws Exception is thrown when there is no stage found.
      */
     @Override
     public void start(Stage stage) throws Exception {
@@ -68,7 +68,7 @@ public class Main extends Application {
                         if(highScoresList[4].getScore() < highScore.getScore()) {
                             highScoresList[4] = highScore;
                             Arrays.sort(highScoresList);
-                            HighScoreStorage.saveHighscores(highScoresList);
+                            HighScoreStorage.saveHighScores(highScoresList);
                         }
                     }
 
@@ -83,7 +83,7 @@ public class Main extends Application {
 
         controller.onExitButtonClicked = (event) -> stage.close();
 
-        controller.onSettingsbuttonClicked = (event) -> {
+        controller.onSettingsButtonClicked = (event) -> {
             stage.setScene(settingsScene);
             settingsController.setSettings(galaxySettings);
         };
@@ -97,7 +97,7 @@ public class Main extends Application {
 
     /**
      * This method is used to open a PopUp window. in the window you can enter your name if you won.
-     * @return String with the name in all uppercases and with a maximum of 6 symbols.
+     * @return String with the name in all upper cases and with a maximum of 6 symbols.
      */
     public String askForName(){
         TextInputDialog dialog = new TextInputDialog("Wouter");

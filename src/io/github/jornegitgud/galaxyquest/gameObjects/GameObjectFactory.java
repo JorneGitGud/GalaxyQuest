@@ -47,9 +47,9 @@ public class GameObjectFactory {
     /**
      * this method creates the planet objects.
      * it adds all images of the planets to planetSprites arraylist.
-     * the creates a SimpleSpriteList adds a image from the planetsprites arraylist from the location dicided by the planetChoice variable.
+     * the creates a SimpleSpriteList adds a image from the planetSprites arraylist from the location decided by the planetChoice variable.
      * @return  a new Planet object with the simpleSpriteList variable.
-     * @throws IOException throws IOExpeption if the file could not be found
+     * @throws IOException throws IOException if the file could not be found
      */
     public static Planet createPlanet() throws IOException {
         if (planetSprites == null) {
@@ -74,10 +74,10 @@ public class GameObjectFactory {
     }
 
     /**
-     * creates Meteorite objects. makes new arraylist with the meteorite imange and adds this to a new meteorite.
+     * creates Meteorite objects. makes new arraylist with the meteorite image and adds this to a new meteorite.
      *
      * @return a new meteorite
-     * @throws IOException throws IOExpeption if the file could not be found
+     * @throws IOException throws IOException if the file could not be found
      */
     public static Meteorite createMeteorite() throws IOException {
         if (meteoriteSprites == null) {
@@ -109,7 +109,7 @@ public class GameObjectFactory {
     }
 
     /**
-     * creates a worhmhole object, sets the sprite and size;
+     * creates a wormhole object, sets the sprite and size;
      * @return a Wormhole object
      * @throws IOException throws an exception if the file is not found.
      */

@@ -29,7 +29,7 @@ public class GameManager {
     private Wormhole wormhole;
 
 
-    //Stage security reasons??
+
     public GameManager(GalaxySettings galaxySettings, GalaxyRenderer galaxyRenderer) throws IOException {
 
         startTime = System.currentTimeMillis();
@@ -87,16 +87,14 @@ public class GameManager {
             checkCurrentTilePlayer((Player) player);
         };
 
-        galaxy.getPlayer().onDirectionChanged = (player) -> {
-            renderer.updateDirection(player);
-        };
+        galaxy.getPlayer().onDirectionChanged = renderer::updateDirection;
 
         mainLoop.start();
 
         for (var object : galaxy.getObjects()) {
             if (object instanceof Meteorite) {
                 ((Meteorite) object).onMoveEnded = (meteorite) -> {
-                    checkCurrentTileMoveableObject(meteorite);
+                    checkCurrentTileMovableObject(meteorite);
                     meteorite.move(15, Direction.randomDirection());
                 };
                 var meteorite = (Meteorite) object;
@@ -104,10 +102,10 @@ public class GameManager {
             } else if (object instanceof SpacePirate) {
                 var spacePirate = (SpacePirate) object;
                 spacePirate.onMoveEnded = (pirate) -> {
-                    checkCurrentTileMoveableObject(pirate);
+                    checkCurrentTileMovableObject(pirate);
                     pirate.move(20, pirate.getTile().getDirectionTo(galaxy.getPlayer().getTile()));
                 };
-                spacePirate.onDirectionChanged = (pirate) -> renderer.updateDirection(pirate);
+                spacePirate.onDirectionChanged = renderer::updateDirection;
                 spacePirate.move(20, spacePirate.getTile().getDirectionTo(galaxy.getPlayer().getTile()));
             }
         }
@@ -119,7 +117,7 @@ public class GameManager {
      * if not calls the gameOver function.
      * @param object the Object to be checked
      */
-    private void checkCurrentTileMoveableObject(GameObject object) {
+    private void checkCurrentTileMovableObject(GameObject object) {
         if (object instanceof Player)
             checkCurrentTilePlayer((Player) object);
 
@@ -169,8 +167,8 @@ public class GameManager {
     }
 
     /**
-     * this methode populates the Galaxy, before calling this method the galaxy contains only empty tiles.
-     * this methode creates an arrayList filled with all possible coordinates for this grid.
+     * this method populates the Galaxy, before calling this method the galaxy contains only empty tiles.
+     * this method creates an arrayList filled with all possible coordinates for this grid.
      * then it gives each object {@link Planet},{@link Player}{@link Meteorite}{@link Wormhole} a {@link Coordinate} object and removes it from the arrayList.
      * And gives this object to the Galaxy class, which sets it in the right Tile
      * @param galaxy it uses a Galaxy object to check the number of coordinates it should create.
@@ -230,10 +228,7 @@ public class GameManager {
         availableCoordinates.remove(tempPos);
 
     }
-//galaxy renderer security reasons??
-    public Galaxy getGalaxy() {
-        return this.galaxy;
-    }
+
 }
 
 

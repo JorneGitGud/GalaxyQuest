@@ -247,7 +247,7 @@ extends java.lang.Object</pre>
 </tr>
 <tr id="i0" class="altColor">
 <td class="colFirst"><code>private void</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#checkCurrentTileMoveableObject(io.github.jornegitgud.galaxyquest.gameObjects.GameObject)">checkCurrentTileMoveableObject</a></span>&#8203;(<a href="gameObjects/GameObject.html" title="class in io.github.jornegitgud.galaxyquest.gameObjects">GameObject</a>&nbsp;object)</code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#checkCurrentTileMovableObject(io.github.jornegitgud.galaxyquest.gameObjects.GameObject)">checkCurrentTileMovableObject</a></span>&#8203;(<a href="gameObjects/GameObject.html" title="class in io.github.jornegitgud.galaxyquest.gameObjects">GameObject</a>&nbsp;object)</code></th>
 <td class="colLast">
 <div class="block">this method check if the given GameObject is a Player object, if so calls the checkCurrentTilePlayer method.</div>
 </td>
@@ -275,7 +275,7 @@ extends java.lang.Object</pre>
 <td class="colFirst"><code>protected void</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#populateGalaxy(io.github.jornegitgud.galaxyquest.Galaxy)">populateGalaxy</a></span>&#8203;(<a href="Galaxy.html" title="class in io.github.jornegitgud.galaxyquest">Galaxy</a>&nbsp;galaxy)</code></th>
 <td class="colLast">
-<div class="block">this methode populates the Galaxy, before calling this method the galaxy contains only empty tiles.</div>
+<div class="block">this method populates the Galaxy, before calling this method the galaxy contains only empty tiles.</div>
 </td>
 </tr>
 </table>
@@ -435,13 +435,13 @@ extends java.lang.Object</pre>
 <!--   -->
 </a>
 <h3>Method Detail</h3>
-<a id="checkCurrentTileMoveableObject(io.github.jornegitgud.galaxyquest.gameObjects.GameObject)">
+<a id="checkCurrentTileMovableObject(io.github.jornegitgud.galaxyquest.gameObjects.GameObject)">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>checkCurrentTileMoveableObject</h4>
-<pre class="methodSignature">private&nbsp;void&nbsp;checkCurrentTileMoveableObject&#8203;(<a href="gameObjects/GameObject.html" title="class in io.github.jornegitgud.galaxyquest.gameObjects">GameObject</a>&nbsp;object)</pre>
+<h4>checkCurrentTileMovableObject</h4>
+<pre class="methodSignature">private&nbsp;void&nbsp;checkCurrentTileMovableObject&#8203;(<a href="gameObjects/GameObject.html" title="class in io.github.jornegitgud.galaxyquest.gameObjects">GameObject</a>&nbsp;object)</pre>
 <div class="block">this method check if the given GameObject is a Player object, if so calls the checkCurrentTilePlayer method.
  if not calls the gameOver function.</div>
 <dl>
@@ -491,8 +491,8 @@ extends java.lang.Object</pre>
 <h4>populateGalaxy</h4>
 <pre class="methodSignature">protected&nbsp;void&nbsp;populateGalaxy&#8203;(<a href="Galaxy.html" title="class in io.github.jornegitgud.galaxyquest">Galaxy</a>&nbsp;galaxy)
                        throws java.io.IOException</pre>
-<div class="block">this methode populates the Galaxy, before calling this method the galaxy contains only empty tiles.
- this methode creates an arrayList filled with all possible coordinates for this grid.
+<div class="block">this method populates the Galaxy, before calling this method the galaxy contains only empty tiles.
+ this method creates an arrayList filled with all possible coordinates for this grid.
  then it gives each object <a href="gameObjects/Planet.html" title="class in io.github.jornegitgud.galaxyquest.gameObjects"><code>Planet</code></a>,<a href="gameObjects/Player.html" title="class in io.github.jornegitgud.galaxyquest.gameObjects"><code>Player</code></a><a href="gameObjects/Meteorite.html" title="class in io.github.jornegitgud.galaxyquest.gameObjects"><code>Meteorite</code></a><a href="gameObjects/Wormhole.html" title="class in io.github.jornegitgud.galaxyquest.gameObjects"><code>Wormhole</code></a> a <a href="Coordinate.html" title="class in io.github.jornegitgud.galaxyquest"><code>Coordinate</code></a> object and removes it from the arrayList.
  And gives this object to the Galaxy class, which sets it in the right Tile</div>
 <dl>

@@ -161,7 +161,7 @@ public class GalaxyRenderer {
     }
 
     /**
-     * get the current sceme
+     * get the current scene
      * @return The current game scene
      */
     public Scene getScene() {

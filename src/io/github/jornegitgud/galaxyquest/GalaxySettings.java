@@ -57,14 +57,6 @@ public class GalaxySettings {
     }
 
     /**
-     * a method to check if the settings for the galaxy can be altered.
-     * @return boolean
-     */
-    public boolean getCanBeAltered() {
-        return !settingsFrozen;
-    }
-
-    /**
      * A method to freeze the game settings.
      */
     public void freezeSettings() {
@@ -166,14 +158,6 @@ public class GalaxySettings {
      */
     public int getPirateCount() {
         return pirateCount;
-    }
-
-    /**
-     * This method is used to get the settingsFrozen of the galaxy
-     * @return the settingsFrozen of the galaxy
-     */
-    public Boolean getSettingsFrozen() {
-        return settingsFrozen;
     }
 
     /**

@@ -7,17 +7,17 @@ import java.util.Arrays;
 import java.util.Scanner;
 
 /**
- * this class stores the highscores in a text file. Wich is saved on the machine that runs the game.
+ * this class stores the high scores in a text file. Which is saved on the machine that runs the game.
  */
 public class HighScoreStorage {
-    private static final String HIGHSCORE_FILE_PATH = System.getProperty("user.dir") + File.separator  + File.separator + "highscores.txt";
+    private static final String HIGHSCORE_FILE_PATH = System.getProperty("user.dir") + File.separator  + File.separator + "highScores.txt";
 
 
     /**
-     * This method saves the highscores in a text file.
-     * @param highscores this ArrayList is used the save the scores.
+     * This method saves the high scores in a text file.
+     * @param highScores this ArrayList is used the save the scores.
      */
-    public static void saveHighscores(HighScore[] highscores) {
+    public static void saveHighScores(HighScore[] highScores) {
         File file = new File(HIGHSCORE_FILE_PATH);
         if (file.exists())
            //This is not a bug!
@@ -25,7 +25,7 @@ public class HighScoreStorage {
 
         try {
             FileWriter writer = new FileWriter(HIGHSCORE_FILE_PATH);
-            for (HighScore highscore : highscores)
+            for (HighScore highscore : highScores)
                 writer.write(highscore.getName() + ":" + highscore.getScore() + System.lineSeparator());
             writer.close();
         } catch (IOException e) {
@@ -34,7 +34,7 @@ public class HighScoreStorage {
     }
 
     /**
-     * This method loads the highscores out of the text file.
+     * This method loads the high scores out of the text file.
      * it creates a new file if the file does not exist.
      * Deletes the file if i contains errors.
      * @return this method returns an HighScore[]

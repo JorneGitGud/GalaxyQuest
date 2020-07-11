@@ -1,8 +1,8 @@
 package io.github.jornegitgud.galaxyquest;
 
 /**
- * this is the highscore class, it had methods that calculate the highscore set by the player.
- * the created highscore objects are stored in the {@link Main} class.
+ * this is the HighScore class, it has methods that calculate the high score set by the player.
+ * the created HighScore objects are stored in the {@link Main} class.
  * it has getters and setters
  */
 
@@ -20,7 +20,7 @@ public class HighScore implements Comparable {
     }
 
     /**
-     * this constructor replaces the default vallues of the highscore object.
+     * this constructor replaces the default values of the HighScore object.
      *
      * @param elapsedSeconds is used in calculateScore method
      * @param galaxySettings is used in calculateScore method

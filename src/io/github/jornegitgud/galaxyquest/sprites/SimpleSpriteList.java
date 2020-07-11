@@ -17,7 +17,7 @@ public class SimpleSpriteList implements SpriteList {
     public SimpleSpriteList() { }
 
     /*
-    consturctor that sets the sprites ArrayList.
+    constructor that sets the sprites ArrayList.
      */
     public SimpleSpriteList(ArrayList<Image> sprites) {
         this.sprites = sprites;
@@ -25,14 +25,6 @@ public class SimpleSpriteList implements SpriteList {
 
     public void addSprite(Image sprite) {
         sprites.add(sprite);
-    }
-
-    public void addSprites(ArrayList<Image> sprites) {
-        this.sprites.addAll(sprites);
-    }
-
-    public ArrayList<Image> getSprites() {
-        return this.sprites;
     }
 
     /**
