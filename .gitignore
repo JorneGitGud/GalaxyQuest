@@ -23,4 +23,6 @@ GalaxyQuest/.idea/sonarlint
 hs_err_pid*
 
 .idea/
-target
+target\
+
+highScores.txt

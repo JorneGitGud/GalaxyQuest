@@ -181,7 +181,6 @@ public class GalaxyRenderer {
             galaxyPane.getChildren().remove(imageView);
         }
 
-        this.stage.setResizable(true);
         this.stage.setScene(null);
     }
 
