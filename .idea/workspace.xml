@@ -31,7 +31,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fff264f5-7b44-419a-b4fb-10106bfbed3e" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/JavaDoc/allclasses-index.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDoc/allclasses-index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/JavaDoc/help-doc.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaDoc/help-doc.html" afterDir="false" />
@@ -104,6 +103,7 @@
       <change beforePath="$PROJECT_DIR$/src/io/github/jornegitgud/galaxyquest/sprites/FileHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/github/jornegitgud/galaxyquest/sprites/FileHelper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/io/github/jornegitgud/galaxyquest/sprites/SimpleSpriteList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/github/jornegitgud/galaxyquest/sprites/SimpleSpriteList.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/io/github/jornegitgud/galaxyquest/sprites/SpriteMapParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/github/jornegitgud/galaxyquest/sprites/SpriteMapParser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
