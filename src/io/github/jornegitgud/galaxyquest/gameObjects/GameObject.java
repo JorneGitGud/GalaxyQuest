@@ -8,16 +8,16 @@ import io.github.jornegitgud.galaxyquest.sprites.SpriteList;
  * this class is called by the {@link GameObjectFactory}
  */
 public class GameObject {
-    private final SpriteList spriteList;
+    private final SpriteList SPRITE_LIST;
     private Tile tile;
 
     public GameObject(SpriteList spriteList) {
-        this.spriteList = spriteList;
+        this.SPRITE_LIST = spriteList;
     }
 
 
     public SpriteList getSpriteList() {
-        return spriteList;
+        return SPRITE_LIST;
     }
 
     public Tile getTile() {

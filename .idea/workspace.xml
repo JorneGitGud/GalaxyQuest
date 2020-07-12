@@ -36,10 +36,8 @@
   <component name="ChangeListManager">
     <list default="true" id="fff264f5-7b44-419a-b4fb-10106bfbed3e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/io/github/jornegitgud/galaxyquest/Coordinate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/github/jornegitgud/galaxyquest/Coordinate.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/io/github/jornegitgud/galaxyquest/Tile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/github/jornegitgud/galaxyquest/Tile.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/io/github/jornegitgud/galaxyquest/sprites/DirectionalSpriteList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/github/jornegitgud/galaxyquest/sprites/DirectionalSpriteList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/io/github/jornegitgud/galaxyquest/sprites/SimpleSpriteList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/github/jornegitgud/galaxyquest/sprites/SimpleSpriteList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/io/github/jornegitgud/galaxyquest/Galaxy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/github/jornegitgud/galaxyquest/Galaxy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/io/github/jornegitgud/galaxyquest/gameObjects/GameObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/io/github/jornegitgud/galaxyquest/gameObjects/GameObject.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -96,7 +94,7 @@
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
-    <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.javacompiler" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -315,9 +313,8 @@
       <workItem from="1594407432591" duration="93000" />
       <workItem from="1594459939954" duration="9758000" />
       <workItem from="1594490840091" duration="1979000" />
-      <workItem from="1594493077539" duration="1510000" />
-      <workItem from="1594525424151" duration="96000" />
-      <workItem from="1594550142647" duration="2584000" />
+      <workItem from="1594493077539" duration="1355000" />
+      <workItem from="1594537889817" duration="2865000" />
     </task>
     <servers />
   </component>
@@ -365,11 +362,12 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="590" y="209" key="#com.intellij.ide.util.frameworkSupport.AddFrameworkSupportDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1591726370405" />
-    <state x="409" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1594493928718">
+    <state x="409" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1594538722081">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="409" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1594493928718" />
     <state x="409" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1592677109685" />
+    <state x="409" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1594538722081" />
     <state x="707" y="369" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1594491988639">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
@@ -447,12 +445,12 @@
     <state width="938" height="352" key="GridCell.Tab.1.right/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1593296527378" />
     <state width="1877" height="348" key="GridCell.Tab.1.right/0.0.1920.1040/-3840.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1593009236002" />
     <state width="1877" height="348" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1594472143630" />
-    <state x="440" y="95" key="SettingsEditor" timestamp="1594490188071">
+    <state x="440" y="95" key="SettingsEditor" timestamp="1594537943229">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="440" y="95" key="SettingsEditor/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1594490188071" />
     <state x="440" y="94" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1594469439555" />
-    <state x="440" y="95" key="SettingsEditor/0.0.1920.1050@0.0.1920.1050" timestamp="1591727229871" />
+    <state x="440" y="95" key="SettingsEditor/0.0.1920.1050@0.0.1920.1050" timestamp="1594537943229" />
     <state x="681" y="261" width="570" height="524" key="StructurePopup" timestamp="1593093309689">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

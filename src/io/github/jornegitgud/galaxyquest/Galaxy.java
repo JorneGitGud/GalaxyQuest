@@ -9,45 +9,45 @@ import java.util.ArrayList;
  */
 public class Galaxy {
 
-    private final GalaxySettings settings;
-    private final Tile[][] galaxyTiles;
-    private final ArrayList<GameObject> objects = new ArrayList<>();
+    private final GalaxySettings SETTINGS;
+    private final Tile[][] GALAXY_TILES;
+    private final ArrayList<GameObject> OBJECTS = new ArrayList<>();
     private Player player;
 
     /**
      * the constructor of the Galaxy class uses an instance of {@link GalaxySettings} to set itself up.
      * This includes the size of the grid and the amount of planets, meteorites, and pirates to be spawned.
-     * @param settings the GalaxySettings
+     * @param SETTINGS the GalaxySettings
      */
-    public Galaxy(GalaxySettings settings) {
+    public Galaxy(GalaxySettings SETTINGS) {
 
-        this.settings = settings;
-        this.galaxyTiles = new Tile[settings.getHeight()][settings.getWidth()];
+        this.SETTINGS = SETTINGS;
+        this.GALAXY_TILES = new Tile[SETTINGS.getHeight()][SETTINGS.getWidth()];
 
         //create tiles
-        for (int y = 0; y < settings.getHeight(); y++) {
-            for (int x = 0; x < settings.getWidth(); x++) {
-                this.galaxyTiles[y][x] = new Tile(new Coordinate(x, y));
+        for (int y = 0; y < SETTINGS.getHeight(); y++) {
+            for (int x = 0; x < SETTINGS.getWidth(); x++) {
+                this.GALAXY_TILES[y][x] = new Tile(new Coordinate(x, y));
             }
         }
 
         //set tile neighbours
-        for (int y = 0; y < settings.getHeight(); y++) {
-            for (int x = 0; x < settings.getWidth(); x++) {
+        for (int y = 0; y < SETTINGS.getHeight(); y++) {
+            for (int x = 0; x < SETTINGS.getWidth(); x++) {
 
                 if (y > 0) {
-                    this.galaxyTiles[y][x].setTileAbove(this.galaxyTiles[y - 1][x]);
+                    this.GALAXY_TILES[y][x].setTileAbove(this.GALAXY_TILES[y - 1][x]);
                 }
-                if (y < settings.getHeight() - 1) {
-                    this.galaxyTiles[y][x].setTileBelow(this.galaxyTiles[y + 1][x]);
+                if (y < SETTINGS.getHeight() - 1) {
+                    this.GALAXY_TILES[y][x].setTileBelow(this.GALAXY_TILES[y + 1][x]);
                 }
 
-                if (x < settings.getWidth() - 1) {
-                    this.galaxyTiles[y][x].setTileRight(this.galaxyTiles[y][x + 1]);
+                if (x < SETTINGS.getWidth() - 1) {
+                    this.GALAXY_TILES[y][x].setTileRight(this.GALAXY_TILES[y][x + 1]);
                 }
 
                 if (x > 0) {
-                    this.galaxyTiles[y][x].setTileLeft(this.galaxyTiles[y][x - 1]);
+                    this.GALAXY_TILES[y][x].setTileLeft(this.GALAXY_TILES[y][x - 1]);
                 }
             }
         }
@@ -60,8 +60,8 @@ public class Galaxy {
      * @return the tile at the specified position, or null if the position was out of bounds.
      */
     public Tile getGalaxyTile(int xPos, int yPos) {
-        if(yPos < this.galaxyTiles.length && xPos < this.galaxyTiles[0].length && xPos >= 0 && yPos >= 0)
-            return this.galaxyTiles[yPos][xPos];
+        if(yPos < this.GALAXY_TILES.length && xPos < this.GALAXY_TILES[0].length && xPos >= 0 && yPos >= 0)
+            return this.GALAXY_TILES[yPos][xPos];
         return null;
     }
 
@@ -70,7 +70,7 @@ public class Galaxy {
      * @return returns the galaxy settings.
      */
     public GalaxySettings getSettings() {
-        return settings;
+        return SETTINGS;
     }
 
     /**
@@ -80,10 +80,10 @@ public class Galaxy {
      * @param gameObject the game object to add to the list of game objects on the tile.
      */
     public void addToTile(int x, int y, GameObject gameObject) {
-        galaxyTiles[x][y].addGameObject(gameObject);
-        gameObject.setTile(galaxyTiles[x][y]);
-        if (!objects.contains(gameObject))
-            objects.add(gameObject);
+        GALAXY_TILES[x][y].addGameObject(gameObject);
+        gameObject.setTile(GALAXY_TILES[x][y]);
+        if (!OBJECTS.contains(gameObject))
+            OBJECTS.add(gameObject);
     }
 
     /**
@@ -91,7 +91,7 @@ public class Galaxy {
      * @return a list of all game objects in the galaxy.
      */
     public ArrayList<GameObject> getObjects() {
-        return objects;
+        return OBJECTS;
     }
 
     /**
