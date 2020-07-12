@@ -16,7 +16,6 @@ public class GalaxyRendererMock extends GalaxyRenderer {
         return tile.getCoordinate();
     }
 
-    @SuppressWarnings("unused")
-    @Override
+    @Override //overriding this because we cannot add sprites on the fly from Unit tests. JavaFX runs in another thread and throws an IllegalAccessException when we try to do this.
     public void addSprite(Galaxy galaxy, Tile tile, String spritePath) { }
 }

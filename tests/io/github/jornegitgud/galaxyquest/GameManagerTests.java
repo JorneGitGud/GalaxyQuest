@@ -43,7 +43,7 @@ public class GameManagerTests {
         for (var x = 0; x < galaxySettings.getWidth(); x++) {
             for (var y = 0; y < galaxySettings.getHeight(); y++) {
                 var tile = galaxy.getGalaxyTile(x, y);
-                var coordinate = mockRenderer.getCoordinate(tile);
+                var coordinate = tile.getCoordinate();
 
                 var tileAbove = tile.getTileAbove();
                 var tileRight = tile.getTileRight();
@@ -53,22 +53,22 @@ public class GameManagerTests {
                 if (coordinate.x == 0)
                     Assertions.assertNull(tileLeft);
                 else
-                    Assertions.assertEquals(mockRenderer.getCoordinate(tileLeft).x, coordinate.x - 1);
+                    Assertions.assertEquals(tileLeft.getCoordinate().x, coordinate.x - 1);
 
                 if (coordinate.y == 0)
                     Assertions.assertNull(tileAbove);
                 else
-                    Assertions.assertEquals(mockRenderer.getCoordinate(tileAbove).y, coordinate.y - 1);
+                    Assertions.assertEquals(tileAbove.getCoordinate().y, coordinate.y - 1);
 
                 if (coordinate.x == galaxySettings.getWidth() - 1)
                     Assertions.assertNull(tileRight);
                 else
-                    Assertions.assertEquals(mockRenderer.getCoordinate(tileRight).x, coordinate.x + 1);
+                    Assertions.assertEquals(tileRight.getCoordinate().x, coordinate.x + 1);
 
                 if (coordinate.y == galaxySettings.getHeight() - 1)
                     Assertions.assertNull(tileBelow);
                 else
-                    Assertions.assertEquals(mockRenderer.getCoordinate(tileBelow).y, coordinate.y + 1);
+                    Assertions.assertEquals(tileBelow.getCoordinate().y, coordinate.y + 1);
 
             }
         }
@@ -79,8 +79,8 @@ public class GameManagerTests {
     public void SpaceShipSpawnsInUpperLeft() {
         //gameManager created in start method because javaFX actions need to happen via testFX framework.
 
-        var galaxy1ShipCoord = mockRenderer.getCoordinate(gameManager.getGalaxy().getPlayer().getTile());
-        var galaxy2ShipCoord = mockRenderer.getCoordinate(gameManager2.getGalaxy().getPlayer().getTile());
+        var galaxy1ShipCoord = gameManager.getGalaxy().getPlayer().getTile().getCoordinate();
+        var galaxy2ShipCoord = gameManager2.getGalaxy().getPlayer().getTile().getCoordinate();
 
         Assertions.assertTrue(
                 galaxy1ShipCoord.x == 0 && galaxy1ShipCoord.y == 0
@@ -98,7 +98,7 @@ public class GameManagerTests {
             for (var y = 0; y < gameManager.getGalaxy().getSettings().getHeight(); y++) {
                 var tile = gameManager.getGalaxy().getGalaxyTile(x, y);
                 if (tile.contains(Meteorite.class)) {
-                    var coordinate = mockRenderer.getCoordinate(tile);
+                    var coordinate = tile.getCoordinate();
                     galaxy1MeteoriteCoords.append(coordinate.x).append(",").append(coordinate.y).append("|");
                 }
             }
@@ -107,7 +107,7 @@ public class GameManagerTests {
             for (var y = 0; y < gameManager2.getGalaxy().getSettings().getHeight(); y++) {
                 var tile = gameManager2.getGalaxy().getGalaxyTile(x, y);
                 if (tile.contains(Meteorite.class)) {
-                    var coordinate = mockRenderer.getCoordinate(tile);
+                    var coordinate = tile.getCoordinate();
                     galaxy2MeteoriteCoords.append(coordinate.x).append(",").append(coordinate.y).append("|");
                 }
             }
@@ -124,7 +124,7 @@ public class GameManagerTests {
             for (var y = 0; y < gameManager.getGalaxy().getSettings().getHeight(); y++) {
                 var tile = gameManager.getGalaxy().getGalaxyTile(x, y);
                 if (tile.contains(Wormhole.class)) {
-                    wormhole1Coordinate = mockRenderer.getCoordinate(tile);
+                    wormhole1Coordinate = tile.getCoordinate();
                 }
             }
 
@@ -132,14 +132,14 @@ public class GameManagerTests {
             for (var y = 0; y < gameManager2.getGalaxy().getSettings().getHeight(); y++) {
                 var tile = gameManager2.getGalaxy().getGalaxyTile(x, y);
                 if (tile.contains(Wormhole.class)) {
-                    wormhole2Coordinate = mockRenderer.getCoordinate(tile);
+                    wormhole2Coordinate = tile.getCoordinate();
                 }
             }
 
         Assertions.assertNotNull(wormhole1Coordinate);
         Assertions.assertNotNull(wormhole2Coordinate);
 
-
+        Assertions.assertFalse(wormhole1Coordinate.x == wormhole2Coordinate.x && wormhole1Coordinate.y == wormhole2Coordinate.y);
     }
 
     @Test
