@@ -9,7 +9,11 @@ public class Coordinate {
     public final int x;
     public final int y;
 
-
+    /**
+     * the constructor used to create a coordinate object
+     * @param x this is the X coordinate
+     * @param y this is the Y coordinate
+     */
     public Coordinate(int x, int y) {
         this.x = x;
         this.y = y;

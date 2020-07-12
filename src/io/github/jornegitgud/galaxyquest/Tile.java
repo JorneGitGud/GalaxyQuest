@@ -28,34 +28,62 @@ public class Tile {
         this.coordinate = coordinate;
     }
 
+    /**
+     * This method is used to get the tile that is above the current tile
+     * @return returns the tile above the current tile
+     */
     public Tile getTileAbove() {
         return tileAbove;
     }
 
+    /**
+     * This method is used to get the tile that is below the current tile
+     * @return returns the tile below the current tile
+     */
     public Tile getTileBelow() {
         return tileBelow;
     }
 
+    /**
+     * This method is used to get the tile that is the the right of the current tile
+     * @return returns the tile to the right of the current tile
+     */
     public Tile getTileRight() {
         return tileRight;
     }
 
+    /**
+     * This method is used to get the tile that is the the left of the current tile
+     * @return returns the tile to the left of the current tile
+     */
     public Tile getTileLeft() {
         return tileLeft;
     }
 
+    /**
+     * This method is used to set the tile that is above the current tile
+     */
     public void setTileAbove(Tile tileAbove) {
         this.tileAbove = tileAbove;
     }
 
+    /**
+     * This method is used to set the tile that is below the current tile
+     */
     public void setTileBelow(Tile tileBelow) {
         this.tileBelow = tileBelow;
     }
 
+    /**
+     * This method is used to set the tile that is the the right of the current tile
+     */
     public void setTileRight(Tile tileRight) {
         this.tileRight = tileRight;
     }
 
+    /**
+     * This method is used to set the tile that is the the left of the current tile
+     */
     public void setTileLeft(Tile tileLeft) {
         this.tileLeft = tileLeft;
     }
@@ -69,6 +97,7 @@ public class Tile {
         if(!this.gameObjects.contains(gameObject))
             gameObjects.add(gameObject);
     }
+
     /**
      * this method remove a GameObject from the tile.
      *
