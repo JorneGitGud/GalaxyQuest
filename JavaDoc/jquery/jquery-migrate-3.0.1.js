@@ -115,8 +115,8 @@ if ( window.document.compatMode === "BackCompat" ) {
 var oldInit = jQuery.fn.init,
 	oldIsNumeric = jQuery.isNumeric,
 	oldFind = jQuery.find,
-	rattrHashTest = /\[(\s*[-\w]+\s*)([~|^$*]?=)\s*([-\w#]*?#[-\w#]*)\s*]/,
-	rattrHashGlob = /\[(\s*[-\w]+\s*)([~|^$*]?=)\s*([-\w#]*?#[-\w#]*)\s*]/g;
+	rattrHashTest = /\[(\s*[-\w]+\s*)([~|^$*]?=)\s*([-\w#]*?#[-\w#]*)\s*\]/,
+	rattrHashGlob = /\[(\s*[-\w]+\s*)([~|^$*]?=)\s*([-\w#]*?#[-\w#]*)\s*\]/g;
 
 jQuery.fn.init = function( arg1 ) {
 	var args = Array.prototype.slice.call( arguments );
