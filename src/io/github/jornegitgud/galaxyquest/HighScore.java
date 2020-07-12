@@ -57,7 +57,7 @@ public class HighScore implements Comparable {
         double setSecondsForGrid = (gridSize * 0.85) * setSecPerTile;
         double timeScoreMultiplier = setSecondsForGrid - elapsedSeconds;
 
-        if (timeScoreMultiplier < 0) timeScoreMultiplier = 0.5;
+        if (timeScoreMultiplier < 0.5) timeScoreMultiplier = 0.5;
         double planetMultiplier = setPlanets / maxPlanets;
         double planetPoints = (planetValue * planetMultiplier) * setPlanets;
         double extraPoints = numberOfObstacles * obstacleValue;
