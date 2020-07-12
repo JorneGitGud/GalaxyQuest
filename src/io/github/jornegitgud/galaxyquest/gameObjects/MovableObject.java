@@ -32,7 +32,7 @@ public class MovableObject extends GameObject {
      * @param direction the direction in which the object moves
      */
     public void move(int frames, Direction direction) {
-        if (moving && direction != null)
+        if (moving || direction == null)
             return;
         moving = true;
         moveFrames = frames;
