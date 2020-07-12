@@ -11,7 +11,7 @@
 .mtj.tmp/
 
 # Package Files #
-.idea/sonarlint
+GalaxyQuest/.idea/sonarlint
 *.war
 *.nar
 *.ear
@@ -23,4 +23,6 @@
 hs_err_pid*
 
 .idea/
-target
+target\
+
+highScores.txt
