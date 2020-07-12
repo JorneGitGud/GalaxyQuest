@@ -22,7 +22,7 @@ import java.util.function.Consumer;
  * The GalaxyRenderer is responsible for rendering sprites in the correct positions, with the correct sizes, in the correct order.
  */
 public class GalaxyRenderer {
-    private final int GALAXY_GRID_SIZE = 48;
+    private final int GALAXY_TILE_SIZE = 48;
     private final Stage STAGE;
     private final Scene GAME_SCENE;
     private final Pane GALAXY_PANE;
@@ -42,7 +42,7 @@ public class GalaxyRenderer {
     public GalaxyRenderer(Stage STAGE, GalaxySettings settings) throws IOException {
         this.STAGE = STAGE;
         GALAXY_PANE = new Pane();
-        this.GAME_SCENE = new Scene(GALAXY_PANE, settings.getWidth() * GALAXY_GRID_SIZE, settings.getHeight() * GALAXY_GRID_SIZE);
+        this.GAME_SCENE = new Scene(GALAXY_PANE, settings.getWidth() * GALAXY_TILE_SIZE, settings.getHeight() * GALAXY_TILE_SIZE);
         STAGE.setResizable(false);
 
         STAGE.setScene(this.GAME_SCENE);
@@ -53,8 +53,8 @@ public class GalaxyRenderer {
             background = new ImageView(galaxySprites.getNextSprite());
             background.setX(0);
             background.setY(0);
-            background.setFitWidth(GALAXY_GRID_SIZE * Math.max(settings.getWidth(), settings.getHeight()));
-            background.setFitHeight(GALAXY_GRID_SIZE * Math.max(settings.getHeight(), settings.getWidth()));
+            background.setFitWidth(GALAXY_TILE_SIZE * Math.max(settings.getWidth(), settings.getHeight()));
+            background.setFitHeight(GALAXY_TILE_SIZE * Math.max(settings.getHeight(), settings.getWidth()));
 
             GALAXY_PANE.getChildren().add(background);
 
@@ -81,16 +81,16 @@ public class GalaxyRenderer {
                 ImageView sprite = SPRITES.get(movableObject);
                 switch (movableObject.getMoveDirection()) {
                     case UP:
-                        sprite.setY((movableObject.getTile().getCoordinate().y * GALAXY_GRID_SIZE) - (1 * movePercentage * GALAXY_GRID_SIZE));
+                        sprite.setY((movableObject.getTile().getCoordinate().y * GALAXY_TILE_SIZE) - (1 * movePercentage * GALAXY_TILE_SIZE));
                         break;
                     case RIGHT:
-                        sprite.setX((movableObject.getTile().getCoordinate().x * GALAXY_GRID_SIZE) + (1 * movePercentage * GALAXY_GRID_SIZE));
+                        sprite.setX((movableObject.getTile().getCoordinate().x * GALAXY_TILE_SIZE) + (1 * movePercentage * GALAXY_TILE_SIZE));
                         break;
                     case LEFT:
-                        sprite.setX((movableObject.getTile().getCoordinate().x * GALAXY_GRID_SIZE) - (1 * movePercentage * GALAXY_GRID_SIZE));
+                        sprite.setX((movableObject.getTile().getCoordinate().x * GALAXY_TILE_SIZE) - (1 * movePercentage * GALAXY_TILE_SIZE));
                         break;
                     case DOWN:
-                        sprite.setY((movableObject.getTile().getCoordinate().y * GALAXY_GRID_SIZE) + (1 * movePercentage * GALAXY_GRID_SIZE));
+                        sprite.setY((movableObject.getTile().getCoordinate().y * GALAXY_TILE_SIZE) + (1 * movePercentage * GALAXY_TILE_SIZE));
                         break;
                 }
             }
@@ -115,15 +115,15 @@ public class GalaxyRenderer {
                 var imageView = new ImageView(object.getSpriteList().getNextSprite());
                 SPRITES.put(object, imageView);
                 GALAXY_PANE.getChildren().add(imageView);
-                imageView.setX(object.getTile().getCoordinate().x * GALAXY_GRID_SIZE);
-                imageView.setY(object.getTile().getCoordinate().y * GALAXY_GRID_SIZE);
-                imageView.setFitWidth(GALAXY_GRID_SIZE);
-                imageView.setFitHeight(GALAXY_GRID_SIZE);
+                imageView.setX(object.getTile().getCoordinate().x * GALAXY_TILE_SIZE);
+                imageView.setY(object.getTile().getCoordinate().y * GALAXY_TILE_SIZE);
+                imageView.setFitWidth(GALAXY_TILE_SIZE);
+                imageView.setFitHeight(GALAXY_TILE_SIZE);
                 if(object instanceof Wormhole) {
-                    imageView.setFitHeight(GALAXY_GRID_SIZE * 1.5);
-                    imageView.setFitWidth(GALAXY_GRID_SIZE * 1.5);
-                    imageView.setX(imageView.getX() - GALAXY_GRID_SIZE * 0.25);
-                    imageView.setY(imageView.getY() - GALAXY_GRID_SIZE * 0.25);
+                    imageView.setFitHeight(GALAXY_TILE_SIZE * 1.5);
+                    imageView.setFitWidth(GALAXY_TILE_SIZE * 1.5);
+                    imageView.setX(imageView.getX() - GALAXY_TILE_SIZE * 0.25);
+                    imageView.setY(imageView.getY() - GALAXY_TILE_SIZE * 0.25);
                     imageView.setVisible(false);
                 }
                 imageView.toBack();
@@ -194,10 +194,10 @@ public class GalaxyRenderer {
         try {
             var imageView = FileHelper.createImageView(spritePath);
             STATIC_SPRITES.add(imageView);
-            imageView.setX(coordinate.x * GALAXY_GRID_SIZE);
-            imageView.setY(coordinate.y * GALAXY_GRID_SIZE);
-            imageView.setFitHeight(GALAXY_GRID_SIZE);
-            imageView.setFitWidth(GALAXY_GRID_SIZE);
+            imageView.setX(coordinate.x * GALAXY_TILE_SIZE);
+            imageView.setY(coordinate.y * GALAXY_TILE_SIZE);
+            imageView.setFitHeight(GALAXY_TILE_SIZE);
+            imageView.setFitWidth(GALAXY_TILE_SIZE);
             GALAXY_PANE.getChildren().add(imageView);
             imageView.toFront();
             SPRITES.get(galaxy.getPlayer()).toFront();

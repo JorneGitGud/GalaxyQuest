@@ -43,7 +43,7 @@ public class SimpleSpriteList implements SpriteList {
     }
 
     /**
-     * randomizes the first image used in animations.
+     * Get the next sprite from the sprite list. randomizes the first image used in animations.
      * @return returns an Image from the sprites Arraylist
      */
     @Override
@@ -57,8 +57,8 @@ public class SimpleSpriteList implements SpriteList {
     }
 
     /**
-     * method used to return a sprite that has a direction
-     * @param dir direction that is used
+     * method used to return a sprite
+     * @param dir a direction. This is ignored in the SimpleSpriteList class, and is included for compatibility with the {@link DirectionalSpriteList} class.
      * @return returns a sprite
      */
     @Override

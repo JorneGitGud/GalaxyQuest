@@ -55,7 +55,7 @@ public class DirectionalSpriteList implements SpriteList {
     }
 
     /**
-     * method used to get the next sprite in the arraylist
+     * Get the next sprite in the sprite list for the last used direction.
      * @return returns an image
      */
     @Override
